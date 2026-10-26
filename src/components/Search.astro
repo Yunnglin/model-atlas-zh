@@ -1,0 +1,17 @@
+---
+import DefaultSearch from '@astrojs/starlight/components/Search.astro';
+---
+
+<DefaultSearch />
+<script>
+  // Include Starlight 0.42.7's visible key caps in the button's accessible name.
+  // References follow its platform-specific Ctrl/Command update automatically.
+  document.querySelectorAll('site-search [data-open-modal]').forEach((button, index) => {
+    const label = button.querySelector('span');
+    const shortcut = button.querySelector('kbd');
+    if (!label || !shortcut) return;
+    label.id = `atlas-search-label-${index}`;
+    shortcut.id = `atlas-search-shortcut-${index}`;
+    button.setAttribute('aria-labelledby', `${label.id} ${shortcut.id}`);
+  });
+</script>

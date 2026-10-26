@@ -1,0 +1,148 @@
+.practice {
+  width: 100%;
+  overflow: auto;
+  padding: 40px clamp(20px, 6vw, 90px);
+}
+.practice header {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: start;
+  max-width: 1100px;
+}
+.practice header span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+.practice h1 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 12px 0;
+}
+.practice header p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.tools {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.tools button,
+.tools label {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 10px;
+  font-size: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.tools input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.questions {
+  max-width: 1000px;
+}
+.questions article {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.number {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.questions h2 {
+  font-size: 21px;
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+.questions textarea {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 12px;
+  font: inherit;
+  font-size: 14px;
+  border-radius: 6px;
+  width: 100%;
+  resize: vertical;
+  line-height: 1.7;
+}
+.questions summary {
+  cursor: pointer;
+  color: var(--accent);
+  padding: 14px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.questions ul {
+  line-height: 1.9;
+  padding-left: 23px;
+  font-size: 15px;
+}
+.followup {
+  padding: 15px 18px;
+  background: #edf5f5;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.sources {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 10px;
+}
+.sources a {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.questions footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.questions footer > div {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.topic {
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+}
+.actions button {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.actions button[aria-pressed='true'] {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+@media (max-width: 760px) {
+  .practice header {
+    flex-direction: column;
+  }
+}

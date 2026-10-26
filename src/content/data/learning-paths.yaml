@@ -1,0 +1,32 @@
+- id: training-engineering
+  title: 训练与评测工程
+  summary: 从预测目标出发，理解训练方式、评测协议和改进闭环。
+  nodes:
+    - transformer
+    - next-token
+    - data-quality
+    - sft
+    - lora
+    - rlhf
+    - dpo
+    - rlvr
+    - grpo
+    - evaluation-protocol
+    - failure-analysis
+    - calibration
+- id: speech-multimodal
+  title: 语音与多模态算法
+  summary: 从声音和图像的表示，到跨模态连接，再回到实际错误与评测。
+  nodes:
+    - attention
+    - encoder-decoder
+    - wav2vec2
+    - whisper
+    - wer
+    - encodec
+    - vit
+    - clip
+    - llava
+    - qwen-omni
+    - omnijev
+    - speech-assistant

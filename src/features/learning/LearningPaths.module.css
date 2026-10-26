@@ -1,0 +1,75 @@
+.paths {
+  padding: 48px clamp(20px, 6vw, 90px);
+  overflow: auto;
+  width: 100%;
+}
+.paths header {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+.paths header > span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.paths h1 {
+  font-size: clamp(26px, 3vw, 38px);
+  margin: 12px 0;
+}
+.paths p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 1200px;
+}
+.columns h2 {
+  font-size: 22px;
+}
+.columns ol {
+  list-style: none;
+  padding: 0;
+}
+.columns li {
+  border-top: 1px solid var(--line);
+}
+.columns button {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  text-align: left;
+  cursor: pointer;
+}
+.columns button:hover strong {
+  color: var(--accent);
+}
+.columns strong {
+  display: block;
+  font-size: 15px;
+}
+.columns small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+.step {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 26px;
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

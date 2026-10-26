@@ -1,0 +1,406 @@
+- id: encoder-decoder-before-attention
+  from: encoder-decoder
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - transformer-paper
+- id: next-token-before-attention
+  from: next-token
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - gpt-code
+- id: masked-modeling-before-attention
+  from: masked-modeling
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - bert-paper
+- id: bert-before-masked-modeling
+  from: bert
+  to: masked-modeling
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - bert-paper
+- id: bert-before-attention
+  from: bert
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - bert-paper
+- id: gpt-before-next-token
+  from: gpt
+  to: next-token
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - gpt-code
+- id: gpt-before-attention
+  from: gpt
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - gpt-code
+- id: t5-before-encoder-decoder
+  from: t5
+  to: encoder-decoder
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - t5-paper
+- id: t5-before-masked-modeling
+  from: t5
+  to: masked-modeling
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - t5-paper
+- id: vit-before-attention
+  from: vit
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - vit-paper
+- id: vit-before-transformer
+  from: vit
+  to: transformer
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - vit-paper
+- id: clip-before-vit
+  from: clip
+  to: vit
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - clip-paper
+- id: clip-before-attention
+  from: clip
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - clip-paper
+- id: dit-before-vit
+  from: dit
+  to: vit
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - dit-paper
+- id: dit-before-transformer
+  from: dit
+  to: transformer
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - dit-paper
+- id: wav2vec2-before-attention
+  from: wav2vec2
+  to: attention
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - wav2vec-paper
+- id: whisper-before-encoder-decoder
+  from: whisper
+  to: encoder-decoder
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - whisper-paper
+- id: whisper-before-next-token
+  from: whisper
+  to: next-token
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - whisper-paper
+- id: llava-before-clip
+  from: llava
+  to: clip
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - llava-paper
+- id: llava-before-sft
+  from: llava
+  to: sft
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - llava-paper
+- id: qwen-omni-before-llava
+  from: qwen-omni
+  to: llava
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - omni-code
+- id: qwen-omni-before-encodec
+  from: qwen-omni
+  to: encodec
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - omni-code
+- id: jev-before-calibration
+  from: jev
+  to: calibration
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - jev-docs
+- id: omnijev-before-llava
+  from: omnijev
+  to: llava
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - omnijev-code
+- id: omnijev-before-calibration
+  from: omnijev
+  to: calibration
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - omnijev-code
+- id: sft-before-next-token
+  from: sft
+  to: next-token
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - instruct-paper
+- id: sft-before-data-quality
+  from: sft
+  to: data-quality
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - instruct-paper
+- id: lora-before-sft
+  from: lora
+  to: sft
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - lora-paper
+- id: rlhf-before-sft
+  from: rlhf
+  to: sft
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - instruct-paper
+- id: rlvr-before-next-token
+  from: rlvr
+  to: next-token
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - r1-paper
+- id: rlvr-before-evaluation-protocol
+  from: rlvr
+  to: evaluation-protocol
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - r1-paper
+- id: dpo-before-rlhf
+  from: dpo
+  to: rlhf
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - dpo-paper
+- id: grpo-before-rlvr
+  from: grpo
+  to: rlvr
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - grpo-paper
+- id: wer-before-evaluation-protocol
+  from: wer
+  to: evaluation-protocol
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - wer-docs
+- id: calibration-before-evaluation-protocol
+  from: calibration
+  to: evaluation-protocol
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - calibration-paper
+- id: data-quality-before-evaluation-protocol
+  from: data-quality
+  to: evaluation-protocol
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - ml-rules
+- id: evaluation-protocol-before-transformer
+  from: evaluation-protocol
+  to: transformer
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - tfma-docs
+- id: failure-analysis-before-evaluation-protocol
+  from: failure-analysis
+  to: evaluation-protocol
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - ml-rules
+- id: failure-analysis-before-data-quality
+  from: failure-analysis
+  to: data-quality
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - ml-rules
+- id: speech-assistant-before-whisper
+  from: speech-assistant
+  to: whisper
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - whisper-code
+- id: speech-assistant-before-wer
+  from: speech-assistant
+  to: wer
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - whisper-code
+- id: speech-assistant-before-failure-analysis
+  from: speech-assistant
+  to: failure-analysis
+  kind: prerequisite
+  explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
+  sources:
+    - whisper-code
+- id: bert-uses-transformer
+  from: bert
+  to: transformer
+  kind: uses
+  explanation: BERT 采用 Transformer 编码器。
+  sources:
+    - bert-paper
+- id: gpt-uses-transformer
+  from: gpt
+  to: transformer
+  kind: uses
+  explanation: GPT-2 采用带因果掩码的 Transformer。
+  sources:
+    - gpt-code
+- id: t5-uses-encoder-decoder
+  from: t5
+  to: encoder-decoder
+  kind: uses
+  explanation: T5 采用编码器—解码器。
+  sources:
+    - t5-paper
+- id: vit-uses-transformer
+  from: vit
+  to: transformer
+  kind: uses
+  explanation: ViT 把图像块输入 Transformer 编码器。
+  sources:
+    - vit-paper
+- id: whisper-uses-encoder-decoder
+  from: whisper
+  to: encoder-decoder
+  kind: uses
+  explanation: Whisper 用声音编码器与文字解码器连接。
+  sources:
+    - whisper-paper
+- id: whisper-uses-next-token
+  from: whisper
+  to: next-token
+  kind: uses
+  explanation: 解码器按已有输出预测下一个 token。
+  sources:
+    - whisper-paper
+- id: llava-uses-clip
+  from: llava
+  to: clip
+  kind: uses
+  explanation: 原始 LLaVA 使用 CLIP 视觉编码器。
+  sources:
+    - llava-paper
+- id: llava-uses-sft
+  from: llava
+  to: sft
+  kind: uses
+  explanation: 视觉指令微调使用配对指令与回答。
+  sources:
+    - llava-paper
+- id: whisper-evaluated-by-wer
+  from: whisper
+  to: wer
+  kind: evaluated-by
+  explanation: 语音识别可用编辑错误率评测，中文协议另需明确。
+  sources:
+    - whisper-paper
+- id: jev-evaluated-by-calibration
+  from: jev
+  to: calibration
+  kind: evaluated-by
+  explanation: 决策概率要在目标数据上检查可靠性。
+  sources:
+    - jev-docs
+- id: omnijev-evaluated-by-calibration
+  from: omnijev
+  to: calibration
+  kind: evaluated-by
+  explanation: 项目讨论了校准集与评测路径限制。
+  sources:
+    - omnijev-code
+- id: whisper-applied-to-speech-assistant
+  from: whisper
+  to: speech-assistant
+  kind: applied-to
+  explanation: 可作为语音助手中的识别环节。
+  sources:
+    - whisper-code
+- id: wav2vec2-compared-with-whisper
+  from: wav2vec2
+  to: whisper
+  kind: compared-with
+  explanation: 比较语音表示预训练与大规模弱监督，不声称继承。
+  sources:
+    - whisper-paper
+- id: rlhf-compared-with-dpo
+  from: rlhf
+  to: dpo
+  kind: compared-with
+  explanation: 经典奖励模型与在线强化学习流程，可与直接偏好优化比较。
+  sources:
+    - dpo-paper
+- id: grpo-compared-with-rlvr
+  from: grpo
+  to: rlvr
+  kind: compared-with
+  explanation: GRPO 是更新算法，RLVR 描述奖励来源，可以组合而非相互替代。
+  sources:
+    - r1-paper
+- id: encoder-decoder-uses-transformer
+  from: encoder-decoder
+  to: transformer
+  kind: uses
+  explanation: 这里讲解 Transformer 的编码器与解码器组合，后续模型会采用不同部分。
+  sources:
+    - transformer-paper

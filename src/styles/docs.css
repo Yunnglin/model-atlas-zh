@@ -1,0 +1,27 @@
+:root {
+  --sl-font: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --sl-color-accent-low: #123b43;
+  --sl-color-accent: #54cbd5;
+  --sl-color-accent-high: #a1e7ed;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #e7f0f4;
+  --sl-color-accent: #087e8b;
+  --sl-color-accent-high: #154c56;
+}
+.atlas-return {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+.atlas-aliases {
+  color: var(--sl-color-gray-2);
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+.sl-markdown-content {
+  line-height: 1.95;
+}
+.sl-markdown-content details {
+  margin-block: 1.4rem;
+}

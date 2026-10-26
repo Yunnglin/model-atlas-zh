@@ -1,0 +1,101 @@
+- id: whisper-principle
+  title: Whisper 怎样把声音变成文字？
+  nodes:
+    - whisper
+    - encoder-decoder
+  answer:
+    - 先把声音转换成 log-Mel 频谱，再由编码器得到声音表示。
+    - 解码器同时使用声音表示和已输出 token，逐步预测文字。
+    - 原生模型结构与实时应用中的分段、活动检测、延迟控制要分开说明。
+  followup: 如果固定长度分段截断了一个词，你会先检查哪里？
+  sources:
+    - whisper-paper
+- id: sft-goal
+  title: SFT 与下一 token 预测是什么关系？
+  nodes:
+    - sft
+    - next-token
+  answer:
+    - 常见生成式 SFT 仍然使用下一 token 预测损失。
+    - 变化主要在训练材料：问题、指令、示范答案以及损失计算的位置。
+    - 先核对对话模板和答案质量，再比较微调方案。
+  followup: SFT 与 LoRA 能不能一起用？它们各自决定什么？
+  sources:
+    - instruct-paper
+    - lora-paper
+- id: rl-distinction
+  title: RLHF、RLVR、GRPO 是三个互相替代的算法吗？
+  nodes:
+    - rlhf
+    - rlvr
+    - grpo
+  answer:
+    - RLHF 和 RLVR 分别强调人类反馈和可验证结果等奖励来源。
+    - GRPO 是一种策略优化方法，强调组内相对优势。
+    - 奖励从哪里来，与用什么算法更新策略，需要分开回答。
+  followup: 一组回答的奖励都一样时，组内学习信号会怎样？
+  sources:
+    - grpo-paper
+    - r1-paper
+- id: wer-limit
+  title: CER 下降就说明语音产品变好了吗？
+  nodes:
+    - wer
+    - evaluation-protocol
+  answer:
+    - 先确认测试集、文本规范化和评分协议一致。
+    - 检查噪声、口音、专名等切片，避免平均值掩盖业务退化。
+    - 产品还要检查端到端延迟、切段和任务完成情况。
+  followup: 只修好了十个错例，怎样证明没有损害其他场景？
+  sources:
+    - wer-docs
+    - tfma-docs
+- id: calibration-check
+  title: 模型给出 0.9 的概率，能直接自动执行吗？
+  nodes:
+    - calibration
+    - jev
+  answer:
+    - 概率是否可靠需要在目标分布上检查，不能只看输出格式。
+    - 校准说的是一组预测的频率对应关系，不保证某一次一定正确。
+    - 用独立数据检查概率质量与阈值下的错误率，再决定自动执行条件。
+  followup: 换了业务场景后，原来的阈值为什么可能失效？
+  sources:
+    - calibration-paper
+    - jev-docs
+- id: lora-memory
+  title: LoRA 参数少，显存就一定占得少吗？
+  nodes:
+    - lora
+  answer:
+    - LoRA 主要减少可训练参数及相应优化器状态。
+    - 基础权重与中间激活仍然消耗显存。
+    - 序列长度、批量大小、精度和检查点策略也会影响显存。
+  followup: 你会如何区分参数显存和激活显存？
+  sources:
+    - lora-paper
+- id: vision-evidence
+  title: 怎样检查视觉语言模型是否真的看了图片？
+  nodes:
+    - llava
+    - clip
+  answer:
+    - 设计需要视觉信息才能回答的样本。
+    - 替换图片、遮挡关键区域或去掉图像输入，比较回答变化。
+    - 按计数、文字识别和空间关系分别评分，并核查答案标注。
+  followup: 模型回答正确但理由编造，应该怎样记录错误？
+  sources:
+    - llava-paper
+- id: data-return
+  title: 一个漏字错例出现后，是否马上补数据训练？
+  nodes:
+    - failure-analysis
+    - data-quality
+  answer:
+    - 保存输入、输出、版本、切段与处理配置，先复现。
+    - 核查参考转写、分段截断和评分规则，再验证模型问题的假设。
+    - 适合数据改进的问题从开发池补采或重标，独立测试集留作验证。
+  followup: 假如补数据后噪声切片提高、干净语音变差，你会怎么判断？
+  sources:
+    - ml-rules
+    - tfma-docs

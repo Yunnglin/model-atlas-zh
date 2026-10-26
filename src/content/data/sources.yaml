@@ -1,0 +1,120 @@
+- id: transformer-paper
+  title: Attention Is All You Need
+  url: https://arxiv.org/abs/1706.03762
+  type: paper
+  checked: '2026-10-26'
+- id: bert-paper
+  title: BERT
+  url: https://arxiv.org/abs/1810.04805
+  type: paper
+  checked: '2026-10-26'
+- id: gpt-code
+  title: OpenAI GPT-2 官方实现
+  url: https://github.com/openai/gpt-2
+  type: official-code
+  checked: '2026-10-26'
+- id: t5-paper
+  title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+  url: https://arxiv.org/abs/1910.10683
+  type: paper
+  checked: '2026-10-26'
+- id: vit-paper
+  title: An Image is Worth 16x16 Words
+  url: https://arxiv.org/abs/2010.11929
+  type: paper
+  checked: '2026-10-26'
+- id: clip-paper
+  title: Learning Transferable Visual Models From Natural Language Supervision
+  url: https://arxiv.org/abs/2103.00020
+  type: paper
+  checked: '2026-10-26'
+- id: dit-paper
+  title: Scalable Diffusion Models with Transformers
+  url: https://arxiv.org/abs/2212.09748
+  type: paper
+  checked: '2026-10-26'
+- id: wav2vec-paper
+  title: wav2vec 2.0
+  url: https://arxiv.org/abs/2006.11477
+  type: paper
+  checked: '2026-10-26'
+- id: whisper-paper
+  title: Robust Speech Recognition via Large-Scale Weak Supervision
+  url: https://arxiv.org/abs/2212.04356
+  type: paper
+  checked: '2026-10-26'
+- id: whisper-code
+  title: Whisper 官方代码与命令行入口
+  url: https://github.com/openai/whisper
+  type: official-code
+  checked: '2026-10-26'
+- id: encodec-paper
+  title: High Fidelity Neural Audio Compression
+  url: https://arxiv.org/abs/2210.13438
+  type: paper
+  checked: '2026-10-26'
+- id: llava-paper
+  title: Visual Instruction Tuning
+  url: https://arxiv.org/abs/2304.08485
+  type: paper
+  checked: '2026-10-26'
+- id: omni-code
+  title: Qwen2.5-Omni 官方实现
+  url: https://github.com/QwenLM/Qwen2.5-Omni
+  type: official-code
+  checked: '2026-10-26'
+- id: jev-docs
+  title: TypeSafe System One 模型说明
+  url: https://docs.typesafe.ai/concepts/system-one
+  type: official-docs
+  checked: '2026-10-26'
+- id: omnijev-code
+  title: OmniJev 官方项目及评测限制
+  url: https://github.com/tinnel123666888/OmniJev
+  type: official-code
+  checked: '2026-10-26'
+- id: instruct-paper
+  title: Training language models to follow instructions with human feedback
+  url: https://arxiv.org/abs/2203.02155
+  type: paper
+  checked: '2026-10-26'
+- id: lora-paper
+  title: LoRA
+  url: https://arxiv.org/abs/2106.09685
+  type: paper
+  checked: '2026-10-26'
+- id: dpo-paper
+  title: Direct Preference Optimization
+  url: https://arxiv.org/abs/2305.18290
+  type: paper
+  checked: '2026-10-26'
+- id: grpo-paper
+  title: DeepSeekMath
+  url: https://arxiv.org/abs/2402.03300
+  type: paper
+  checked: '2026-10-26'
+- id: r1-paper
+  title: DeepSeek-R1
+  url: https://arxiv.org/abs/2501.12948
+  type: paper
+  checked: '2026-10-26'
+- id: calibration-paper
+  title: On Calibration of Modern Neural Networks
+  url: https://arxiv.org/abs/1706.04599
+  type: paper
+  checked: '2026-10-26'
+- id: wer-docs
+  title: 'Hugging Face Evaluate: Word Error Rate'
+  url: https://huggingface.co/spaces/evaluate-metric/wer
+  type: official-docs
+  checked: '2026-10-26'
+- id: ml-rules
+  title: Rules of Machine Learning
+  url: https://developers.google.com/machine-learning/guides/rules-of-ml
+  type: official-docs
+  checked: '2026-10-26'
+- id: tfma-docs
+  title: TensorFlow Model Analysis
+  url: https://www.tensorflow.org/tfx/guide/tfma
+  type: official-docs
+  checked: '2026-10-26'
