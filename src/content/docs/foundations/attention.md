@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 注意力
     - QKV
+  purpose: 按需要汇总其他位置的信息
   summary: 为当前计算挑选有用的信息，并给不同位置分配不同权重。
   question: 模型怎样知道这一步该参考哪里？
   facets:

@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 低秩适配
     - 参数高效微调
+  purpose: 用较少的参数完成微调
   summary: 冻结原有权重，用两个较小矩阵学习一部分权重变化。
   question: 微调时怎样减少需要训练的参数？
   facets:

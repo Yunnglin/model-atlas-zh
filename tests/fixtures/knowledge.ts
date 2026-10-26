@@ -19,6 +19,7 @@ export function readKnowledgeFixture(): KnowledgeBase {
           ...frontmatter.atlas,
           title: frontmatter.title,
           href: `/${relative(docs, path).replace(/\.md$/, '')}/`,
+          readerHref: `/readers/${(frontmatter.atlas as { id: string }).id}/`,
         });
       }
     }
@@ -27,7 +28,8 @@ export function readKnowledgeFixture(): KnowledgeBase {
   const load = (name: string): unknown =>
     parse(readFileSync(join(root, 'data', `${name}.yaml`), 'utf8'));
   return validateKnowledge({
-    version: 1,
+    version: 2,
+    navigation: load('navigation'),
     nodes,
     sources: load('sources'),
     relations: load('relations'),

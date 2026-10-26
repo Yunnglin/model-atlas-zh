@@ -296,6 +296,7 @@
   from: bert
   to: transformer
   kind: uses
+  caption: 编码器
   explanation: BERT 采用 Transformer 编码器。
   sources:
     - bert-paper
@@ -303,6 +304,7 @@
   from: gpt
   to: transformer
   kind: uses
+  caption: 因果解码
   explanation: GPT-2 采用带因果掩码的 Transformer。
   sources:
     - gpt-code
@@ -317,6 +319,7 @@
   from: vit
   to: transformer
   kind: uses
+  caption: 图像分块
   explanation: ViT 把图像块输入 Transformer 编码器。
   sources:
     - vit-paper
@@ -324,6 +327,7 @@
   from: whisper
   to: encoder-decoder
   kind: uses
+  caption: 采用
   explanation: Whisper 用声音编码器与文字解码器连接。
   sources:
     - whisper-paper
@@ -331,6 +335,7 @@
   from: whisper
   to: next-token
   kind: uses
+  caption: 生成目标
   explanation: 解码器按已有输出预测下一个 token。
   sources:
     - whisper-paper
@@ -338,6 +343,7 @@
   from: llava
   to: clip
   kind: uses
+  caption: 视觉特征
   explanation: 原始 LLaVA 使用 CLIP 视觉编码器。
   sources:
     - llava-paper
@@ -352,6 +358,7 @@
   from: whisper
   to: wer
   kind: evaluated-by
+  caption: 评测
   explanation: 语音识别可用编辑错误率评测，中文协议另需明确。
   sources:
     - whisper-paper
@@ -404,3 +411,44 @@
   explanation: 这里讲解 Transformer 的编码器与解码器组合，后续模型会采用不同部分。
   sources:
     - transformer-paper
+- id: clip-uses-vit
+  from: clip
+  to: vit
+  kind: uses
+  caption: 可作视觉编码器
+  explanation: 原始 CLIP 比较了 ResNet 和 ViT 视觉编码器；此关系表示可采用 ViT，不表示所有 CLIP 版本都使用它。
+  sources:
+    - clip-paper
+- id: wav2vec2-uses-transformer
+  from: wav2vec2
+  to: transformer
+  kind: uses
+  caption: 上下文编码
+  explanation: wav2vec 2.0 使用 Transformer 上下文网络处理声音特征。
+  sources:
+    - wav2vec-paper
+- id: llava-compared-with-qwen-omni
+  from: llava
+  to: qwen-omni
+  kind: compared-with
+  caption: 能力对比
+  explanation: 对比原始 LLaVA 的图文问答与 Qwen2.5-Omni 的多种输入和语音输出能力；不表示继承或相同训练过程。
+  sources:
+    - llava-paper
+    - omni-code
+- id: gpt-uses-next-token
+  from: gpt
+  to: next-token
+  kind: uses
+  caption: 预训练目标
+  explanation: GPT-2 的语言建模目标是根据已有文字预测下一个 token。
+  sources:
+    - gpt-code
+- id: sft-uses-next-token
+  from: sft
+  to: next-token
+  kind: uses
+  caption: 常见生成式目标
+  explanation: 常见生成式 SFT 使用下一 token 预测，变化主要在示范数据、对话模板和哪些位置计分。
+  sources:
+    - instruct-paper

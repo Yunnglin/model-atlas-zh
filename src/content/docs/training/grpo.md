@@ -6,6 +6,7 @@ atlas:
   modality: shared
   aliases:
     - 组相对策略优化
+  purpose: 用一组回答的相对表现指导更新
   summary: 对同一问题生成一组回答，根据组内相对奖励判断哪些回答更值得加强。
   question: 为什么可以用一组回答来估计改进方向？
   facets:

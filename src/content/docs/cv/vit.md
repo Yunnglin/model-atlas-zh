@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 视觉Transformer
     - 图像块
+  purpose: 把图像块交给 Transformer
   summary: 把图像切成小块，像处理序列一样处理这些图像块。
   question: 图像没有单词，Transformer 怎么读？
   facets:

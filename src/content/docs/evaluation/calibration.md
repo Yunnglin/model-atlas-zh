@@ -8,6 +8,7 @@ atlas:
     - 校准
     - 置信度
     - ECE
+  purpose: 检查概率是否与实际表现相符
   summary: 检查模型说“有八成把握”的那些预测，是否真的大约八成正确。
   question: 高置信度为什么不一定可信？
   facets:

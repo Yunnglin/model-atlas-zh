@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 音频token
     - 神经音频编解码器
+  purpose: 把声音压缩成离散编码
   summary: 把连续声音压缩成较紧凑的表示，再重建为声音。
   question: 语音生成为什么常提到“音频 token”？
   facets:

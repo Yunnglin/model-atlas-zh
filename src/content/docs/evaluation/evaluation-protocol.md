@@ -5,6 +5,7 @@ atlas:
   kind: method
   modality: shared
   aliases: []
+  purpose: 固定评测规则，按条件看结果
   summary: 把“怎么测”和“在哪些样本上测”固定下来，让比较有意义。
   question: 一个总分够不够判断模型能否上线？
   facets:

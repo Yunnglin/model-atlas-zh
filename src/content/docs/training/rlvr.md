@@ -6,6 +6,7 @@ atlas:
   modality: shared
   aliases:
     - 可验证奖励强化学习
+  purpose: 根据可检查的结果获得奖励
   summary: 让模型尝试解题，再用可检查的结果给奖励。
   question: 没有人逐条打分，奖励从哪里来？
   facets:

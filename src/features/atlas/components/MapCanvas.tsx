@@ -1,177 +1,159 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import {
-  ReactFlow,
-  Background,
-  Controls,
-  MiniMap,
-  ReactFlowProvider,
-  useReactFlow,
-  getNodesBounds,
-  getViewportForBounds,
-  type Edge,
-} from '@xyflow/react';
-import '@xyflow/react/dist/style.css';
-import type { KnowledgeBase, MapView } from '../../../core/schemas/knowledge';
-import type { MapSelection } from '../../../core/projections/project';
-import { layoutGraph, type CanvasLayout } from '../layouts/layout';
-import { KnowledgeCard } from './KnowledgeCard';
-import { LaneHeading } from './LaneHeading';
-import { readViewport, writeViewport } from '../../../platform/viewport';
-import styles from '../Atlas.module.css';
-
-const nodeTypes = { knowledge: KnowledgeCard, lane: LaneHeading };
-function viewportKey(container: HTMLElement): string {
-  return `${location.pathname}${location.search}|${container.clientWidth}x${container.clientHeight}`;
-}
+import { useEffect, useRef, useState } from 'react';
+import { ArrowsOutIcon, MinusIcon, PlusIcon } from '@phosphor-icons/react';
+import type { KnowledgeBase } from '../../../core/schemas/knowledge';
+import { projectNavigation } from '../../../core/projections/navigation';
+import type { TreeGraph } from '../layouts/tree-graph';
+import styles from './TreeCanvas.module.css';
 
 interface Props {
   data: KnowledgeBase;
-  selection: MapSelection;
+  expanded: readonly string[];
+  focus?: string;
   onSelect: (id: string) => void;
-  onRelation: (message: string) => void;
+  onToggle: (id: string) => void;
 }
 
-function Canvas({ data, selection, onSelect, onRelation }: Props) {
-  const [layout, setLayout] = useState<CanvasLayout & { input?: KnowledgeBase; view?: MapView }>({
-    nodes: [],
-    edges: [],
-  });
-  const [busy, setBusy] = useState(true);
-  const [error, setError] = useState('');
-  const generation = useRef(0);
+export function MapCanvas({ data, expanded, focus, onSelect, onToggle }: Props) {
   const container = useRef<HTMLDivElement>(null);
-  const flow = useReactFlow();
+  const controller = useRef<TreeGraph | undefined>(undefined);
+  const latest = useRef({ expanded, focus, onSelect, onToggle });
+  latest.current = { expanded, focus, onSelect, onToggle };
+  const queue = useRef(Promise.resolve());
+  const [ready, setReady] = useState(false);
+  const [busy, setBusy] = useState(true);
+  const [error, setError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const generation = useRef(0);
+
   useEffect(() => {
-    const request = ++generation.current;
+    const element = container.current!;
     let disposed = false;
+    let graph: TreeGraph | undefined;
+    let observer: ResizeObserver | undefined;
+    setReady(false);
     setBusy(true);
-    setError('');
-    void layoutGraph(data, selection.view)
-      .then((result) => {
-        if (disposed || request !== generation.current) return;
-        setLayout({ ...result, input: data, view: selection.view });
+    setError(false);
+    void import('../layouts/tree-graph')
+      .then(async ({ TreeGraph }) => {
+        if (disposed) return;
+        graph = new TreeGraph(element, data);
+        controller.current = graph;
+        await graph.apply(latest.current.expanded, latest.current.focus);
+        if (disposed) return;
+        observer = new ResizeObserver(([entry]) => {
+          if (!entry || disposed) return;
+          const { width, height } = entry.contentRect;
+          queue.current = queue.current
+            .catch(() => {})
+            .then(async () => {
+              if (!disposed && graph && !graph.graph.destroyed)
+                await graph.resize(Math.round(width), Math.round(height));
+            })
+            .catch(() => {
+              if (!disposed) setError(true);
+            });
+        });
+        observer.observe(element);
+        setReady(true);
         setBusy(false);
       })
       .catch(() => {
-        if (disposed) return;
-        setError('地图布局暂时未完成，请切换视图重试。右侧正文仍可阅读。');
-        setBusy(false);
+        if (!disposed) {
+          setError(true);
+          setBusy(false);
+        }
       });
+    function click(event: MouseEvent) {
+      const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]');
+      if (!button || !element.contains(button)) return;
+      event.stopPropagation();
+      if (button.dataset.action === 'toggle') latest.current.onToggle(button.dataset.entry!);
+      else latest.current.onSelect(button.dataset.knowledge!);
+    }
+    function pointer(event: PointerEvent) {
+      if ((event.target as Element).closest('button')) event.stopPropagation();
+    }
+    element.addEventListener('click', click, true);
+    element.addEventListener('pointerdown', pointer, true);
     return () => {
       disposed = true;
+      observer?.disconnect();
+      element.removeEventListener('click', click, true);
+      element.removeEventListener('pointerdown', pointer, true);
+      graph?.destroy();
+      controller.current = undefined;
     };
-  }, [data, selection.view]);
+  }, [data, attempt]);
+
   useEffect(() => {
-    if (layout.input !== data || layout.view !== selection.view) return;
-    if (layout.nodes.length) {
-      const frame = requestAnimationFrame(() => {
-        const visible = container.current;
-        if (!visible) return;
-        const saved = readViewport(viewportKey(visible));
-        if (saved) {
-          void flow.setViewport(saved);
-          return;
+    if (!ready) return;
+    const request = ++generation.current;
+    setBusy(true);
+    queue.current = queue.current
+      .catch(() => {})
+      .then(async () => {
+        const graph = controller.current;
+        if (request !== generation.current || !graph) return;
+        await graph.apply(expanded, focus);
+        if (controller.current !== graph) return;
+        if (request === generation.current) {
+          setBusy(false);
+          setError(false);
         }
-        const neighborhood = new Set([selection.node]);
-        for (const edge of layout.edges) {
-          if (edge.source === selection.node || edge.target === selection.node) {
-            neighborhood.add(edge.source);
-            neighborhood.add(edge.target);
-          }
+      })
+      .catch(() => {
+        if (request === generation.current) {
+          setBusy(false);
+          setError(true);
         }
-        const targets = layout.nodes.filter(
-          (node) => selection.view !== 'tree' || neighborhood.has(node.id),
-        );
-        void flow.setViewport(
-          getViewportForBounds(
-            getNodesBounds(targets),
-            visible.clientWidth,
-            visible.clientHeight,
-            0.35,
-            0.9,
-            0.15,
-          ),
-        );
       });
-      return () => cancelAnimationFrame(frame);
-    }
-  }, [data, layout, flow, selection.node, selection.view]);
-  const nodes = useMemo(
-    () => layout.nodes.map((node) => ({ ...node, selected: node.id === selection.node })),
-    [layout.nodes, selection.node],
-  );
-  const edges = useMemo(
-    () =>
-      layout.edges.map((edge): Edge => ({
-        ...edge,
-        style: {
-          ...edge.style,
-          stroke:
-            edge.source === selection.node || edge.target === selection.node
-              ? '#13858a'
-              : '#aebac6',
-          opacity: edge.source === selection.node || edge.target === selection.node ? 1 : 0.45,
-        },
-      })),
-    [layout.edges, selection.node],
-  );
+  }, [expanded, focus, ready]);
+
+  const visible = projectNavigation(data, expanded).nodes.length;
   return (
     <div
-      ref={container}
       className={styles.canvas}
       data-testid="map-canvas"
-      aria-label="交互式知识地图"
+      role="region"
+      aria-label="树形知识导航"
       aria-busy={busy}
     >
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={nodeTypes}
-        onNodeClick={(_, node) => onSelect(node.id)}
-        onNodesChange={(changes) => {
-          for (const change of changes) {
-            if (change.type === 'select' && change.selected && change.id !== selection.node)
-              onSelect(change.id);
-          }
-        }}
-        onEdgeClick={(_, edge) => onRelation(String(edge.data?.explanation ?? ''))}
-        onMoveEnd={(_, viewport) => {
-          if (container.current) writeViewport(viewportKey(container.current), viewport);
-        }}
-        nodesDraggable={false}
-        nodesConnectable={false}
-        deleteKeyCode={null}
-        minZoom={0.2}
-        maxZoom={1.6}
-        ariaLabelConfig={{
-          'controls.zoomIn.ariaLabel': '放大地图',
-          'controls.zoomOut.ariaLabel': '缩小地图',
-          'controls.fitView.ariaLabel': '显示完整地图',
-          'node.a11yDescription.default': '按 Enter 选择节点。使用 Tab 切换节点。',
-        }}
-      >
-        <Background color="#dce4ea" gap={24} size={1} />
-        <Controls showInteractive={false} />
-        <MiniMap pannable zoomable nodeColor="#b9d8dc" />
-      </ReactFlow>
-      {busy && (
-        <p className={styles.mapNotice} role="status">
-          正在整理节点位置…
-        </p>
-      )}
-      {error && (
-        <p className={styles.mapNotice} role="alert">
-          {error}
-        </p>
+      <div ref={container} className={styles.graph} />
+      <p className={styles.status} aria-live="polite">
+        {visible} 个导航节点 · 同级只展开一条分支
+      </p>
+      <div className={styles.controls} aria-label="地图操作">
+        <button
+          type="button"
+          aria-label="放大地图"
+          onClick={() => void controller.current?.zoom(1.15)}
+        >
+          <PlusIcon size={18} />
+        </button>
+        <button
+          type="button"
+          aria-label="缩小地图"
+          onClick={() => void controller.current?.zoom(1 / 1.15)}
+        >
+          <MinusIcon size={18} />
+        </button>
+        <button type="button" className={styles.fit} onClick={() => void controller.current?.fit()}>
+          <ArrowsOutIcon size={17} />
+          适配全图
+        </button>
+      </div>
+      {error ? (
+        <div className={styles.notice} role="alert">
+          <p>地图暂时没能打开，正文仍可通过搜索阅读。</p>
+          <button onClick={() => setAttempt((value) => value + 1)}>重试地图</button>
+        </div>
+      ) : (
+        busy && (
+          <p className={styles.notice} role="status">
+            正在整理分支…
+          </p>
+        )
       )}
     </div>
-  );
-}
-
-export function MapCanvas(props: Props) {
-  return (
-    <ReactFlowProvider>
-      <Canvas {...props} />
-    </ReactFlowProvider>
   );
 }

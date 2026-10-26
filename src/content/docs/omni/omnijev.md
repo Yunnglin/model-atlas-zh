@@ -6,6 +6,7 @@ atlas:
   modality: omni
   aliases:
     - 多模态决策
+  purpose: 根据图文进行决策与评分
   summary: 把视觉与文字上下文用于类型化决策，并输出可检查的概率。
   question: 多模态决策模型要怎样验证？
   facets:

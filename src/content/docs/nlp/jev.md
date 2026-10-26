@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 决策模型
     - System One
+  purpose: 返回类型化判断与概率
   summary: 根据上下文和预先定义的问题，返回选择、评分或真假判断的概率。
   question: 业务只要一个决定，为什么还要生成一大段文字？
   facets:

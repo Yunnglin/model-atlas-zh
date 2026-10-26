@@ -8,6 +8,7 @@ atlas:
     - 错误分析
     - bad case
     - 错例
+  purpose: 先复现错误，再验证原因
   summary: 保存失败现场，区分问题出在数据、模型、应用流程还是评分规则。
   question: 看到一个错例，下一步先改什么？
   facets:

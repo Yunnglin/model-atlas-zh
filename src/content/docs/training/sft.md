@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 监督微调
     - 指令微调
+  purpose: 从问题和示范答案中学习
   summary: 给已有模型看“问题和示范答案”，让它学习怎样按要求回答。
   question: SFT 改变的是结构，还是学习材料？
   facets:

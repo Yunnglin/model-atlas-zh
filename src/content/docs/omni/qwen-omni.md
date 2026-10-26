@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 全模态
     - Thinker Talker
+  purpose: 理解多种输入并生成语音
   summary: 把文本、图像、声音和视频输入联系起来，并支持文字和语音输出。
   question: 多模态模型为什么还要区分输入和输出能力？
   facets:

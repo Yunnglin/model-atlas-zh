@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 图文对齐
     - 对比学习
+  purpose: 比较图片和文字
   summary: 让描述同一内容的图像和文字在表示空间里更接近。
   question: 图片和句子怎样能直接比较？
   facets:

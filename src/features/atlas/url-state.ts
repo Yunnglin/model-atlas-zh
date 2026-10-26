@@ -1,29 +1,39 @@
-import { z } from 'zod';
+import type { KnowledgeBase } from '../../core/schemas/knowledge';
 import {
-  facetSchema,
-  modalitySchema,
-  viewSchema,
-  type KnowledgeBase,
-} from '../../core/schemas/knowledge';
-import type { MapSelection } from '../../core/projections/project';
+  initialExpansion,
+  normalizeExpansion,
+  revealKnowledge,
+} from '../../core/projections/navigation';
+import { visitSelection, type AtlasSelection } from './state';
 
-export function decodeSelection(search: string, data: KnowledgeBase): MapSelection {
+/** Repeated node parameters preserve a shareable exploration path, including old deep links. */
+export function decodeSelection(search: string, data: KnowledgeBase): AtlasSelection {
   const params = new URLSearchParams(search);
-  const id = params.get('node');
-  const node = data.nodes.some((item) => item.id === id) ? id! : 'transformer';
-  return {
-    node,
-    view: viewSchema.catch('tree').parse(params.get('view')),
-    facet: facetSchema.catch('overview').parse(params.get('facet')),
-    modality: modalitySchema.or(z.literal('all')).catch('all').parse(params.get('modality')),
-  };
+  const ids = new Set(data.nodes.map((node) => node.id));
+  let state: AtlasSelection = { trail: [], readerOpen: false, expanded: initialExpansion(data) };
+  for (const id of params.getAll('node')) {
+    if (!ids.has(id)) break;
+    state = visitSelection(state, id);
+  }
+  const requested = params.getAll('open').flatMap((id) => {
+    if (data.navigation.some((entry) => entry.id === id)) return [id];
+    // Earlier demos used canonical knowledge IDs for expansion.
+    return data.navigation.filter((entry) => entry.knowledge === id).map((entry) => entry.id);
+  });
+  state.expanded = requested.length
+    ? normalizeExpansion(data, requested)
+    : state.trail.length
+      ? revealKnowledge(data, state.trail.at(-1)!)
+      : initialExpansion(data);
+  if (state.trail.length && params.get('reader') === 'closed') state.readerOpen = false;
+  return state;
 }
 
-export function encodeSelection(state: MapSelection): string {
+export function encodeSelection(state: AtlasSelection): string {
   const params = new URLSearchParams();
-  params.set('node', state.node);
-  if (state.view !== 'tree') params.set('view', state.view);
-  if (state.facet !== 'overview') params.set('facet', state.facet);
-  if (state.modality !== 'all') params.set('modality', state.modality);
-  return `?${params.toString()}`;
+  state.trail.forEach((id) => params.append('node', id));
+  if (state.trail.length && !state.readerOpen) params.set('reader', 'closed');
+  state.expanded.filter((id) => id !== 'nav-root').forEach((id) => params.append('open', id));
+  const search = params.toString();
+  return search ? `?${search}` : '';
 }

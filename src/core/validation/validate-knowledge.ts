@@ -9,6 +9,7 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
     relations: new Set<string>(),
     questions: new Set<string>(),
     paths: new Set<string>(),
+    navigation: new Set<string>(),
   };
   for (const key of Object.keys(sets) as (keyof typeof sets)[]) {
     for (const item of data[key]) {
@@ -53,6 +54,22 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
     references(item.sources, sets.sources, item.id);
   }
   for (const item of data.paths) references(item.nodes, sets.nodes, item.id);
+  const roots = data.navigation.filter((entry) => !entry.parent);
+  if (roots.length !== 1) errors.push('navigation: exactly one root required');
+  for (const entry of data.navigation) {
+    if (entry.knowledge) references([entry.knowledge], sets.nodes, entry.id);
+    if (entry.parent) references([entry.parent], sets.navigation, entry.id);
+    const ancestors = new Set<string>();
+    let current: typeof entry | undefined = entry;
+    while (current) {
+      if (ancestors.has(current.id)) {
+        errors.push(`navigation cycle at ${current.id}`);
+        break;
+      }
+      ancestors.add(current.id);
+      current = data.navigation.find((item) => item.id === current!.parent);
+    }
+  }
   if (errors.length) throw new Error(`Invalid knowledge base:\n${errors.join('\n')}`);
   return data;
 }

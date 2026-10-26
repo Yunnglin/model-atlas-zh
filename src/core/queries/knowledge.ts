@@ -34,11 +34,22 @@ export function prerequisites(data: KnowledgeBase, id: string): KnowledgeNode[] 
 }
 
 export function searchNodes(data: KnowledgeBase, query: string): KnowledgeNode[] {
-  const terms = query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+  const normalized = query.toLocaleLowerCase().trim();
+  const terms = normalized.split(/\s+/).filter(Boolean);
   if (!terms.length) return [];
-  return data.nodes.filter((node) => {
-    const text =
-      `${node.title} ${node.id} ${node.aliases.join(' ')} ${node.summary}`.toLocaleLowerCase();
-    return terms.every((term) => text.includes(term));
-  });
+  function score(node: KnowledgeNode): number {
+    const names = [node.title, node.id, ...node.aliases].map((name) => name.toLocaleLowerCase());
+    if (names.includes(normalized)) return 0;
+    if (names.some((name) => name.startsWith(normalized))) return 1;
+    if (names.some((name) => name.includes(normalized))) return 2;
+    if (terms.every((term) => names.some((name) => name.includes(term)))) return 3;
+    return 4;
+  }
+  return data.nodes
+    .filter((node) => {
+      const text =
+        `${node.title} ${node.id} ${node.aliases.join(' ')} ${node.summary}`.toLocaleLowerCase();
+      return terms.every((term) => text.includes(term));
+    })
+    .sort((a, b) => score(a) - score(b) || a.id.localeCompare(b.id));
 }

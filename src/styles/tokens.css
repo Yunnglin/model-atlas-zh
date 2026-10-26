@@ -3,11 +3,7 @@
   --muted: #5e7182;
   --accent: #086b74;
   --line: #e1e8ed;
-  --paper: #f8fafb;
-  --nlp: #6860ba;
-  --cv: #89601f;
-  --audio: #086e70;
-  --omni: #4565a3;
+  --paper: #fcfcfa;
   font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
   color: var(--ink);
   font-synthesis: none;

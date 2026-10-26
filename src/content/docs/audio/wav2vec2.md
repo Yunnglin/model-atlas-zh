@@ -5,6 +5,7 @@ atlas:
   kind: model
   modality: audio
   aliases: []
+  purpose: 从录音中学习声音表示
   summary: 先从没有逐字转写的声音里学习表示，再用转写数据学习识别。
   question: 没有文字标签，语音模型能先学什么？
   facets:
@@ -15,6 +16,7 @@ atlas:
     - application
   sources:
     - wav2vec-paper
+  featured: true
   year: 2020
 ---
 

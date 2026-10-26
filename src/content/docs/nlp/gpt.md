@@ -5,6 +5,7 @@ atlas:
   kind: model
   modality: nlp
   aliases: []
+  purpose: 逐步生成文字
   summary: 用已经出现的 token 预测下一个 token，并重复这个过程生成文本。
   question: 为什么它生成文字时不能看未来？
   facets:

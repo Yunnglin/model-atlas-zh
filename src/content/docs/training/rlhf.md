@@ -6,6 +6,7 @@ atlas:
   modality: shared
   aliases:
     - 人类反馈强化学习
+  purpose: 根据人的偏好改进回答
   summary: 把人的偏好变成学习信号，让模型更倾向于给出人认可的回答。
   question: 人更喜欢哪个回答，怎样影响模型？
   facets:

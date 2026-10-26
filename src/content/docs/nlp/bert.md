@@ -5,6 +5,7 @@ atlas:
   kind: model
   modality: nlp
   aliases: []
+  purpose: 结合两边的上下文理解文字
   summary: 用双向上下文为文字生成表示，适合分类、抽取和匹配等任务。
   question: 为什么 BERT 常用于理解任务？
   facets:

@@ -7,6 +7,7 @@ atlas:
   aliases:
     - 编码器解码器
     - Seq2Seq
+  purpose: 读懂输入，再逐步写出结果
   summary: 先理解输入，再根据输入逐步产生输出。
   question: 编码器、解码器和交叉注意力分别在做什么？
   facets:

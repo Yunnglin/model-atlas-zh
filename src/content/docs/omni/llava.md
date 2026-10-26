@@ -5,6 +5,7 @@ atlas:
   kind: model
   modality: omni
   aliases: []
+  purpose: 看图回答问题
   summary: 把视觉编码器得到的图像信息接入语言模型，再学习按图像指令回答。
   question: 语言模型如何读懂一张图？
   facets:

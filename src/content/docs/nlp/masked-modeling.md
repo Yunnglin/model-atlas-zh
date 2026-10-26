@@ -5,6 +5,7 @@ atlas:
   kind: method
   modality: nlp
   aliases: []
+  purpose: 根据上下文补回被遮住的文字
   summary: 遮住一部分内容，让模型用上下文把它补回来。
   question: 为什么 BERT 能同时利用左右两边的文字？
   facets:

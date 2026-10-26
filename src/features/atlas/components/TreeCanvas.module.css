@@ -1,0 +1,149 @@
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+.graph {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+}
+.treeNode {
+  box-sizing: border-box;
+  width: 204px;
+  padding: 13px 16px;
+  border: 1px solid #d8e4e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #243b44;
+  font-family: inherit;
+  box-shadow: 0 2px 7px #183f351f;
+}
+.openNode {
+  border-color: #66a99c;
+  background: #f3f9f6;
+}
+.selectedNode {
+  border-color: #227d6b;
+  box-shadow: 0 0 0 2px #227d6b;
+}
+.nodeName {
+  display: block;
+  text-align: left;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+.nodeName:hover {
+  color: #146955;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.nodeDescription {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #536c67;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.groupNode .nodeName {
+  font-size: 14px;
+}
+.disclosure {
+  margin-top: 7px;
+  padding: 1px 7px;
+  border: 1px solid #b5cec6;
+  background: #fff;
+  color: #286b5d;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.nodeHint {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #60756f;
+}
+.nodeName:focus-visible,
+.disclosure:focus-visible {
+  outline: 2px solid #227d6b;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.status {
+  position: absolute;
+  right: 28px;
+  top: 0;
+  font-size: 12px;
+  color: #536c67;
+  padding: 5px 8px;
+  background: var(--paper);
+  pointer-events: none;
+}
+.controls {
+  position: absolute;
+  bottom: 28px;
+  left: 38px;
+  display: flex;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.controls button {
+  height: 38px;
+  min-width: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  padding: 0 10px;
+  background: #fff;
+  color: #35564c;
+  cursor: pointer;
+}
+.controls button:last-child {
+  border: 0;
+}
+.controls button:hover {
+  background: #eaf4ef;
+}
+.fit {
+  font-size: 12px;
+}
+.notice {
+  position: absolute;
+  left: 32px;
+  top: 16px;
+  padding: 12px;
+  background: var(--paper);
+  color: #536c67;
+  font-size: 13px;
+}
+.notice button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+@media (max-width: 760px) {
+  .status {
+    right: 12px;
+    font-size: 10px;
+  }
+  .controls {
+    left: 18px;
+    bottom: 25px;
+  }
+}

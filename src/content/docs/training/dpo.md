@@ -6,6 +6,7 @@ atlas:
   modality: shared
   aliases:
     - 直接偏好优化
+  purpose: 直接从回答的偏好比较中学习
   summary: 直接用“更好与更差”的回答对，调整模型的偏好。
   question: 有偏好数据，为什么还要单独训练奖励模型？
   facets:

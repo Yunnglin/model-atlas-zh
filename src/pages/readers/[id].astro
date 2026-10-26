@@ -1,0 +1,14 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('docs');
+  return entries.map((entry) => ({ params: { id: entry.data.atlas.id }, props: { entry } }));
+}
+const { entry } = Astro.props as { entry: CollectionEntry<'docs'> };
+const { Content } = await render(entry);
+---
+
+<article data-atlas-reader data-pagefind-ignore>
+  <Content />
+</article>

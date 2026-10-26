@@ -8,7 +8,6 @@ export const facetSchema = z.enum([
   'evaluation',
   'application',
 ]);
-export const viewSchema = z.enum(['tree', 'timeline', 'network']);
 export const nodeKindSchema = z.enum(['architecture', 'model', 'method', 'metric', 'case']);
 export const relationKindSchema = z.enum([
   'uses',
@@ -34,6 +33,7 @@ export const nodeMetadataSchema = z.object({
   modality: modalitySchema,
   aliases: z.array(nonempty).default([]),
   summary: nonempty,
+  purpose: nonempty.max(28),
   question: nonempty,
   year: z.number().int().min(1900).max(2100).optional(),
   facets: z.array(facetSchema).min(1),
@@ -44,6 +44,7 @@ export const nodeMetadataSchema = z.object({
 export const knowledgeNodeSchema = nodeMetadataSchema.extend({
   title: nonempty,
   href: nonempty,
+  readerHref: nonempty,
 });
 export const sourceSchema = z.object({
   id: idSchema,
@@ -59,6 +60,7 @@ export const relationSchema = z.object({
   to: idSchema,
   kind: relationKindSchema,
   explanation: nonempty,
+  caption: nonempty.max(24).optional(),
   sources: z.array(idSchema).min(1),
 });
 export const questionSchema = z.object({
@@ -75,8 +77,25 @@ export const learningPathSchema = z.object({
   summary: nonempty,
   nodes: z.array(idSchema).min(1),
 });
+/** Navigation occurrences reference canonical knowledge; parentage is editorial, not lineage. */
+export const navigationEntrySchema = z
+  .object({
+    id: idSchema,
+    order: z.number().int().min(0),
+    parent: idSchema.optional(),
+    knowledge: idSchema.optional(),
+    title: nonempty.max(24).optional(),
+    description: nonempty.max(42).optional(),
+  })
+  .refine(
+    (entry) => Boolean(entry.knowledge) !== Boolean(entry.title),
+    'Provide a knowledge reference or a group title',
+  );
+export type NavigationEntry = z.infer<typeof navigationEntrySchema>;
+
 export const knowledgeBaseSchema = z.object({
-  version: z.literal(1),
+  version: z.literal(2),
+  navigation: z.array(navigationEntrySchema).min(1),
   nodes: z.array(knowledgeNodeSchema),
   relations: z.array(relationSchema),
   sources: z.array(sourceSchema),
@@ -86,7 +105,6 @@ export const knowledgeBaseSchema = z.object({
 
 export type Modality = z.infer<typeof modalitySchema>;
 export type Facet = z.infer<typeof facetSchema>;
-export type MapView = z.infer<typeof viewSchema>;
 export type KnowledgeNode = z.infer<typeof knowledgeNodeSchema>;
 export type KnowledgeBase = z.infer<typeof knowledgeBaseSchema>;
 export type Relation = z.infer<typeof relationSchema>;

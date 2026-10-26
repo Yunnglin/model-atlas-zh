@@ -5,6 +5,7 @@ atlas:
   kind: case
   modality: audio
   aliases: []
+  purpose: 把识别错例变成可检查的改进方案
   summary: 沿着一个“噪声下漏字”的教学案例，走完数据、训练、评测和改进闭环。
   question: 怎样把一个错例变成可验证的改进方案？
   facets:

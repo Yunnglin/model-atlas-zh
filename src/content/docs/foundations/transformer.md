@@ -5,6 +5,7 @@ atlas:
   kind: architecture
   modality: shared
   aliases: []
+  purpose: 用注意力处理序列
   summary: 处理一个位置时，让它有选择地使用其他位置的信息。
   question: 为什么它能同时处理一句话中的多个位置？
   facets:

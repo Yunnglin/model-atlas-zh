@@ -1,0 +1,68 @@
+import { z } from 'zod';
+
+const readingStateSchema = z.object({
+  top: z.number().min(0),
+  expanded: z.array(z.number().int().min(0)),
+});
+export type ReadingState = z.infer<typeof readingStateSchema>;
+const articles = new Map<string, string>();
+
+/** Only HTML compiled from this repository's Markdown is loaded into the reader. */
+export async function loadReader(url: string, signal: AbortSignal): Promise<string> {
+  const cached = articles.get(url);
+  if (cached !== undefined) return cached;
+  const response = await fetch(url, { signal });
+  if (!response.ok) throw new Error('Reader unavailable');
+  const document = new DOMParser().parseFromString(await response.text(), 'text/html');
+  const article = document.querySelector('[data-atlas-reader]');
+  if (!article) throw new Error('Reader fragment missing');
+  // The question is already shown in the reader's title block.
+  const first = article.querySelector('h2');
+  if (first?.textContent?.trim() === '先看一个问题') {
+    const block = first.parentElement?.classList.contains('sl-heading-wrapper')
+      ? first.parentElement
+      : first;
+    let next = block.nextElementSibling;
+    while (next && next.tagName !== 'H2' && !next.querySelector('h2')) {
+      const following = next.nextElementSibling;
+      next.remove();
+      next = following;
+    }
+    block.remove();
+  }
+  article.querySelectorAll('h2,h3,h4,h5').forEach((heading) => {
+    const lower = document.createElement(`h${Number(heading.tagName[1]) + 1}`);
+    lower.innerHTML = heading.innerHTML;
+    lower.id = heading.id;
+    heading.replaceWith(lower);
+  });
+  article.querySelectorAll('script').forEach((script) => script.remove());
+  article.querySelectorAll('a[href]').forEach((anchor) => {
+    const href = anchor.getAttribute('href') ?? '';
+    if (/^https?:\/\//.test(href)) {
+      anchor.setAttribute('target', '_blank');
+      anchor.setAttribute('rel', 'noreferrer');
+    }
+  });
+  const html = article.innerHTML;
+  articles.set(url, html);
+  return html;
+}
+
+export function readReadingState(id: string): ReadingState {
+  try {
+    return readingStateSchema.parse(
+      JSON.parse(sessionStorage.getItem(`atlas:reading:${id}`) ?? 'null'),
+    );
+  } catch {
+    return { top: 0, expanded: [] };
+  }
+}
+
+export function writeReadingState(id: string, state: ReadingState): void {
+  try {
+    sessionStorage.setItem(`atlas:reading:${id}`, JSON.stringify(state));
+  } catch {
+    /* Reading works without browser storage. */
+  }
+}

@@ -5,6 +5,7 @@ atlas:
   kind: model
   modality: cv
   aliases: []
+  purpose: 用 Transformer 学习图像去噪
   summary: 在扩散生成过程中，用 Transformer 预测如何逐步去掉噪声。
   question: 图像生成中的 Transformer 和语言模型有什么不同？
   facets:
