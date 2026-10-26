@@ -1,0 +1,76 @@
+.article {
+  font-size: 16px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.article h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 27px 0 10px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.article h3:first-child {
+  margin-top: 13px;
+}
+.article h4 {
+  font-size: 16px;
+  margin: 23px 0 8px;
+}
+.article p {
+  margin: 0 0 14px;
+  color: #3e586d;
+}
+.article a {
+  color: #087583;
+  text-decoration: underline;
+  text-decoration-color: #b1d1d6;
+  text-underline-offset: 3px;
+}
+.article blockquote {
+  margin: 18px 0;
+  padding: 13px 15px;
+  background: #f3f8f8;
+  border: 1px solid #e0ebee;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+.article blockquote p {
+  margin: 0;
+}
+.article details {
+  margin: 20px 0;
+}
+.article summary {
+  color: #235575;
+  cursor: pointer;
+  font-size: 14px;
+}
+.article ul,
+.article ol {
+  padding-left: 22px;
+}
+.article li {
+  margin-bottom: 9px;
+}
+.article pre {
+  overflow: auto;
+  max-width: 100%;
+  font-size: 13px;
+  padding: 14px;
+  background: #f3f6f8;
+  border-radius: 5px;
+}
+.article :global(.katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 0;
+}
+.article :global(.copy),
+.article :global(.expressive-code button) {
+  display: none;
+}
+.article :global(.sl-anchor-link) {
+  display: none;
+}

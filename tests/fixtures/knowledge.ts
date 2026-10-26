@@ -20,6 +20,9 @@ export function readKnowledgeFixture(): KnowledgeBase {
           title: frontmatter.title,
           href: `/${relative(docs, path).replace(/\.md$/, '')}/`,
           readerHref: `/readers/${(frontmatter.atlas as { id: string }).id}/`,
+          chapters: [...text.matchAll(/^## (.+)$/gm)]
+            .filter((match) => match[1] !== '先看一个问题')
+            .map((match) => ({ id: match[1]!, title: match[1]! })),
         });
       }
     }
@@ -28,8 +31,9 @@ export function readKnowledgeFixture(): KnowledgeBase {
   const load = (name: string): unknown =>
     parse(readFileSync(join(root, 'data', `${name}.yaml`), 'utf8'));
   return validateKnowledge({
-    version: 2,
-    navigation: load('navigation'),
+    version: 3,
+    figures: load('figures'),
+    guides: load('model-guides'),
     nodes,
     sources: load('sources'),
     relations: load('relations'),

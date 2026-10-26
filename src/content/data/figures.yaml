@@ -1,0 +1,19 @@
+- id: whisper-official-architecture
+  title: Whisper 官方架构与任务示意
+  model: whisper
+  version: Whisper 原始模型家族；交互入口为 openai/whisper-small
+  basis: official
+  source: https://github.com/openai/whisper
+  checked: '2026-10-26'
+  caption: 原图保留官方英文标注；本章正文按声音输入、编码器和文字解码器逐步解释。交互资源由第三方提供，其结构生成依据需以目标页面说明为准。
+  alt: Whisper 官方示意图，展示音频编码器、文本解码器及多任务训练中的特殊 token。
+  asset:
+    src: /figures/whisper/approach.png
+    width: 2973
+    height: 2253
+    license: MIT
+    attribution: Copyright (c) 2022 OpenAI；保留官方原图，未改绘结构。
+  interactive:
+    provider: hfviewer
+    url: https://hfviewer.com/openai/whisper-small
+    embedding: external-only

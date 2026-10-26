@@ -1,0 +1,5 @@
+- id: whisper-guide
+  model: whisper
+  figures:
+    - figure: whisper-official-architecture
+      heading: 结构与数据流

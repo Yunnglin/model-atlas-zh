@@ -6,7 +6,8 @@ import { parse } from 'yaml';
 import { z } from 'zod';
 import {
   nodeMetadataSchema,
-  navigationEntrySchema,
+  figureSchema,
+  modelGuideSchema,
   relationSchema,
   sourceSchema,
   questionSchema,
@@ -19,9 +20,13 @@ export const collections = {
     loader: docsLoader(),
     schema: docsSchema({ extend: z.object({ atlas: nodeMetadataSchema }) }),
   }),
-  navigation: defineCollection({
-    loader: file('src/content/data/navigation.yaml', { parser: parse }),
-    schema: navigationEntrySchema,
+  figures: defineCollection({
+    loader: file('src/content/data/figures.yaml', { parser: parse }),
+    schema: figureSchema,
+  }),
+  guides: defineCollection({
+    loader: file('src/content/data/model-guides.yaml', { parser: parse }),
+    schema: modelGuideSchema,
   }),
   sources: defineCollection({
     loader: file('src/content/data/sources.yaml', { parser: parse }),

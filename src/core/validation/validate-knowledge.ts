@@ -9,7 +9,8 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
     relations: new Set<string>(),
     questions: new Set<string>(),
     paths: new Set<string>(),
-    navigation: new Set<string>(),
+    figures: new Set<string>(),
+    guides: new Set<string>(),
   };
   for (const key of Object.keys(sets) as (keyof typeof sets)[]) {
     for (const item of data[key]) {
@@ -54,20 +55,24 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
     references(item.sources, sets.sources, item.id);
   }
   for (const item of data.paths) references(item.nodes, sets.nodes, item.id);
-  const roots = data.navigation.filter((entry) => !entry.parent);
-  if (roots.length !== 1) errors.push('navigation: exactly one root required');
-  for (const entry of data.navigation) {
-    if (entry.knowledge) references([entry.knowledge], sets.nodes, entry.id);
-    if (entry.parent) references([entry.parent], sets.navigation, entry.id);
-    const ancestors = new Set<string>();
-    let current: typeof entry | undefined = entry;
-    while (current) {
-      if (ancestors.has(current.id)) {
-        errors.push(`navigation cycle at ${current.id}`);
-        break;
-      }
-      ancestors.add(current.id);
-      current = data.navigation.find((item) => item.id === current!.parent);
+  for (const figure of data.figures) {
+    references([figure.model], sets.nodes, figure.id);
+    if (figure.interactive?.embedUrl && figure.interactive.embedding !== 'verified')
+      errors.push(`${figure.id}: unverified embed URL`);
+    if (figure.asset && (!figure.asset.src.startsWith('/') || figure.asset.src.includes('..')))
+      errors.push(`${figure.id}: asset must use a local public path`);
+  }
+  for (const guide of data.guides) {
+    references([guide.model], sets.nodes, guide.id);
+    const node = data.nodes.find((item) => item.id === guide.model);
+    if (node && node.kind !== 'model' && node.id !== 'transformer')
+      errors.push(`${guide.id}: guide must reference a model`);
+    for (const placement of guide.figures) {
+      references([placement.figure], sets.figures, guide.id);
+      if (node && !node.chapters.some((chapter) => chapter.title === placement.heading))
+        errors.push(`${guide.id}: missing chapter ${placement.heading}`);
+      if (data.figures.find((item) => item.id === placement.figure)?.model !== guide.model)
+        errors.push(`${guide.id}: figure/model mismatch`);
     }
   }
   if (errors.length) throw new Error(`Invalid knowledge base:\n${errors.join('\n')}`);

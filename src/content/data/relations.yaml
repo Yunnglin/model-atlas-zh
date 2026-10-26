@@ -452,3 +452,11 @@
   explanation: 常见生成式 SFT 使用下一 token 预测，变化主要在示范数据、对话模板和哪些位置计分。
   sources:
     - instruct-paper
+- id: dit-uses-transformer
+  from: dit
+  to: transformer
+  kind: uses
+  caption: 图像去噪
+  explanation: DiT 使用 Transformer 作为扩散模型中的去噪网络骨干；这里表示结构采用，不表示从某个语言模型继续训练。
+  sources:
+    - dit-paper

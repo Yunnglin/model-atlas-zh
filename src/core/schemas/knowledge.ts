@@ -45,6 +45,7 @@ export const knowledgeNodeSchema = nodeMetadataSchema.extend({
   title: nonempty,
   href: nonempty,
   readerHref: nonempty,
+  chapters: z.array(z.object({ id: nonempty, title: nonempty })),
 });
 export const sourceSchema = z.object({
   id: idSchema,
@@ -77,25 +78,55 @@ export const learningPathSchema = z.object({
   summary: nonempty,
   nodes: z.array(idSchema).min(1),
 });
-/** Navigation occurrences reference canonical knowledge; parentage is editorial, not lineage. */
-export const navigationEntrySchema = z
+export const figureSchema = z
   .object({
     id: idSchema,
-    order: z.number().int().min(0),
-    parent: idSchema.optional(),
-    knowledge: idSchema.optional(),
-    title: nonempty.max(24).optional(),
-    description: nonempty.max(42).optional(),
+    title: nonempty,
+    model: idSchema,
+    version: nonempty,
+    basis: z.enum(['official', 'teaching', 'configuration-or-trace', 'execution-trace']),
+    source: z.url(),
+    checked: z.iso.date(),
+    caption: nonempty,
+    alt: nonempty,
+    asset: z
+      .object({
+        src: nonempty,
+        width: z.number().int().positive(),
+        height: z.number().int().positive(),
+        license: nonempty,
+        attribution: nonempty,
+      })
+      .optional(),
+    interactive: z
+      .object({
+        provider: z.enum(['hfviewer', 'transformer-explainer', 'netron']),
+        url: z.url(),
+        embedding: z.enum(['external-only', 'verified']),
+        embedUrl: z.url().optional(),
+      })
+      .refine(
+        (item) => item.embedding !== 'verified' || Boolean(item.embedUrl),
+        'Verified embedding requires embedUrl',
+      )
+      .optional(),
   })
   .refine(
-    (entry) => Boolean(entry.knowledge) !== Boolean(entry.title),
-    'Provide a knowledge reference or a group title',
+    (item) => Boolean(item.asset || item.interactive),
+    'Figure requires an asset or interactive resource',
   );
-export type NavigationEntry = z.infer<typeof navigationEntrySchema>;
+export const modelGuideSchema = z.object({
+  id: idSchema,
+  model: idSchema,
+  figures: z.array(z.object({ figure: idSchema, heading: nonempty })),
+});
+export type ModelFigure = z.infer<typeof figureSchema>;
+export type ModelGuide = z.infer<typeof modelGuideSchema>;
 
 export const knowledgeBaseSchema = z.object({
-  version: z.literal(2),
-  navigation: z.array(navigationEntrySchema).min(1),
+  version: z.literal(3),
+  figures: z.array(figureSchema),
+  guides: z.array(modelGuideSchema),
   nodes: z.array(knowledgeNodeSchema),
   relations: z.array(relationSchema),
   sources: z.array(sourceSchema),

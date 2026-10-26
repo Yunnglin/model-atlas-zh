@@ -78,14 +78,6 @@
 .skipLink:focus {
   top: 10px;
 }
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
 @media (max-width: 760px) {
   .header {
     height: 64px;
@@ -103,4 +95,16 @@
   .github span {
     display: none;
   }
+}
+
+.main {
+  position: relative;
+}
+.mapSlot {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+.mapSlot[hidden] {
+  display: none;
 }

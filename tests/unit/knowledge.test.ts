@@ -7,13 +7,7 @@ import {
   prerequisites,
   searchNodes,
 } from '../../src/core/queries/knowledge';
-import {
-  projectNavigation,
-  navigationPath,
-  normalizeExpansion,
-  toggleBranch,
-  initialExpansion,
-} from '../../src/core/projections/navigation';
+import { isModel, projectModelMap } from '../../src/core/projections/model-map';
 import { decodeSelection, encodeSelection } from '../../src/features/atlas/url-state';
 import {
   createAtlasStore,
@@ -77,60 +71,45 @@ describe('knowledge and progressive projections', () => {
   it('keeps incoming and outgoing relationships', () => {
     expect(connectedRelations(knowledge, 'whisper').some((r) => r.from === 'wav2vec2')).toBe(true);
   });
-  it('starts with a root and three structure routes, not every direct technical relationship', () => {
-    const tree = projectNavigation(knowledge, initialExpansion(knowledge));
-    expect(tree.nodes.map((node) => node.id)).toEqual([
-      'nav-root',
-      'route-encoder',
-      'route-decoder',
-      'route-both',
-    ]);
-    expect(tree.edges).toHaveLength(tree.nodes.length - 1);
-  });
-  it('opens one sibling dimension at a time while preserving the ancestor path', () => {
-    const open = normalizeExpansion(knowledge, ['whisper-training']);
-    expect(open).toEqual(['nav-root', 'route-both', 'model-whisper', 'whisper-training']);
-    const next = toggleBranch(knowledge, open, 'whisper-evaluation');
-    const tree = projectNavigation(knowledge, next);
-    expect(tree.nodes.some((node) => node.knowledge === 'wer')).toBe(true);
-    expect(tree.nodes.some((node) => node.knowledge === 'next-token')).toBe(false);
-    expect(tree.nodes.some((node) => node.id === 'whisper-training')).toBe(true);
-    expect(next).not.toContain('whisper-training');
-  });
-  it('collapses descendants and keeps only navigation parent edges', () => {
-    const expanded = normalizeExpansion(knowledge, ['whisper-training']);
-    const collapsed = toggleBranch(knowledge, expanded, 'model-whisper');
-    expect(collapsed).toEqual(['nav-root', 'route-both']);
-    const tree = projectNavigation(knowledge, expanded);
-    expect(tree.edges).toHaveLength(tree.nodes.length - 1);
+  it('projects models only, keeping sourced meanings rather than treating prerequisites as ancestry', () => {
+    const map = projectModelMap(knowledge);
+    expect(map.nodes.every(isModel)).toBe(true);
+    expect(map.nodes.some((node) => node.id === 'transformer')).toBe(true);
+    expect(map.nodes.some((node) => node.id === 'next-token')).toBe(false);
     expect(
-      tree.edges.every(
-        (edge) => knowledge.navigation.find((node) => node.id === edge.to)?.parent === edge.from,
+      map.edges.every(
+        (edge) =>
+          edge.evidence.length > 0 && edge.evidence.every((item) => item.kind !== 'prerequisite'),
       ),
     ).toBe(true);
+    expect(
+      map.edges
+        .find((edge) => edge.to === 'whisper' && !edge.comparison)
+        ?.evidence.map((item) => item.id),
+    ).toEqual(['whisper-uses-encoder-decoder', 'encoder-decoder-uses-transformer']);
+    const comparison = map.edges.find((edge) => edge.comparison && edge.to === 'whisper')!;
+    expect(comparison.evidence[0]!.kind).toBe('compared-with');
   });
-  it('can reference the same canonical article from multiple navigation locations', () => {
-    const duplicate = structuredClone(knowledge);
-    duplicate.navigation.push({
-      id: 'another-whisper-reference',
-      order: 99,
-      parent: 'route-encoder',
-      knowledge: 'next-token',
-    });
-    expect(() => validateKnowledge(duplicate)).not.toThrow();
-    expect(navigationPath(duplicate, 'another-whisper-reference').map((entry) => entry.id)).toEqual(
-      ['nav-root', 'route-encoder', 'another-whisper-reference'],
-    );
-    expect(duplicate.nodes.filter((node) => node.id === 'next-token')).toHaveLength(1);
+  it('rejects missing figure references, mismatched model and missing chapter placements', () => {
+    const bad = structuredClone(knowledge);
+    bad.guides[0]!.figures[0]!.figure = 'absent';
+    expect(() => validateKnowledge(bad)).toThrow('missing reference');
+    bad.guides[0]!.figures[0]!.figure = knowledge.figures[0]!.id;
+    bad.guides[0]!.figures[0]!.heading = 'absent';
+    expect(() => validateKnowledge(bad)).toThrow('missing chapter');
+    bad.guides[0]!.model = 'bert';
+    expect(() => validateKnowledge(bad)).toThrow('figure/model mismatch');
   });
-  it('rejects broken navigation references, cycles and duplicate occurrences', () => {
-    const broken = structuredClone(knowledge);
-    broken.navigation[1]!.parent = 'missing-parent';
-    expect(() => validateKnowledge(broken)).toThrow('missing reference');
-    broken.navigation[1]!.parent = 'model-bert';
-    expect(() => validateKnowledge(broken)).toThrow('navigation cycle');
-    broken.navigation.push(broken.navigation[1]!);
-    expect(() => validateKnowledge(broken)).toThrow('duplicate ID');
+  it('requires a verified embed declaration and a local static asset', () => {
+    const bad = structuredClone(knowledge);
+    bad.figures[0]!.interactive!.embedUrl = 'https://example.com/';
+    expect(() => validateKnowledge(bad)).toThrow('unverified embed');
+    delete bad.figures[0]!.interactive!.embedUrl;
+    bad.figures[0]!.interactive!.embedding = 'verified';
+    expect(() => validateKnowledge(bad)).toThrow('requires embedUrl');
+    bad.figures[0]!.interactive!.embedding = 'external-only';
+    bad.figures[0]!.asset!.src = '/../secret';
+    expect(() => validateKnowledge(bad)).toThrow('local public path');
   });
   it('bundles duplicate endpoint pairs without losing meanings or reversing them', () => {
     const pairs = groupRelations(connectedRelations(knowledge, 'whisper'));
@@ -145,68 +124,54 @@ describe('knowledge and progressive projections', () => {
   });
 });
 
-describe('exploration URL and navigation', () => {
-  it('starts in an unselected overview', () => {
-    expect(decodeSelection('', knowledge)).toEqual({
-      trail: [],
-      readerOpen: false,
-      expanded: ['nav-root'],
-    });
+describe('model and concept navigation', () => {
+  it('starts with an unselected overview and roundtrips shareable reading state', () => {
+    expect(decodeSelection('', knowledge)).toEqual({ concepts: [] });
+    const state: AtlasSelection = { model: 'whisper', concepts: ['next-token', 'attention'] };
+    expect(decodeSelection(encodeSelection(state), knowledge)).toEqual(state);
   });
-  it('roundtrips a shared path and closed reader', () => {
-    const selection: AtlasSelection = {
-      trail: ['whisper', 'next-token'],
-      readerOpen: false,
-      expanded: ['nav-root', 'route-both', 'model-whisper', 'whisper-training'],
-    };
-    expect(decodeSelection(encodeSelection(selection), knowledge)).toEqual(selection);
-  });
-  it('preserves old node links but discards obsolete filter and mode parameters', () => {
-    const selection = decodeSelection(
-      '?node=whisper&modality=omni&view=network&facet=training',
-      knowledge,
-    );
-    expect(selection).toEqual({
-      trail: ['whisper'],
-      readerOpen: true,
-      expanded: ['nav-root', 'route-both'],
-    });
-    expect(encodeSelection(selection)).toBe('?node=whisper&open=route-both');
-  });
-  it('rejects unknown path segments instead of selecting a random node', () => {
-    expect(decodeSelection('?node=unknown', knowledge)).toEqual({
-      trail: [],
-      readerOpen: false,
-      expanded: ['nav-root'],
-    });
-    expect(decodeSelection('?node=whisper&node=unknown&node=sft', knowledge).trail).toEqual([
-      'whisper',
-    ]);
-  });
-  it('returns to an existing point in a cycle instead of growing the breadcrumb indefinitely', () => {
+  it('migrates old expanded URLs to the model and discards obsolete filters', () => {
     expect(
-      visitSelection(
-        { trail: ['whisper', 'next-token'], readerOpen: true, expanded: ['nav-root'] },
-        'whisper',
-      ).trail,
-    ).toEqual(['whisper']);
+      decodeSelection(
+        '?node=whisper&node=wer&reader=closed&open=route-both&view=network',
+        knowledge,
+      ),
+    ).toEqual({ model: 'whisper', concepts: [] });
+    expect(
+      encodeSelection(decodeSelection('?node=whisper&node=next-token&modality=omni', knowledge)),
+    ).toBe('?model=whisper&concept=next-token');
   });
-  it('does not generate duplicate history entries for an unchanged selection', () => {
-    const store = createAtlasStore(
-      { trail: [], readerOpen: false, expanded: ['nav-root'] },
-      knowledge,
-    );
-    const subscriber = vi.fn();
+  it('rejects unknown IDs and truncates invalid concept paths', () => {
+    expect(decodeSelection('?model=wer&concept=unknown&concept=sft', knowledge)).toEqual({
+      concepts: [],
+    });
+    expect(
+      decodeSelection('?model=whisper&concept=next-token&concept=unknown&concept=sft', knowledge),
+    ).toEqual({ model: 'whisper', concepts: ['next-token'] });
+  });
+  it('returns within a concept cycle without changing the model', () => {
+    expect(
+      visitSelection({ model: 'whisper', concepts: ['next-token', 'attention'] }, 'next-token'),
+    ).toEqual({ model: 'whisper', concepts: ['next-token'] });
+  });
+  it('separates model navigation from concept previews without duplicate history', () => {
+    const store = createAtlasStore({ concepts: [] }, knowledge),
+      subscriber = vi.fn();
     store.subscribe(subscriber);
     store.getState().visit('whisper');
     store.getState().visit('whisper');
     expect(subscriber).toHaveBeenCalledTimes(1);
     store.getState().visit('next-token');
+    store.getState().visit('attention');
     store.getState().returnTo(0);
-    expect(store.getState().selection.trail).toEqual(['whisper']);
+    expect(store.getState().selection).toEqual({ model: 'whisper', concepts: ['next-token'] });
     store.getState().closeReader();
-    expect(store.getState().selection.readerOpen).toBe(false);
+    expect(store.getState().selection).toEqual({ model: 'whisper', concepts: [] });
+    store.getState().visit('bert');
+    expect(store.getState().selection).toEqual({ model: 'bert', concepts: [] });
+    store.getState().visit('unknown');
+    expect(store.getState().selection.model).toBe('bert');
     store.getState().reset();
-    expect(store.getState().selection.trail).toEqual([]);
+    expect(store.getState().selection).toEqual({ concepts: [] });
   });
 });

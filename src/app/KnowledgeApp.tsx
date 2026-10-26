@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useStore } from 'zustand';
 import { GraphIcon, GithubLogoIcon } from '@phosphor-icons/react';
 import { knowledgeBaseSchema, type KnowledgeBase } from '../core/schemas/knowledge';
-import { revealKnowledge } from '../core/projections/navigation';
+import { ModelLearning } from '../features/learning/ModelLearning';
+import { KnowledgeReader } from '../features/reading/KnowledgeReader';
 import { createAtlasStore } from '../features/atlas/state';
 import { decodeSelection, encodeSelection } from '../features/atlas/url-state';
 import { Atlas } from '../features/atlas/Atlas';
@@ -68,6 +70,11 @@ function LoadedApp({ data }: { data: KnowledgeBase }) {
       window.removeEventListener('popstate', restore);
     };
   }, [data, store]);
+  const selection = useStore(store, (state) => state.selection);
+  const actions = store.getState();
+  const model = data.nodes.find((node) => node.id === selection.model);
+  const concept = data.nodes.find((node) => node.id === selection.concepts.at(-1));
+  const previous = data.nodes.find((node) => node.id === selection.concepts.at(-2));
   return (
     <div className={styles.app}>
       <a className={styles.skipLink} href="#main">
@@ -82,17 +89,7 @@ function LoadedApp({ data }: { data: KnowledgeBase }) {
           <GraphIcon size={29} weight="bold" />
           <span>模型知识地图</span>
         </button>
-        <AtlasSearch
-          data={data}
-          onVisit={(id) =>
-            store.getState().setSelection({
-              ...store.getState().selection,
-              trail: [id],
-              readerOpen: true,
-              expanded: revealKnowledge(data, id),
-            })
-          }
-        />
+        <AtlasSearch data={data} onVisit={actions.visit} />
         <a
           className={styles.github}
           href="https://github.com/Yunnglin"
@@ -105,8 +102,29 @@ function LoadedApp({ data }: { data: KnowledgeBase }) {
         </a>
       </header>
       <main className={styles.main} id="main">
-        <h1 className={styles.srOnly}>模型知识地图</h1>
-        <Atlas data={data} store={store} />
+        <div className={styles.mapSlot} hidden={Boolean(model)}>
+          <Atlas data={data} onSelect={actions.visit} />
+        </div>
+        {model && (
+          <ModelLearning
+            key={model.id}
+            data={data}
+            model={model}
+            onBack={actions.reset}
+            onConcept={actions.visit}
+          />
+        )}
+        {concept && (
+          <KnowledgeReader
+            key={concept.id}
+            data={data}
+            node={concept}
+            previous={previous}
+            onVisit={actions.visit}
+            onBack={() => actions.returnTo(selection.concepts.length - 2)}
+            onClose={actions.closeReader}
+          />
+        )}
       </main>
     </div>
   );

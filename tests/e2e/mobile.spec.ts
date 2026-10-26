@@ -1,57 +1,48 @@
 import { expect, test } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test('mobile readers explore, fill a prerequisite gap and return without overflow or hidden controls', async ({
+test('mobile model reading and concept return keep chapters accessible without horizontal overflow', async ({
   page,
 }) => {
-  await page.goto('./');
-  const search = page.getByRole('combobox', { name: '搜索知识点' });
-  await search.fill('Whisper');
-  await search.press('Enter');
+  await page.goto('./?model=whisper');
+  const model = page.getByTestId('model-learning');
+  await expect(model.getByTestId('model-chapter')).toHaveCount(7);
+  await model.getByRole('link', { name: '数据与训练', exact: true }).click();
+  await model.getByRole('link', { name: 'SFT', exact: true }).click();
+  const position = await model.evaluate((element) => element.scrollTop);
   const reader = page.getByTestId('knowledge-reader');
-  await expect(reader.getByRole('heading', { name: 'Whisper', exact: true })).toBeVisible();
-  const body = page.getByTestId('reader-body');
-  await expect(body.getByRole('heading', { name: '用大白话理解' })).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await body.getByRole('link', { name: '预测下一个文字片段', exact: true }).click();
-  await expect(reader.getByRole('heading', { name: '下一 token 预测', exact: true })).toBeVisible();
-  await reader.getByRole('button', { name: '返回 Whisper', exact: true }).click();
-  await expect(reader.getByRole('heading', { name: 'Whisper', exact: true })).toBeVisible();
+  await expect(reader.getByRole('heading', { name: 'SFT · 示范学习', exact: true })).toBeVisible();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await reader.getByRole('button', { name: '关闭阅读区' }).click();
-  await expect(reader).toHaveCount(0);
-  await page.getByRole('button', { name: '收起全部', exact: true }).click();
-  await expect(page).not.toHaveURL(/node=/);
+  await expect.poll(() => model.evaluate((element) => element.scrollTop)).toBeCloseTo(position, 0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole('button', { name: '模型知识地图，返回全景' }).click();
+  await expect(page.getByTestId('map-canvas')).toBeVisible();
 });
 
-test('tree disclosure keeps the current branch and next layer reachable on a narrow screen', async ({
+test('mobile architecture modal fits the screen and the map remains navigable by keyboard', async ({
   page,
 }) => {
   await page.goto('./');
   const map = page.getByTestId('map-canvas');
   await expect(map).toHaveAttribute('aria-busy', 'false');
-  await map.getByRole('button', { name: '编码器＋解码器 · 展开', exact: true }).click();
-  await expect(map.getByRole('button', { name: 'Whisper', exact: true })).toBeVisible();
-  await map.getByRole('button', { name: '展开 · 4 项：Whisper', exact: true }).click();
-  await map.getByRole('button', { name: '训练 · 展开', exact: true }).click();
-  await expect(map).toHaveAttribute('aria-busy', 'false');
-  const next = map.getByRole('button', { name: '下一 token 预测', exact: true });
-  const box = await next.boundingBox();
-  expect(box!.x).toBeGreaterThanOrEqual(0);
-  expect(box!.x + box!.width).toBeLessThanOrEqual(page.viewportSize()!.width);
-  await next.click();
-  await expect(
-    page
-      .getByTestId('knowledge-reader')
-      .getByRole('heading', { name: '下一 token 预测', exact: true }),
-  ).toBeVisible();
-  await page.getByRole('button', { name: '关闭阅读区', exact: true }).click();
-  await expect(map.getByRole('button', { name: '训练 · 收起', exact: true })).toHaveAttribute(
-    'aria-expanded',
-    'true',
-  );
-  await map.getByRole('button', { name: '评测 · 展开', exact: true }).click();
-  await expect(map.getByRole('button', { name: 'WER / CER', exact: true })).toBeVisible();
-  await expect(map.getByRole('button', { name: '下一 token 预测', exact: true })).toHaveCount(0);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect
+    .poll(async () => {
+      const box = await map.locator('[data-model-id=transformer]').boundingBox();
+      return box!.width;
+    })
+    .toBeGreaterThan(120);
+  const whisper = map.getByRole('button', { name: 'Whisper', exact: true });
+  await whisper.focus();
+  await whisper.press('Enter');
+  const figure = page.getByTestId('architecture-figure');
+  await figure.getByRole('button', { name: /^放大查看原图/ }).click();
+  const dialog = page.getByRole('dialog', { name: 'Whisper 官方架构与任务示意放大视图' });
+  await expect(dialog).toBeVisible();
+  const box = await dialog.boundingBox();
+  expect(box!.width).toBeLessThanOrEqual(page.viewportSize()!.width);
+  await dialog.getByRole('button', { name: '关闭架构图' }).click();
+  await expect(dialog).not.toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

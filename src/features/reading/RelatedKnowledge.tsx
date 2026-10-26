@@ -1,9 +1,9 @@
-import type { KnowledgeBase } from '../../../core/schemas/knowledge';
-import { connectedRelations } from '../../../core/queries/knowledge';
-import { relationLabels } from '../../../core/schemas/knowledge';
-import styles from '../Atlas.module.css';
+import type { KnowledgeBase } from '../../core/schemas/knowledge';
+import { connectedRelations } from '../../core/queries/knowledge';
+import { relationLabels } from '../../core/schemas/knowledge';
+import styles from './KnowledgeReader.module.css';
 
-/** Cross-links stay available without adding any edge to the navigation tree. */
+/** Cross-links stay available without adding any edge to the model map. */
 export function RelatedKnowledge({
   data,
   id,
@@ -21,7 +21,7 @@ export function RelatedKnowledge({
   return (
     <details className={styles.related}>
       <summary>关联知识 · {related.length} 项</summary>
-      <p>这些是技术关系，和地图上的学习顺序分开看。</p>
+      <p>查看相关概念、使用它的模型，以及资料依据。</p>
       {related.map((neighbor) => {
         const target = data.nodes.find((node) => node.id === neighbor)!;
         const links = relations.filter(

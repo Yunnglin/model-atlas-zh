@@ -1,56 +1,48 @@
 import { createStore } from 'zustand/vanilla';
 import type { KnowledgeBase } from '../../core/schemas/knowledge';
-import { initialExpansion, toggleBranch } from '../../core/projections/navigation';
+import { isModel } from '../../core/projections/model-map';
 
 export interface AtlasSelection {
-  trail: readonly string[];
-  readerOpen: boolean;
-  expanded: readonly string[];
+  model?: string;
+  concepts: readonly string[];
 }
-export interface AtlasState {
-  selection: AtlasSelection;
-  setSelection: (selection: AtlasSelection) => void;
-  visit: (id: string) => void;
-  returnTo: (index: number) => void;
-  closeReader: () => void;
-  reset: () => void;
-  toggle: (id: string, data: KnowledgeBase) => void;
-}
-
 export function visitSelection(state: AtlasSelection, id: string): AtlasSelection {
-  const index = state.trail.indexOf(id);
+  const index = state.concepts.indexOf(id);
   return {
     ...state,
-    trail: index < 0 ? [...state.trail, id] : state.trail.slice(0, index + 1),
-    readerOpen: true,
+    concepts: index < 0 ? [...state.concepts, id] : state.concepts.slice(0, index + 1),
   };
 }
-
 export function createAtlasStore(initial: AtlasSelection, data: KnowledgeBase) {
-  return createStore<AtlasState>((set, get) => ({
+  return createStore<{
+    selection: AtlasSelection;
+    setSelection: (selection: AtlasSelection) => void;
+    visit: (id: string) => void;
+    returnTo: (index: number) => void;
+    closeReader: () => void;
+    reset: () => void;
+  }>((set, get) => ({
     selection: initial,
     setSelection: (selection) =>
       set((state) =>
-        state.selection.readerOpen === selection.readerOpen &&
-        state.selection.trail.join('|') === selection.trail.join('|') &&
-        state.selection.expanded.join('|') === selection.expanded.join('|')
+        state.selection.model === selection.model &&
+        state.selection.concepts.join('|') === selection.concepts.join('|')
           ? state
           : { selection },
       ),
-    visit: (id) => get().setSelection(visitSelection(get().selection, id)),
+    visit: (id) => {
+      const node = data.nodes.find((item) => item.id === id);
+      if (!node) return;
+      get().setSelection(
+        isModel(node) ? { model: id, concepts: [] } : visitSelection(get().selection, id),
+      );
+    },
     returnTo: (index) =>
       get().setSelection({
         ...get().selection,
-        trail: get().selection.trail.slice(0, index + 1),
-        readerOpen: true,
+        concepts: get().selection.concepts.slice(0, index + 1),
       }),
-    closeReader: () => get().setSelection({ ...get().selection, readerOpen: false }),
-    toggle: (id, knowledge) =>
-      get().setSelection({
-        ...get().selection,
-        expanded: toggleBranch(knowledge, get().selection.expanded, id),
-      }),
-    reset: () =>
-      get().setSelection({ trail: [], readerOpen: false, expanded: initialExpansion(data) }),
+    closeReader: () => get().setSelection({ ...get().selection, concepts: [] }),
+    reset: () => get().setSelection({ concepts: [] }),
   }));
 }

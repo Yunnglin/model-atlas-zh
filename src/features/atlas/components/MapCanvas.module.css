@@ -8,10 +8,12 @@
   overflow: hidden;
   touch-action: none;
 }
-.treeNode {
+.modelNode {
+  position: relative;
   box-sizing: border-box;
   width: 204px;
-  padding: 13px 16px;
+  height: 84px;
+  padding: 11px 14px;
   border: 1px solid #d8e4e1;
   border-radius: 8px;
   background: #fff;
@@ -19,24 +21,21 @@
   font-family: inherit;
   box-shadow: 0 2px 7px #183f351f;
 }
-.openNode {
-  border-color: #66a99c;
-  background: #f3f9f6;
-}
-.selectedNode {
-  border-color: #227d6b;
-  box-shadow: 0 0 0 2px #227d6b;
+.rootNode {
+  border-color: #459880;
+  background: #eef7f2;
 }
 .nodeName {
   display: block;
   text-align: left;
+  max-width: calc(100% - 30px);
   padding: 0;
   border: 0;
   background: transparent;
   color: inherit;
   cursor: pointer;
   font: inherit;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   font-weight: 650;
 }
@@ -47,7 +46,7 @@
 }
 .nodeDescription {
   margin: 5px 0 0;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.55;
   color: #536c67;
   display: -webkit-box;
@@ -55,28 +54,16 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
-.groupNode .nodeName {
-  font-size: 14px;
-}
-.disclosure {
-  margin-top: 7px;
-  padding: 1px 7px;
-  border: 1px solid #b5cec6;
-  background: #fff;
-  color: #286b5d;
-  border-radius: 4px;
-  font-size: 12px;
-  line-height: 1.5;
-  cursor: pointer;
-}
 .nodeHint {
+  position: absolute;
+  right: 10px;
+  top: 14px;
   display: block;
-  margin-top: 8px;
-  font-size: 11px;
+  margin-top: 0px;
+  font-size: 9px;
   color: #60756f;
 }
-.nodeName:focus-visible,
-.disclosure:focus-visible {
+.nodeName:focus-visible {
   outline: 2px solid #227d6b;
   outline-offset: 4px;
   border-radius: 3px;
