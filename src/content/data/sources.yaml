@@ -2,119 +2,598 @@
   title: Attention Is All You Need
   url: https://arxiv.org/abs/1706.03762
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: bert-paper
   title: BERT
   url: https://arxiv.org/abs/1810.04805
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: gpt-code
   title: OpenAI GPT-2 官方实现
   url: https://github.com/openai/gpt-2
   type: official-code
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: t5-paper
-  title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+  title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text
+    Transformer
   url: https://arxiv.org/abs/1910.10683
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: vit-paper
   title: An Image is Worth 16x16 Words
   url: https://arxiv.org/abs/2010.11929
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: clip-paper
   title: Learning Transferable Visual Models From Natural Language Supervision
   url: https://arxiv.org/abs/2103.00020
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: dit-paper
   title: Scalable Diffusion Models with Transformers
   url: https://arxiv.org/abs/2212.09748
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: wav2vec-paper
   title: wav2vec 2.0
   url: https://arxiv.org/abs/2006.11477
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: whisper-paper
   title: Robust Speech Recognition via Large-Scale Weak Supervision
   url: https://arxiv.org/abs/2212.04356
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: whisper-code
   title: Whisper 官方代码与命令行入口
   url: https://github.com/openai/whisper
   type: official-code
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: encodec-paper
   title: High Fidelity Neural Audio Compression
   url: https://arxiv.org/abs/2210.13438
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: llava-paper
   title: Visual Instruction Tuning
   url: https://arxiv.org/abs/2304.08485
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: omni-code
   title: Qwen2.5-Omni 官方实现
   url: https://github.com/QwenLM/Qwen2.5-Omni
   type: official-code
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: jev-docs
   title: TypeSafe System One 模型说明
   url: https://docs.typesafe.ai/concepts/system-one
   type: official-docs
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: omnijev-code
   title: OmniJev 官方项目及评测限制
   url: https://github.com/tinnel123666888/OmniJev
   type: official-code
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: instruct-paper
   title: Training language models to follow instructions with human feedback
   url: https://arxiv.org/abs/2203.02155
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: lora-paper
   title: LoRA
   url: https://arxiv.org/abs/2106.09685
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: dpo-paper
   title: Direct Preference Optimization
   url: https://arxiv.org/abs/2305.18290
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: grpo-paper
   title: DeepSeekMath
   url: https://arxiv.org/abs/2402.03300
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: r1-paper
   title: DeepSeek-R1
-  url: https://arxiv.org/abs/2501.12948
+  url: https://arxiv.org/abs/2501.12948v1
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
+  note: 本库的原始 R1 流程讲解以 2025 年 v1 报告为基准，后续修订与模型更新另行核对。
 - id: calibration-paper
   title: On Calibration of Modern Neural Networks
   url: https://arxiv.org/abs/1706.04599
   type: paper
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: wer-docs
   title: 'Hugging Face Evaluate: Word Error Rate'
   url: https://huggingface.co/spaces/evaluate-metric/wer
   type: official-docs
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: ml-rules
   title: Rules of Machine Learning
   url: https://developers.google.com/machine-learning/guides/rules-of-ml
   type: official-docs
-  checked: '2026-10-26'
+  checked: 2026-10-26
 - id: tfma-docs
   title: TensorFlow Model Analysis
   url: https://www.tensorflow.org/tfx/guide/tfma
   type: official-docs
-  checked: '2026-10-26'
+  checked: 2026-10-26
+- id: llama-paper
+  title: The Llama 3 Herd of Models
+  url: https://arxiv.org/abs/2407.21783
+  type: paper
+  checked: 2026-10-26
+- id: llama-card
+  title: Llama 3.1 官方模型卡
+  url: https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+  type: official-code
+  checked: 2026-10-26
+- id: qwen3-paper
+  title: Qwen3 Technical Report
+  url: https://arxiv.org/abs/2505.09388
+  type: paper
+  checked: 2026-10-26
+- id: qwen3-code
+  title: Qwen3 官方实现
+  url: https://github.com/QwenLM/Qwen3
+  type: official-code
+  checked: 2026-10-26
+- id: v3-paper
+  title: DeepSeek-V3 Technical Report
+  url: https://arxiv.org/abs/2412.19437v2
+  type: paper
+  checked: 2026-10-26
+- id: r1-code
+  title: DeepSeek-R1 官方说明与蒸馏模型
+  url: https://github.com/deepseek-ai/DeepSeek-R1
+  type: official-code
+  checked: 2026-10-26
+- id: gpt3-paper
+  title: Language Models are Few-Shot Learners
+  url: https://arxiv.org/abs/2005.14165
+  type: paper
+  checked: 2026-10-26
+- id: gpt4-paper
+  title: GPT-4 Technical Report
+  url: https://arxiv.org/abs/2303.08774
+  type: paper
+  checked: 2026-10-26
+- id: claude-intro
+  title: Introducing Claude
+  url: https://www.anthropic.com/news/introducing-claude
+  type: official-docs
+  checked: 2026-10-26
+- id: constitutional-paper
+  title: 'Constitutional AI: Harmlessness from AI Feedback'
+  url: https://arxiv.org/abs/2212.08073
+  type: paper
+  checked: 2026-10-26
+- id: moe-paper
+  title: 'Outrageously Large Neural Networks: The Sparsely-Gated
+    Mixture-of-Experts Layer'
+  url: https://arxiv.org/abs/1701.06538
+  type: paper
+  checked: 2026-10-26
+- id: kv-docs
+  title: 'Hugging Face: How caching works'
+  url: https://huggingface.co/docs/transformers/main/en/cache_explanation
+  type: official-docs
+  checked: 2026-10-26
+- id: rope-paper
+  title: 'RoFormer: Enhanced Transformer with Rotary Position Embedding'
+  url: https://arxiv.org/abs/2104.09864
+  type: paper
+  checked: 2026-10-26
+- id: distillation-paper
+  title: Distilling the Knowledge in a Neural Network
+  url: https://arxiv.org/abs/1503.02531
+  type: paper
+  checked: 2026-10-26
+- id: rag-paper
+  title: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+  url: https://arxiv.org/abs/2005.11401
+  type: paper
+  checked: 2026-10-26
+- id: mmlu-paper
+  title: Measuring Massive Multitask Language Understanding
+  url: https://arxiv.org/abs/2009.03300
+  type: paper
+  checked: 2026-10-26
+- id: humaneval-paper
+  title: Evaluating Large Language Models Trained on Code
+  url: https://arxiv.org/abs/2107.03374
+  type: paper
+  checked: 2026-10-26
+- id: swin-paper
+  title: 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows'
+  url: https://arxiv.org/abs/2103.14030
+  type: paper
+  checked: 2026-10-26
+- id: sam-paper
+  title: Segment Anything
+  url: https://arxiv.org/abs/2304.02643
+  type: paper
+  checked: 2026-10-26
+- id: sam-code
+  title: Segment Anything 官方实现
+  url: https://github.com/facebookresearch/segment-anything
+  type: official-code
+  checked: 2026-10-26
+- id: ldm-paper
+  title: High-Resolution Image Synthesis with Latent Diffusion Models
+  url: https://arxiv.org/abs/2112.10752
+  type: paper
+  checked: 2026-10-26
+- id: sd-card
+  title: Stable Diffusion v1-4 模型卡
+  url: https://huggingface.co/CompVis/stable-diffusion-v1-4
+  type: official-docs
+  checked: 2026-10-26
+- id: conformer-paper
+  title: 'Conformer: Convolution-augmented Transformer for Speech Recognition'
+  url: https://arxiv.org/abs/2005.08100
+  type: paper
+  checked: 2026-10-26
+- id: hubert-paper
+  title: 'HuBERT: Self-Supervised Speech Representation Learning by Masked
+    Prediction of Hidden Units'
+  url: https://arxiv.org/abs/2106.07447
+  type: paper
+  checked: 2026-10-26
+- id: valle-paper
+  title: Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers
+  url: https://arxiv.org/abs/2301.02111
+  type: paper
+  checked: 2026-10-26
+- id: f5-paper
+  title: 'F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow
+    Matching'
+  url: https://arxiv.org/abs/2410.06885
+  type: paper
+  checked: 2026-10-26
+- id: f5-code
+  title: F5-TTS 官方代码
+  url: https://github.com/SWivid/F5-TTS
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-vl-paper
+  title: Qwen2.5-VL Technical Report
+  url: https://arxiv.org/abs/2502.13923v1
+  type: paper
+  checked: 2026-10-26
+- id: qwen-vl-card
+  title: Qwen2.5-VL-7B-Instruct 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
+  type: official-docs
+  checked: 2026-10-26
+- id: gpt4o-release
+  title: Hello GPT-4o
+  url: https://openai.com/index/hello-gpt-4o/
+  type: official-docs
+  checked: 2026-10-26
+- id: gemini-paper
+  title: 'Gemini 1.5: Unlocking multimodal understanding across millions of tokens
+    of context'
+  url: https://arxiv.org/abs/2403.05530v5
+  type: paper
+  checked: 2026-10-26
+- id: flow-paper
+  title: Flow Matching for Generative Modeling
+  url: https://arxiv.org/abs/2210.02747
+  type: paper
+  checked: 2026-10-26
+- id: ctc-paper
+  title: 'Connectionist Temporal Classification: Labelling Unsegmented Sequence
+    Data with Recurrent Neural Networks'
+  url: https://www.cs.toronto.edu/~graves/icml_2006.pdf
+  type: paper
+  checked: 2026-10-26
+- id: fid-paper
+  title: GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash
+    Equilibrium
+  url: https://arxiv.org/abs/1706.08500
+  type: paper
+  checked: 2026-10-26
+- id: coco-paper
+  title: 'Microsoft COCO: Common Objects in Context'
+  url: https://arxiv.org/abs/1405.0312
+  type: paper
+  checked: 2026-10-26
+- id: mmmu-paper
+  title: 'MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning
+    Benchmark'
+  url: https://arxiv.org/abs/2311.16502
+  type: paper
+  checked: 2026-10-26
+- id: docvqa-paper
+  title: 'DocVQA: A Dataset for VQA on Document Images'
+  url: https://arxiv.org/abs/2007.00398
+  type: paper
+  checked: 2026-10-26
+- id: tokenizer-docs
+  title: 'Hugging Face Tokenizers: Components'
+  url: https://huggingface.co/docs/tokenizers/components
+  type: official-docs
+  checked: 2026-10-26
+- id: judge-paper
+  title: Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena
+  url: https://arxiv.org/abs/2306.05685
+  type: paper
+  checked: 2026-10-26
+- id: qwen1-paper
+  title: Qwen Technical Report（第一代）
+  url: https://arxiv.org/abs/2309.16609
+  type: paper
+  checked: 2026-10-26
+- id: qwen15-blog
+  title: Qwen1.5 官方发布说明
+  url: https://qwenlm.github.io/blog/qwen1.5/
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen2-paper
+  title: Qwen2 Technical Report
+  url: https://arxiv.org/abs/2407.10671
+  type: paper
+  checked: 2026-10-26
+- id: qwen25-paper
+  title: Qwen2.5 Technical Report
+  url: https://arxiv.org/abs/2412.15115
+  type: paper
+  checked: 2026-10-26
+- id: qwen38-code
+  title: Qwen3.5、3.6、3.8 官方发布记录
+  url: https://github.com/QwenLM/Qwen3.8
+  type: official-code
+  checked: 2026-10-26
+- id: qwen38-card
+  title: Qwen3.8-27B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3.8-27B
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen35-card
+  title: Qwen3.5-397B-A17B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3.5-397B-A17B
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen37-blog
+  title: Qwen3.7-Max 官方发布：闭源服务
+  url: https://qwen.ai/blog?id=qwen3.7
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen-next-card
+  title: Qwen3-Next-80B-A3B-Instruct 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen3-vl-code
+  title: Qwen3-VL 官方实现与发布记录
+  url: https://github.com/QwenLM/Qwen3-VL
+  type: official-code
+  checked: 2026-10-26
+- id: qwen2-vl-paper
+  title: Qwen2-VL Technical Report
+  url: https://arxiv.org/abs/2409.12191
+  type: paper
+  checked: 2026-10-26
+- id: qwen1-vl-paper
+  title: Qwen-VL Technical Report
+  url: https://arxiv.org/abs/2308.12966
+  type: paper
+  checked: 2026-10-26
+- id: qwen-audio-code
+  title: Qwen-Audio 与 Qwen2-Audio 官方发布记录
+  url: https://github.com/QwenLM/Qwen2-Audio
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-asr-code
+  title: Qwen3-ASR 官方实现与模型清单
+  url: https://github.com/QwenLM/Qwen3-ASR
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-asr-paper
+  title: Qwen3-ASR Technical Report
+  url: https://arxiv.org/abs/2601.21337
+  type: paper
+  checked: 2026-10-26
+- id: qwen-tts-code
+  title: Qwen3-TTS 官方实现与模型清单
+  url: https://github.com/QwenLM/Qwen3-TTS
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-tts-paper
+  title: Qwen3-TTS Technical Report
+  url: https://arxiv.org/abs/2601.15621
+  type: paper
+  checked: 2026-10-26
+- id: qwen3-omni-code
+  title: Qwen3-Omni 官方实现与模型清单
+  url: https://github.com/QwenLM/Qwen3-Omni
+  type: official-code
+  checked: 2026-10-26
+- id: qwen35-omni-paper
+  title: Qwen3.5-Omni Technical Report
+  url: https://arxiv.org/abs/2604.15804
+  type: paper
+  checked: 2026-10-26
+- id: qwen38-omni-paper
+  title: 'Qwen3.8-Omni: Towards Native Omni-Modal Agents'
+  url: https://arxiv.org/abs/2609.25611
+  type: paper
+  checked: 2026-10-26
+- id: qwen-coder-code
+  title: Qwen3-Coder 与 Coder-Next 官方实现
+  url: https://github.com/QwenLM/Qwen3-Coder
+  type: official-code
+  checked: 2026-10-26
+- id: qwen25-coder-paper
+  title: Qwen2.5-Coder Technical Report
+  url: https://arxiv.org/abs/2409.12186
+  type: paper
+  checked: 2026-10-26
+- id: qwen-math-code
+  title: Qwen2.5-Math 官方实现
+  url: https://github.com/QwenLM/Qwen2.5-Math
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-qwq-card
+  title: QwQ-32B 官方模型卡
+  url: https://huggingface.co/Qwen/QwQ-32B
+  type: official-docs
+  checked: 2026-10-26
+- id: qwen-embed-code
+  title: Qwen3 Embedding 与 Reranker 官方实现
+  url: https://github.com/QwenLM/Qwen3-Embedding
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-vl-embed-code
+  title: Qwen3-VL-Embedding 与 Reranker 官方实现
+  url: https://github.com/QwenLM/Qwen3-VL-Embedding
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-guard-code
+  title: Qwen3Guard 官方实现
+  url: https://github.com/QwenLM/Qwen3Guard
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-image-code
+  title: Qwen-Image 官方实现与版本记录
+  url: https://github.com/QwenLM/Qwen-Image
+  type: official-code
+  checked: 2026-10-26
+- id: qwen-image-paper
+  title: Qwen-Image Technical Report
+  url: https://arxiv.org/abs/2508.02324
+  type: paper
+  checked: 2026-10-26
+- id: kimi15-paper
+  title: 'Kimi k1.5: Scaling Reinforcement Learning with LLMs'
+  url: https://arxiv.org/abs/2501.12599
+  type: paper
+  checked: 2026-10-26
+- id: kimi-k2-code
+  title: Kimi K2 官方实现
+  url: https://github.com/MoonshotAI/Kimi-K2
+  type: official-code
+  checked: 2026-10-26
+- id: kimi-k25-code
+  title: Kimi K2.5 官方实现
+  url: https://github.com/MoonshotAI/Kimi-K2.5
+  type: official-code
+  checked: 2026-10-26
+- id: kimi-k26-card
+  title: Kimi K2.6 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-K2.6
+  type: official-docs
+  checked: 2026-10-26
+- id: kimi-k27-card
+  title: Kimi K2.7 Code 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-K2.7-Code
+  type: official-docs
+  checked: 2026-10-26
+- id: kimi-k3-code
+  title: Kimi K3 官方结构与权重说明
+  url: https://github.com/MoonshotAI/Kimi-K3
+  type: official-code
+  checked: 2026-10-26
+- id: kimi-thinking-card
+  title: Kimi K2 Thinking 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
+  type: official-docs
+  checked: 2026-10-26
+- id: kimi-linear-card
+  title: Kimi Linear 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-Linear-48B-A3B-Instruct
+  type: official-docs
+  checked: 2026-10-26
+- id: kimi-vl-card
+  title: Kimi-VL 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-VL-A3B-Instruct
+  type: official-docs
+  checked: 2026-10-26
+- id: kimi-audio-card
+  title: Kimi-Audio 官方模型卡
+  url: https://huggingface.co/moonshotai/Kimi-Audio-7B-Instruct
+  type: official-docs
+  checked: 2026-10-26
+- id: glm-paper
+  title: 'GLM: Autoregressive Blank Infilling'
+  url: https://arxiv.org/abs/2103.10360
+  type: paper
+  checked: 2026-10-26
+- id: chatglm-paper
+  title: 'ChatGLM: From GLM-130B to GLM-4 All Tools'
+  url: https://arxiv.org/abs/2406.12793
+  type: paper
+  checked: 2026-10-26
+- id: chatglm-code
+  title: ChatGLM3 官方实现与历史模型入口
+  url: https://github.com/THUDM/ChatGLM3
+  type: official-code
+  checked: 2026-10-26
+- id: glm4-card
+  title: GLM-4-9B-Chat 官方模型卡
+  url: https://huggingface.co/THUDM/glm-4-9b-chat
+  type: official-docs
+  checked: 2026-10-26
+- id: glm45-code
+  title: GLM-4.5／4.6／4.7 官方实现
+  url: https://github.com/zai-org/GLM-4.5
+  type: official-code
+  checked: 2026-10-26
+- id: glm5-code
+  title: GLM-5 至 5.3 官方实现与发布说明
+  url: https://github.com/zai-org/GLM-5
+  type: official-code
+  checked: 2026-10-26
+- id: glm5-paper
+  title: GLM-5 Technical Report
+  url: https://arxiv.org/abs/2602.15763
+  type: paper
+  checked: 2026-10-26
+- id: glm52-card
+  title: GLM-5.2 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-5.2
+  type: official-docs
+  checked: 2026-10-26
+- id: glm53-card
+  title: GLM-5.3 官方模型卡与许可证
+  url: https://huggingface.co/zai-org/GLM-5.3
+  type: official-docs
+  checked: 2026-10-26
+- id: glm53-flash-card
+  title: GLM-5.3-Flash 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-5.3-Flash
+  type: official-docs
+  checked: 2026-10-26
+- id: glm-v-code
+  title: GLM-V 官方实现与版本清单
+  url: https://github.com/zai-org/GLM-V
+  type: official-code
+  checked: 2026-10-26
+- id: glm-asr-code
+  title: GLM-ASR 官方实现
+  url: https://github.com/zai-org/GLM-ASR
+  type: official-code
+  checked: 2026-10-26
+- id: glm-tts-code
+  title: GLM-TTS 官方实现
+  url: https://github.com/zai-org/GLM-TTS
+  type: official-code
+  checked: 2026-10-26
+- id: glm-ocr-code
+  title: GLM-OCR 官方实现
+  url: https://github.com/zai-org/GLM-OCR
+  type: official-code
+  checked: 2026-10-26
+- id: qwen38-large-card
+  title: Qwen3.8-2.4T-A95B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+  type: official-docs
+  checked: 2026-10-26
+- id: codeqwen15-card
+  title: CodeQwen1.5-7B-Chat 官方模型卡
+  url: https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat
+  type: official-docs
+  checked: 2026-10-26

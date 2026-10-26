@@ -38,6 +38,8 @@ export function searchNodes(data: KnowledgeBase, query: string): KnowledgeNode[]
   const terms = normalized.split(/\s+/).filter(Boolean);
   if (!terms.length) return [];
   function score(node: KnowledgeNode): number {
+    // A concrete title or ID should win over an alias mentioned by its family overview.
+    if ([node.title, node.id].some((name) => name.toLocaleLowerCase() === normalized)) return -1;
     const names = [node.title, node.id, ...node.aliases].map((name) => name.toLocaleLowerCase());
     if (names.includes(normalized)) return 0;
     if (names.some((name) => name.startsWith(normalized))) return 1;

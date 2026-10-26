@@ -4,7 +4,7 @@ export function isModel(node: KnowledgeNode): boolean {
 }
 export function projectModelMap(data: KnowledgeBase) {
   const nodes = data.nodes
-    .filter(isModel)
+    .filter((node) => isModel(node) && node.featured)
     .toSorted((a, b) => (a.year ?? 2100) - (b.year ?? 2100) || a.id.localeCompare(b.id));
   const ids = new Set(nodes.map((node) => node.id));
   const edges: {

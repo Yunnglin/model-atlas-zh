@@ -460,3 +460,572 @@
   explanation: DiT 使用 Transformer 作为扩散模型中的去噪网络骨干；这里表示结构采用，不表示从某个语言模型继续训练。
   sources:
     - dit-paper
+- id: llama-compared-with-gpt
+  from: llama
+  to: gpt
+  kind: compared-with
+  explanation: 比较因果语言模型的结构、数据与后训练演进；不表示 Llama 由 GPT-2 权重训练而来。
+  sources:
+    - llama-paper
+    - gpt-code
+  caption: 因果模型对比
+- id: qwen3-compared-with-llama
+  from: qwen3
+  to: llama
+  kind: compared-with
+  explanation: 比较 Llama 3.1 文本模型与 Qwen3 初始系列的规格、模式与训练；不声明模型继承。
+  sources:
+    - qwen3-paper
+    - llama-card
+  caption: 规格与模式对比
+- id: llama-compared-with-deepseek-v3
+  from: llama
+  to: deepseek-v3
+  kind: compared-with
+  explanation: 比较公开 Dense 基线与 DeepSeek-V3 的 MoE、注意力缓存及训练效率设计；不声明权重继承。
+  sources:
+    - v3-paper
+    - llama-paper
+  caption: Dense 与 MoE
+- id: deepseek-r1-extends-deepseek-v3
+  from: deepseek-r1
+  to: deepseek-v3
+  kind: extends
+  explanation: 原始 R1 从 DeepSeek-V3-Base 开始后训练；本关系不表示从 V3 最终聊天模型继续训练，也不描述蒸馏版学生基座。
+  sources:
+    - r1-paper
+    - v3-paper
+  caption: V3-Base 后训练
+- id: claude-compared-with-gpt
+  from: claude
+  to: gpt
+  kind: compared-with
+  explanation: 比较生成助手与对齐方法的公开证据；Claude 的未公开架构不据 GPT-2 或其他模型补齐。
+  sources:
+    - claude-intro
+    - constitutional-paper
+    - gpt-code
+  caption: 助手对齐视角
+- id: swin-compared-with-vit
+  from: swin
+  to: vit
+  kind: compared-with
+  explanation: Swin 强调窗口移位与层级表示，ViT 提供图像分块序列的基础对照；不声明从特定 ViT 权重派生。
+  sources:
+    - swin-paper
+    - vit-paper
+  caption: 窗口与全局对比
+- id: sam-uses-vit
+  from: sam
+  to: vit
+  kind: uses
+  explanation: 原始 SAM 的图像编码器基于 ViT；提示编码器和掩码解码器另承担分割任务。
+  sources:
+    - sam-paper
+  caption: 图像编码器
+- id: stable-diffusion-uses-clip
+  from: stable-diffusion
+  to: clip
+  kind: uses
+  explanation: Stable Diffusion v1-4 使用 CLIP 的文字编码器提供条件，不表示使用 CLIP 图像编码器直接生成图片。
+  sources:
+    - sd-card
+  caption: 文字条件编码
+- id: hubert-compared-with-wav2vec2
+  from: hubert
+  to: wav2vec2
+  kind: compared-with
+  explanation: 比较离线聚类伪标签的遮盖预测与量化表示上的对比目标，不声明二者使用相同损失。
+  sources:
+    - hubert-paper
+    - wav2vec-paper
+  caption: 自监督目标对比
+- id: wav2vec2-compared-with-conformer
+  from: wav2vec2
+  to: conformer
+  kind: compared-with
+  explanation: Conformer 主要说明卷积与注意力的编码器设计；wav2vec 2.0 还包含特定自监督学习路线。这里比较设计层次而非声明继承。
+  sources:
+    - conformer-paper
+    - wav2vec-paper
+  caption: 骨干与目标
+- id: vall-e-uses-encodec
+  from: vall-e
+  to: encodec
+  kind: uses
+  explanation: 原始 VALL-E 使用 EnCodec 产生的离散声学编码作为语音生成的建模对象。
+  sources:
+    - valle-paper
+    - encodec-paper
+  caption: 声学编码
+- id: vall-e-compared-with-whisper
+  from: vall-e
+  to: whisper
+  kind: compared-with
+  explanation: 比较按文字与参考声音生成语音，和按声音生成转写的任务方向；二者不是继承关系。
+  sources:
+    - valle-paper
+    - whisper-paper
+  caption: 识别与合成
+- id: f5-tts-uses-dit
+  from: f5-tts
+  to: dit
+  kind: uses
+  explanation: F5-TTS 采用 Diffusion Transformer 骨干思路处理连续声学表示；不表示直接使用图像 DiT
+    权重，流匹配目标与原始图像扩散设置也不同。
+  sources:
+    - f5-paper
+    - dit-paper
+  caption: DiT 骨干思路
+- id: qwen-vl-uses-vit
+  from: qwen-vl
+  to: vit
+  kind: uses
+  explanation: Qwen2.5-VL 训练动态分辨率的视觉 Transformer；这表示采用视觉骨干思想，不是套用原始 ViT 的全部权重与训练配方。
+  sources:
+    - qwen-vl-paper
+  caption: 动态视觉编码
+- id: gpt4o-compared-with-whisper
+  from: gpt4o
+  to: whisper
+  kind: compared-with
+  explanation: GPT-4o 的公开介绍比较了端到端多模态路线与含 Whisper 的语音转写串联方案；此处不声明两者权重继承。
+  sources:
+    - gpt4o-release
+    - whisper-paper
+  caption: 端到端与串联
+- id: gpt4o-compared-with-gemini
+  from: gpt4o
+  to: gemini
+  kind: compared-with
+  explanation: 以 GPT-4o 的交互路线和 Gemini 1.5 的长上下文研究比较多模态任务与评测，不声明相同内部结构或继承。
+  sources:
+    - gpt4o-release
+    - gemini-paper
+  caption: 多模态研究对比
+- id: llama-uses-next-token
+  from: llama
+  to: next-token
+  kind: uses
+  explanation: Llama 3.1 文本模型采用自回归语言建模，后训练还会使用其他数据与信号。
+  sources:
+    - llama-paper
+- id: llama-uses-kv-cache
+  from: llama
+  to: kv-cache
+  kind: uses
+  explanation: Llama 3.1 的 GQA 配置影响注意力缓存组织与推理开销。
+  sources:
+    - llama-card
+- id: qwen3-uses-moe
+  from: qwen3
+  to: moe
+  kind: uses
+  explanation: Qwen3 初始系列含 Dense 与 MoE 规格；本关系只表示其中 MoE 规格采用专家路由。
+  sources:
+    - qwen3-paper
+- id: qwen3-prerequisite-training-pipeline
+  from: qwen3
+  to: training-pipeline
+  kind: prerequisite
+  explanation: 阅读前置：分清预训练、监督与反馈环节，再看思考模式和训练方法的关系。
+  sources:
+    - qwen3-paper
+- id: deepseek-v3-uses-moe
+  from: deepseek-v3
+  to: moe
+  kind: uses
+  explanation: 原始 V3 采用 DeepSeekMoE 专家结构，具体路由与均衡策略按报告解释。
+  sources:
+    - v3-paper
+- id: deepseek-v3-uses-kv-cache
+  from: deepseek-v3
+  to: kv-cache
+  kind: uses
+  explanation: V3 的 MLA 设计减少部分注意力缓存开销，不等于通用 KV Cache 估算可以直接套用。
+  sources:
+    - v3-paper
+- id: deepseek-r1-uses-rlvr
+  from: deepseek-r1
+  to: rlvr
+  kind: uses
+  explanation: 原始 R1 推理训练使用可验证结果相关奖励；这不说明所有后训练环节都只有同一种奖励。
+  sources:
+    - r1-paper
+- id: deepseek-r1-uses-grpo
+  from: deepseek-r1
+  to: grpo
+  kind: uses
+  explanation: 原始 R1 报告采用 GRPO 进行相应强化学习更新。
+  sources:
+    - r1-paper
+- id: deepseek-r1-applied-to-distillation
+  from: deepseek-r1
+  to: distillation
+  kind: applied-to
+  explanation: R1 生成的推理材料用于适配较小的 Qwen/Llama 学生模型，学生结构由其基座确定。
+  sources:
+    - r1-code
+- id: claude-compared-with-rlhf
+  from: claude
+  to: rlhf
+  kind: compared-with
+  explanation: Constitutional AI 公开方法有 AI 偏好反馈路线，可与人类偏好奖励路线比较；不据此推断每个 Claude 版本完整配方。
+  sources:
+    - constitutional-paper
+    - instruct-paper
+- id: clip-uses-contrastive-learning
+  from: clip
+  to: contrastive-learning
+  kind: uses
+  explanation: CLIP 用图文配对和批内候选学习跨模态表示。
+  sources:
+    - clip-paper
+- id: stable-diffusion-uses-diffusion-flow
+  from: stable-diffusion
+  to: diffusion-flow
+  kind: uses
+  explanation: 以 v1-4 为例在潜空间训练条件去噪模型；这里指扩散路线，不声称其使用 F5-TTS 的流匹配配方。
+  sources:
+    - ldm-paper
+    - sd-card
+- id: dit-uses-diffusion-flow
+  from: dit
+  to: diffusion-flow
+  kind: uses
+  explanation: 原始 DiT 是使用 Transformer 去噪骨干的潜空间图像扩散研究。
+  sources:
+    - dit-paper
+- id: f5-tts-uses-diffusion-flow
+  from: f5-tts
+  to: diffusion-flow
+  kind: uses
+  explanation: F5-TTS 使用流匹配训练连续声学生成，并在推理时进行多步采样。
+  sources:
+    - f5-paper
+- id: wav2vec2-uses-ctc
+  from: wav2vec2
+  to: ctc
+  kind: uses
+  explanation: 原始 wav2vec 2.0 研究在语音表示预训练后使用 CTC 进行带转写的识别微调。
+  sources:
+    - wav2vec-paper
+- id: hubert-compared-with-masked-modeling
+  from: hubert
+  to: masked-modeling
+  kind: compared-with
+  explanation: HuBERT 使用声音聚类伪标签做遮盖预测，与文本遮盖学习共享思路，但输入和目标不同。
+  sources:
+    - hubert-paper
+    - bert-paper
+- id: vit-uses-position-encoding
+  from: vit
+  to: position-encoding
+  kind: uses
+  explanation: ViT 在图像分块表示中加入位置信息，以表达块的位置。
+  sources:
+    - vit-paper
+- id: qwen-vl-uses-position-encoding
+  from: qwen-vl
+  to: position-encoding
+  kind: uses
+  explanation: Qwen2.5-VL 用相应时空位置设计组织动态图像与视频输入。
+  sources:
+    - qwen-vl-paper
+- id: gpt-prerequisite-training-pipeline
+  from: gpt
+  to: training-pipeline
+  kind: prerequisite
+  explanation: 阅读前置：先把结构、目标、数据和后训练层次分开；不把所有 GPT 版本都套上同一配方。
+  sources:
+    - gpt-code
+    - instruct-paper
+- id: training-pipeline-prerequisite-next-token
+  from: training-pipeline
+  to: next-token
+  kind: prerequisite
+  explanation: 阅读前置：理解生成式学习目标后，再区分示范与反馈的来源。
+  sources:
+    - instruct-paper
+- id: next-token-prerequisite-tokenization
+  from: next-token
+  to: tokenization
+  kind: prerequisite
+  explanation: 阅读前置：理解模型预测的是词表片段，而不是总能对应一个字或一个词。
+  sources:
+    - gpt-code
+- id: gpt-evaluated-by-llm-benchmarks
+  from: gpt
+  to: llm-benchmarks
+  kind: evaluated-by
+  explanation: 知识、代码和指令任务需要各自协议，不能只看续写损失。
+  sources:
+    - gpt3-paper
+    - gpt4-paper
+- id: llama-evaluated-by-llm-benchmarks
+  from: llama
+  to: llm-benchmarks
+  kind: evaluated-by
+  explanation: Llama 3 报告提供多项能力与部署相关评价，使用时仍需固定版本与预算。
+  sources:
+    - llama-paper
+- id: qwen3-evaluated-by-llm-benchmarks
+  from: qwen3
+  to: llm-benchmarks
+  kind: evaluated-by
+  explanation: Qwen3 报告比较多类任务，思考模式和预算需要一并记录。
+  sources:
+    - qwen3-paper
+- id: deepseek-r1-evaluated-by-llm-benchmarks
+  from: deepseek-r1
+  to: llm-benchmarks
+  kind: evaluated-by
+  explanation: R1 推理评价须同时记录采样数量、输出预算、答案提取与测试。
+  sources:
+    - r1-paper
+- id: sam-evaluated-by-vision-metrics
+  from: sam
+  to: vision-metrics
+  kind: evaluated-by
+  explanation: 提示分割应明确提示类型、掩码质量与边界表现。
+  sources:
+    - sam-paper
+- id: stable-diffusion-evaluated-by-vision-metrics
+  from: stable-diffusion
+  to: vision-metrics
+  kind: evaluated-by
+  explanation: 生成图像需同时评价分布质量、条件满足和逐样本失败，不只看展示样图。
+  sources:
+    - ldm-paper
+    - sd-card
+- id: f5-tts-evaluated-by-speech-quality
+  from: f5-tts
+  to: speech-quality
+  kind: evaluated-by
+  explanation: F5-TTS 需要区分内容、音色、自然度与生成开销。
+  sources:
+    - f5-paper
+- id: vall-e-evaluated-by-speech-quality
+  from: vall-e
+  to: speech-quality
+  kind: evaluated-by
+  explanation: VALL-E 评价涉及内容、说话人相似性和听感，不能用单个相似度替代。
+  sources:
+    - valle-paper
+- id: qwen-vl-evaluated-by-multimodal-evaluation
+  from: qwen-vl
+  to: multimodal-evaluation
+  kind: evaluated-by
+  explanation: 视觉语言模型需分文档、定位、视频时间与输出结构评测。
+  sources:
+    - qwen-vl-paper
+- id: qwen-omni-evaluated-by-multimodal-evaluation
+  from: qwen-omni
+  to: multimodal-evaluation
+  kind: evaluated-by
+  explanation: Omni 的感知、跨模态整合、回答与发声需分别评价。
+  sources:
+    - omni-code
+- id: gemini-evaluated-by-multimodal-evaluation
+  from: gemini
+  to: multimodal-evaluation
+  kind: evaluated-by
+  explanation: 长上下文检索、跨段推理与多模态输入组织是不同的评测维度。
+  sources:
+    - gemini-paper
+- id: rag-applied-to-document-qa
+  from: rag
+  to: document-qa
+  kind: applied-to
+  explanation: 资料问答案例用检索证据与生成阶段分开定位错误。
+  sources:
+    - rag-paper
+- id: qwen-vl-applied-to-visual-qa
+  from: qwen-vl
+  to: visual-qa
+  kind: applied-to
+  explanation: 文档字段问答案例结合实际输入、字段答案与定位证据。
+  sources:
+    - qwen-vl-paper
+- id: f5-tts-applied-to-tts
+  from: f5-tts
+  to: tts
+  kind: applied-to
+  explanation: 语音生成案例按内容、声学特征与波形链路拆分排错。
+  sources:
+    - f5-paper
+- id: qwen-omni-applied-to-omni-assistant
+  from: qwen-omni
+  to: omni-assistant
+  kind: applied-to
+  explanation: 多模态助手案例保留同步音视频与请求时间线，分阶段归因。
+  sources:
+    - omni-code
+- id: qwen-uses-transformer
+  from: qwen
+  to: transformer
+  kind: uses
+  explanation: Qwen 主线以 Transformer 语言建模为基础，后续代际的注意力与视觉路径各自演进。
+  sources:
+    - qwen1-paper
+    - qwen3-paper
+    - qwen38-code
+  caption: 语言模型主线
+- id: qwen-asr-extends-qwen
+  from: qwen-asr
+  to: qwen
+  kind: extends
+  explanation: Qwen-Audio、Qwen2-Audio 为 Qwen 的音频理解分支；Qwen3-ASR 继承 Qwen3-Omni
+    的音频能力，不能视为每一代文本模型的逐项直接继承。
+  sources:
+    - qwen-audio-code
+    - qwen-asr-code
+  caption: 音频分支
+- id: qwen-vl-family-extends-qwen
+  from: qwen-vl-family
+  to: qwen
+  kind: extends
+  explanation: Qwen-VL 家族在 Qwen 语言能力基础上结合视觉编码与图文训练，各代结构分别核对。
+  sources:
+    - qwen1-vl-paper
+    - qwen3-vl-code
+  caption: 视觉语言分支
+- id: qwen-omni-family-extends-qwen
+  from: qwen-omni-family
+  to: qwen
+  kind: extends
+  explanation: Qwen-Omni 是 Qwen 的全模态理解与交互分支，不意味着文本、VL 和 Omni 每个版本都一一对应。
+  sources:
+    - omni-code
+    - qwen3-omni-code
+  caption: 全模态分支
+- id: qwen-tts-extends-qwen
+  from: qwen-tts
+  to: qwen
+  kind: extends
+  explanation: Qwen3-TTS 属于 Qwen 的语音生成分支，其语音 tokenizer 和生成路径应单独理解。
+  sources:
+    - qwen-tts-code
+  caption: 语音生成分支
+- id: qwen-coder-extends-qwen
+  from: qwen-coder
+  to: qwen
+  kind: extends
+  explanation: Qwen-Coder 在 Qwen 基础上进行代码与工程任务训练；Coder-Next 明确基于 Qwen3-Next-80B-A3B-Base。
+  sources:
+    - qwen-coder-code
+    - qwen25-coder-paper
+  caption: 代码分支
+- id: qwen-image-uses-dit
+  from: qwen-image
+  to: dit
+  kind: uses
+  explanation: 初代 Qwen-Image 采用 MMDiT 图像生成架构，这条线表示架构家族关系，不表示继承初代 DiT 权重。
+  sources:
+    - qwen-image-paper
+  caption: 多模态 DiT
+- id: qwen-image-compared-with-qwen
+  from: qwen-image
+  to: qwen
+  kind: compared-with
+  explanation: Qwen-Image 是图像生成分支，与 Qwen 通用理解主线输出目标不同；品牌归属不是权重继承证据。
+  sources:
+    - qwen-image-code
+    - qwen38-code
+  caption: 理解与生成
+- id: qwen-tts-compared-with-f5-tts
+  from: qwen-tts
+  to: f5-tts
+  kind: compared-with
+  explanation: Qwen3-TTS 的离散多码本 LM 与 F5-TTS 的流匹配路线不同，按同任务比较内容、音色与延迟。
+  sources:
+    - qwen-tts-paper
+    - f5-paper
+  caption: 语音生成路线
+- id: qwen-asr-compared-with-whisper
+  from: qwen-asr
+  to: whisper
+  kind: compared-with
+  explanation: 二者可在同一转写任务比较，但需要固定文字规范、切片和预算。
+  sources:
+    - qwen-asr-paper
+    - whisper-paper
+  caption: 识别对比
+- id: qwen-vl-family-compared-with-llava
+  from: qwen-vl-family
+  to: llava
+  kind: compared-with
+  explanation: 二者可对照视觉编码如何接入语言模型，动态输入与训练设置不同，不声明直接继承。
+  sources:
+    - qwen3-vl-code
+    - llava-paper
+  caption: 视觉语言对比
+- id: kimi-uses-transformer
+  from: kimi
+  to: transformer
+  kind: uses
+  explanation: Kimi K2 采用 Transformer MoE 与 MLA 等设计，后续 K3 还使用混合历史处理与层间融合。
+  sources:
+    - kimi-k2-code
+    - kimi-k3-code
+  caption: MoE 与混合记忆
+- id: glm-uses-transformer
+  from: glm
+  to: transformer
+  kind: uses
+  explanation: 早期 GLM 通过 Transformer 与特定注意力掩码实现自回归填空，后续代际结构继续演进。
+  sources:
+    - glm-paper
+    - glm5-code
+  caption: 填空与生成
+- id: qwen-prerequisite-moe
+  from: qwen
+  to: moe
+  kind: prerequisite
+  explanation: 阅读 Qwen 的 Dense 与 MoE 型号对照，需要区分总参数和激活参数。
+  sources:
+    - qwen3-paper
+- id: kimi-prerequisite-moe
+  from: kimi
+  to: moe
+  kind: prerequisite
+  explanation: 理解 K2、K3 需要先区分专家总规模和每步激活规模。
+  sources:
+    - kimi-k2-code
+    - kimi-k3-code
+- id: glm-prerequisite-moe
+  from: glm
+  to: moe
+  kind: prerequisite
+  explanation: 理解 GLM-4.5 之后主型号需要了解 MoE。
+  sources:
+    - glm45-code
+    - glm5-code
+- id: qwen-asr-evaluated-by-wer
+  from: qwen-asr
+  to: wer
+  kind: evaluated-by
+  explanation: 转写质量用 WER／CER 等衡量，文本规范和任务切片需一并记录。
+  sources:
+    - qwen-asr-code
+- id: qwen-tts-evaluated-by-speech-quality
+  from: qwen-tts
+  to: speech-quality
+  kind: evaluated-by
+  explanation: 语音生成应分别评估内容、音色、自然度与延迟。
+  sources:
+    - qwen-tts-paper
+- id: qwen-applied-to-document-qa
+  from: qwen
+  to: document-qa
+  kind: applied-to
+  explanation: Qwen 可作为文档问答中的生成或视觉理解模型；具体型号按输入选择，案例不声称实际运行。
+  sources:
+    - qwen38-code
+- id: qwen-omni-family-applied-to-omni-assistant
+  from: qwen-omni-family
+  to: omni-assistant
+  kind: applied-to
+  explanation: Qwen-Omni 是全模态助手案例的候选模型，案例仅提供复现计划。
+  sources:
+    - qwen3-omni-code

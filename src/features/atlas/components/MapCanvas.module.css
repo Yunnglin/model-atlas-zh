@@ -68,6 +68,19 @@
   outline-offset: 4px;
   border-radius: 3px;
 }
+.graph[data-compact='true'] .modelNode {
+  display: flex;
+  align-items: center;
+}
+.graph[data-compact='true'] .nodeName {
+  max-width: 100%;
+  font-size: 26px;
+  line-height: 1.15;
+}
+.graph[data-compact='true'] .nodeHint,
+.graph[data-compact='true'] .nodeDescription {
+  display: none;
+}
 .status {
   position: absolute;
   right: 28px;

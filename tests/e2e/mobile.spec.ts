@@ -46,3 +46,19 @@ test('mobile architecture modal fits the screen and the map remains navigable by
   await expect(dialog).not.toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test('family comparison tables scroll locally on phones without widening the page', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('./?model=qwen');
+  const model = page.getByTestId('model-learning');
+  await model.getByRole('link', { name: '结构与数据流', exact: true }).click();
+  const table = model.getByRole('table').first();
+  await expect(table).toHaveAttribute('tabindex', '0');
+  await table.focus();
+  await table.press('ArrowRight');
+  await expect.poll(() => table.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+});

@@ -61,6 +61,9 @@ describe('knowledge and progressive projections', () => {
     expect(searchNodes(knowledge, '下一 token')[0]?.id).toBe('next-token');
     expect(searchNodes(knowledge, 'whisper').map((node) => node.id)).toEqual(['whisper']);
     expect(searchNodes(knowledge, '低秩').some((node) => node.id === 'lora')).toBe(true);
+    expect(searchNodes(knowledge, 'Qwen3')[0]?.id).toBe('qwen3');
+    expect(searchNodes(knowledge, 'Qwen3.8')[0]?.id).toBe('qwen38');
+    expect(searchNodes(knowledge, 'Qwen')[0]?.id).toBe('qwen');
   });
   it('follows only reading prerequisites', () => {
     const ids = prerequisites(knowledge, 'whisper').map((node) => node.id);
@@ -76,6 +79,10 @@ describe('knowledge and progressive projections', () => {
     expect(map.nodes.every(isModel)).toBe(true);
     expect(map.nodes.some((node) => node.id === 'transformer')).toBe(true);
     expect(map.nodes.some((node) => node.id === 'next-token')).toBe(false);
+    expect(map.nodes.every((node) => node.featured)).toBe(true);
+    expect(map.nodes.some((node) => node.id === 'qwen')).toBe(true);
+    expect(map.nodes.some((node) => node.id === 'qwen3')).toBe(false);
+    expect(knowledge.nodes.some((node) => node.id === 'qwen3' && isModel(node))).toBe(true);
     expect(
       map.edges.every(
         (edge) =>

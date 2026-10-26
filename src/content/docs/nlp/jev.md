@@ -19,6 +19,7 @@ atlas:
   sources:
     - jev-docs
   year: 2026
+  featured: false
 ---
 
 ## 先看一个问题

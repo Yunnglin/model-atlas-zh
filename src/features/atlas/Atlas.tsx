@@ -5,6 +5,7 @@ import styles from './Atlas.module.css';
 
 export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: string) => void }) {
   const map = projectModelMap(data);
+  const unlinked = map.unlinked;
   return (
     <div className={styles.atlas}>
       <div className={styles.context}>
@@ -17,10 +18,10 @@ export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: 
       </div>
       <div className={styles.stage}>
         <MapCanvas data={data} onSelect={onSelect} />
-        {map.unlinked.length > 0 && (
+        {unlinked.length > 0 && (
           <div className={styles.unlinked}>
             <span>关系待补充</span>
-            {map.unlinked.map((node) => (
+            {unlinked.map((node) => (
               <button key={node.id} onClick={() => onSelect(node.id)}>
                 {node.title}
               </button>

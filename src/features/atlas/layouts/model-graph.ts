@@ -1,4 +1,4 @@
-import { Graph, type NodeData, type IPointerEvent } from '@antv/g6';
+import { Graph, GraphEvent, type NodeData, type IPointerEvent } from '@antv/g6';
 import type { KnowledgeBase, KnowledgeNode } from '../../../core/schemas/knowledge';
 import { projectModelMap } from '../../../core/projections/model-map';
 import styles from '../components/MapCanvas.module.css';
@@ -68,6 +68,9 @@ export class ModelGraph {
       ],
     });
   }
+  private updateDetail = () => {
+    if (!this.graph.destroyed) this.container.dataset.compact = String(this.graph.getZoom() < 0.7);
+  };
   private card(node: KnowledgeNode) {
     const card = document.createElement('div');
     card.className = `${styles.modelNode} ${node.id === 'transformer' ? styles.rootNode : ''}`;
@@ -80,6 +83,7 @@ export class ModelGraph {
     name.className = styles.nodeName!;
     name.dataset.knowledge = node.id;
     name.textContent = node.title;
+    name.title = node.purpose;
     const description = document.createElement('p');
     description.className = styles.nodeDescription!;
     description.textContent = node.purpose;
@@ -88,7 +92,9 @@ export class ModelGraph {
   }
   async render() {
     await this.graph.render();
+    this.graph.on(GraphEvent.AFTER_TRANSFORM, this.updateDetail);
     await this.frame();
+    this.updateDetail();
     this.container.querySelectorAll('canvas').forEach((canvas) => {
       canvas.setAttribute('aria-hidden', 'true');
       canvas.tabIndex = -1;
@@ -123,6 +129,7 @@ export class ModelGraph {
     );
   }
   destroy() {
+    this.graph.off(GraphEvent.AFTER_TRANSFORM, this.updateDetail);
     if (!this.graph.destroyed) this.graph.destroy();
   }
 }

@@ -83,7 +83,7 @@ export function MapCanvas({
       aria-busy={busy}
     >
       <div ref={container} className={styles.graph} />
-      <p className={styles.status}>点击模型开始阅读 · 可拖动、缩放</p>
+      <p className={styles.status}>点击模型阅读 · 拖动看更多 · 可适配全图</p>
       <div className={styles.controls} aria-label="地图操作">
         <button
           disabled={busy || error}

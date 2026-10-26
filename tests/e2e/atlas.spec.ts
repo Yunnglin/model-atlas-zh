@@ -43,11 +43,14 @@ test('overview contains models with sourced relationships, readable cards and no
           y: box.y,
           w: box.width,
           h: box.height,
+          text:
+            (parseFloat(getComputedStyle(element.querySelector('button')!).fontSize) * box.width) /
+            (element as HTMLElement).offsetWidth,
         };
       }),
     );
   expect(boxes.length).toBeGreaterThan(8);
-  expect(boxes.every((box) => box.w >= 140)).toBe(true);
+  expect(boxes.every((box) => box.text >= 12)).toBe(true);
   for (let i = 0; i < boxes.length; i++)
     for (let j = i + 1; j < boxes.length; j++) {
       const a = boxes[i]!,
@@ -177,10 +180,11 @@ test('returning to the model map preserves its camera and reopens the saved mode
 }) => {
   await page.goto('./');
   await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
+  const initial = await graph(page).locator('[data-model-id="whisper"]').boundingBox();
   await page.getByRole('button', { name: '放大地图', exact: true }).click();
   await expect
-    .poll(async () => (await modelButton(page, 'Whisper').boundingBox())!.width)
-    .toBeGreaterThan(75);
+    .poll(async () => (await graph(page).locator('[data-model-id="whisper"]').boundingBox())!.width)
+    .toBeGreaterThan(initial!.width * 1.1);
   const before = await modelButton(page, 'Whisper').boundingBox();
   await modelButton(page, 'Whisper').click();
   await model(page).getByRole('link', { name: '数据与训练', exact: true }).click();
@@ -377,6 +381,103 @@ test('all canonical articles, fragments and figures resolve under the configured
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.getByRole('button', { name: /搜索正文/ }).click();
   await page.getByRole('textbox').fill('ASR');
-  await expect(page.getByRole('link', { name: /Whisper/ }).first()).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Qwen Audio / ASR', exact: true }).first(),
+  ).toBeVisible();
   await expect(page.getByRole('link', { name: /readers\// })).toHaveCount(0);
+});
+
+test('curated reasoning models link to complete training concepts without losing model context', async ({
+  page,
+}) => {
+  await page.goto('./?model=deepseek-r1');
+  await expect(model(page).getByRole('heading', { name: 'DeepSeek-R1', level: 1 })).toBeVisible();
+  await expect(model(page).getByText(/R1-Zero 研究不先做 SFT/)).toBeVisible();
+  await model(page).getByRole('link', { name: 'RLVR', exact: true }).click();
+  await expect(reader(page).getByRole('heading', { name: /RLVR/, level: 2 })).toBeVisible();
+  await expect(
+    reader(page)
+      .locator('[data-reader-content]')
+      .getByText(/奖励来源/)
+      .first(),
+  ).toBeVisible();
+  await reader(page).getByRole('button', { name: '关闭阅读区' }).click();
+  await expect(model(page).getByRole('heading', { name: 'DeepSeek-R1', level: 1 })).toBeVisible();
+});
+
+test('new vision and speech chapters reuse figures, formulas and linked practice cases', async ({
+  page,
+}) => {
+  await page.goto('./?model=sam');
+  const figure = page.getByTestId('architecture-figure');
+  await expect(figure.getByRole('img', { name: /SAM 官方示意图/ })).toHaveJSProperty(
+    'naturalWidth',
+    2412,
+  );
+  await expect(figure).toContainText('Apache-2.0');
+  await expect(model(page).getByText(/不能仅凭示意图/)).toBeVisible();
+  await page.goto('./?model=f5-tts');
+  await expect(model(page).getByRole('heading', { name: 'F5-TTS', level: 1 })).toBeVisible();
+  await model(page).getByRole('link', { name: '流匹配', exact: true }).click();
+  await reader(page).getByText('想深入：直线路径的流匹配例子').click();
+  await expect(reader(page).locator('.katex').first()).toBeVisible();
+  await reader(page).getByRole('button', { name: '关闭阅读区' }).click();
+  await model(page).getByRole('link', { name: '语音生成案例', exact: true }).click();
+  await expect(
+    reader(page).getByRole('heading', { name: '语音生成：漏读、音色与杂音分开查', exact: true }),
+  ).toBeVisible();
+  for (const stage of ['数据', '训练', '评测', '应用', '错例分析', '数据改进'])
+    await expect(reader(page).getByRole('heading', { name: stage, exact: true })).toHaveCount(1);
+});
+
+test('family overviews contain generations while detailed versions stay off the overview map', async ({
+  page,
+}) => {
+  await page.goto('./');
+  await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
+  await expect(modelButton(page, 'Qwen 系列')).toBeVisible();
+  await expect(modelButton(page, 'Kimi 系列')).toBeVisible();
+  await expect(modelButton(page, 'GLM 系列')).toBeVisible();
+  await expect(modelButton(page, 'Qwen3')).toHaveCount(0);
+  await modelButton(page, 'Qwen 系列').click();
+  const rows = model(page).getByRole('row');
+  for (const generation of [
+    'Qwen 第一代',
+    'Qwen1.5',
+    'Qwen2（',
+    'Qwen2.5（',
+    'Qwen3（',
+    'Qwen3-Next',
+    'Qwen3.5',
+    'Qwen3.6',
+    'Qwen3.7',
+    'Qwen3.8',
+  ])
+    await expect(rows.filter({ hasText: generation }).first()).toHaveCount(1);
+  await model(page).getByRole('link', { name: '3.5 → 3.8', exact: true }).click();
+  await expect(page).toHaveURL(/\?model=qwen38$/);
+  await expect(model(page).getByText(/纯文本、始终思考/)).toBeVisible();
+  await page.goto('./?model=qwen');
+  await model(page).getByRole('link', { name: 'Audio 与 ASR', exact: true }).click();
+  await expect(page).toHaveURL(/\?model=qwen-asr$/);
+  await expect(model(page).getByRole('row').filter({ hasText: 'Qwen3-ForcedAligner' })).toHaveCount(
+    1,
+  );
+  await model(page).getByRole('link', { name: 'WER／CER', exact: true }).click();
+  await expect(reader(page).getByRole('heading', { name: 'WER / CER', exact: true })).toBeVisible();
+  await reader(page).getByRole('button', { name: '关闭阅读区' }).click();
+  await expect(
+    model(page).getByRole('heading', { name: 'Qwen Audio / ASR', level: 1 }),
+  ).toBeVisible();
+  for (const [id, version] of [
+    ['kimi', 'Kimi K3'],
+    ['glm', 'GLM-5.3-Flash'],
+  ]) {
+    await page.goto(`./?model=${id}`);
+    await expect(model(page).getByRole('row').filter({ hasText: version! })).toHaveCount(1);
+  }
+  await choose(page, 'Qwen3');
+  await expect(page).toHaveURL(/\?model=qwen3$/);
+  await choose(page, 'Qwen3.8');
+  await expect(page).toHaveURL(/\?model=qwen38$/);
 });

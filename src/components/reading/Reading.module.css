@@ -54,6 +54,32 @@
 .article li {
   margin-bottom: 9px;
 }
+.article table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.article th,
+.article td {
+  min-width: 140px;
+  padding: 12px 14px;
+  border: 1px solid #dce6e2;
+  text-align: left;
+  vertical-align: top;
+}
+.article th {
+  background: #eef5f0;
+  color: #294f3d;
+  font-weight: 650;
+}
+.article tr:nth-child(even) td {
+  background: #f8faf8;
+}
 .article pre {
   overflow: auto;
   max-width: 100%;

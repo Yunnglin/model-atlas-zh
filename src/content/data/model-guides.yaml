@@ -3,3 +3,8 @@
   figures:
     - figure: whisper-official-architecture
       heading: 结构与数据流
+- id: sam-guide
+  model: sam
+  figures:
+    - figure: sam-official-architecture
+      heading: 结构与数据流

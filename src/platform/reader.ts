@@ -37,6 +37,10 @@ export async function loadReader(url: string, signal: AbortSignal): Promise<stri
     heading.replaceWith(lower);
   });
   article.querySelectorAll('script').forEach((script) => script.remove());
+  article.querySelectorAll('table').forEach((table) => {
+    table.tabIndex = 0;
+    table.setAttribute('aria-label', '知识对照表，可横向滚动');
+  });
   article.querySelectorAll('a[href]').forEach((anchor) => {
     const href = anchor.getAttribute('href') ?? '';
     if (/^https?:\/\//.test(href)) {
