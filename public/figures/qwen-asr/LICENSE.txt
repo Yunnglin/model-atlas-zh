@@ -1,0 +1,7 @@
+Qwen Team — official technical-report figures
+Source: https://arxiv.org/html/2601.21337v1
+The corresponding report declares Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Images and SVG are reproduced unchanged with attribution. See docs/assets.md for exact source, dimensions and SHA-256.
+Retrieved: 2026-10-27

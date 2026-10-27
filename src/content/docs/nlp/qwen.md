@@ -68,6 +68,15 @@ Qwen 已经是一组模型，不是一个不断变大的聊天机器人。学习
 
 参数量、量化格式、Base／Instruct 在对应页归并。**没有独立发布的分支不能按数字补齐**：不能从 Qwen3.8 推出存在名为 Qwen3.8-ASR 的开源模型。
 
+### 想读深，可以跟着一个例子读完
+
+- [Qwen3：一道算术题](/nlp/qwen3/)——因果生成、Dense／MoE、四段后训练、思考预算。
+- [Qwen2.5-VL：一张发票](/omni/qwen-vl/)——图片怎样变成 600 个视觉 token，训练怎样学字段，评测怎样区分认字与理解。
+- [Qwen3-ASR：一句带噪声的话](/audio/qwen-asr/)——声音编码、专门识别、强制对齐、流式与错例。
+- [Qwen3-TTS：读对一笔金额](/audio/qwen-tts/)——多码本、流式发声、声音条件与四类质量。
+- [Qwen2.5-Omni](/omni/qwen-omni/)与 [Qwen3-Omni](/omni/qwen3-omni/)——沿同一次看视频回答，比较理解与发声的代际变化。
+- [Coder：修复一个计数错误](/nlp/qwen-coder/)——填空补全、工具轨迹、训练反馈与测试覆盖。
+
 ## 数据与训练
 
 早期主线先通过[下一 token 预测](/foundations/next-token/)学习文本，再通过指令与偏好训练适应对话。到 Qwen3，要理解长推理训练、[可验证奖励](/training/rlvr/)与[蒸馏](/training/distillation/)；到 3.5 以后，还要看视觉与文本怎样共同训练。每代公开范围不同，不用通用流程图冒充完整配方。

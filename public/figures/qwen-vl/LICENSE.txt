@@ -1,0 +1,4 @@
+Original teaching diagram by model-atlas-zh contributors.
+Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Based on cited technical facts, not a copy of an official figure.
+See docs/assets.md for scope and source.

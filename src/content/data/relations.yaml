@@ -1030,3 +1030,47 @@
   explanation: Qwen-Omni 是全模态助手案例的候选模型，案例仅提供复现计划。
   sources:
     - qwen3-omni-code
+- id: qwen3-omni-compared-with-qwen-omni
+  from: qwen3-omni
+  to: qwen-omni
+  kind: compared-with
+  explanation: 两代均使用 Thinker—Talker，但 Qwen3-Omni 改用 AuT、MoE 与多码本流式波形生成，不能沿用 2.5 的结构图。
+  sources:
+    - qwen3-omni-paper
+    - qwen25-omni-paper
+- id: qwen3-omni-uses-gspo
+  from: qwen3-omni
+  to: gspo
+  kind: uses
+  explanation: Qwen3-Omni 报告在 Thinker 后训练中介绍 GSPO，不能据此把全部语音模块都描述为同一种训练目标。
+  sources:
+    - qwen3-omni-paper
+- id: qwen-asr-uses-gspo
+  from: qwen-asr
+  to: gspo
+  kind: uses
+  explanation: Qwen3-ASR 在 ASR 后训练的强化学习阶段使用 GSPO。
+  sources:
+    - qwen-asr-paper
+- id: qwen-tts-uses-gspo
+  from: qwen-tts
+  to: gspo
+  kind: uses
+  explanation: Qwen3-TTS 报告包含使用规则奖励的 GSPO 后训练。
+  sources:
+    - qwen-tts-paper
+- id: gspo-compared-with-grpo
+  from: gspo
+  to: grpo
+  kind: compared-with
+  explanation: GSPO 使用长度归一化的序列级重要性比率与裁剪；与 GRPO 的原始更新形式区分。
+  sources:
+    - gspo-paper
+- id: qwen3-omni-compared-with-qwen-asr
+  from: qwen3-omni
+  to: qwen-asr
+  kind: compared-with
+  explanation: ASR 利用 AuT 和 Omni 预训练基础，但最终是专门识别模型，不等于完整音视频语音助手。
+  sources:
+    - qwen-asr-paper
+    - qwen3-omni-paper

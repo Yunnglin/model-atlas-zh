@@ -597,3 +597,23 @@
   url: https://huggingface.co/Qwen/CodeQwen1.5-7B-Chat
   type: official-docs
   checked: 2026-10-26
+- id: qwen25-vl-processing
+  title: Transformers 官方 Qwen2.5-VL 输入处理实现
+  url: https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen2_5_vl/processing_qwen2_5_vl.py
+  type: official-code
+  checked: 2026-10-27
+- id: gspo-paper
+  title: Group Sequence Policy Optimization
+  url: https://arxiv.org/abs/2507.18071v2
+  type: paper
+  checked: 2026-10-27
+- id: qwen3-omni-paper
+  title: Qwen3-Omni Technical Report（v1）
+  url: https://arxiv.org/abs/2509.17765v1
+  type: paper
+  checked: 2026-10-27
+- id: qwen25-omni-paper
+  title: Qwen2.5-Omni Technical Report（v1）
+  url: https://arxiv.org/abs/2503.20215v1
+  type: paper
+  checked: 2026-10-27

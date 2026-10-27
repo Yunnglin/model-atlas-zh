@@ -32,3 +32,138 @@
     height: 514
     license: Apache-2.0
     attribution: Segment Anything 项目贡献者；保留官方原图，未改绘。
+- id: qwen25-vl-teaching
+  title: Qwen2.5-VL：一张发票怎样变成答案
+  model: qwen-vl
+  version: Qwen2.5-VL；仅静态图片教学路径
+  basis: teaching
+  source: https://arxiv.org/abs/2502.13923v1
+  checked: 2026-10-27
+  caption: 本站原创教学简图；以处理后 840×560 图片计算 patch 与合并后的数量，省略逐层注意力、位置编码及视频路径。
+  alt: 发票图片切成 2400 个 patch，经视觉编码和二乘二合并得到 600 个视觉 token，再由语言模型生成含税金额 114.48。
+  asset:
+    src: /figures/qwen-vl/teaching-flow.svg
+    width: 1200
+    height: 540
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-teaching
+  title: Qwen3：从已知前缀预测下一个 token
+  model: qwen3
+  version: 2025 年初版 Qwen3；Dense 与 MoE 为不同型号选择
+  basis: teaching
+  source: https://arxiv.org/abs/2505.09388v1
+  checked: 2026-10-27
+  caption: 本站原创教学简图；Dense 与 MoE 是两种型号选择，不是同一个模型同时走两条 FFN 路线。省略残差、归一化细节和层数。
+  alt: 文字前缀进入因果 Transformer，经注意力及 Dense 或 MoE 前馈模块，得到下一 token 概率；新 token 追加到前缀继续生成。
+  asset:
+    src: /figures/qwen3/teaching-flow.svg
+    width: 1200
+    height: 450
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-asr-official
+  title: Qwen3-ASR：AuT 预训练与识别结构
+  model: qwen-asr
+  version: Qwen3-ASR 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2601.21337v1#S2.F2
+  checked: 2026-10-27
+  caption: 官方 Figure 2，原图未改绘。左侧为 AuT 编码器—解码器预训练，右侧为 ASR 识别模型；正文补充图中未单独绘出的投影层。
+  alt: 左侧 AuT 从声学特征学习编码与转写，右侧预训练 AuT 编码器和文本 token 一起接入 Qwen3 语言模型输出识别文字。
+  asset:
+    src: /figures/qwen-asr/architecture.svg
+    width: 2205
+    height: 806
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen-asr-alignment-official
+  title: ForcedAligner：给已知文字定位时间
+  model: qwen-asr
+  version: Qwen3-ForcedAligner 技术报告 v1，Figure 3
+  basis: official
+  source: https://arxiv.org/html/2601.21337v1#S3.F3
+  checked: 2026-10-27
+  caption: 官方 Figure 3，原图未改绘。给定音频和文字，在 time 槽位预测离散时间位置；时间单位不代表实测误差。
+  alt: AuT 编码的音频与包含 time 槽位的已知文字进入模型，时间戳预测层输出对应时间位置。
+  asset:
+    src: /figures/qwen-asr/alignment.png
+    width: 2738
+    height: 1874
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen-tts-official
+  title: Qwen3-TTS：双轨语音生成
+  model: qwen-tts
+  version: Qwen3-TTS 技术报告 v1，Figure 3；12Hz 路线
+  basis: official
+  source: https://arxiv.org/html/2601.15621v1#S3.F3
+  checked: 2026-10-27
+  caption: 官方 Figure 3，原图未改绘。主骨干预测主码本，MTP 补其他码本；虚线表示可选条件，各检查点接口不同。
+  alt: 文本和可选声音条件进入 Qwen3 语言模型，主码本与 MTP 预测的残差码本组合后交给流式波形解码器。
+  asset:
+    src: /figures/qwen-tts/architecture.png
+    width: 4546
+    height: 3171
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen-tts-tokenizers-official
+  title: 语音 tokenizer：25Hz 与 12Hz 两条路线
+  model: qwen-tts
+  version: Qwen3-TTS 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2601.15621v1#S2.F2
+  checked: 2026-10-27
+  caption: 官方 Figure 2，原图未改绘。25Hz 单码本与 12Hz 多码本是不同研究路线；公开 12Hz 型号的实际码帧频率为 12.5Hz。
+  alt: 左侧为 25Hz 路线的 Qwen2-Audio 编码、单码本与 Mel 重建；右侧为 12Hz 路线的语义教师、语义与残差码本、因果编码解码。
+  asset:
+    src: /figures/qwen-tts/tokenizers.png
+    width: 7737
+    height: 3899
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen25-omni-official
+  title: Qwen2.5-Omni：Thinker 与 Talker
+  model: qwen-omni
+  version: Qwen2.5-Omni 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2503.20215v1#S2.F2
+  checked: 2026-10-27
+  caption: 官方 Figure 2，原图未改绘。理解、文字回答、语音码与分块波形重建分工不同，不适用于直接解释 Qwen3-Omni。
+  alt: 图像、声音和文字编码后进入 Thinker；Thinker 输出文字并向 Talker 提供条件，Talker 生成语音码，由分块 DiT 还原波形。
+  asset:
+    src: /figures/qwen25-omni/architecture.png
+    width: 2742
+    height: 2499
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen3-omni-official
+  title: Qwen3-Omni：理解与流式发声
+  model: qwen3-omni
+  version: Qwen3-Omni 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2509.17765v1#S2.F2
+  checked: 2026-10-27
+  caption: 官方 Figure 2，原图未改绘。MoE 是专家结构，0 到 15 是语音码本；两种编号含义不同。文字表示的解耦按正文 2.1 节解释。
+  alt: AuT、视觉与文字接入 MoE Thinker；MoE Talker 和 MTP 逐帧生成多码本，流式 Codec Decoder 输出波形。
+  asset:
+    src: /figures/qwen3-omni/architecture.png
+    width: 5408
+    height: 5715
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen3-omni-aut-official
+  title: AuT：音频表示怎样学习
+  model: qwen3-omni
+  version: Qwen3-Omni 技术报告 v1，Figure 3
+  basis: official
+  source: https://arxiv.org/html/2509.17765v1#S2.F3
+  checked: 2026-10-27
+  caption: 官方 Figure 3，原图未改绘。区分学习音频编码器时的训练系统与接入 Omni 后的编码器，不把训练解码器当作所有推理都保留的模块。
+  alt: AuT 使用音频编码与解码任务学习表示，音频编码器随后连接到多模态语言模型。
+  asset:
+    src: /figures/qwen3-omni/aut.png
+    width: 4001
+    height: 3689
+    license: CC BY 4.0
+    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。

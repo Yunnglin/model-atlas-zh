@@ -62,3 +62,23 @@ test('family comparison tables scroll locally on phones without widening the pag
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
 });
+
+test('mobile Qwen official diagrams and dense chapter tables stay inside the reading viewport', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('./?model=qwen-tts');
+  const model = page.getByTestId('model-learning');
+  await model.getByRole('link', { name: '先把声音变成编号', exact: true }).click();
+  const figure = model.getByTestId('architecture-figure').nth(1);
+  await figure.getByRole('button', { name: /^放大查看原图/ }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  expect((await dialog.boundingBox())!.width).toBeLessThanOrEqual(390);
+  await dialog.getByRole('button', { name: '放大架构图', exact: true }).click();
+  await expect(dialog.locator('img')).toHaveAttribute('style', /150%/);
+  await dialog.getByRole('button', { name: '关闭架构图' }).click();
+  await model.getByRole('link', { name: '评测怎么看', exact: true }).click();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+});

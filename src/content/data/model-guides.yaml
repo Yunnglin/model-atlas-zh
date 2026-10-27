@@ -8,3 +8,39 @@
   figures:
     - figure: sam-official-architecture
       heading: 结构与数据流
+- id: qwen-vl-guide
+  model: qwen-vl
+  figures:
+    - figure: qwen25-vl-teaching
+      heading: 结构与数据流
+- id: qwen3-guide
+  model: qwen3
+  figures:
+    - figure: qwen3-teaching
+      heading: 结构与数据流
+- id: qwen-asr-guide
+  model: qwen-asr
+  figures:
+    - figure: qwen-asr-official
+      heading: 结构与数据流
+    - figure: qwen-asr-alignment-official
+      heading: 时间戳为什么是另一道题
+- id: qwen-tts-guide
+  model: qwen-tts
+  figures:
+    - figure: qwen-tts-official
+      heading: 结构与数据流
+    - figure: qwen-tts-tokenizers-official
+      heading: 先把声音变成编号
+- id: qwen-omni-guide
+  model: qwen-omni
+  figures:
+    - figure: qwen25-omni-official
+      heading: 结构与数据流
+- id: qwen3-omni-guide
+  model: qwen3-omni
+  figures:
+    - figure: qwen3-omni-official
+      heading: 结构与数据流
+    - figure: qwen3-omni-aut-official
+      heading: 音频编码器 AuT 在学什么

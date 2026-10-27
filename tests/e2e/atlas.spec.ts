@@ -481,3 +481,58 @@ test('family overviews contain generations while detailed versions stay off the 
   await choose(page, 'Qwen3.8');
   await expect(page).toHaveURL(/\?model=qwen38$/);
 });
+
+test('Qwen chapters load sourced architecture previews and their enlarged originals', async ({
+  page,
+}) => {
+  for (const id of ['qwen3', 'qwen-vl', 'qwen-asr', 'qwen-tts', 'qwen-omni', 'qwen3-omni']) {
+    await page.goto(`./?model=${id}`);
+    await expect(model(page).getByRole('heading', { level: 1 })).toBeVisible();
+    const figures = model(page).getByTestId('architecture-figure');
+    const expected = ['qwen-asr', 'qwen-tts', 'qwen3-omni'].includes(id) ? 2 : 1;
+    await expect(figures).toHaveCount(expected);
+    for (const figure of await figures.all()) {
+      await figure.scrollIntoViewIfNeeded();
+      const preview = figure.getByRole('button', { name: /^放大查看原图/ });
+      await expect
+        .poll(() =>
+          preview
+            .locator('img')
+            .evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0),
+        )
+        .toBe(true);
+      await expect(figure.getByRole('link', { name: '原始来源' })).toHaveAttribute(
+        'href',
+        /^https:\/\/arxiv.org\//,
+      );
+      await expect(figure).toContainText('CC BY 4.0');
+      await preview.click();
+      const dialog = page.getByRole('dialog');
+      await expect(dialog).toBeVisible();
+      await expect(dialog.locator('img')).toHaveJSProperty('complete', true);
+      await dialog.getByRole('button', { name: '关闭架构图' }).click();
+    }
+  }
+});
+
+test('Qwen family deep links preserve a continuous model while GSPO opens and closes as a shared concept', async ({
+  page,
+}) => {
+  await page.goto('./?model=qwen');
+  await model(page).getByRole('link', { name: 'Qwen3-ASR：一句带噪声的话', exact: true }).click();
+  await expect(page).toHaveURL(/\?model=qwen-asr$/);
+  await model(page).getByRole('link', { name: '数据与训练', exact: true }).click();
+  await model(page).getByRole('link', { name: 'GSPO', exact: true }).click();
+  const position = await model(page).evaluate((element) => element.scrollTop);
+  await expect(
+    reader(page).getByRole('heading', { name: 'GSPO · 按序列优化', exact: true }),
+  ).toBeVisible();
+  await reader(page).getByRole('button', { name: '关闭阅读区' }).click();
+  await expect
+    .poll(() => model(page).evaluate((element) => element.scrollTop))
+    .toBeCloseTo(position, 0);
+  await page.goto('./?model=qwen-vl');
+  await model(page).getByText('想深入：视觉长度怎样估算').click();
+  await expect(model(page).locator('.katex').first()).toBeVisible();
+  await expect(model(page).getByTestId('architecture-figure')).toContainText('教学简化图');
+});
