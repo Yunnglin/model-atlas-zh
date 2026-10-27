@@ -15,7 +15,7 @@
 | [Coder](../src/content/docs/nlp/qwen-coder.md)        | 修复计数少一的函数      | FIM、代码补全与任务执行、工具轨迹、训练反馈、隐藏测试与覆盖缺口                            |
 | [GSPO](../src/content/docs/training/gspo.md)          | 同题三个候选            | 序列级重要性比率、裁剪、与 GRPO／RLVR 的区别、奖励可靠性                                   |
 
-家族总览保留代际与分支关系，并提供上述深读入口。Next、3.5—3.8、Qwen3-VL、Image 和专用分支仍是先前的较短解释，没有把本批进度描述成所有版本都已达到同样深度。
+家族总览保留代际与分支关系，并提供上述深读入口。上一批到此时，Next、3.5—3.8、Qwen3-VL、Image 和专用分支仍是较短解释；本轮已继续补充这些正文，并将检查范围扩展至全部已收录模型，详见[逐页通读记录](reviews/model-depth-review.md)。
 
 ## 一手依据与复用图形
 

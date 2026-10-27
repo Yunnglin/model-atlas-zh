@@ -617,3 +617,23 @@
   url: https://arxiv.org/abs/2503.20215v1
   type: paper
   checked: 2026-10-27
+- id: jev-primer
+  title: TypeSafe 决策模型与 RLCD 公开说明
+  url: https://docs.typesafe.ai/introduction/machine-learning-primer
+  type: official-docs
+  checked: 2026-10-27
+- id: gated-deltanet-paper
+  title: 'Gated Delta Networks: Improving Mamba2 with Delta Rule'
+  url: https://arxiv.org/abs/2412.06464
+  type: paper
+  checked: 2026-10-27
+- id: attnres-paper
+  title: Attention Residuals
+  url: https://arxiv.org/abs/2603.15031
+  type: paper
+  checked: 2026-10-27
+- id: mhc-paper
+  title: 'mHC: Manifold-Constrained Hyper-Connections'
+  url: https://arxiv.org/abs/2512.24880v2
+  type: paper
+  checked: 2026-10-27
