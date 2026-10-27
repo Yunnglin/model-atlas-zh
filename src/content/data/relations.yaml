@@ -589,7 +589,8 @@
   from: gpt4o
   to: whisper
   kind: compared-with
-  explanation: GPT-4o 的公开介绍比较了端到端多模态路线与含 Whisper 的语音转写串联方案；此处不声明两者权重继承。
+  explanation: GPT-4o 的公开介绍比较端到端多模态与独立语音识别、语言模型、TTS 串联的路线；Whisper
+    在此作为独立识别模型的教学对照，不据此断言产品实际使用某个 Whisper 权重版本。
   sources:
     - gpt4o-release
     - whisper-paper
@@ -744,7 +745,7 @@
   from: training-pipeline
   to: next-token
   kind: prerequisite
-  explanation: 阅读前置：理解生成式学习目标后，再区分示范与反馈的来源。
+  explanation: 阅读前置：先理解自回归预测这一条路线，再与掩码、对比、扩散等目标及后训练反馈区分。
   sources:
     - instruct-paper
 - id: next-token-prerequisite-tokenization

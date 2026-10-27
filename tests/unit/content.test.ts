@@ -38,6 +38,20 @@ describe('learner-facing content integrity', () => {
     expect(() => validate(tree('/figures/sam/model_diagram.png'))).not.toThrow();
     expect(() => validate(tree('/figures/missing.png'))).toThrow('Missing local content target');
   });
+  it('keeps visible references aligned with registered source URLs and pinned paper versions', () => {
+    const data = readKnowledgeFixture();
+    for (const node of data.nodes) {
+      const raw = readFileSync(`src/content/docs${node.href.replace(/\/$/, '.md')}`, 'utf8');
+      const references = raw.split('## 参考资料')[1] ?? '';
+      const urls = new Set(
+        [...references.matchAll(/\]\((https?:[^)]+)\)/g)].map((match) => match[1]),
+      );
+      for (const id of node.sources) {
+        const source = data.sources.find((item) => item.id === id)!;
+        expect(urls.has(source.url), `${node.id}: missing canonical reference ${id}`).toBe(true);
+      }
+    }
+  });
   it('keeps selected models as complete, sourced continuous explanations and cases as six-stage plans', () => {
     const data = readKnowledgeFixture();
     for (const node of data.nodes) {

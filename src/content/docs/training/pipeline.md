@@ -12,6 +12,9 @@ atlas:
     - instruct-paper
     - dpo-paper
     - r1-paper
+    - bert-paper
+    - clip-paper
+    - flow-paper
   aliases:
     - pretraining
     - post-training
@@ -32,14 +35,16 @@ atlas:
 
 ## 每一阶段在学什么
 
-| 环节          | 主要材料               | 学习信号                    | 需要检查什么                   |
-| ------------- | ---------------------- | --------------------------- | ------------------------------ |
-| 生成式预训练  | 广泛文本或相应模态序列 | 常见为下一 token 预测       | 覆盖、去重、泄漏、能力迁移     |
-| SFT           | 指令与示范答案         | 预测示范输出，按掩码计分    | 模板、答案质量、任务完成       |
-| 偏好学习      | 同题候选与偏好         | 奖励模型＋RL，或 DPO 等目标 | 评审质量、长度偏差、泛化       |
-| 可验证奖励 RL | 可采样题目与验证器     | 答案或测试等可检查反馈      | 验证器漏洞、采样预算、隐藏测试 |
+| 环节          | 主要材料           | 学习信号                    | 需要检查什么                   |
+| ------------- | ------------------ | --------------------------- | ------------------------------ |
+| 自回归预训练  | 文本或离散模态序列 | 下一 token 预测             | 覆盖、去重、泄漏、能力迁移     |
+| SFT           | 指令与示范答案     | 预测示范输出，按掩码计分    | 模板、答案质量、任务完成       |
+| 偏好学习      | 同题候选与偏好     | 奖励模型＋RL，或 DPO 等目标 | 评审质量、长度偏差、泛化       |
+| 可验证奖励 RL | 可采样题目与验证器 | 答案或测试等可检查反馈      | 验证器漏洞、采样预算、隐藏测试 |
 
 这不是所有模型必须依次完成的固定流水线。具体模型可以采用其中部分步骤，或组合其他目标。
+
+下一 token 预测只是自回归路线的代表目标。掩码预测见 [BERT](/nlp/masked-modeling/)，图文表示见[对比学习](/training/contrastive-learning/)，图像和连续语音生成还可用[扩散／流匹配](/training/diffusion-flow/)。生成模型不是都在做下一 token 预测。
 
 ## 跟着例子走
 
@@ -57,9 +62,15 @@ SFT 仍常用[下一 token 预测](/foundations/next-token/)，变化在训练�
 
 ## 参考资料
 
+- [Flow Matching for Generative Modeling](https://arxiv.org/abs/2210.02747)
+
+- [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)
+
+- [BERT](https://arxiv.org/abs/1810.04805)
+
 - [OpenAI GPT-2 官方实现](https://github.com/openai/gpt-2)
 - [Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155)
 - [Direct Preference Optimization](https://arxiv.org/abs/2305.18290)
-- [DeepSeek-R1](https://arxiv.org/abs/2501.12948)
+- [DeepSeek-R1](https://arxiv.org/abs/2501.12948v1)
 
 资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。

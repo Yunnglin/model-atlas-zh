@@ -46,6 +46,6 @@ atlas:
 
 ## 参考资料
 
-- [DeepSeek-R1](https://arxiv.org/abs/2501.12948)
+- [DeepSeek-R1](https://arxiv.org/abs/2501.12948v1)
 
 资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
