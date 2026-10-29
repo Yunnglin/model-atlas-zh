@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 import remarkBaseLinks from './src/build/remark-base-links';
 
 export default defineConfig({
-  site: 'https://Yunnglin.github.io',
+  site: process.env.ATLAS_SITE ?? 'https://Yunnglin.github.io',
   base: process.env.ATLAS_BASE ?? '/',
   trailingSlash: 'always',
   devToolbar: { enabled: false },

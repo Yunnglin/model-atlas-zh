@@ -1,0 +1,91 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 38px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+.filters label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.modalityField {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.modalityFilter {
+  position: relative;
+  z-index: 5;
+}
+.modalityFilter summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 7px 9px;
+  list-style: none;
+}
+.modalityFilter summary::-webkit-details-marker {
+  display: none;
+}
+.modalityPanel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 155px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 4px 16px #183f3520;
+}
+.modalityPanel fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.modalityPanel legend {
+  padding: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.modalityPanel label {
+  margin-top: 8px;
+  cursor: pointer;
+}
+.filters select,
+.filters button {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 7px 9px;
+  font: inherit;
+}
+.filters button {
+  cursor: pointer;
+}
+.filterCount {
+  margin-left: auto;
+}
+
+@media (max-width: 760px) {
+  .filters {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  .filterCount {
+    margin-left: 0;
+  }
+}

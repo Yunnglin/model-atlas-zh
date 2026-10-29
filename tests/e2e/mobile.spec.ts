@@ -150,3 +150,21 @@ test('standalone model figures appear in their chapter and fit a phone', async (
     );
   }
 });
+
+test('mobile modality filter stays within the screen and accepts multiple choices', async ({
+  page,
+}) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: '模态：全部模态' }).click();
+  const options = page.getByRole('group', { name: '同时涉及所选模态' });
+  await expect(options).toBeVisible();
+  await options.getByLabel('文字', { exact: true }).check();
+  await options.getByLabel('图像', { exact: true }).check();
+  await expect(page.getByRole('button', { name: '模态：文字＋图像' })).toBeVisible();
+  const bounds = await options.boundingBox();
+  expect(bounds).not.toBeNull();
+  expect(bounds!.x).toBeGreaterThanOrEqual(0);
+  expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(page.viewportSize()!.width);
+  await page.getByRole('button', { name: '清除筛选' }).click();
+  await expect(page.getByRole('button', { name: '模态：全部模态' })).toBeVisible();
+});

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { MagnifyingGlassIcon } from '@phosphor-icons/react';
 import type { KnowledgeBase } from '../../../core/schemas/knowledge';
 import { searchNodes } from '../../../core/queries/knowledge';
-import styles from '../Atlas.module.css';
+import styles from './AtlasSearch.module.css';
 
 export function AtlasSearch({
   data,

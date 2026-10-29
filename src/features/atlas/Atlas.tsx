@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import type { KnowledgeBase, TimelineModel } from '../../core/schemas/knowledge';
+import type { KnowledgeBase } from '../../core/schemas/knowledge';
 import {
   emptyTimelineFilters,
   filterTimeline,
@@ -7,17 +7,8 @@ import {
   type TimelineFilters,
 } from '../../core/projections/timeline';
 import { MapCanvas } from './components/MapCanvas';
+import { TimelineFilterBar, architectures, modalities } from './components/TimelineFilterBar';
 import styles from './Atlas.module.css';
-
-const architectures: Record<TimelineModel['architecture'], string> = {
-  encoder: 'Encoder',
-  decoder: 'Decoder',
-  'encoder-decoder': 'Encoder + Decoder',
-  mixed: '混合结构',
-  other: '其他结构',
-  unknown: '未公开或待确认',
-};
-const modalities = { text: '文字', image: '图像', audio: '音频', video: '视频' } as const;
 
 export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: string) => void }) {
   const [filters, setFilters] = useState<TimelineFilters>(emptyTimelineFilters);
@@ -36,83 +27,16 @@ export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: 
   return (
     <div className={styles.atlas}>
       <h1 className={styles.visuallyHidden}>模型发展时间线</h1>
-      <div className={styles.filters}>
-        <label>
-          结构{' '}
-          <select
-            aria-label="结构"
-            value={filters.architecture}
-            onChange={(event) =>
-              change('architecture', event.target.value as TimelineFilters['architecture'])
-            }
-          >
-            <option value="all">全部结构</option>
-            {Object.entries(architectures).map(([key, label]) => (
-              <option key={key} value={key}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <details className={styles.modalityFilter}>
-          <summary>
-            模态：
-            {filters.modalities.length
-              ? filters.modalities.map((item) => modalities[item]).join('＋')
-              : '全部'}
-          </summary>
-          <fieldset>
-            <legend>同时涉及所选模态</legend>
-            {Object.entries(modalities).map(([key, label]) => {
-              const value = key as TimelineModel['modalities'][number];
-              return (
-                <label key={key}>
-                  <input
-                    type="checkbox"
-                    checked={filters.modalities.includes(value)}
-                    onChange={(event) =>
-                      change(
-                        'modalities',
-                        event.target.checked
-                          ? [...filters.modalities, value]
-                          : filters.modalities.filter((item) => item !== value),
-                      )
-                    }
-                  />
-                  {label}
-                </label>
-              );
-            })}
-          </fieldset>
-        </details>
-        <label>
-          系列{' '}
-          <select
-            aria-label="系列"
-            value={filters.family}
-            onChange={(event) => change('family', event.target.value)}
-          >
-            <option value="all">全部系列</option>
-            {families.map((family) => (
-              <option key={family}>{family}</option>
-            ))}
-          </select>
-        </label>
-        <button
-          onClick={() => {
-            setFilters(emptyTimelineFilters);
-            setSelected(undefined);
-          }}
-        >
-          清除筛选
-        </button>
-        <span
-          aria-live="polite"
-          title="竖线只表示厂商内的时间先后，并不表示模型继承关系；月份未知时同年内顺序待核对。"
-        >
-          {models.length} 个模型或版本 · 竖线表示先后
-        </span>
-      </div>
+      <TimelineFilterBar
+        filters={filters}
+        families={families}
+        count={models.length}
+        onChange={change}
+        onClear={() => {
+          setFilters(emptyTimelineFilters);
+          setSelected(undefined);
+        }}
+      />
       <div className={styles.stage}>
         {models.length ? (
           <MapCanvas models={models} edges={edges} selected={selected} onSelect={setSelected} />

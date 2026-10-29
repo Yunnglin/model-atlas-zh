@@ -399,7 +399,7 @@ test('timeline combines family, architecture and modalities and links a version 
   await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
   await page.getByRole('combobox', { name: '系列' }).selectOption('Qwen');
   await page.getByRole('combobox', { name: '结构' }).selectOption('decoder');
-  await page.getByText('模态：全部').click();
+  await page.getByRole('button', { name: '模态：全部模态' }).click();
   await page.getByLabel('文字', { exact: true }).check();
   await expect(modelButton(page, 'Qwen2.5')).toBeVisible();
   await expect(modelButton(page, 'BERT')).toHaveCount(0);
@@ -408,6 +408,24 @@ test('timeline combines family, architecture and modalities and links a version 
   await page.getByRole('button', { name: '阅读模型讲解 →' }).click();
   await expect(model(page).getByRole('heading', { name: 'Qwen2.5', level: 1 })).toBeVisible();
   await expect(model(page).getByTestId('architecture-figure')).toHaveCount(1);
+});
+
+test('modality filter supports multiple choices and keyboard dismissal', async ({ page }) => {
+  await page.goto('./');
+  await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
+  await page.getByRole('button', { name: '模态：全部模态' }).click();
+  await page.getByLabel('文字', { exact: true }).check();
+  await page.getByLabel('图像', { exact: true }).check();
+  const filter = page.getByRole('button', { name: '模态：文字＋图像' });
+  await expect(filter).toHaveAttribute('aria-expanded', 'true');
+  await expect(modelButton(page, 'Qwen2.5-VL')).toBeVisible();
+  await expect(modelButton(page, 'BERT')).toHaveCount(0);
+  await page.keyboard.press('Escape');
+  await expect(filter).toHaveAttribute('aria-expanded', 'false');
+  await expect(filter).toBeFocused();
+  await page.getByRole('button', { name: '清除筛选' }).click();
+  await expect(page.getByRole('button', { name: '模态：全部模态' })).toBeVisible();
+  await expect(modelButton(page, 'BERT')).toBeVisible();
 });
 
 test('each early Qwen Audio version opens its own illustrated article', async ({ page }) => {
