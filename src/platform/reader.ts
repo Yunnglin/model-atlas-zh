@@ -11,12 +11,22 @@ const articles = new Map<string, string>();
 export async function loadReader(url: string, signal: AbortSignal): Promise<string> {
   const cached = articles.get(url);
   if (cached !== undefined) return cached;
-  // A stalled connection must not leave the reader in its loading state indefinitely.
-  const response = await fetch(url, {
-    signal: AbortSignal.any([signal, AbortSignal.timeout(8_000)]),
-  });
-  if (!response.ok) throw new Error('Reader unavailable');
-  const document = new DOMParser().parseFromString(await response.text(), 'text/html');
+  // A slow connection gets time to finish; navigation still cancels the request.
+  const controller = new AbortController();
+  const cancel = () => controller.abort();
+  if (signal.aborted) cancel();
+  else signal.addEventListener('abort', cancel, { once: true });
+  const timer = setTimeout(cancel, 30_000);
+  let content: string;
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) throw new Error('Reader unavailable');
+    content = await response.text();
+  } finally {
+    clearTimeout(timer);
+    signal.removeEventListener('abort', cancel);
+  }
+  const document = new DOMParser().parseFromString(content, 'text/html');
   const article = document.querySelector('[data-atlas-reader]');
   if (!article) throw new Error('Reader fragment missing');
   // The question is already shown in the reader's title block.

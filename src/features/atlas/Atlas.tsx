@@ -16,6 +16,7 @@ export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: 
   const models = useMemo(() => filterTimeline(data.timeline, filters), [data.timeline, filters]);
   const edges = useMemo(() => timelineRelations(data, models), [data, models]);
   const current = models.find((model) => model.id === selected);
+  const currentArticle = data.nodes.find((node) => node.id === current?.article);
   const related = edges.filter((edge) => edge.from === selected || edge.to === selected);
   const families = [
     ...new Set(data.timeline.flatMap((model) => (model.family ? [model.family] : []))),
@@ -45,6 +46,7 @@ export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: 
         )}
         {current && (
           <aside className={styles.detail} aria-label="选中模型">
+            {currentArticle && <link rel="prefetch" href={currentArticle.readerHref} />}
             <button
               className={styles.close}
               aria-label="关闭模型详情"

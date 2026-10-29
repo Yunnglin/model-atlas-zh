@@ -19,7 +19,7 @@ interface Props {
 export function KnowledgeReader({ data, node, previous, onVisit, onBack, onClose }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const body = useRef<HTMLDivElement>(null);
-  const { html, error, retry } = useArticle(node.readerHref);
+  const { html, error, slow, retry } = useArticle(node.readerHref);
 
   useEffect(() => {
     function escape(event: KeyboardEvent) {
@@ -97,7 +97,7 @@ export function KnowledgeReader({ data, node, previous, onVisit, onBack, onClose
           </div>
         ) : (
           <p className={styles.readerMessage} role="status">
-            正在打开正文…
+            {slow ? '网络较慢，正文仍在加载…' : '正在打开正文…'}
           </p>
         )}
       </div>

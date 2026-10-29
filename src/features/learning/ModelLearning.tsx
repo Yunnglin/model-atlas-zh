@@ -19,7 +19,7 @@ export function ModelLearning({
   onBack: () => void;
   onConcept: (id: string) => void;
 }) {
-  const { html, error, retry } = useArticle(model.readerHref);
+  const { html, error, slow, retry } = useArticle(model.readerHref);
   const sections = useMemo(() => (html === undefined ? [] : splitArticleSections(html)), [html]);
   const scroll = useRef<HTMLDivElement>(null);
   const guide = data.guides.find((item) => item.model === model.id);
@@ -68,7 +68,7 @@ export function ModelLearning({
             </div>
           ) : html === undefined ? (
             <div>
-              <p role="status">正在打开模型学习页…</p>
+              <p role="status">{slow ? '网络较慢，正文仍在加载…' : '正在打开模型学习页…'}</p>
               <a href={model.href}>直接打开独立正文</a>
             </div>
           ) : (

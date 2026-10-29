@@ -12,6 +12,16 @@ const choose = async (page: Page, query: string) => {
   await search(page).press('Enter');
 };
 
+test('selecting a model prepares its article before opening it', async ({ page }) => {
+  await page.goto('./');
+  await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
+  const article = page.waitForResponse((response) => response.url().includes('/readers/whisper/'));
+  await modelButton(page, 'Whisper').click();
+  expect((await article).ok()).toBeTruthy();
+  await page.getByRole('button', { name: '阅读模型讲解 →' }).click();
+  await expect(model(page).getByRole('heading', { name: '模型卡', level: 2 })).toBeVisible();
+});
+
 test('orders model vendors and exposes the major DeepSeek versions', async ({ page }) => {
   await page.goto('./');
   await expect(graph(page)).toHaveAttribute('aria-busy', 'false');
@@ -786,19 +796,24 @@ test('failed model and concept loads retry without losing the reading context', 
   await expect(page.getByTestId('reader-body').getByText(/假设按字切分/)).toBeVisible();
 });
 
-test('a stalled model article shows retry and standalone reading options', async ({ page }) => {
+test('a slow model article can finish after eight seconds without newer AbortSignal methods', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(AbortSignal, 'any', { value: undefined });
+    Object.defineProperty(AbortSignal, 'timeout', { value: undefined });
+  });
   await page.route('**/readers/whisper/**', async (route) => {
-    await new Promise((resolve) => setTimeout(resolve, 10_000));
-    await route.abort().catch(() => {});
+    const response = await route.fetch();
+    await new Promise((resolve) => setTimeout(resolve, 9_000));
+    await route.fulfill({ response });
   });
   await page.goto('./?model=whisper');
   await expect(model(page).getByRole('link', { name: '直接打开独立正文' })).toBeVisible();
-  await expect(model(page).getByRole('alert')).toBeVisible({ timeout: 12_000 });
-  await expect(model(page).getByRole('button', { name: '重新加载正文' })).toBeVisible();
-  await expect(model(page).getByRole('link', { name: '打开独立正文' })).toHaveAttribute(
-    'href',
-    /\/audio\/whisper\/$/,
-  );
+  await expect(model(page).getByText('网络较慢，正文仍在加载…')).toBeVisible({ timeout: 10_000 });
+  await expect(model(page).getByRole('heading', { name: '模型卡', level: 2 })).toBeVisible({
+    timeout: 6_000,
+  });
 });
 
 test('model reading and concept navigation work with blocked browser storage', async ({ page }) => {
