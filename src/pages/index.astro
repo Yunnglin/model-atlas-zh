@@ -1,6 +1,13 @@
 ---
 import KnowledgeApp from '../app/KnowledgeApp';
+import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL;
+const docs = await getCollection('docs');
+const modelRoutes = Object.fromEntries(
+  docs
+    .filter(({ data }) => data.atlas.kind === 'model' || data.atlas.id === 'transformer')
+    .map(({ id, data }) => [data.atlas.id, `${base}${id.replace(/\/$/, '')}/`]),
+);
 ---
 
 <!doctype html>
@@ -15,6 +22,14 @@ const base = import.meta.env.BASE_URL;
     <meta name="theme-color" content="#f8fafb" />
     <title>模型知识地图 · 从 Transformer 出发</title>
     <link rel="icon" href="data:," />
+    <script is:inline define:vars={{ modelRoutes }}>
+      const selection = new URLSearchParams(location.search);
+      const requested = selection.get('model');
+      const hasRoute = (id) => Object.prototype.hasOwnProperty.call(modelRoutes, id);
+      const legacy = selection.getAll('node').find(hasRoute);
+      const id = requested ?? legacy;
+      if (id && hasRoute(id)) location.replace(modelRoutes[id]);
+    </script>
   </head>
   <body>
     <KnowledgeApp client:only="react" dataUrl={`${base}data/atlas.json`} base={base} />

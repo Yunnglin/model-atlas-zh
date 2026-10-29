@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { KnowledgeBase } from '../../core/schemas/knowledge';
 import {
   emptyTimelineFilters,
@@ -8,11 +8,13 @@ import {
 } from '../../core/projections/timeline';
 import { MapCanvas } from './components/MapCanvas';
 import { TimelineFilterBar, architectures, modalities } from './components/TimelineFilterBar';
+import { readTimelineFilters, writeTimelineFilters } from '../../platform/timeline-preferences';
 import styles from './Atlas.module.css';
 
 export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: string) => void }) {
-  const [filters, setFilters] = useState<TimelineFilters>(emptyTimelineFilters);
+  const [filters, setFilters] = useState<TimelineFilters>(readTimelineFilters);
   const [selected, setSelected] = useState<string>();
+  useEffect(() => writeTimelineFilters(filters), [filters]);
   const models = useMemo(() => filterTimeline(data.timeline, filters), [data.timeline, filters]);
   const edges = useMemo(() => timelineRelations(data, models), [data, models]);
   const current = models.find((model) => model.id === selected);
@@ -46,7 +48,7 @@ export function Atlas({ data, onSelect }: { data: KnowledgeBase; onSelect: (id: 
         )}
         {current && (
           <aside className={styles.detail} aria-label="选中模型">
-            {currentArticle && <link rel="prefetch" href={currentArticle.readerHref} />}
+            {currentArticle && <link rel="prefetch" href={currentArticle.href} />}
             <button
               className={styles.close}
               aria-label="关闭模型详情"

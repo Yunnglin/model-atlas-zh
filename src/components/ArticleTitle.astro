@@ -2,7 +2,7 @@
 import DefaultPageTitle from '@astrojs/starlight/components/PageTitle.astro';
 const data = Astro.locals.starlightRoute.entry.data;
 const base = import.meta.env.BASE_URL;
-const href = `${base}?node=${encodeURIComponent(data.atlas.id)}`;
+const href = base;
 ---
 
 <a class="atlas-return" href={href} data-atlas-return={data.atlas.id}>
@@ -19,10 +19,34 @@ const href = `${base}?node=${encodeURIComponent(data.atlas.id)}`;
       if (!saved) return;
       const url = new URL(saved, location.origin);
       const expected = new URL(import.meta.env.BASE_URL, location.origin);
-      if (url.origin === location.origin && url.pathname === expected.pathname)
+      if (
+        url.origin === location.origin &&
+        url.pathname === expected.pathname &&
+        !url.searchParams.has('model') &&
+        !url.searchParams.has('node')
+      )
         link.href = url.href;
     } catch {
       // The canonical link remains usable when session storage is unavailable.
     }
+    link.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+        return;
+      try {
+        const previous = new URL(document.referrer);
+        const map = new URL(import.meta.env.BASE_URL, location.origin);
+        if (
+          sessionStorage.getItem('atlas:from-map') === '1' &&
+          previous.origin === map.origin &&
+          previous.pathname === map.pathname
+        ) {
+          sessionStorage.removeItem('atlas:from-map');
+          event.preventDefault();
+          history.back();
+        }
+      } catch {
+        // A direct visit uses the link's ordinary fallback.
+      }
+    });
   });
 </script>

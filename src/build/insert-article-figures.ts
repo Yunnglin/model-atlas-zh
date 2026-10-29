@@ -35,7 +35,13 @@ function figureHtml(figure: ModelFigure, base: string): string {
   const interactive = figure.interactive
     ? ` · <a href="${esc(figure.interactive.url)}" target="_blank" rel="noreferrer">查看交互资源</a>`
     : '';
-  return `<section aria-label="结构图与资料" class="atlas-document-figures"><figure><h3>${esc(figure.title)}</h3>${image}<figcaption><p>${esc(figure.caption)}</p><p>${original}<a href="${esc(figure.source)}" target="_blank" rel="noreferrer">图示依据</a>${credit}${interactive}</p></figcaption></figure></section>`;
+  const basis = {
+    official: '官方原图',
+    teaching: '教学简化图',
+    'configuration-or-trace': '配置或执行追踪生成',
+    'execution-trace': '执行追踪',
+  }[figure.basis];
+  return `<section aria-label="结构图与资料" class="atlas-document-figures"><figure data-testid="architecture-figure"><h3>${esc(figure.title)}</h3><p>${basis}</p>${image}<figcaption><p>${esc(figure.caption)}</p><p>${original}<a href="${esc(figure.source)}" target="_blank" rel="noreferrer">图示依据</a>${credit}${interactive}</p></figcaption></figure></section>`;
 }
 
 function textContent(node: Node): string {

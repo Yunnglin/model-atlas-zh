@@ -83,39 +83,3 @@ export function writeReadingState(id: string, state: ReadingState): void {
     /* Reading works without browser storage. */
   }
 }
-
-export interface ArticleSection {
-  id: string;
-  title: string;
-  html: string;
-}
-/** Uses compiled heading IDs, so the reading page and its TOC share one canonical outline. */
-export function splitArticleSections(html: string): ArticleSection[] {
-  const document = new DOMParser().parseFromString(`<main>${html}</main>`, 'text/html');
-  const root = document.querySelector('main')!;
-  const sections: ArticleSection[] = [];
-  for (const child of [...root.children]) {
-    const heading = child.matches('h3') ? child : child.querySelector(':scope > h3');
-    if (heading)
-      sections.push({ id: heading.id, title: heading.textContent?.trim() ?? '', html: '' });
-    else if (sections.length) {
-      // The model page supplies h2 chapter headings; restore lower headings for that context.
-      const headings = [
-        ...(child.matches('h4,h5,h6') ? [child] : []),
-        ...child.querySelectorAll('h4,h5,h6'),
-      ];
-      for (const item of headings) {
-        const heading = document.createElement(`h${Number(item.tagName[1]) - 1}`);
-        heading.innerHTML = item.innerHTML;
-        heading.id = item.id;
-        item.replaceWith(heading);
-        if (item === child) {
-          sections.at(-1)!.html += heading.outerHTML;
-          break;
-        }
-      }
-      if (!child.matches('h4,h5,h6')) sections.at(-1)!.html += child.outerHTML;
-    }
-  }
-  return sections;
-}

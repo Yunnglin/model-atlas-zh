@@ -1,11 +1,6 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import {
-  loadReader,
-  readReadingState,
-  writeReadingState,
-  splitArticleSections,
-} from '../../src/platform/reader';
+import { loadReader, readReadingState, writeReadingState } from '../../src/platform/reader';
 
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -39,17 +34,6 @@ describe('reader and session adapters', () => {
     await expect(
       loadReader('/readers/fixture-wrong/', new AbortController().signal),
     ).rejects.toThrow('fragment missing');
-  });
-  it('groups a continuous model article by compiled headings without dropping nested content', () => {
-    const sections = splitArticleSections(
-      '<div class="sl-heading-wrapper"><h3 id="structure">结构</h3><a class="sl-anchor-link">链接</a></div><p>解释</p><h4>细节</h4><p>例子</p><h3 id="train">训练</h3><ol><li>样本</li></ol>',
-    );
-    expect(sections.map((item) => ({ id: item.id, title: item.title }))).toEqual([
-      { id: 'structure', title: '结构' },
-      { id: 'train', title: '训练' },
-    ]);
-    expect(sections[0]!.html).toContain('<h3 id="">细节</h3>');
-    expect(sections[1]!.html).toContain('<li>样本</li>');
   });
   it('stores reading position, expanded formulas without conflating them with learning progress', () => {
     writeReadingState('whisper', { top: 420, expanded: [0, 2] });

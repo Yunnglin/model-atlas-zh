@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { loadReader } from '../../platform/reader';
 
-/** Both the full learning page and concept reader use the same cancellable loader/cache. */
+/** The concept reader uses a cancellable loader and in-memory cache. */
 export function useArticle(url: string) {
   const [html, setHtml] = useState<string>();
   const [error, setError] = useState(false);

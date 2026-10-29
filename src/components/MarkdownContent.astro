@@ -2,10 +2,19 @@
 import DefaultMarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
 import { getCollection } from 'astro:content';
 import { insertArticleFigures } from '../build/insert-article-figures';
+import { relationLabels } from '../core/schemas/knowledge';
 
-// The interactive reader uses the same guide, but renders its figures as React components.
+// Guides insert each registered figure into the corresponding static chapter.
 const modelId = Astro.locals.starlightRoute.entry.data.atlas.id;
-const [guides, figures] = await Promise.all([getCollection('guides'), getCollection('figures')]);
+const isModel =
+  Astro.locals.starlightRoute.entry.data.atlas.kind === 'model' || modelId === 'transformer';
+const [guides, figures, relations, docs, sources] = await Promise.all([
+  getCollection('guides'),
+  getCollection('figures'),
+  getCollection('relations'),
+  getCollection('docs'),
+  getCollection('sources'),
+]);
 const guide = guides.find((item) => item.data.model === modelId)?.data;
 const resources = (guide?.figures ?? []).map((item) => ({
   heading: item.heading,
@@ -16,8 +25,47 @@ const html = insertArticleFigures(
   resources,
   import.meta.env.BASE_URL,
 );
+const related = isModel
+  ? relations.filter(({ data }) => data.from === modelId || data.to === modelId)
+  : [];
+const base = import.meta.env.BASE_URL;
 ---
 
 <DefaultMarkdownContent>
   <Fragment set:html={html} />
+  {related.length > 0 && (
+    <section class="atlas-related" aria-label="关联知识">
+      <h2>关联知识</h2>
+      <p>沿着这些联系继续阅读：</p>
+      <ul>
+        {related.map(({ data: relation }) => {
+          const targetId = relation.from === modelId ? relation.to : relation.from;
+          const target = docs.find((item) => item.data.atlas.id === targetId);
+          if (!target) return null;
+          return (
+            <li>
+              {relation.from === modelId && <>当前模型 · {relationLabels[relation.kind]} · </>}
+              <a href={`${base}${target.id.replace(/\/$/, '')}/`}>{target.data.title}</a>
+              {relation.to === modelId && <> · {relationLabels[relation.kind]} · 当前模型</>}：
+              {relation.explanation} (
+              {relation.sources.map((id, index) => {
+                const source = sources.find((item) => item.id === id);
+                return (
+                  source && (
+                    <>
+                      {index > 0 && '、'}
+                      <a href={source.data.url} target="_blank" rel="noreferrer">
+                        {source.data.title}
+                      </a>
+                    </>
+                  )
+                );
+              })}
+              )
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
 </DefaultMarkdownContent>
