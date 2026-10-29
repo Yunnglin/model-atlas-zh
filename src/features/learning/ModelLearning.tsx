@@ -67,7 +67,10 @@ export function ModelLearning({
               <a href={model.href}>打开独立正文</a>
             </div>
           ) : html === undefined ? (
-            <p role="status">正在打开模型学习页…</p>
+            <div>
+              <p role="status">正在打开模型学习页…</p>
+              <a href={model.href}>直接打开独立正文</a>
+            </div>
           ) : (
             sections.map((section) => (
               <section

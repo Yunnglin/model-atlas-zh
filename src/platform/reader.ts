@@ -11,7 +11,10 @@ const articles = new Map<string, string>();
 export async function loadReader(url: string, signal: AbortSignal): Promise<string> {
   const cached = articles.get(url);
   if (cached !== undefined) return cached;
-  const response = await fetch(url, { signal });
+  // A stalled connection must not leave the reader in its loading state indefinitely.
+  const response = await fetch(url, {
+    signal: AbortSignal.any([signal, AbortSignal.timeout(8_000)]),
+  });
   if (!response.ok) throw new Error('Reader unavailable');
   const document = new DOMParser().parseFromString(await response.text(), 'text/html');
   const article = document.querySelector('[data-atlas-reader]');
