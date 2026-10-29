@@ -1,5 +1,14 @@
 # 模型知识地图：从 Transformer 读懂 AI 模型
 
+[![在线阅读](https://img.shields.io/badge/在线阅读-模型知识地图-087e86?logo=githubpages&logoColor=white)](https://yunnglin.github.io/model-atlas-zh/)
+[![验证状态](https://github.com/Yunnglin/model-atlas-zh/actions/workflows/verify.yml/badge.svg)](https://github.com/Yunnglin/model-atlas-zh/actions/workflows/verify.yml)
+[![Pages 发布](https://github.com/Yunnglin/model-atlas-zh/actions/workflows/deploy.yml/badge.svg)](https://github.com/Yunnglin/model-atlas-zh/actions/workflows/deploy.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/Yunnglin/model-atlas-zh?style=flat&logo=github)](https://github.com/Yunnglin/model-atlas-zh/stargazers)
+[![代码许可：MIT](https://img.shields.io/badge/代码-MIT-blue)](LICENSE)
+[![内容许可：CC BY 4.0](https://img.shields.io/badge/内容-CC%20BY%204.0-blue)](LICENSE-CONTENT.md)
+
+**[打开在线知识地图 →](https://yunnglin.github.io/model-atlas-zh/)**
+
 一个中文 AI 模型学习知识库。沿时间线认识 BERT、GPT、Qwen、DeepSeek、Kimi、GLM 等模型，再走进模型页面，用大白话和例子理解它们的结构、训练、评测与应用。
 
 **适合谁：**想系统学习大模型、多模态模型，或准备相关技术面试的读者。项目重点介绍开放权重模型；对于闭源模型，以公开资料为准说明已知能力和边界。
@@ -23,7 +32,7 @@
 
 如果这份地图对你的学习有帮助，欢迎给 [项目点个 Star](https://github.com/Yunnglin/model-atlas-zh)，也欢迎通过 Issue 提出问题或参与改进。
 
-网站目前需要本地运行，在线版尚未启用。下面的步骤可以启动完整知识地图。
+访问[在线知识地图](https://yunnglin.github.io/model-atlas-zh/)即可开始学习；也可以按下面的步骤在本地运行。
 
 ## 本地运行
 
@@ -73,7 +82,7 @@ ATLAS_BASE=/model-atlas-zh/ pnpm test:e2e
 - 网站提供知识与可复现案例说明，不执行训练、评测或收费模型调用。
 - 案例明确区分说明性方案与真实运行记录，当前没有宣称任何实测改进。
 - URL 保存当前模型与概念查阅路径；浏览器会话保存阅读位置和公式展开。首页不提供学习进度或自测。
-- 源码已公开推送 GitHub；网站部署尚未启用。部署流程通过手动工作流启用。
+- 网站通过 GitHub Actions 构建并发布到 GitHub Pages；发布工作流在验证通过后部署。
 
 架构和依赖方向见 [架构说明](docs/architecture.md)，写作规范见 [内容指南](docs/content-guide.md)。欢迎通过 Issue 反馈不清楚的解释，贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
