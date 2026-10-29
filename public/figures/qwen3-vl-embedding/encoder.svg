@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 290" role="img" aria-labelledby="title desc">
+<title id="title">Qwen3-VL-Embedding 如何生成多模态向量</title>
+<desc id="desc">图片或视频经视觉编码、文字经文本处理，与任务指令一同送入 Qwen3-VL 模型；取末尾标记对应的最后隐藏状态作为向量。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#087b7c"/></marker></defs>
+<rect width="1120" height="290" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui, sans-serif" fill="#183b45"><text x="30" y="43" font-size="24" font-weight="700">多模态材料怎样变成一个向量？</text>
+<g fill="#fff" stroke="#bfdcd6"><rect x="30" y="75" width="175" height="58" rx="10"/><rect x="30" y="165" width="175" height="58" rx="10"/><rect x="250" y="75" width="185" height="58" rx="10"/><rect x="250" y="165" width="185" height="58" rx="10"/><rect x="505" y="110" width="205" height="75" rx="10"/><rect x="770" y="110" width="320" height="75" rx="10"/></g>
+<g font-size="18" font-weight="600"><text x="52" y="111">图片／视频</text><text x="52" y="201">文本与指令</text><text x="271" y="111">视觉编码</text><text x="271" y="201">文本处理</text><text x="525" y="142">Qwen3-VL 主干</text><text x="790" y="142">末尾标记的最后隐藏状态</text></g>
+<g font-size="14" fill="#526b72"><text x="525" y="166">因果注意力处理输入</text><text x="790" y="166">得到一个检索向量</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M205 104 H242"/><path d="M205 194 H242"/><path d="M435 104 L497 129"/><path d="M435 194 L497 165"/><path d="M710 148 H762"/></g>
+<text x="30" y="262" font-size="15" fill="#526b72">查询和资料分别经过同一模型编码；具体分辨率与抽帧由预处理配置决定。</text></g></svg>

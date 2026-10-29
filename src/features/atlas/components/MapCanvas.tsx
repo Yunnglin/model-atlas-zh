@@ -1,18 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowsOutIcon, MinusIcon, PlusIcon } from '@phosphor-icons/react';
-import type { KnowledgeBase } from '../../../core/schemas/knowledge';
-import type { ModelGraph } from '../layouts/model-graph';
+import type { Relation, TimelineModel } from '../../../core/schemas/knowledge';
+import {
+  AXIS_WIDTH,
+  COLUMN_STEP,
+  NODE_OFFSET,
+  TRACK_OFFSET,
+  timelineLayout,
+} from '../layouts/timeline-layout';
 import styles from './MapCanvas.module.css';
 
 export function MapCanvas({
-  data,
+  models,
+  edges,
+  selected,
   onSelect,
 }: {
-  data: KnowledgeBase;
+  models: TimelineModel[];
+  edges: { id: string; from: string; to: string; relation: Relation }[];
+  selected?: string;
   onSelect: (id: string) => void;
 }) {
-  const container = useRef<HTMLDivElement>(null),
-    controller = useRef<ModelGraph | undefined>(undefined);
+  const container = useRef<HTMLDivElement>(null);
   const latest = useRef(onSelect);
   latest.current = onSelect;
   const [busy, setBusy] = useState(true),
@@ -20,26 +28,25 @@ export function MapCanvas({
   useEffect(() => {
     const element = container.current!;
     let disposed = false,
-      graph: ModelGraph | undefined;
-    let queue = Promise.resolve();
+      graph: import('../layouts/model-graph').ModelGraph | undefined;
+    let queue = Promise.resolve(),
+      lastWidth = 0;
     setBusy(true);
     setError(false);
-    // A direct model link keeps the map hidden. Initialize only when its canvas has space.
     const observer = new ResizeObserver(([entry]) => {
       if (!entry || disposed) return;
-      const { width, height } = entry.contentRect;
-      if (width <= 0 || height <= 0) return;
+      const width = Math.round(entry.contentRect.width);
+      if (width <= 0 || width === lastWidth) return;
+      lastWidth = width;
       queue = queue
         .catch(() => {})
         .then(async () => {
           if (disposed) return;
-          if (!graph) {
-            const { ModelGraph } = await import('../layouts/model-graph');
-            if (disposed) return;
-            graph = new ModelGraph(element, data);
-            controller.current = graph;
-            await graph.render();
-          } else await graph.resize(Math.round(width), Math.round(height));
+          graph?.destroy();
+          const { ModelGraph } = await import('../layouts/model-graph');
+          if (disposed) return;
+          graph = new ModelGraph(element, models, edges, selected);
+          await graph.render();
           if (!disposed) {
             setBusy(false);
             setError(false);
@@ -55,70 +62,80 @@ export function MapCanvas({
     observer.observe(element);
     function click(event: MouseEvent) {
       const button = (event.target as Element).closest<HTMLButtonElement>('button[data-knowledge]');
-      if (button && element.contains(button)) {
-        event.stopPropagation();
-        latest.current(button.dataset.knowledge!);
-      }
+      if (button && element.contains(button)) latest.current(button.dataset.knowledge!);
     }
-    function pointer(event: PointerEvent) {
-      if ((event.target as Element).closest('button')) event.stopPropagation();
-    }
-    element.addEventListener('click', click, true);
-    element.addEventListener('pointerdown', pointer, true);
+    element.addEventListener('click', click);
     return () => {
       disposed = true;
-      observer?.disconnect();
-      element.removeEventListener('click', click, true);
-      element.removeEventListener('pointerdown', pointer, true);
+      observer.disconnect();
+      element.removeEventListener('click', click);
       graph?.destroy();
-      controller.current = undefined;
     };
-  }, [data]);
+  }, [models, edges, selected]);
+  const layout = timelineLayout(models);
   return (
     <div
       className={styles.canvas}
       data-testid="map-canvas"
       role="region"
-      aria-label="模型关系地图"
+      aria-label="模型时间轴"
       aria-busy={busy}
+      tabIndex={0}
     >
-      <div ref={container} className={styles.graph} />
-      <p className={styles.status}>点击模型阅读 · 拖动看更多 · 可适配全图</p>
-      <div className={styles.controls} aria-label="地图操作">
-        <button
-          disabled={busy || error}
-          aria-label="放大地图"
-          onClick={() => void controller.current?.zoom(1.15)}
-        >
-          <PlusIcon size={18} />
-        </button>
-        <button
-          disabled={busy || error}
-          aria-label="缩小地图"
-          onClick={() => void controller.current?.zoom(1 / 1.15)}
-        >
-          <MinusIcon size={18} />
-        </button>
-        <button
-          disabled={busy || error}
-          className={styles.fit}
-          onClick={() => void controller.current?.fit()}
-        >
-          <ArrowsOutIcon size={17} />
-          适配全图
-        </button>
+      <div
+        className={styles.headingBar}
+        style={{
+          gridTemplateColumns: `${AXIS_WIDTH}px repeat(${layout.organizations.length}, ${COLUMN_STEP}px)`,
+        }}
+      >
+        <span title="同一月份横向对齐；空月份省略，行距不代表实际时间。问号表示月份待核对。">
+          时间
+        </span>
+        {layout.organizations.map((organization) => (
+          <span key={organization}>{organization}</span>
+        ))}
       </div>
-      {error ? (
-        <div className={styles.notice} role="alert">
-          <p>地图暂时没能打开，正文仍可通过搜索阅读。</p>
-          <button onClick={() => location.reload()}>重试地图</button>
-        </div>
-      ) : (
-        busy && (
-          <p className={styles.notice} role="status">
-            正在整理模型关系…
-          </p>
-        )
+      <div className={styles.bands} style={{ width: layout.width }} aria-hidden="true">
+        {layout.periods.map((period) => (
+          <div className={styles.band} key={period.period} style={{ top: period.top }} />
+        ))}
+      </div>
+      <div className={styles.tracks} style={{ width: layout.width }} aria-hidden="true">
+        {layout.tracks.map((track) => (
+          <div key={track.organization}>
+            <div
+              data-testid="vendor-track"
+              data-organization={track.organization}
+              className={styles.track}
+              style={{ left: track.left, top: track.top, height: track.height }}
+            />
+            {track.positions.map((top) => (
+              <div
+                className={styles.tick}
+                key={top}
+                style={{ left: track.left, top, width: NODE_OFFSET - TRACK_OFFSET }}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+      <div className={styles.axis}>
+        {layout.periods.map((period) => (
+          <div className={styles.year} key={period.period} style={{ top: period.top }}>
+            {period.label}
+          </div>
+        ))}
+      </div>
+      <div ref={container} className={styles.graph} />
+      {error && (
+        <p className={styles.notice} role="alert">
+          时间轴暂时无法打开，请重试页面。
+        </p>
+      )}
+      {busy && !error && (
+        <p className={styles.notice} role="status">
+          正在整理模型时间轴…
+        </p>
       )}
     </div>
   );

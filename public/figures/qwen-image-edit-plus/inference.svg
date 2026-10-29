@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<title id="title">Qwen-Image-Edit 多图推理中的两条条件路径</title>
+<desc id="desc">多张图与文字进入视觉语言编码器；多张图另经 VAE 编码后沿序列拼接。图文条件、图像潜变量和噪声一起参与图像 Transformer 的迭代，最终生成部分经 VAE 解码得到图片。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#52757a"/></marker></defs>
+<rect width="1200" height="430" rx="20" fill="#f7faf9"/>
+<g font-family="system-ui,sans-serif" fill="#18353a">
+<text x="32" y="42" font-size="23" font-weight="700">多图编辑：同一组参考图走两条条件路径</text>
+<text x="32" y="68" font-size="14" fill="#526c70">按 Diffusers 固定版本推理代码绘制，展示主要数据流</text>
+<g stroke="#b4cfca"><rect x="32" y="110" width="155" height="63" rx="10" fill="#e4f3f0"/><rect x="32" y="235" width="155" height="63" rx="10" fill="#e4f3f0"/><rect x="265" y="100" width="205" height="83" rx="10" fill="#edf1fa"/><rect x="265" y="225" width="205" height="83" rx="10" fill="#faf3e6"/><rect x="535" y="160" width="245" height="100" rx="10" fill="#e8f2f1"/><rect x="535" y="322" width="245" height="55" rx="10" fill="#f0f3f3"/><rect x="835" y="175" width="145" height="70" rx="10" fill="#faf3e6"/><rect x="1020" y="175" width="150" height="70" rx="10" fill="#e4f3f0"/></g>
+<g font-size="17" font-weight="700"><text x="48" y="148">文字指令</text><text x="48" y="273">多张参考图</text><text x="282" y="133">视觉语言编码器</text><text x="282" y="258">VAE 编码器</text><text x="553" y="193">图像 Transformer</text><text x="553" y="355">生成潜变量：从噪声开始</text><text x="852" y="205">VAE 解码</text><text x="1037" y="205">编辑结果</text></g>
+<g font-size="14" fill="#526c70"><text x="282" y="159">图文指令条件</text><text x="282" y="284">各图编码并沿序列拼接</text><text x="553" y="221">条件引导，多步更新生成部分</text><text x="852" y="230">还原图像</text><text x="1037" y="230">检查主体和指令</text></g>
+<g fill="none" stroke="#52757a" stroke-width="2" marker-end="url(#arrow)"><path d="M187 141 H258"/><path d="M187 255 H220 V155 H258"/><path d="M187 275 H258"/><path d="M470 141 H502 V185 H528"/><path d="M470 267 H502 V235 H528"/><path d="M657 322 V268"/><path d="M780 210 H828"/><path d="M980 210 H1013"/></g>
+<text x="32" y="405" font-size="14" fill="#526c70">模型卡公开 2509 的拼接训练；图中展示的推理流程不代表训练样本如何拼接。</text>
+</g></svg>

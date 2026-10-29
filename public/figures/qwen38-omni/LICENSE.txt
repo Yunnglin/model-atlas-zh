@@ -1,0 +1,10 @@
+Qwen3.8-Omni official Figures 2 and 3
+Copyright: Qwen Team. Reproduced without modification from:
+https://arxiv.org/html/2609.25611v1#S2.F2
+https://arxiv.org/html/2609.25611v1#S7.F3
+Original images:
+https://arxiv.org/html/2609.25611v1/3.8aut.png
+https://arxiv.org/html/2609.25611v1/realtime.png
+The Qwen3.8-Omni technical report is licensed CC BY 4.0:
+https://creativecommons.org/licenses/by/4.0/
+The other image in this directory, overview.svg, is an original simplified teaching diagram; see ../LICENSE-TEACHING.txt.

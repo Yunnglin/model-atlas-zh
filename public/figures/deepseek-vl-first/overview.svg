@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 410" role="img" aria-labelledby="title desc">
+  <title id="title">DeepSeek-VL-7B 的混合视觉编码流程</title>
+  <desc id="desc">同一图片分别经 SigLIP 与 SAM 图像编码器，空间位置对齐后按特征维拼接，经适配器映射，与文本一起交给语言模型。1.3B 版本只用 SigLIP。</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9Z" fill="#557e7d"/></marker></defs>
+  <rect width="1120" height="410" rx="20" fill="#f5f9f8"/>
+  <g font-family="system-ui, sans-serif" fill="#183d3d" text-anchor="middle">
+    <text x="560" y="43" font-size="24" font-weight="700">DeepSeek-VL-7B：既看整体，也关注细节</text>
+    <g fill="#fff" stroke="#95b9b4" stroke-width="2">
+      <rect x="28" y="143" width="135" height="80" rx="12"/><rect x="230" y="76" width="200" height="74" rx="12"/><rect x="230" y="210" width="200" height="74" rx="12"/><rect x="500" y="143" width="200" height="80" rx="12"/><rect x="760" y="143" width="145" height="80" rx="12"/><rect x="955" y="143" width="135" height="80" rx="12"/>
+    </g>
+    <g font-size="19" font-weight="600"><text x="95" y="177">图片</text><text x="330" y="105">SigLIP-L</text><text x="330" y="239">SAM-B 编码器</text><text x="600" y="174">位置对齐与拼接</text><text x="832" y="176">视觉适配器</text><text x="1022" y="176">语言模型</text></g>
+    <g font-size="15"><text x="95" y="203">例：商品标签</text><text x="330" y="130">384 × 384 · 语义</text><text x="330" y="264">1024 × 1024 · 细节</text><text x="600" y="200">576 个视觉位置</text><text x="832" y="201">映射到语言空间</text><text x="1022" y="201">结合问题作答</text></g>
+    <g fill="none" stroke="#557e7d" stroke-width="2" marker-end="url(#arrow)"><path d="M163 162 H194 V113 H230"/><path d="M163 204 H194 V247 H230"/><path d="M430 113 H466 V162 H500"/><path d="M430 247 H466 V204 H500"/><path d="M700 183 H760"/><path d="M905 183 H955"/></g>
+    <text x="560" y="339" font-size="16">图为 7B 教学简图；1.3B 版本只使用 SigLIP，不含 SAM-B 分支</text>
+    <text x="560" y="370" font-size="15">依据 DeepSeek-VL 论文 3.1 节绘制，省略内部细节</text>
+  </g>
+</svg>

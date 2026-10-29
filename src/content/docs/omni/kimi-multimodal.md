@@ -103,4 +103,4 @@ VL 从截图读出标题，Audio 从录音识别时间或语气，Linear 从长�
 - [Kimi K2.6 官方模型卡](https://huggingface.co/moonshotai/Kimi-K2.6)
 - [Kimi K2.7 Code 官方模型卡](https://huggingface.co/moonshotai/Kimi-K2.7-Code)
 
-资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

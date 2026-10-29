@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 610" role="img" aria-labelledby="title desc">
+<title id="title">CLIP 图文配对与双向训练</title>
+<desc id="desc">猫图和杯子图分别与一只猫、一个杯子组成两个已知图文配对，示例相似度矩阵是 0.8、0.2、0.3、0.7。按行给图找文，按列给文找图，各算交叉熵并平均。非配对位置是本批候选，并不保证在全局语义上错误，近重复可能是假负例。</desc>
+<rect width="1100" height="610" rx="20" fill="#f4f8f7"/><g font-family="system-ui, sans-serif" fill="#173b3d">
+<text x="40" y="48" font-size="25" font-weight="700">一小批图文：从配对到双向比较</text><text x="40" y="80" font-size="17" fill="#526d68">虚构示例：两个已知配对，分数只用于说明，不是模型实测</text>
+<rect x="40" y="108" width="275" height="116" rx="12" fill="#fff" stroke="#a3c6bb"/><text x="62" y="144" font-size="19" font-weight="700">图像编码器</text><text x="62" y="181" font-size="18">猫图、杯子图 → 图像向量</text>
+<rect x="40" y="249" width="275" height="116" rx="12" fill="#fff" stroke="#a3c6bb"/><text x="62" y="285" font-size="19" font-weight="700">文本编码器</text><text x="62" y="322" font-size="18">猫、杯子描述 → 文本向量</text>
+<path d="M315 166 H365 M315 307 H365" stroke="#5e9285" stroke-width="3" fill="none"/>
+<text x="530" y="140" font-size="19" font-weight="700" text-anchor="middle">图文相似度矩阵</text>
+<g text-anchor="middle" font-size="18"><text x="594" y="183">一只猫</text><text x="754" y="183">一个杯子</text><text x="444" y="236">猫图</text><text x="444" y="303">杯子图</text>
+<rect x="520" y="199" width="148" height="54" rx="8" fill="#d4eddf"/><rect x="680" y="199" width="148" height="54" rx="8" fill="#e9eff7"/><rect x="520" y="266" width="148" height="54" rx="8" fill="#e9eff7"/><rect x="680" y="266" width="148" height="54" rx="8" fill="#d4eddf"/>
+<text x="594" y="233">0.8 · 配对</text><text x="754" y="233">0.2</text><text x="594" y="300">0.3</text><text x="754" y="300">0.7 · 配对</text></g>
+<rect x="850" y="189" width="210" height="74" rx="10" fill="#fff" stroke="#a3c6bb"/><text x="870" y="220" font-size="17" font-weight="700">按行：图找文 →</text><text x="870" y="244" font-size="15">在本批文字中选择</text>
+<rect x="850" y="278" width="210" height="74" rx="10" fill="#fff" stroke="#a3c6bb"/><text x="870" y="309" font-size="17" font-weight="700">按列：文找图 ↓</text><text x="870" y="333" font-size="15">在本批图片中选择</text>
+<rect x="40" y="405" width="1020" height="72" rx="11" fill="#e4f2ed"/><text x="60" y="436" font-size="18" font-weight="700">两个方向分别计算交叉熵，再取平均。</text><text x="60" y="461" font-size="16">每个方向都鼓励已知配对在当前候选中获得更高相对得分。</text>
+<rect x="40" y="493" width="1020" height="76" rx="11" fill="#fff4e6"/><text x="60" y="524" font-size="18" font-weight="700">非配对位置只是同批训练候选，不是全局绝对负例。</text><text x="60" y="550" font-size="16">不同图片也可能有同样合适的描述；近重复或多正例可能形成假负例。</text>
+</g></svg>

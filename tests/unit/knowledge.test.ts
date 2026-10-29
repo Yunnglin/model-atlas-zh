@@ -7,8 +7,13 @@ import {
   prerequisites,
   searchNodes,
 } from '../../src/core/queries/knowledge';
-import { isModel, projectModelMap } from '../../src/core/projections/model-map';
+import {
+  emptyTimelineFilters,
+  filterTimeline,
+  timelineRelations,
+} from '../../src/core/projections/timeline';
 import { decodeSelection, encodeSelection } from '../../src/features/atlas/url-state';
+import { timelineLayout } from '../../src/features/atlas/layouts/timeline-layout';
 import {
   createAtlasStore,
   visitSelection,
@@ -57,12 +62,99 @@ describe('maintained content contracts', () => {
 });
 
 describe('knowledge and progressive projections', () => {
+  it('filters versions by combined architecture, family and modalities and sorts months', () => {
+    const filtered = filterTimeline(knowledge.timeline, {
+      ...emptyTimelineFilters,
+      family: 'Qwen',
+      architecture: 'mixed',
+      modalities: ['text', 'audio'],
+    });
+    expect(filtered.map((item) => item.id)).toContain('qwen3-asr');
+    expect(
+      filtered.every(
+        (item) =>
+          item.family === 'Qwen' &&
+          item.architecture === 'mixed' &&
+          item.modalities.includes('audio') &&
+          item.modalities.includes('text'),
+      ),
+    ).toBe(true);
+    const all = filterTimeline(knowledge.timeline, emptyTimelineFilters);
+    expect(all.findIndex((item) => item.id === 'qwen-vl')).toBeLessThan(
+      all.findIndex((item) => item.id === 'qwen3'),
+    );
+    expect(
+      timelineRelations(knowledge, all).find((edge) => edge.id === 'series-qwen-2-qwen-25')
+        ?.relation.explanation,
+    ).toContain('不代表权重继承');
+  });
+  it('rejects a month without a traceable date basis', () => {
+    const bad = structuredClone(knowledge);
+    const item = bad.timeline.find((model) => model.month)!;
+    delete item.dateSource;
+    expect(() => validateKnowledge(bad)).toThrow('month requires year, date basis and source');
+  });
+  it('groups a month by vendor without interleaving dates or crossing source families', () => {
+    const models = filterTimeline(knowledge.timeline, emptyTimelineFilters);
+    const layout = timelineLayout(models);
+    const periods = layout.periods.map((period) => period.period);
+    expect(periods.indexOf('2024-6')).toBeLessThan(periods.indexOf('2024-9'));
+    expect(
+      layout.periods.find((period) => period.period === '2021-3')?.items.map((item) => item.id),
+    ).toEqual(expect.arrayContaining(['glm-original', 'swin']));
+    expect(layout.organizations.filter((name) => name === '阿里巴巴')).toHaveLength(1);
+    expect(
+      models
+        .filter((model) => model.family === 'Qwen')
+        .every((model) => model.organization === '阿里巴巴'),
+    ).toBe(true);
+  });
   it('searches English names and Chinese aliases', () => {
     expect(searchNodes(knowledge, '下一 token')[0]?.id).toBe('next-token');
     expect(searchNodes(knowledge, 'whisper').map((node) => node.id)).toEqual(['whisper']);
     expect(searchNodes(knowledge, '低秩').some((node) => node.id === 'lora')).toBe(true);
     expect(searchNodes(knowledge, 'Qwen3')[0]?.id).toBe('qwen3');
+    expect(searchNodes(knowledge, 'Qwen3.5')[0]?.id).toBe('qwen35-model');
+    expect(searchNodes(knowledge, 'Qwen3.6')[0]?.id).toBe('qwen36-model');
+    expect(searchNodes(knowledge, 'Qwen3.5-Omni')[0]?.id).toBe('qwen35-omni-model');
+    expect(searchNodes(knowledge, 'Qwen3.8-Omni-Flash')[0]?.id).toBe('qwen38-omni-model');
+    expect(searchNodes(knowledge, 'Qwen3.8-Flash-Next')[0]?.id).toBe('qwen38-flash-next-model');
+    expect(searchNodes(knowledge, 'Qwen-VLA')[0]?.id).toBe('qwen-vla-model');
+    expect(searchNodes(knowledge, 'Qwen-Image-Layered')[0]?.id).toBe('qwen-image-layered-model');
+    expect(searchNodes(knowledge, 'Qwen3-LiveTranslate')[0]?.id).toBe('qwen3-livetranslate-model');
+    expect(searchNodes(knowledge, 'Qwen3.5-LiveTranslate')[0]?.id).toBe(
+      'qwen35-livetranslate-model',
+    );
+    expect(searchNodes(knowledge, 'Qwen2-Math')[0]?.id).toBe('qwen2-math-model');
+    expect(searchNodes(knowledge, 'Qwen2.5-Math-RM-72B')[0]?.id).toBe('qwen25-math-rm-model');
+    expect(searchNodes(knowledge, 'QVQ-72B-Preview')[0]?.id).toBe('qvq-72b-preview-model');
+    expect(searchNodes(knowledge, 'DeepSeek-V2.5')[0]?.id).toBe('deepseek-v25-model');
+    expect(searchNodes(knowledge, 'GLM-TTS')[0]?.id).toBe('glm-tts-model');
+    expect(searchNodes(knowledge, 'Qwen2.5-Math-PRM')[0]?.id).toBe('qwen25-math-prm-model');
+    expect(searchNodes(knowledge, 'DeepSeek-R1-0528')[0]?.id).toBe('deepseek-r1-0528-model');
+    expect(searchNodes(knowledge, 'DeepSeek-V3-0324')[0]?.id).toBe('deepseek-v3-0324-model');
+    expect(searchNodes(knowledge, 'GLM-Image')[0]?.id).toBe('glm-image-model');
+    expect(searchNodes(knowledge, 'Qwen2.5-1M')[0]?.id).toBe('qwen25-1m-model');
+    expect(searchNodes(knowledge, 'KTO')[0]?.id).toBe('kto');
+    expect(searchNodes(knowledge, 'Qwen3-VL-Embedding')[0]?.id).toBe('qwen3-vl-embedding-model');
+    expect(searchNodes(knowledge, 'Qwen3 Reranker')[0]?.id).toBe('qwen3-reranker-model');
+    expect(searchNodes(knowledge, 'Qwen3-VL-Reranker')[0]?.id).toBe('qwen3-vl-reranker-model');
+    expect(searchNodes(knowledge, 'Qwen3-ForcedAligner')[0]?.id).toBe('qwen3-forcedaligner-model');
+    expect(searchNodes(knowledge, 'Qwen-Image-Edit')[0]?.id).toBe('qwen-image-edit-model');
+    expect(searchNodes(knowledge, 'Qwen-Image-2.1')[0]?.id).toBe('qwen-image21-model');
+    expect(searchNodes(knowledge, 'Qwen3.8-LiveTranslate')[0]?.id).toBe(
+      'qwen38-livetranslate-model',
+    );
     expect(searchNodes(knowledge, 'Qwen3.8')[0]?.id).toBe('qwen38');
+    expect(searchNodes(knowledge, 'GPT-4')[0]?.id).not.toBe('gpt');
+    expect(searchNodes(knowledge, 'Kimi K2')[0]?.id).toBe('kimi-k2');
+    expect(searchNodes(knowledge, 'Kimi K2 Thinking')[0]?.id).toBe('kimi-k2-thinking');
+    expect(knowledge.timeline.find((model) => model.id === 'kimi-k2-thinking')).toMatchObject({
+      year: 2025,
+      month: 11,
+      seriesPrevious: 'kimi-k2',
+    });
+    expect(searchNodes(knowledge, 'Kimi K2.7')[0]?.id).toBe('kimi-k27-model');
     expect(searchNodes(knowledge, 'Qwen')[0]?.id).toBe('qwen');
   });
   it('follows only reading prerequisites', () => {
@@ -73,29 +165,6 @@ describe('knowledge and progressive projections', () => {
   });
   it('keeps incoming and outgoing relationships', () => {
     expect(connectedRelations(knowledge, 'whisper').some((r) => r.from === 'wav2vec2')).toBe(true);
-  });
-  it('projects models only, keeping sourced meanings rather than treating prerequisites as ancestry', () => {
-    const map = projectModelMap(knowledge);
-    expect(map.nodes.every(isModel)).toBe(true);
-    expect(map.nodes.some((node) => node.id === 'transformer')).toBe(true);
-    expect(map.nodes.some((node) => node.id === 'next-token')).toBe(false);
-    expect(map.nodes.every((node) => node.featured)).toBe(true);
-    expect(map.nodes.some((node) => node.id === 'qwen')).toBe(true);
-    expect(map.nodes.some((node) => node.id === 'qwen3')).toBe(false);
-    expect(knowledge.nodes.some((node) => node.id === 'qwen3' && isModel(node))).toBe(true);
-    expect(
-      map.edges.every(
-        (edge) =>
-          edge.evidence.length > 0 && edge.evidence.every((item) => item.kind !== 'prerequisite'),
-      ),
-    ).toBe(true);
-    expect(
-      map.edges
-        .find((edge) => edge.to === 'whisper' && !edge.comparison)
-        ?.evidence.map((item) => item.id),
-    ).toEqual(['whisper-uses-encoder-decoder', 'encoder-decoder-uses-transformer']);
-    const comparison = map.edges.find((edge) => edge.comparison && edge.to === 'whisper')!;
-    expect(comparison.evidence[0]!.kind).toBe('compared-with');
   });
   it('rejects missing figure references, mismatched model and missing chapter placements', () => {
     const bad = structuredClone(knowledge);

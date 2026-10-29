@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 380" role="img" aria-labelledby="title desc">
+  <title id="title">MiniMax-Text-01 的混合注意力与专家路由</title>
+  <desc id="desc">文本输入进入八层为一组的模型主干，每组七个 Lightning Attention 层后接一个 Softmax Attention 层，总共重复十组；各层使用 32 选 2 的专家网络，最终输出文本。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9Z" fill="#557e7d"/></marker>
+  </defs>
+  <rect width="1120" height="380" rx="20" fill="#f5f9f8"/>
+  <g font-family="system-ui, sans-serif" text-anchor="middle" fill="#183d3d">
+    <text x="560" y="44" font-size="24" font-weight="700">MiniMax-Text-01：混合注意力与专家网络</text>
+    <g fill="#fff" stroke="#95b9b4" stroke-width="2">
+      <rect x="24" y="142" width="130" height="72" rx="13"/>
+      <rect x="206" y="104" width="248" height="92" rx="13"/>
+      <rect x="504" y="104" width="248" height="92" rx="13"/>
+      <rect x="805" y="142" width="130" height="72" rx="13"/>
+      <rect x="298" y="245" width="380" height="70" rx="13"/>
+    </g>
+    <text x="89" y="171" font-size="19" font-weight="700">文本输入</text><text x="89" y="196" font-size="15">分词与表示</text>
+    <text x="330" y="139" font-size="19" font-weight="700">7 层 Lightning Attention</text><text x="330" y="168" font-size="15">递推汇总历史信息</text>
+    <text x="628" y="139" font-size="19" font-weight="700">1 层 Softmax Attention</text><text x="628" y="168" font-size="15">因果注意力 · GQA</text>
+    <text x="870" y="171" font-size="19" font-weight="700">文本输出</text><text x="870" y="196" font-size="15">逐 token 生成</text>
+    <text x="488" y="273" font-size="18" font-weight="700">每层：32 个专家中为每个 token 选 2 个</text><text x="488" y="296" font-size="15">专家网络与注意力模块是不同部分</text>
+    <text x="628" y="222" font-size="16">以上 8 层组成一组，共重复 10 组</text>
+    <text x="560" y="350" font-size="15">教学简图：省略嵌入、归一化与残差；不是官方完整结构图</text>
+  </g>
+  <g stroke="#557e7d" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+    <path d="M154 178 H180 V150 H206"/><path d="M454 150 H504"/><path d="M752 150 H780 V178 H805"/>
+  </g>
+</svg>

@@ -88,4 +88,4 @@ atlas:
 - [DocVQA: A Dataset for VQA on Document Images](https://arxiv.org/abs/2007.00398)
 - [Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)
 
-资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

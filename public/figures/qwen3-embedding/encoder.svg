@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 270" role="img" aria-labelledby="title desc">
+<title id="title">Qwen3 Embedding 如何生成文本向量</title>
+<desc id="desc">把任务指令和查询文字组织为输入，尾部添加结束标记，Qwen3 因果注意力模型处理后取结束标记对应的最后一层隐藏状态，再得到向量。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#087b7c"/></marker></defs>
+<rect width="1120" height="270" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui, sans-serif" fill="#183b45"><text x="30" y="43" font-size="24" font-weight="700">文本向量从哪里来？</text>
+<g fill="#fff" stroke="#bfdcd6"><rect x="30" y="80" width="230" height="90" rx="10"/><rect x="310" y="80" width="230" height="90" rx="10"/><rect x="590" y="80" width="230" height="90" rx="10"/><rect x="870" y="80" width="220" height="90" rx="10"/></g>
+<g font-size="20" font-weight="600"><text x="50" y="115">任务指令＋查询</text><text x="330" y="115">Qwen3 解码器</text><text x="610" y="115">结束标记的位置</text><text x="890" y="115">文本向量</text></g>
+<g font-size="15" fill="#526b72"><text x="50" y="145">末尾添加结束标记</text><text x="330" y="145">因果注意力处理序列</text><text x="610" y="145">取最后一层隐藏状态</text><text x="890" y="145">0.6B：1024 维</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M265 125 H302"/><path d="M545 125 H582"/><path d="M825 125 H862"/></g><text x="30" y="225" font-size="16" fill="#526b72">查询与文档分别编码；文档侧通常不添加查询任务指令。</text></g></svg>

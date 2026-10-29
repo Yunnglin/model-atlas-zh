@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="350" viewBox="0 0 1060 350" role="img" aria-labelledby="title desc">
+  <title id="title">DeepSeek-R1 多阶段后训练与重新微调</title>
+  <desc id="desc">第一行：V3-Base 冷启动微调后进行推理强化学习，用该检查点生成并筛选推理样本，再与通用样本组成数据集。第二行：从 V3-Base 重新出发，用该数据集进行监督微调，随后全场景强化学习得到 R1。虚线代表数据用于训练，实线代表模型阶段。</desc>
+  <rect width="1060" height="350" rx="16" fill="#f5faf8"/>
+  <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#468b75"/></marker></defs>
+  <g fill="#fff" stroke="#87b6a4">
+    <rect x="25" y="56" width="150" height="66" rx="8"/><rect x="210" y="56" width="150" height="66" rx="8"/><rect x="395" y="56" width="155" height="66" rx="8"/><rect x="590" y="56" width="195" height="66" rx="8"/><rect x="825" y="56" width="205" height="66" rx="8"/>
+    <rect x="25" y="207" width="150" height="66" rx="8"/><rect x="395" y="207" width="155" height="66" rx="8"/><rect x="590" y="207" width="195" height="66" rx="8"/><rect x="825" y="207" width="205" height="66" rx="8"/>
+  </g>
+  <g font-family="sans-serif" text-anchor="middle" fill="#203b35">
+    <text x="25" y="32" text-anchor="start" font-size="15">① 训练推理模型，生成后续训练数据</text>
+    <text x="100" y="95" font-size="16">V3-Base</text><text x="285" y="95" font-size="16">冷启动 SFT</text><text x="472" y="95" font-size="16">推理强化学习</text><text x="688" y="83" font-size="15">生成并筛选</text><text x="688" y="105" font-size="15">推理样本</text><text x="928" y="83" font-size="15">加入通用样本</text><text x="928" y="105" font-size="15">得到 SFT 数据集</text>
+    <text x="25" y="181" text-anchor="start" font-size="15">② 重新从底座微调，再做全场景强化学习</text>
+    <text x="100" y="236" font-size="16">V3-Base</text><text x="100" y="257" font-size="13">重新出发</text><text x="472" y="246" font-size="16">SFT</text><text x="688" y="246" font-size="16">全场景强化学习</text><text x="928" y="246" font-size="16">DeepSeek-R1</text>
+    <text x="530" y="320" font-size="13">教学简图；虚线表示数据输入，实线表示训练阶段。省略 R1-Zero、蒸馏与阶段细节。</text>
+  </g>
+  <g fill="none" stroke="#468b75" stroke-width="3" marker-end="url(#arrow)"><path d="M175 89H202"/><path d="M360 89H387"/><path d="M550 89H582"/><path d="M785 89H817"/><path d="M175 240H387"/><path d="M550 240H582"/><path d="M785 240H817"/><path d="M928 122V155H472V199" stroke-dasharray="7 5"/></g>
+</svg>

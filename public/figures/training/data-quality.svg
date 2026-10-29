@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" role="img" aria-labelledby="title desc">
+  <title id="title">按说话人切分数据，并保留独立测试</title>
+  <desc id="desc">同源说话人的录音分到同一组，训练与开发用于训练和错例改进；独立测试集不参与训练或方案选择，定稿后用于评估。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#527c78"/></marker></defs>
+  <rect width="960" height="490" rx="20" fill="#f5f9f8"/>
+  <g font-family="system-ui, -apple-system, sans-serif" fill="#193e46">
+    <text x="32" y="47" font-size="25" font-weight="700">语音案例：先按说话人分组，再留出测试集</text>
+    <text x="32" y="78" font-size="15" fill="#526b72">教学示意：避免同一说话人的相邻录音跨训练、开发与测试集合。</text>
+    <g fill="#fff" stroke="#cbded9"><rect x="32" y="125" width="190" height="100" rx="10"/><rect x="295" y="112" width="245" height="90" rx="10"/><rect x="295" y="250" width="245" height="90" rx="10"/><rect x="650" y="112" width="278" height="90" rx="10"/><rect x="650" y="250" width="278" height="90" rx="10"/></g>
+    <g stroke="#527c78" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M222 157H285"/><path d="M180 225V295H285"/><path d="M540 157H640"/><path d="M788 250V212"/></g>
+    <g font-size="19" font-weight="700"><text x="50" y="158">录音按说话人分组</text><text x="313" y="146">训练集 + 开发集</text><text x="313" y="284">独立测试集</text><text x="668" y="146">训练与开发评估</text><text x="668" y="284">错例分析 → 补数据</text></g>
+    <g font-size="14" fill="#526b72"><text x="50" y="185">同一人只进入一个集合</text><text x="313" y="174">训练 / 选择方案</text><text x="313" y="312">保留，定稿后使用</text><text x="668" y="174">开发集发现问题</text><text x="668" y="312">只用开发数据或另采数据</text></g>
+    <path d="M580 95V360" stroke="#a6bdba" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="32" y="394" font-size="16" font-weight="700">定稿后：用隔离的测试集评估对新说话人的表现。</text>
+    <text x="32" y="423" font-size="15" fill="#526b72">测试结果若反复用于调整方案，会逐渐失去独立性；需保留新的独立测试数据。</text>
+    <text x="32" y="454" font-size="15" fill="#526b72">这是数据流程示例，不代表已开展训练或评测。</text>
+  </g>
+</svg>

@@ -89,6 +89,8 @@ VQA 需要图片、问题与字段答案；OCR 需要转录和结构；ASR 需�
 
 **有 ASR 和 TTS 就等于单个 Omni 模型吗？** 可以组成系统，但模块组合与原生联合模型在结构和训练上不同。可对照 [Qwen-Omni](/omni/qwen-omni-family/)。
 
+[GLM-TTS](/audio/glm-tts-model/) 专门讲解语音生成的权重、训练与评测。
+
 ## 参考资料
 
 - [ChatGLM: From GLM-130B to GLM-4 All Tools](https://arxiv.org/abs/2406.12793)
@@ -98,4 +100,4 @@ VQA 需要图片、问题与字段答案；OCR 需要转录和结构；ASR 需�
 - [GLM-OCR 官方实现](https://github.com/zai-org/GLM-OCR)
 - [GLM-5.3-Flash 官方模型卡](https://huggingface.co/zai-org/GLM-5.3-Flash)
 
-资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

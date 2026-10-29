@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="490" viewBox="0 0 1240 490" role="img" aria-labelledby="title desc">
+  <title id="title">Qwen3.5-Omni：多模态理解与流式语音</title>
+  <desc id="desc">文字直接进入 Thinker；图片和视频经视觉编码器、音频经 AuT 编码器输入 Thinker。Thinker 生成文字，Talker 使用其信息与文本，通过 ARIA、语音码本和 Code2Wav 生成流式语音。工具请求由外部系统执行。图为简化教学示意。</desc>
+  <rect width="1240" height="490" rx="18" fill="#f4f8f7"/>
+  <text x="34" y="42" font-family="sans-serif" font-size="23" font-weight="700" fill="#173b3d">Qwen3.5-Omni：理解、回答与发声</text>
+  <g font-family="sans-serif" text-anchor="middle" fill="#173b3d">
+    <rect x="30" y="92" width="155" height="55" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="108" y="126" font-size="16">文字</text>
+    <rect x="30" y="175" width="155" height="55" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="108" y="208" font-size="16">图片 / 视频帧</text>
+    <rect x="30" y="258" width="155" height="55" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="108" y="292" font-size="16">音频</text>
+    <rect x="245" y="175" width="170" height="55" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="330" y="208" font-size="15">视觉编码器</text>
+    <rect x="245" y="258" width="170" height="55" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="330" y="292" font-size="15">AuT 音频编码器</text>
+    <rect x="487" y="123" width="242" height="180" rx="12" fill="#dcefeb" stroke="#67a59c"/><text x="608" y="161" font-size="18" font-weight="700">Thinker · 理解与推理</text><text x="608" y="190" font-size="14">混合注意力 + MoE</text><text x="608" y="216" font-size="14">组织多模态与时间信息</text><text x="608" y="242" font-size="14">生成文字或工具请求</text>
+    <rect x="815" y="81" width="180" height="60" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="905" y="118" font-size="16">文字回答</text>
+    <rect x="815" y="190" width="180" height="105" rx="10" fill="#dcefeb" stroke="#67a59c"/><text x="905" y="221" font-size="17" font-weight="700">Talker</text><text x="905" y="245" font-size="13">混合注意力 + MoE</text><text x="905" y="269" font-size="13">ARIA 文本语音对齐</text>
+    <rect x="1038" y="190" width="165" height="105" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="1120" y="222" font-size="15">多码本 + MTP</text><text x="1120" y="247" font-size="14">Code2Wav</text><text x="1120" y="271" font-size="14">流式语音</text>
+    <rect x="815" y="355" width="250" height="58" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="940" y="379" font-size="15">外部工具与执行器</text><text x="940" y="399" font-size="12">工具请求须由外部系统执行</text>
+    <text x="620" y="458" font-size="13" fill="#4b6666">原创教学简图：省略各层细节；输出能力和工具配置以具体服务为准。</text>
+  </g>
+  <g fill="none" stroke="#357f77" stroke-width="2" marker-end="url(#arrow)"><path d="M185 120H460V155H480"/><path d="M185 202H237"/><path d="M415 202H480"/><path d="M185 285H237"/><path d="M415 285H480"/><path d="M729 155H770V111H808"/><path d="M729 239H808"/><path d="M995 242H1031"/><path d="M729 284H770V384H808"/></g>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#357f77"/></marker></defs>
+</svg>

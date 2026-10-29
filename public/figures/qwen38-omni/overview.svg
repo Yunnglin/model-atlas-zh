@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="530" viewBox="0 0 1240 530" role="img" aria-labelledby="title desc">
+  <title id="title">Qwen3.8-Omni-Flash：多模态理解与实时语音</title>
+  <desc id="desc">文字、视觉、一般音频及空间音频分别进入多模态处理路径，编码信息交给采用混合稀疏专家、Gated DeltaNet 与稀疏注意力的 Thinker。Thinker 输出文字和工具请求；实时版本可经 Talker 与 Code2Wav 输出流式语音。工具由外部框架执行。</desc>
+  <rect width="1240" height="530" rx="18" fill="#f4f8f7"/>
+  <text x="34" y="42" font-family="sans-serif" font-size="23" font-weight="700" fill="#173b3d">Qwen3.8-Omni-Flash：多模态理解与实时交互</text>
+  <g font-family="sans-serif" text-anchor="middle" fill="#173b3d">
+    <rect x="25" y="84" width="145" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="97" y="114" font-size="15">文字</text>
+    <rect x="25" y="158" width="145" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="97" y="188" font-size="15">图片 / 视频帧</text>
+    <rect x="25" y="232" width="145" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="97" y="262" font-size="15">一般音频</text>
+    <rect x="25" y="306" width="145" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="97" y="336" font-size="15">空间音频</text>
+    <rect x="230" y="158" width="170" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="315" y="188" font-size="15">视觉编码器</text>
+    <rect x="230" y="232" width="170" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="315" y="262" font-size="15">AuT 编码器</text>
+    <rect x="230" y="306" width="170" height="48" rx="9" fill="#fff" stroke="#a8c7c4"/><text x="315" y="336" font-size="15">Spatial AuT 编码器</text>
+    <rect x="480" y="135" width="260" height="210" rx="12" fill="#dcefeb" stroke="#67a59c"/><text x="610" y="172" font-size="18" font-weight="700">Thinker</text><text x="610" y="200" font-size="14">混合稀疏 MoE 骨干</text><text x="610" y="226" font-size="14">Gated DeltaNet + QSA</text><text x="610" y="252" font-size="14">整合视觉、音频及时间信息</text><text x="610" y="278" font-size="14">生成文字或工具请求</text>
+    <rect x="820" y="86" width="185" height="57" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="912" y="121" font-size="15">文字回答</text>
+    <rect x="820" y="202" width="185" height="90" rx="10" fill="#dcefeb" stroke="#67a59c"/><text x="912" y="230" font-size="16" font-weight="700">Realtime · Talker</text><text x="912" y="254" font-size="13">ARIA + 多码本 / MTP</text><text x="912" y="277" font-size="13">流式语音 token</text>
+    <rect x="1045" y="202" width="155" height="90" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="1122" y="236" font-size="14">Code2Wav</text><text x="1122" y="263" font-size="14">增量合成语音</text>
+    <rect x="820" y="360" width="255" height="57" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="947" y="384" font-size="15">外部工具与框架</text><text x="947" y="404" font-size="12">搜索、执行、记忆由应用组织</text>
+    <text x="620" y="486" font-size="13" fill="#4b6666">原创教学简图：实时语音路径对应 Realtime；Flash 的工具权限与输出以服务配置为准。</text>
+    <text x="620" y="508" font-size="13" fill="#4b6666">一般 AuT 与 Spatial AuT 是并行音频路径，图中未展示采样和投影细节。</text>
+  </g>
+  <g fill="none" stroke="#357f77" stroke-width="2" marker-end="url(#arrow)"><path d="M170 108H450V156H473"/><path d="M170 182H223"/><path d="M400 182H473"/><path d="M170 256H223"/><path d="M400 256H473"/><path d="M170 330H223"/><path d="M400 330H473"/><path d="M740 168H780V114H813"/><path d="M740 248H813"/><path d="M1005 247H1038"/><path d="M740 320H780V388H813"/></g>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#357f77"/></marker></defs>
+</svg>

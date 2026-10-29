@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 520" role="img" aria-labelledby="title desc">
+  <title id="title">离线示范蒸馏：从教师答案到学生独立作答</title>
+  <desc id="desc">训练前，教师模型针对问题生成答案，经过筛选形成示范数据；训练时学生模型学习示范答案。部署时使用训练后的学生处理新问题，无需每次调用教师。这是一种示例，其他蒸馏方法可能在线使用教师概率。</desc>
+  <rect width="680" height="520" rx="18" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#173b3d">
+    <text x="28" y="43" font-size="25" font-weight="700">一种蒸馏方式：先准备教师示范</text>
+    <text x="28" y="76" font-size="17" fill="#486460">示例：教师生成答案，学生用示范做监督微调</text>
+    <text x="32" y="118" font-size="16" font-weight="700" fill="#39766c">准备数据</text>
+    <g fill="#fff" stroke="#a8c7c4" stroke-width="2">
+      <rect x="28" y="138" width="172" height="75" rx="12"/>
+      <rect x="254" y="138" width="172" height="75" rx="12"/>
+      <rect x="480" y="138" width="172" height="75" rx="12"/>
+      <rect x="28" y="283" width="250" height="75" rx="12"/>
+      <rect x="402" y="283" width="250" height="75" rx="12"/>
+      <rect x="28" y="422" width="250" height="58" rx="12"/>
+      <rect x="402" y="422" width="250" height="58" rx="12"/>
+    </g>
+    <g text-anchor="middle" font-size="18">
+      <text x="114" y="170">问题集合</text><text x="114" y="196" font-size="15" fill="#486460">如客户投诉</text>
+      <text x="340" y="170">教师模型</text><text x="340" y="196" font-size="15" fill="#486460">生成示范答案</text>
+      <text x="566" y="170">筛选示范</text><text x="566" y="196" font-size="15" fill="#486460">检查错误与质量</text>
+      <text x="153" y="315">问题＋示范答案</text><text x="153" y="341" font-size="15" fill="#486460">训练数据</text>
+      <text x="527" y="315">学生模型训练</text><text x="527" y="341" font-size="15" fill="#486460">学习生成示范</text>
+      <text x="153" y="457">新问题</text><text x="527" y="457">训练后的学生作答</text>
+    </g>
+    <text x="32" y="263" font-size="16" font-weight="700" fill="#39766c">训练学生</text>
+    <text x="32" y="402" font-size="16" font-weight="700" fill="#39766c">部署推理：此方案不必每次调用教师</text>
+    <g fill="none" stroke="#357f77" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M204 175h43"/><path d="M430 175h43"/><path d="M566 216v28H153v32"/><path d="M282 320h112"/><path d="M282 451h112"/>
+    </g>
+  </g>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#357f77"/></marker></defs>
+</svg>

@@ -44,3 +44,831 @@
       heading: 结构与数据流
     - figure: qwen3-omni-aut-official
       heading: 音频编码器 AuT 在学什么
+- id: qwen25-model-guide
+  model: qwen25-model
+  figures:
+    - figure: qwen25-model-teaching
+      heading: 结构与数据流
+- id: qwen2-model-guide
+  model: qwen2-model
+  figures:
+    - figure: qwen2-model-teaching
+      heading: 结构与数据流
+- id: qwen1-model-guide
+  model: qwen1-model
+  figures:
+    - figure: qwen1-model-teaching
+      heading: 结构与数据流
+- id: qwen15-model-guide
+  model: qwen15-model
+  figures:
+    - figure: qwen15-model-teaching
+      heading: 结构与数据流
+- id: qwen-next-guide
+  model: qwen-next
+  figures:
+    - figure: qwen-next-teaching
+      heading: 结构与数据流
+- id: qwen35-model-guide
+  model: qwen35-model
+  figures:
+    - figure: qwen35-model-teaching
+      heading: 结构与数据流
+- id: qwen3-vl-guide
+  model: qwen3-vl
+  figures:
+    - figure: qwen3-vl-teaching
+      heading: 结构与数据流
+- id: qwen-audio-first-guide
+  model: qwen-audio-model
+  figures:
+    - figure: qwen-audio-first-official
+      heading: 结构与数据流
+- id: qwen2-audio-guide
+  model: qwen2-audio-model
+  figures:
+    - figure: qwen2-audio-official
+      heading: 结构与数据流
+- id: qwen-vl-first-guide
+  model: qwen-vl-first-model
+  figures:
+    - figure: qwen-vl-first-teaching
+      heading: 结构与数据流
+- id: qwen2-vl-guide
+  model: qwen2-vl-model
+  figures:
+    - figure: qwen2-vl-teaching
+      heading: 结构与数据流
+- id: codeqwen15-guide
+  model: codeqwen15-model
+  figures:
+    - figure: codeqwen15-teaching
+      heading: 结构与数据流
+- id: qwen25-coder-guide
+  model: qwen25-coder-model
+  figures:
+    - figure: qwen25-coder-teaching
+      heading: 结构与数据流
+- id: qwen3-coder-guide
+  model: qwen3-coder-model
+  figures:
+    - figure: qwen3-coder-teaching
+      heading: 结构与数据流
+- id: qwen3-coder-next-guide
+  model: qwen3-coder-next-model
+  figures:
+    - figure: qwen3-coder-next-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v2-model-guide
+  model: deepseek-v2-model
+  figures:
+    - figure: deepseek-v2-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v3-guide
+  model: deepseek-v3
+  figures:
+    - figure: deepseek-v3-teaching
+      heading: 结构与数据流
+
+- id: deepseek-r1-guide
+  model: deepseek-r1
+  figures:
+    - figure: deepseek-r1-training
+      heading: 结构与数据流
+
+- id: deepseek-v32-guide
+  model: deepseek-v32-model
+  figures:
+    - figure: deepseek-v32-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v4-flash-guide
+  model: deepseek-v4-flash-model
+  figures:
+    - figure: deepseek-v4-flash-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v41-flash-guide
+  model: deepseek-v41-flash-model
+  figures:
+    - figure: deepseek-v41-flash-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v4-pro-guide
+  model: deepseek-v4-pro-model
+  figures:
+    - figure: deepseek-v4-pro-teaching
+      heading: 结构与数据流
+
+- id: deepseek-coder-v2-guide
+  model: deepseek-coder-v2-model
+  figures:
+    - figure: deepseek-coder-v2-teaching
+      heading: 结构与数据流
+
+- id: deepseek-vl2-guide
+  model: deepseek-vl2-model
+  figures:
+    - figure: deepseek-vl2-teaching
+      heading: 结构与数据流
+
+- id: deepseek-math-guide
+  model: deepseek-math-model
+  figures:
+    - figure: deepseek-math-teaching
+      heading: 结构与数据流
+
+- id: deepseek-v31-guide
+  model: deepseek-v31-model
+  figures:
+    - figure: deepseek-v31-teaching
+      heading: 结构与数据流
+
+- id: deepseek-coder-guide
+  model: deepseek-coder-model
+  figures:
+    - figure: deepseek-coder-teaching
+      heading: 结构与数据流
+
+- id: deepseek-math-v2-guide
+  model: deepseek-math-v2-model
+  figures:
+    - figure: deepseek-math-v2-teaching
+      heading: 结构与数据流
+
+- id: janus-pro-guide
+  model: janus-pro-model
+  figures:
+    - figure: janus-pro-teaching
+      heading: 结构与数据流
+
+- id: qwen25-math-guide
+  model: qwen25-math-model
+  figures:
+    - figure: qwen25-math-teaching
+      heading: 结构与数据流
+
+- id: qwq-guide
+  model: qwq-model
+  figures:
+    - figure: qwq-teaching
+      heading: 结构与数据流
+
+- id: kimi-audio-guide
+  model: kimi-audio-model
+  figures:
+    - figure: kimi-audio-teaching
+      heading: 结构与数据流
+
+- id: qwen3-embedding-guide
+  model: qwen3-embedding-model
+  figures:
+    - figure: qwen3-embedding-teaching
+      heading: 结构与数据流
+
+- id: glm45-guide
+  model: glm45-model
+  figures:
+    - figure: glm45-architecture
+      heading: 结构与数据流
+    - figure: glm45-teaching
+      heading: 数据与训练
+
+- id: kimi-vl-guide
+  model: kimi-vl-model
+  figures:
+    - figure: kimi-vl-teaching
+      heading: 结构与数据流
+
+- id: kimi-linear-guide
+  model: kimi-linear-model
+  figures:
+    - figure: kimi-linear-teaching
+      heading: 结构与数据流
+
+- id: minimax-m2-guide
+  model: minimax-m2-model
+  figures:
+    - figure: minimax-m2-teaching
+      heading: 结构与数据流
+
+- id: glm46-guide
+  model: glm46-model
+  figures:
+    - figure: glm46-teaching
+      heading: 结构与数据流
+
+- id: deepseek-llm-guide
+  model: deepseek-llm-model
+  figures:
+    - figure: deepseek-llm-teaching
+      heading: 结构与数据流
+
+- id: glm47-guide
+  model: glm47-model
+  figures:
+    - figure: glm47-teaching
+      heading: 结构与数据流
+
+- id: kimi-k25-guide
+  model: kimi-k25-model
+  figures:
+    - figure: kimi-k25-teaching
+      heading: 结构与数据流
+
+- id: minimax-m21-guide
+  model: minimax-m21-model
+  figures:
+    - figure: minimax-m21-teaching
+      heading: 结构与数据流
+
+- id: transformer-guide
+  model: transformer
+  figures:
+    - figure: transformer-teaching
+      heading: 结构与数据流
+
+- id: glm5-guide
+  model: glm5-model
+  figures:
+    - figure: glm5-teaching
+      heading: 结构与数据流
+
+- id: kimi-k26-guide
+  model: kimi-k26-model
+  figures:
+    - figure: kimi-k26-teaching
+      heading: 结构：从截图到行动建议
+
+- id: minimax-m25-guide
+  model: minimax-m25-model
+  figures:
+    - figure: minimax-m25-teaching
+      heading: 结构：每次请一部分专家来帮忙
+
+- id: glm51-guide
+  model: glm51-model
+  figures:
+    - figure: glm51-teaching
+      heading: 结构与数据流
+
+- id: glm-ocr-guide
+  model: glm-ocr-model
+  figures:
+    - figure: glm-ocr-teaching
+      heading: 结构：先看清，再组织输出
+
+- id: minimax-m27-guide
+  model: minimax-m27-model
+  figures:
+    - figure: minimax-m27-teaching
+      heading: 结构：一个模型，加一套工具
+
+- id: glm52-guide
+  model: glm52-model
+  figures:
+    - figure: glm52-teaching
+      heading: 结构：专家负责计算，索引负责找材料
+
+- id: minimax-m3-guide
+  model: minimax-m3-model
+  figures:
+    - figure: minimax-m3-teaching
+      heading: 结构：既要选对资料，也要读得省
+
+- id: glm53-guide
+  model: glm53-model
+  figures:
+    - figure: glm53-teaching
+      heading: 结构与数据流
+
+- id: glm53-flash-guide
+  model: glm53-flash-model
+  figures:
+    - figure: glm53-flash-teaching
+      heading: 结构：混合两种注意力
+
+- id: minimax-m31-flash-guide
+  model: minimax-m31-flash-model
+  figures:
+    - figure: minimax-m31-flash-teaching
+      heading: 结构：三项优化不是一回事
+
+- id: bert-guide
+  model: bert
+  figures:
+    - figure: bert-teaching
+      heading: 结构与数据流
+
+- id: glm-original-guide
+  model: glm-original-model
+  figures:
+    - figure: glm-original-teaching
+      heading: 结构与数据流：一张试卷分两部分
+
+- id: glm-v-guide
+  model: glm-v-model
+  figures:
+    - figure: glm-v-teaching
+      heading: 结构：把图片变成语言模型可用的信息
+
+- id: glm-asr-guide
+  model: glm-asr-model
+  figures:
+    - figure: glm-asr-teaching
+      heading: 声音如何变成文字
+
+- id: t5-guide
+  model: t5
+  figures:
+    - figure: t5-teaching
+      heading: 结构与数据流
+
+- id: gpt2-guide
+  model: gpt
+  figures:
+    - figure: gpt2-teaching
+      heading: 结构与数据流
+
+- id: vit-guide
+  model: vit
+  figures:
+    - figure: vit-teaching
+      heading: 结构与数据流：图片怎样进入 Transformer
+
+- id: wav2vec2-guide
+  model: wav2vec2
+  figures:
+    - figure: wav2vec2-teaching
+      heading: 结构与数据流：两条路
+
+- id: clip-guide
+  model: clip
+  figures:
+    - figure: clip-teaching
+      heading: 结构与数据流
+
+- id: hubert-guide
+  model: hubert
+  figures:
+    - figure: hubert-teaching
+      heading: 结构与数据流
+
+- id: swin-guide
+  model: swin
+  figures:
+    - figure: swin-teaching
+      heading: 结构与数据流：从图块到层级特征
+
+- id: dit-guide
+  model: dit
+  figures:
+    - figure: dit-teaching
+      heading: 结构与数据流
+
+- id: conformer-guide
+  model: conformer
+  figures:
+    - figure: conformer-teaching
+      heading: 结构与数据流：声音如何走进模型
+
+- id: encodec-guide
+  model: encodec
+  figures:
+    - figure: encodec-teaching
+      heading: 结构与数据流
+
+- id: stable-diffusion-guide
+  model: stable-diffusion
+  figures:
+    - figure: stable-diffusion-teaching
+      heading: 结构与数据流
+
+- id: llava-guide
+  model: llava
+  figures:
+    - figure: llava-teaching
+      heading: 结构与数据流：让图片特征进入语言模型
+
+- id: vall-e-guide
+  model: vall-e
+  figures:
+    - figure: vall-e-teaching
+      heading: 结构与数据流
+
+- id: qwen36-guide
+  model: qwen36-model
+  figures:
+    - figure: qwen36-teaching
+      heading: 结构与数据流
+
+- id: llama31-guide
+  model: llama
+  figures:
+    - figure: llama31-teaching
+      heading: 结构与数据流
+
+- id: chatglm-guide
+  model: chatglm
+  figures:
+    - figure: chatglm-teaching
+      heading: 结构与数据流：为什么填空也能自回归
+
+- id: f5-tts-guide
+  model: f5-tts
+  figures:
+    - figure: f5-tts-teaching
+      heading: 结构与数据流
+
+- id: qwen38-guide
+  model: qwen38
+  figures:
+    - figure: qwen38-teaching
+      heading: 结构与数据流
+
+- id: kimi-k27-guide
+  model: kimi-k27-model
+  figures:
+    - figure: kimi-k27-teaching
+      heading: 结构：视觉输入、专家路由与工具反馈
+
+- id: qwen-image-guide
+  model: qwen-image
+  figures:
+    - figure: qwen-image-teaching
+      heading: 结构与数据流
+
+- id: qwen3guard-guide
+  model: qwen3guard-model
+  figures:
+    - figure: qwen3guard-teaching
+      heading: 结构：一次判断与边生成边判断
+
+- id: jev-guide
+  model: jev
+  figures:
+    - figure: jev-teaching
+      heading: 结构与数据流
+
+- id: kimi15-guide
+  model: kimi
+  figures:
+    - figure: kimi15-teaching
+      heading: 结构与数据流
+
+- id: kimi-k2-guide
+  model: kimi-k2
+  figures:
+    - figure: kimi-k2-teaching
+      heading: 结构：注意力、专家和工具各做什么
+
+- id: kimi-k2-thinking-guide
+  model: kimi-k2-thinking
+  figures:
+    - figure: kimi-k2-thinking-teaching
+      heading: 结构：MoE、MLA 与工具各管什么
+
+- id: kimi-k3-guide
+  model: kimi-k3
+  figures:
+    - figure: kimi-k3-teaching
+      heading: 结构与数据流
+
+- id: omnijev-guide
+  model: omnijev
+  figures:
+    - figure: omnijev-teaching
+      heading: 结构与数据流
+
+- id: claude-guide
+  model: claude
+  figures:
+    - figure: claude-teaching
+      heading: 定位与公开范围
+
+- id: gemini15-guide
+  model: gemini
+  figures:
+    - figure: gemini15-teaching
+      heading: 公开的数据流：多种材料进入同一个问题
+
+- id: gpt4o-guide
+  model: gpt4o
+  figures:
+    - figure: gpt4o-teaching
+      heading: 值得理解的思路
+
+- id: qwen37-guide
+  model: qwen37-model
+  figures:
+    - figure: qwen37-teaching
+      heading: 结构与数据流
+
+- id: qwen35-omni-guide
+  model: qwen35-omni-model
+  figures:
+    - figure: qwen35-omni-official
+      heading: 结构与数据流：先听懂、看懂，再组织回答
+    - figure: qwen35-omni-teaching
+      heading: 结构与数据流：先听懂、看懂，再组织回答
+- id: qwen38-omni-guide
+  model: qwen38-omni-model
+  figures:
+    - figure: qwen38-omni-encoders-official
+      heading: 结构：三个感知入口与一个 Thinker
+    - figure: qwen38-omni-teaching
+      heading: 结构：三个感知入口与一个 Thinker
+    - figure: qwen38-omni-realtime-official
+      heading: Realtime：为什么能边听边说
+
+- id: qwen38-flash-next-guide
+  model: qwen38-flash-next-model
+  figures:
+    - figure: qwen38-flash-next-teaching
+      heading: 结构：摘要、索引、专家和额外记忆
+- id: qwen-image21-guide
+  model: qwen-image21-model
+  figures:
+    - figure: qwen-image21-teaching
+      heading: 结构与数据流：7B 到底指什么
+- id: qwen38-livetranslate-guide
+  model: qwen38-livetranslate-model
+  figures:
+    - figure: qwen38-livetranslate-teaching
+      heading: 结构：听到、理解，再把译文说出来
+
+- id: qwen2-math-guide
+  model: qwen2-math-model
+  figures:
+    - figure: qwen2-math-teaching
+      heading: 结构：同一底座，专项数据和后训练
+- id: qwen3-vl-embedding-guide
+  model: qwen3-vl-embedding-model
+  figures:
+    - figure: qwen3-vl-embedding-teaching
+      heading: 结构：海选和复核各做什么
+- id: qwen-image-edit-guide
+  model: qwen-image-edit-model
+  figures:
+    - figure: qwen-image-edit-teaching
+      heading: 结构：两条路共同理解原图
+
+- id: qwen-image-layered-guide
+  model: qwen-image-layered-model
+  figures:
+    - figure: qwen-image-layered-teaching
+      heading: 结构与数据流：从一张图到多个透明图层
+    - figure: qwen-image-layered-official-architecture
+      heading: 读懂官方结构图
+- id: qwen-vla-guide
+  model: qwen-vla-model
+  figures:
+    - figure: qwen-vla-teaching
+      heading: 结构：一位理解场景的搭档，加一位生成动作的搭档
+- id: qwen3-livetranslate-guide
+  model: qwen3-livetranslate-model
+  figures:
+    - figure: qwen3-livetranslate-teaching
+      heading: 结构：从音视频到译文与声音
+- id: qwen35-livetranslate-guide
+  model: qwen35-livetranslate-model
+  figures:
+    - figure: qwen35-livetranslate-teaching
+      heading: 结构：Readable Unit 怎样帮助边听边说
+
+- id: qwen3-reranker-guide
+  model: qwen3-reranker-model
+  figures:
+    - figure: qwen3-reranker-teaching
+      heading: 结构：问题和候选一起评分
+
+- id: qwen3-vl-reranker-guide
+  model: qwen3-vl-reranker-model
+  figures:
+    - figure: qwen3-vl-reranker-teaching
+      heading: 结构：把问题和候选放在一起看
+
+- id: qwen3-forcedaligner-guide
+  model: qwen3-forcedaligner-model
+  figures:
+    - figure: qwen3-forcedaligner-teaching
+      heading: 结构：把已知文字放到声音的时间线上
+    - figure: qwen3-forcedaligner-official
+      heading: 结构：把已知文字放到声音的时间线上
+
+- id: qwen25-1m-guide
+  model: qwen25-1m-model
+  figures:
+    - figure: qwen25-1m-teaching
+      heading: 结构：长文本怎样走进模型
+
+- id: deepseek-r1-0528-guide
+  model: deepseek-r1-0528-model
+  figures:
+    - figure: deepseek-r1-0528-structure
+      heading: 结构：同一条生成路径，不同的处理环节
+    - figure: deepseek-r1-0528-teaching
+      heading: 结构：同一条生成路径，不同的处理环节
+
+- id: qwen25-math-prm-guide
+  model: qwen25-math-prm-model
+  figures:
+    - figure: qwen25-math-prm-teaching
+      heading: 结构：生成答案和检查步骤分工
+
+- id: glm-image-guide
+  model: glm-image-model
+  figures:
+    - figure: glm-image-teaching
+      heading: 结构：先定布局，再画细节
+
+- id: deepseek-v3-0324-guide
+  model: deepseek-v3-0324-model
+  figures:
+    - figure: deepseek-v3-0324-structure
+      heading: 结构：同一栋楼里怎样处理一条请求
+    - figure: deepseek-v3-0324-teaching
+      heading: 结构：同一栋楼里怎样处理一条请求
+
+- id: qwen25-math-rm-guide
+  model: qwen25-math-rm-model
+  figures:
+    - figure: qwen25-math-rm-teaching
+      heading: 结构：生成与打分为什么要分开
+
+- id: qvq-72b-preview-guide
+  model: qvq-72b-preview-model
+  figures:
+    - figure: qvq-72b-preview-teaching
+      heading: 结构：把图片和文字放在一起理解
+
+- id: deepseek-v25-guide
+  model: deepseek-v25-model
+  figures:
+    - figure: deepseek-v25-teaching
+      heading: 结构：一套文本主干处理多种任务
+
+- id: glm-tts-guide
+  model: glm-tts-model
+  figures:
+    - figure: glm-tts-teaching
+      heading: 结构：从文字到可播放声音
+
+- id: gpt3-guide
+  model: gpt3-model
+  figures:
+    - figure: gpt3-teaching
+      heading: 零样本、单样本和少样本：例子放在哪里？
+- id: gpt4-guide
+  model: gpt4-model
+  figures:
+    - figure: gpt4-teaching
+      heading: 结构：知道输入输出，但不要虚构内部零件
+- id: wan21-guide
+  model: wan21-model
+  figures:
+    - figure: wan21-teaching
+      heading: 结构：从噪声逐步生成一段视频
+
+- id: gpt1-guide
+  model: gpt1-model
+  figures:
+    - figure: gpt1-teaching
+      heading: 监督微调：把同一底座改造成任务模型
+- id: sam2-guide
+  model: sam2-model
+  figures:
+    - figure: sam2-teaching
+      heading: 结构：让当前画面参考过去的线索
+- id: wan22-guide
+  model: wan22-model
+  figures:
+    - figure: wan22-teaching
+      heading: 结构：两个专家按生成阶段接力
+
+- id: qwq-preview-guide
+  model: qwq-preview-model
+  figures:
+    - figure: qwq-preview-teaching
+      heading: 结构：思考文字也是逐步生成的
+
+- id: gpt5-guide
+  model: gpt5-model
+  figures:
+    - figure: gpt5-teaching
+      heading: 从请求到结果：产品系统怎么组织
+
+- id: qwen-image-2512-guide
+  model: qwen-image-2512-model
+  figures:
+    - figure: qwen-image-2512-teaching
+      heading: 结构：从文字到图片
+- id: qwen-image-edit-2511-guide
+  model: qwen-image-edit-2511-model
+  figures:
+    - figure: qwen-image-edit-2511-teaching
+      heading: 示例：把参考关系写清楚
+
+- id: qwen-image-edit-2509-guide
+  model: qwen-image-edit-2509-model
+  figures:
+    - figure: qwen-image-edit-2509-teaching
+      heading: 结构：多张图片怎样进入一次编辑
+
+- id: llama1-guide
+  model: llama1-model
+  figures:
+    - figure: llama1-teaching
+      heading: 模型结构：从已有前文预测下一段
+- id: llama2-guide
+  model: llama2-model
+  figures:
+    - figure: llama2-teaching
+      heading: 结构：从一串词到下一段文字
+
+- id: llama3-guide
+  model: llama3-model
+  figures:
+    - figure: llama3-teaching
+      heading: 结构：从前文生成下一个 token
+- id: llama4-guide
+  model: llama4-model
+  figures:
+    - figure: llama4-teaching
+      heading: 图文结构：图片如何参与回答
+
+- id: llama32-vision-guide
+  model: llama32-vision-model
+  figures:
+    - figure: llama32-vision-teaching
+      heading: 结构：给语言模型接上一条视觉通路
+- id: llama33-guide
+  model: llama33-model
+  figures:
+    - figure: llama33-teaching
+      heading: 结构：文本进来，文本出去
+
+- id: instructgpt-guide
+  model: instructgpt-model
+  figures:
+    - figure: instructgpt-teaching
+      heading: 一张图看懂训练：三种人类反馈角色
+- id: llama32-text-guide
+  model: llama32-text-model
+  figures:
+    - figure: llama32-text-teaching
+      heading: 剪枝：先把网络做小
+
+- id: chatglm2-guide
+  model: chatglm2-model
+  figures:
+    - figure: chatglm2-backbone
+      heading: 结构与数据流
+- id: chatglm3-guide
+  model: chatglm3-model
+  figures:
+    - figure: chatglm3-backbone
+      heading: 结构与数据流
+
+- id: glm130-guide
+  model: glm130-model
+  figures:
+    - figure: glm130-overview
+      heading: 结构与数据流
+- id: glm4-9b-guide
+  model: glm4-9b-model
+  figures:
+    - figure: glm4-9b-overview
+      heading: 结构与数据流
+- id: minimax-m1-guide
+  model: minimax-m1-model
+  figures:
+    - figure: minimax-m1-overview
+      heading: 结构与数据流
+- id: qwen3-omni-captioner-guide
+  model: qwen3-omni-captioner-model
+  figures:
+    - figure: qwen3-omni-captioner-teaching
+      heading: 结构与数据流
+- id: deepseek-vl-first-guide
+  model: deepseek-vl-first-model
+  figures:
+    - figure: deepseek-vl-first-teaching
+      heading: 结构与数据流
+- id: minimax-text-01-guide
+  model: minimax-text-01-model
+  figures:
+    - figure: minimax-text-01-teaching
+      heading: 结构与数据流
+- id: minimax-vl01-guide
+  model: minimax-vl01-model
+  figures:
+    - figure: minimax-vl01-teaching
+      heading: 结构与数据流
+- id: glm45v-guide
+  model: glm45v-model
+  figures:
+    - figure: glm45v-teaching
+      heading: 结构与数据流

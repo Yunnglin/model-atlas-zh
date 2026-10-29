@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">GLM-TTS 语音生成示意</title>
+<desc id="desc">文字和参考声音条件经过自回归语音模型形成语音 token，流匹配模块产生梅尔频谱，再由声码器生成波形。</desc>
+<rect width="1200" height="420" rx="24" fill="#f6faf9"/>
+<g font-family="system-ui, sans-serif" fill="#203548">
+<text x="45" y="54" font-size="25" font-weight="700">GLM-TTS：先生成语音 token，再合成声音</text>
+<text x="45" y="84" font-size="16" fill="#59717c">教学示意：条件与分块细节以官方实现为准</text>
+<g fill="#fff" stroke="#bdd4d0" stroke-width="2"><rect x="36" y="145" width="200" height="120" rx="14"/><rect x="293" y="145" width="230" height="120" rx="14"/><rect x="580" y="145" width="220" height="120" rx="14"/><rect x="857" y="145" width="165" height="120" rx="14"/><rect x="1065" y="145" width="100" height="120" rx="14"/></g>
+<g font-size="18" font-weight="700"><text x="55" y="183">文字 / 读音提示</text><text x="55" y="221">参考声音条件</text><text x="317" y="183">自回归语音模型</text><text x="609" y="183">流匹配模块</text><text x="882" y="183">声码器</text><text x="1082" y="194">波形</text></g>
+<g font-size="15" fill="#59717c"><text x="317" y="222">生成语音 token</text><text x="609" y="222">生成梅尔频谱</text><text x="882" y="222">合成声音</text></g>
+<g stroke="#398579" stroke-width="3" fill="none"><path d="M236 205 H281"/><path d="M523 205 H568"/><path d="M800 205 H845"/><path d="M1022 205 H1053"/></g>
+<g fill="#398579"><path d="M281 205 l-10 -6 v12z"/><path d="M568 205 l-10 -6 v12z"/><path d="M845 205 l-10 -6 v12z"/><path d="M1053 205 l-10 -6 v12z"/></g>
+<text x="45" y="352" font-size="16" fill="#59717c">训练中用语音 tokenizer 编码真实语音；多奖励后训练关注发音、音色与表现力。</text>
+</g></svg>

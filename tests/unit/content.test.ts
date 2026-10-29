@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { parse } from 'yaml';
 import type { Root } from 'mdast';
 import remarkBaseLinks from '../../src/build/remark-base-links';
@@ -18,6 +19,54 @@ function tree(url: string): Root {
 }
 
 describe('learner-facing content integrity', () => {
+  it('keeps recorded local figure checksums consistent with the assets', () => {
+    const sections = readFileSync('docs/assets.md', 'utf8').split(/(?=^#{2,3} )/m);
+    for (const section of sections) {
+      const hash = section.match(/SHA-256：`([0-9a-f]{64})`/)?.[1];
+      const path = section.match(/`(public\/figures\/[^`]+\.(?:svg|png|jpe?g|webp))`/)?.[1];
+      if (!hash || !path) continue;
+      expect(createHash('sha256').update(readFileSync(path)).digest('hex'), path).toBe(hash);
+    }
+  });
+  it('avoids site-centric self references in reader-facing articles', () => {
+    const data = readKnowledgeFixture();
+    for (const node of data.nodes) {
+      const raw = readFileSync(`src/content/docs${node.href.replace(/\/$/, '.md')}`, 'utf8');
+      expect(raw, node.id).not.toMatch(/本站|本网站|本项目/);
+    }
+  });
+  it('keeps every timeline model distinct, illustrated, and beginning with a sufficiently deep model card', () => {
+    const data = readKnowledgeFixture();
+    const articles = new Set<string>();
+    for (const entry of data.timeline) {
+      expect(articles.has(entry.article), `${entry.id}: shared article`).toBe(false);
+      articles.add(entry.article);
+      const node = data.nodes.find((item) => item.id === entry.article);
+      expect(node, `${entry.id}: missing article`).toBeDefined();
+      const raw = readFileSync(`src/content/docs${node!.href.replace(/\/$/, '.md')}`, 'utf8');
+      const body = raw.split('---').slice(2).join('---').split('## 参考资料')[0]!;
+      expect(body.trimStart(), entry.id).toMatch(/^## 模型卡/);
+      // Count article prose separately from headings, model-card tables and reference links.
+      const prose = body
+        .split('\n')
+        .filter((line) => !/^\s*(\||#|[-*]\s*\[|<\/?|\$\$)/.test(line))
+        .join('\n')
+        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
+      expect(prose.match(/[\u4e00-\u9fff]/g)?.length ?? 0, entry.id).toBeGreaterThanOrEqual(2000);
+      expect(
+        data.guides.some((guide) => guide.model === entry.article && guide.figures.length),
+        entry.id,
+      ).toBe(true);
+      const guide = data.guides.find((item) => item.model === entry.article)!;
+      for (const item of guide.figures) {
+        const figure = data.figures.find((candidate) => candidate.id === item.figure);
+        if (figure?.asset)
+          expect(raw, `${entry.id}: duplicated registered figure`).not.toContain(
+            `](${figure.asset.src})`,
+          );
+      }
+    }
+  });
   it('rejects dangling article links, while keeping base prefixes, anchors and query strings', () => {
     const validate = remarkBaseLinks({
       base: '/model-atlas-zh/',

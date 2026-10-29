@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">RLOO：留出当前回答，用其他回答的奖励作为基线</title>
+  <desc id="desc">同一问题独立采样三个回答，奖励分别是 1、0、0。A 的基线为 0，优势为 1；B 和 C 的基线均为 0.5，优势均为负 0.5。</desc>
+  <rect width="960" height="440" rx="20" fill="#f5f9f8"/>
+  <g font-family="system-ui, -apple-system, sans-serif" fill="#183b45">
+    <text x="36" y="52" font-size="26" font-weight="700">留出自己，再和其他回答比较</text>
+    <text x="36" y="85" font-size="16" fill="#526b72">示例前提：同一问题独立采样 A、B、C；奖励依次为 1、0、0。</text>
+    <text x="52" y="133" font-size="15" font-weight="700">当前回答与奖励</text>
+    <text x="326" y="133" font-size="15" font-weight="700">其他回答的平均奖励（基线）</text>
+    <text x="707" y="133" font-size="15" font-weight="700">优势 = 奖励 − 基线</text>
+    <g font-size="20">
+      <rect x="36" y="151" width="888" height="64" rx="10" fill="#ffffff" stroke="#d5e6e2"/>
+      <text x="52" y="191" font-weight="700">A：1</text>
+      <text x="326" y="191">B 和 C： (0 + 0) ÷ 2 = 0</text>
+      <text x="707" y="191" fill="#08755c" font-weight="700">1 − 0 = +1</text>
+      <rect x="36" y="227" width="888" height="64" rx="10" fill="#ffffff" stroke="#d5e6e2"/>
+      <text x="52" y="267" font-weight="700">B：0</text>
+      <text x="326" y="267">A 和 C： (1 + 0) ÷ 2 = 0.5</text>
+      <text x="707" y="267" fill="#99584a" font-weight="700">0 − 0.5 = −0.5</text>
+      <rect x="36" y="303" width="888" height="64" rx="10" fill="#ffffff" stroke="#d5e6e2"/>
+      <text x="52" y="343" font-weight="700">C：0</text>
+      <text x="326" y="343">A 和 B： (1 + 0) ÷ 2 = 0.5</text>
+      <text x="707" y="343" fill="#99584a" font-weight="700">0 − 0.5 = −0.5</text>
+    </g>
+    <text x="36" y="406" font-size="16" fill="#526b72">每一行都排除当前回答；优势是训练信号，并非实测效果。</text>
+  </g>
+</svg>

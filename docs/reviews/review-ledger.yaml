@@ -1,0 +1,2784 @@
+version: 1
+dimensions:
+  - structure
+  - training
+  - evaluation
+  - figures
+  - community
+entries:
+  - id: transformer
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/transformer-full-review-20261029.md
+      - docs/reviews/transformer-bert-t5-source-followup-20261029.md
+    notes: '[基础语言模型审校](foundation-audit.md)：结构、训练、部分评测、图文字和连接；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/transformer-full-review-20261029.md
+      training: docs/reviews/transformer-full-review-20261029.md
+      evaluation: docs/reviews/transformer-full-review-20261029.md
+      figures: docs/reviews/transformer-full-review-20261029.md
+      community: docs/reviews/transformer-full-review-20261029.md
+  - id: bert
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/classic-nlp-cards-final.md
+      - docs/reviews/bert-structure-complete-20261029.md
+      - docs/reviews/bert-training-eval-figure-community-20261029.md
+      - docs/reviews/transformer-bert-t5-source-followup-20261029.md
+      - docs/reviews/four-foundation-figure-dataflow-20261029.md
+    notes: '[基础语言模型审校](foundation-audit.md)、[经典模型卡复核](classic-nlp-cards-final.md)：结构、训练、部分评测及图示范围。'
+    completedEvidence:
+      structure: docs/reviews/bert-structure-complete-20261029.md
+      training: docs/reviews/bert-training-eval-figure-community-20261029.md
+      evaluation: docs/reviews/bert-training-eval-figure-community-20261029.md
+      figures: docs/reviews/bert-training-eval-figure-community-20261029.md
+      community: docs/reviews/bert-training-eval-figure-community-20261029.md
+  - id: gpt
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/classic-nlp-cards-final.md
+      - docs/reviews/gpt2-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt2-full-review-20261029.md
+      training: docs/reviews/gpt2-full-review-20261029.md
+      evaluation: docs/reviews/gpt2-full-review-20261029.md
+      figures: docs/reviews/gpt2-full-review-20261029.md
+      community: docs/reviews/gpt2-full-review-20261029.md
+  - id: t5
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/classic-nlp-cards-final.md
+      - docs/reviews/t5-full-review-20261029.md
+      - docs/reviews/transformer-bert-t5-source-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/t5-full-review-20261029.md
+      training: docs/reviews/t5-full-review-20261029.md
+      evaluation: docs/reviews/t5-full-review-20261029.md
+      figures: docs/reviews/t5-full-review-20261029.md
+      community: docs/reviews/t5-full-review-20261029.md
+  - id: conformer
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/audio-model-cards-final.md
+      - docs/reviews/speech-followup.md
+      - docs/reviews/conformer-full-review-20261029.md
+      - docs/reviews/numeric-vision-speech-batch7-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/conformer-full-review-20261029.md
+      training: docs/reviews/conformer-full-review-20261029.md
+      evaluation: docs/reviews/conformer-full-review-20261029.md
+      figures: docs/reviews/conformer-full-review-20261029.md
+      community: docs/reviews/conformer-full-review-20261029.md
+  - id: vit
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/vision-followup.md
+      - docs/reviews/vit-full-review-20261029.md
+      - docs/reviews/vit-clip-sam-evaluation-figure-followup-20261029.md
+      - docs/reviews/kimi-vision-evidence-crosscheck-20261029.md
+      - docs/reviews/four-foundation-figure-dataflow-20261029.md
+      - docs/reviews/vit-cls-figure-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/vit-full-review-20261029.md
+      training: docs/reviews/vit-full-review-20261029.md
+      evaluation: docs/reviews/vit-full-review-20261029.md
+      figures: docs/reviews/vit-full-review-20261029.md
+      community: docs/reviews/vit-full-review-20261029.md
+  - id: wav2vec2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/audio-model-cards-final.md
+      - docs/reviews/wav2vec2-full-review-20261029.md
+      - docs/reviews/whisper-wav2vec-hubert-training-eval-followup-20261029.md
+      - docs/reviews/four-foundation-figure-dataflow-20261029.md
+      - docs/reviews/wav2vec-mask-span-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/wav2vec2-full-review-20261029.md
+      training: docs/reviews/wav2vec2-full-review-20261029.md
+      evaluation: docs/reviews/wav2vec2-full-review-20261029.md
+      figures: docs/reviews/wav2vec2-full-review-20261029.md
+      community: docs/reviews/wav2vec2-full-review-20261029.md
+  - id: clip
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/clip-full-review-20261029.md
+      - docs/reviews/vit-clip-sam-evaluation-figure-followup-20261029.md
+      - docs/reviews/four-foundation-figure-dataflow-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/clip-full-review-20261029.md
+      training: docs/reviews/clip-full-review-20261029.md
+      evaluation: docs/reviews/clip-full-review-20261029.md
+      figures: docs/reviews/clip-full-review-20261029.md
+      community: docs/reviews/clip-full-review-20261029.md
+  - id: glm-original
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-remaining-audit.md
+      - docs/reviews/zhihu-reading.md
+      - docs/reviews/glm-original-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-original-full-review-20261029.md
+      training: docs/reviews/glm-original-full-review-20261029.md
+      evaluation: docs/reviews/glm-original-full-review-20261029.md
+      figures: docs/reviews/glm-original-full-review-20261029.md
+      community: docs/reviews/glm-original-full-review-20261029.md
+  - id: hubert
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/speech-followup.md
+      - docs/reviews/hubert-full-review-20261029.md
+      - docs/reviews/whisper-wav2vec-hubert-training-eval-followup-20261029.md
+      - docs/reviews/hubert-lm-decoding-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/hubert-full-review-20261029.md
+      training: docs/reviews/hubert-full-review-20261029.md
+      evaluation: docs/reviews/hubert-full-review-20261029.md
+      figures: docs/reviews/hubert-full-review-20261029.md
+      community: docs/reviews/hubert-full-review-20261029.md
+  - id: swin
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/vision-followup.md
+      - docs/reviews/swin-full-review-20261029.md
+    notes: 范围与证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/swin-full-review-20261029.md
+      training: docs/reviews/swin-full-review-20261029.md
+      evaluation: docs/reviews/swin-full-review-20261029.md
+      figures: docs/reviews/swin-full-review-20261029.md
+      community: docs/reviews/swin-full-review-20261029.md
+  - id: dit
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/dit-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/dit-full-review-20261029.md
+      training: docs/reviews/dit-full-review-20261029.md
+      evaluation: docs/reviews/dit-full-review-20261029.md
+      figures: docs/reviews/dit-full-review-20261029.md
+      community: docs/reviews/dit-full-review-20261029.md
+  - id: encodec
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/encodec-deep-review-20261029.md
+      - docs/reviews/model-card-inventory-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/encodec-deep-review-20261029.md
+      training: docs/reviews/encodec-deep-review-20261029.md
+      evaluation: docs/reviews/encodec-deep-review-20261029.md
+      figures: docs/reviews/encodec-deep-review-20261029.md
+      community: docs/reviews/encodec-deep-review-20261029.md
+  - id: stable-diffusion
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/stable-diffusion-full-review-20261029.md
+      - docs/reviews/stable-diffusion-v14-bksdm-evaluation-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/stable-diffusion-full-review-20261029.md
+      training: docs/reviews/stable-diffusion-full-review-20261029.md
+      evaluation: docs/reviews/stable-diffusion-full-review-20261029.md
+      figures: docs/reviews/stable-diffusion-full-review-20261029.md
+      community: docs/reviews/stable-diffusion-full-review-20261029.md
+  - id: whisper
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/audio-model-cards-final.md
+      - docs/reviews/speech-followup.md
+      - docs/reviews/whisper-full-review-20261029.md
+      - docs/reviews/whisper-wav2vec-hubert-training-eval-followup-20261029.md
+      - docs/reviews/audio-figures-four-crosscheck-20261029.md
+      - docs/reviews/whisper-longform-timestamp-context-20261029.md
+    notes: 已完成对应维度审校，详见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/whisper-full-review-20261029.md
+      training: docs/reviews/whisper-full-review-20261029.md
+      evaluation: docs/reviews/whisper-full-review-20261029.md
+      figures: docs/reviews/whisper-full-review-20261029.md
+      community: docs/reviews/whisper-full-review-20261029.md
+  - id: chatglm-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/glm-version-audit.md
+      - docs/reviews/remaining-community-3.md
+      - docs/reviews/chatglm-first-full-review-20261029.md
+      - docs/reviews/glm-deepseek-numeric-batch8-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/chatglm-first-full-review-20261029.md
+      training: docs/reviews/chatglm-first-full-review-20261029.md
+      evaluation: docs/reviews/chatglm-first-full-review-20261029.md
+      figures: docs/reviews/chatglm-first-full-review-20261029.md
+      community: docs/reviews/chatglm-first-full-review-20261029.md
+  - id: chatglm2-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/chatglm23-source-review-20261028.md
+      - docs/reviews/chatglm2-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/chatglm2-full-review-20261029.md
+      training: docs/reviews/chatglm2-full-review-20261029.md
+      evaluation: docs/reviews/chatglm2-full-review-20261029.md
+      figures: docs/reviews/chatglm2-full-review-20261029.md
+      community: docs/reviews/chatglm2-full-review-20261029.md
+  - id: chatglm3-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/chatglm23-source-review-20261028.md
+      - docs/reviews/chatglm3-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/chatglm3-full-review-20261029.md
+      training: docs/reviews/chatglm3-full-review-20261029.md
+      evaluation: docs/reviews/chatglm3-full-review-20261029.md
+      figures: docs/reviews/chatglm3-full-review-20261029.md
+      community: docs/reviews/chatglm3-full-review-20261029.md
+  - id: claude
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/closed-model-audit.md
+      - docs/reviews/claude-full-review-20261029.md
+      - docs/reviews/claude-first-community-followup-20261029.md
+      - docs/reviews/claude-first-original-community-20261029.md
+      - docs/reviews/claude-v13-cot-hub-20261029.md
+    notes: 已核对 Claude-v1.3 社区论文汇总；系列 100K 报道实测为 Instant，范围分别记录。
+    completedEvidence:
+      structure: docs/reviews/claude-full-review-20261029.md
+      training: docs/reviews/claude-full-review-20261029.md
+      evaluation: docs/reviews/claude-full-review-20261029.md
+      figures: docs/reviews/claude-full-review-20261029.md
+      community: docs/reviews/claude-v13-cot-hub-20261029.md
+  - id: llava
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/vision-followup.md
+      - docs/reviews/llava-full-review-20261029.md
+      - docs/reviews/kimi-vision-evidence-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llava-full-review-20261029.md
+      training: docs/reviews/llava-full-review-20261029.md
+      evaluation: docs/reviews/llava-full-review-20261029.md
+      figures: docs/reviews/llava-full-review-20261029.md
+      community: docs/reviews/llava-full-review-20261029.md
+  - id: qwen-1
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-text-audit.md
+      - docs/reviews/qwen-model-card-audit.md
+      - docs/reviews/qwen-community.md
+      - docs/reviews/qwen1-full-review-20261029.md
+      - docs/reviews/qwen1-qwen2-qwen25-training-eval-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen1-full-review-20261029.md
+      training: docs/reviews/qwen1-full-review-20261029.md
+      evaluation: docs/reviews/qwen1-full-review-20261029.md
+      figures: docs/reviews/qwen1-full-review-20261029.md
+      community: docs/reviews/qwen1-full-review-20261029.md
+  - id: qwen-audio
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen-audio-full-review-20261029.md
+    notes: 已完成对应维度审校，详见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-audio-full-review-20261029.md
+      training: docs/reviews/qwen-audio-full-review-20261029.md
+      evaluation: docs/reviews/qwen-audio-full-review-20261029.md
+      figures: docs/reviews/qwen-audio-full-review-20261029.md
+      community: docs/reviews/qwen-audio-full-review-20261029.md
+  - id: qwen-vl-first
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-vl-version-detail-audit.md
+      - docs/reviews/qwen-vision-community.md
+      - docs/reviews/qwen-vl-first-full-review-20261029.md
+      - docs/reviews/qwen-vl-three-versions-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-vl-first-full-review-20261029.md
+      training: docs/reviews/qwen-vl-first-full-review-20261029.md
+      evaluation: docs/reviews/qwen-vl-first-full-review-20261029.md
+      figures: docs/reviews/qwen-vl-first-full-review-20261029.md
+      community: docs/reviews/qwen-vl-first-full-review-20261029.md
+  - id: sam
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/vision-followup.md
+      - docs/reviews/sam-full-review-20261029.md
+      - docs/reviews/vit-clip-sam-evaluation-figure-followup-20261029.md
+    notes: 范围与证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/sam-full-review-20261029.md
+      training: docs/reviews/sam-full-review-20261029.md
+      evaluation: docs/reviews/sam-full-review-20261029.md
+      figures: docs/reviews/sam-full-review-20261029.md
+      community: docs/reviews/sam-full-review-20261029.md
+  - id: vall-e
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/vall-e-full-review-20261029.md
+      - docs/reviews/f5-valle-training-eval-followup-20261029.md
+      - docs/reviews/numeric-vision-speech-batch7-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/vall-e-full-review-20261029.md
+      training: docs/reviews/vall-e-full-review-20261029.md
+      evaluation: docs/reviews/vall-e-full-review-20261029.md
+      figures: docs/reviews/vall-e-full-review-20261029.md
+      community: docs/reviews/vall-e-full-review-20261029.md
+  - id: qwen-coder-15
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/codeqwen15-independent.md
+      - docs/reviews/qwen-code-community.md
+      - docs/reviews/codeqwen15-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/codeqwen15-full-review-20261029.md
+      training: docs/reviews/codeqwen15-full-review-20261029.md
+      evaluation: docs/reviews/codeqwen15-full-review-20261029.md
+      figures: docs/reviews/codeqwen15-full-review-20261029.md
+      community: docs/reviews/codeqwen15-full-review-20261029.md
+  - id: deepseek-v3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-core-audit.md
+      - docs/reviews/deepseek-v3-r1-independent-20261028.md
+      - docs/reviews/deepseek-v3-full-review-20261029.md
+      - docs/reviews/deepseek-v3-r1-reward-review-20261029.md
+      - docs/reviews/moe-model-card-crosscheck-20261029.md
+      - docs/reviews/deepseek-v2-v3-v32-comparison-followup-20261029.md
+      - docs/reviews/five-open-models-spotcheck-20261029.md
+      - docs/reviews/deepseek-v3-sft-packing-followup-20261029.md
+    notes: '[核心版本审校](deepseek-core-audit.md)：结构、训练、部分评测和图文字；[V3 / R1 复核](deepseek-v3-r1-independent-20261028.md)补充配置和评测。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-v3-full-review-20261029.md
+      training: docs/reviews/deepseek-v3-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v3-full-review-20261029.md
+      figures: docs/reviews/deepseek-v3-full-review-20261029.md
+      community: docs/reviews/deepseek-v3-full-review-20261029.md
+  - id: f5-tts
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/legacy-audio-vision-audit.md
+      - docs/reviews/f5-tts-full-review-20261029.md
+      - docs/reviews/audio-figures-four-crosscheck-20261029.md
+      - docs/reviews/f5-valle-training-eval-followup-20261029.md
+      - docs/reviews/f5-sway-ablation-followup-20261029.md
+      - docs/reviews/f5-tts-flow-loop-figure-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/f5-tts-full-review-20261029.md
+      training: docs/reviews/f5-tts-full-review-20261029.md
+      evaluation: docs/reviews/f5-tts-full-review-20261029.md
+      figures: docs/reviews/f5-tts-full-review-20261029.md
+      community: docs/reviews/f5-tts-full-review-20261029.md
+  - id: gemini
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/closed-model-audit.md
+      - docs/reviews/gemini15-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gemini15-full-review-20261029.md
+      training: docs/reviews/gemini15-full-review-20261029.md
+      evaluation: docs/reviews/gemini15-full-review-20261029.md
+      figures: docs/reviews/gemini15-full-review-20261029.md
+      community: docs/reviews/gemini15-full-review-20261029.md
+  - id: glm-vision
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/omni-followup.md
+      - docs/reviews/glm-v-full-review-20261029.md
+      - docs/reviews/glm-deepseek-numeric-review-batch7-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-v-full-review-20261029.md
+      training: docs/reviews/glm-v-full-review-20261029.md
+      evaluation: docs/reviews/glm-v-full-review-20261029.md
+      figures: docs/reviews/glm-v-full-review-20261029.md
+      community: docs/reviews/glm-v-full-review-20261029.md
+  - id: gpt4o
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/closed-model-audit.md
+      - docs/reviews/gpt4-gpt4o-second-review.md
+      - docs/reviews/gpt4o-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt4o-full-review-20261029.md
+      training: docs/reviews/gpt4o-full-review-20261029.md
+      evaluation: docs/reviews/gpt4o-full-review-20261029.md
+      figures: docs/reviews/gpt4o-full-review-20261029.md
+      community: docs/reviews/gpt4o-full-review-20261029.md
+  - id: llama
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/foundation-audit.md
+      - docs/reviews/llama31-llama33-architecture-review-20261028.md
+      - docs/reviews/llama31-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama31-full-review-20261029.md
+      training: docs/reviews/llama31-full-review-20261029.md
+      evaluation: docs/reviews/llama31-full-review-20261029.md
+      figures: docs/reviews/llama31-full-review-20261029.md
+      community: docs/reviews/llama31-full-review-20261029.md
+  - id: qwen-15
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-text-audit.md
+      - docs/reviews/qwen-model-card-audit.md
+      - docs/reviews/qwen-community.md
+      - docs/reviews/qwen15-full-review-20261029.md
+      - docs/reviews/qwen15-dense-zhihu-candidates-20261029.md
+      - docs/reviews/qwen15-dense-deployment-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen15-full-review-20261029.md
+      training: docs/reviews/qwen15-full-review-20261029.md
+      evaluation: docs/reviews/qwen15-full-review-20261029.md
+      figures: docs/reviews/qwen15-full-review-20261029.md
+      community: docs/reviews/qwen15-full-review-20261029.md
+  - id: qwen-2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-text-audit.md
+      - docs/reviews/qwen-model-card-audit.md
+      - docs/reviews/qwen-community.md
+      - docs/reviews/qwen2-full-review-20261029.md
+      - docs/reviews/qwen1-qwen2-qwen25-training-eval-followup-20261029.md
+    notes: 审校范围和限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen2-full-review-20261029.md
+      training: docs/reviews/qwen2-full-review-20261029.md
+      evaluation: docs/reviews/qwen2-full-review-20261029.md
+      figures: docs/reviews/qwen2-full-review-20261029.md
+      community: docs/reviews/qwen2-full-review-20261029.md
+  - id: qwen2-audio
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen2-audio-full-review-20261029.md
+    notes: 指定结构、训练、部分评测及官方图标题和范围；当轮未重新阅读全部社区资料。
+    completedEvidence:
+      structure: docs/reviews/qwen2-audio-full-review-20261029.md
+      training: docs/reviews/qwen2-audio-full-review-20261029.md
+      evaluation: docs/reviews/qwen2-audio-full-review-20261029.md
+      figures: docs/reviews/qwen2-audio-full-review-20261029.md
+      community: docs/reviews/qwen2-audio-full-review-20261029.md
+  - id: qwen2-vl
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-vl-version-detail-audit.md
+      - docs/reviews/qwen-vision-community.md
+      - docs/reviews/qwen2-vl-full-review-20261029.md
+      - docs/reviews/qwen-vl-three-versions-crosscheck-20261029.md
+      - docs/reviews/qwen2-vl-training-budget-review-20261029.md
+      - docs/reviews/qwen-five-modelcard-source-check-20261029.md
+      - docs/reviews/qwen2-vl-figure-mlp-flow-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen2-vl-full-review-20261029.md
+      training: docs/reviews/qwen2-vl-full-review-20261029.md
+      evaluation: docs/reviews/qwen2-vl-full-review-20261029.md
+      figures: docs/reviews/qwen2-vl-full-review-20261029.md
+      community: docs/reviews/qwen2-vl-full-review-20261029.md
+  - id: qwen-25
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-text-audit.md
+      - docs/reviews/qwen-model-card-audit.md
+      - docs/reviews/qwen-community.md
+      - docs/reviews/qwen25-full-review-20261029.md
+      - docs/reviews/qwen1-qwen2-qwen25-training-eval-followup-20261029.md
+    notes: 范围与证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-full-review-20261029.md
+      training: docs/reviews/qwen25-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-full-review-20261029.md
+      figures: docs/reviews/qwen25-full-review-20261029.md
+      community: docs/reviews/qwen25-full-review-20261029.md
+  - id: qwen25-coder
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-coder-source-review-20261028.md
+      - docs/reviews/qwen-code-community.md
+      - docs/reviews/qwen25-coder-full-review-20261029.md
+      - docs/reviews/qwen-coder-two-context-followup-20261029.md
+      - docs/reviews/qwen-five-modelcard-source-check-20261029.md
+    notes: 审校范围和限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-coder-full-review-20261029.md
+      training: docs/reviews/qwen25-coder-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-coder-full-review-20261029.md
+      figures: docs/reviews/qwen25-coder-full-review-20261029.md
+      community: docs/reviews/qwen25-coder-full-review-20261029.md
+  - id: qwen2-math
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen2-qwen25math-followup-20261028.md
+      - docs/reviews/qwen2-math-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen2-math-full-review-20261029.md
+      training: docs/reviews/qwen2-math-full-review-20261029.md
+      evaluation: docs/reviews/qwen2-math-full-review-20261029.md
+      figures: docs/reviews/qwen2-math-full-review-20261029.md
+      community: docs/reviews/qwen2-math-full-review-20261029.md
+  - id: qwen-math
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-math-three-review-20261028.md
+      - docs/reviews/qwen25-math-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-math-full-review-20261029.md
+      training: docs/reviews/qwen25-math-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-math-full-review-20261029.md
+      figures: docs/reviews/qwen25-math-full-review-20261029.md
+      community: docs/reviews/qwen25-math-full-review-20261029.md
+  - id: deepseek-r1
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-core-audit.md
+      - docs/reviews/deepseek-v3-r1-independent-20261028.md
+      - docs/reviews/deepseek-r1-full-review-20261029.md
+      - docs/reviews/deepseek-v3-r1-reward-review-20261029.md
+      - docs/reviews/deepseek-glm-evidence-sample-20261029.md
+    notes: '[核心版本审校](deepseek-core-audit.md)：结构、训练、部分评测及训练图；[V3 / R1 复核](deepseek-v3-r1-independent-20261028.md)。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-r1-full-review-20261029.md
+      training: docs/reviews/deepseek-r1-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-r1-full-review-20261029.md
+      figures: docs/reviews/deepseek-r1-full-review-20261029.md
+      community: docs/reviews/deepseek-r1-full-review-20261029.md
+  - id: glm45
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-core-audit.md
+      - docs/reviews/glm45-glm5-architecture-review-20261028.md
+      - docs/reviews/community-coverage.md
+      - docs/reviews/glm45-full-review-20261029.md
+      - docs/reviews/glm45-46-47-version-boundary-followup-20261029.md
+      - docs/reviews/five-open-models-spotcheck-20261029.md
+      - docs/reviews/deepseek-glm-evidence-sample-20261029.md
+      - docs/reviews/deepseek-v32-glm45-training-followup-20261029.md
+      - docs/reviews/glm45-agent-loss-mask-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm45-full-review-20261029.md
+      training: docs/reviews/glm45-full-review-20261029.md
+      evaluation: docs/reviews/glm45-full-review-20261029.md
+      figures: docs/reviews/glm45-full-review-20261029.md
+      community: docs/reviews/glm45-full-review-20261029.md
+  - id: glm46
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm45-47-versions-review-20261028.md
+      - docs/reviews/glm46-glm47-review-20261028.md
+      - docs/reviews/glm46-full-review-20261029.md
+      - docs/reviews/glm45-46-47-version-boundary-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm46-full-review-20261029.md
+      training: docs/reviews/glm46-full-review-20261029.md
+      evaluation: docs/reviews/glm46-full-review-20261029.md
+      figures: docs/reviews/glm46-full-review-20261029.md
+      community: docs/reviews/glm46-full-review-20261029.md
+  - id: glm47
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm45-47-versions-review-20261028.md
+      - docs/reviews/glm46-glm47-review-20261028.md
+      - docs/reviews/glm47-full-review-20261029.md
+      - docs/reviews/glm45-46-47-version-boundary-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm47-full-review-20261029.md
+      training: docs/reviews/glm47-full-review-20261029.md
+      evaluation: docs/reviews/glm47-full-review-20261029.md
+      figures: docs/reviews/glm47-full-review-20261029.md
+      community: docs/reviews/glm47-full-review-20261029.md
+  - id: glm-audio
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-remaining-audit.md
+      - docs/reviews/kimi-glm-audio-review-20261028.md
+      - docs/reviews/zhihu-reading.md
+      - docs/reviews/glm-asr-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-asr-full-review-20261029.md
+      training: docs/reviews/glm-asr-full-review-20261029.md
+      evaluation: docs/reviews/glm-asr-full-review-20261029.md
+      figures: docs/reviews/glm-asr-full-review-20261029.md
+      community: docs/reviews/glm-asr-full-review-20261029.md
+  - id: kimi15
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-core-audit.md
+      - docs/reviews/kimi-k15-k2thinking-followup-20261028.md
+      - docs/reviews/kimi15-full-review-20261029.md
+      - docs/reviews/kimi-k15-k2-k25-eval-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi15-full-review-20261029.md
+      training: docs/reviews/kimi15-full-review-20261029.md
+      evaluation: docs/reviews/kimi15-full-review-20261029.md
+      figures: docs/reviews/kimi15-full-review-20261029.md
+      community: docs/reviews/kimi15-full-review-20261029.md
+  - id: kimi-k2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-core-audit.md
+      - docs/reviews/kimi-k2-k25-architecture-review-20261028.md
+      - docs/reviews/kimi-k2-versions-review-20261028.md
+      - docs/reviews/kimi-k2-full-review-20261029.md
+      - docs/reviews/moe-model-card-crosscheck-20261029.md
+      - docs/reviews/kimi-k15-k2-k25-eval-followup-20261029.md
+      - docs/reviews/five-open-models-spotcheck-20261029.md
+      - docs/reviews/kimi-vision-evidence-crosscheck-20261029.md
+    notes: 审校范围和限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k2-full-review-20261029.md
+      training: docs/reviews/kimi-k2-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k2-full-review-20261029.md
+      figures: docs/reviews/kimi-k2-full-review-20261029.md
+      community: docs/reviews/kimi-k2-full-review-20261029.md
+  - id: kimi-k2-thinking
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-k2-versions-review-20261028.md
+      - docs/reviews/kimi-k15-k2thinking-followup-20261028.md
+      - docs/reviews/kimi-thinking-community.md
+      - docs/reviews/kimi-k2-thinking-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k2-thinking-full-review-20261029.md
+      training: docs/reviews/kimi-k2-thinking-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k2-thinking-full-review-20261029.md
+      figures: docs/reviews/kimi-k2-thinking-full-review-20261029.md
+      community: docs/reviews/kimi-k2-thinking-full-review-20261029.md
+  - id: kimi-linear
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-vl-linear-followup-20261028.md
+      - docs/reviews/kimi-linear-full-review-20261029.md
+      - docs/reviews/minimax-m1-budget-checkpoint-20261029.md
+      - docs/reviews/community-four-version-check-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-linear-full-review-20261029.md
+      training: docs/reviews/kimi-linear-full-review-20261029.md
+      evaluation: docs/reviews/kimi-linear-full-review-20261029.md
+      figures: docs/reviews/kimi-linear-full-review-20261029.md
+      community: docs/reviews/kimi-linear-full-review-20261029.md
+  - id: kimi-audio
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-audio-glm-asr-followup-20261028.md
+      - docs/reviews/kimi-audio-full-review-20261029.md
+      - docs/reviews/kimi-vision-evidence-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-audio-full-review-20261029.md
+      training: docs/reviews/kimi-audio-full-review-20261029.md
+      evaluation: docs/reviews/kimi-audio-full-review-20261029.md
+      figures: docs/reviews/kimi-audio-full-review-20261029.md
+      community: docs/reviews/kimi-audio-full-review-20261029.md
+  - id: kimi-vl
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-vl-linear-followup-20261028.md
+      - docs/reviews/kimi-vl-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-vl-full-review-20261029.md
+      training: docs/reviews/kimi-vl-full-review-20261029.md
+      evaluation: docs/reviews/kimi-vl-full-review-20261029.md
+      figures: docs/reviews/kimi-vl-full-review-20261029.md
+      community: docs/reviews/kimi-vl-full-review-20261029.md
+  - id: qwen-image
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-family-review-20261028.md
+      - docs/reviews/qwen-last-audit.md
+      - docs/reviews/qwen-image-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-full-review-20261029.md
+      training: docs/reviews/qwen-image-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-full-review-20261029.md
+      figures: docs/reviews/qwen-image-full-review-20261029.md
+      community: docs/reviews/qwen-image-full-review-20261029.md
+  - id: qwen-image-edit
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-family-review-20261028.md
+      - docs/reviews/qwen-image-edit-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-edit-full-review-20261029.md
+      training: docs/reviews/qwen-image-edit-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-edit-full-review-20261029.md
+      figures: docs/reviews/qwen-image-edit-full-review-20261029.md
+      community: docs/reviews/qwen-image-edit-full-review-20261029.md
+  - id: qwen-image-layered
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-family-review-20261028.md
+      - docs/reviews/qwen-image-layered-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-layered-full-review-20261029.md
+      training: docs/reviews/qwen-image-layered-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-layered-full-review-20261029.md
+      figures: docs/reviews/qwen-image-layered-full-review-20261029.md
+      community: docs/reviews/qwen-image-layered-full-review-20261029.md
+  - id: qwen-vla
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-vla-vlembedding-audit.md
+      - docs/reviews/qwen-vla-community.md
+      - docs/reviews/qwen-vla-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-vla-full-review-20261029.md
+      training: docs/reviews/qwen-vla-full-review-20261029.md
+      evaluation: docs/reviews/qwen-vla-full-review-20261029.md
+      figures: docs/reviews/qwen-vla-full-review-20261029.md
+      community: docs/reviews/qwen-vla-full-review-20261029.md
+  - id: qwen3-livetranslate
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-livetranslate-early-audit.md
+      - docs/reviews/qwen3-livetranslate-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-livetranslate-full-review-20261029.md
+      training: docs/reviews/qwen3-livetranslate-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-livetranslate-full-review-20261029.md
+      figures: docs/reviews/qwen3-livetranslate-full-review-20261029.md
+      community: docs/reviews/qwen3-livetranslate-full-review-20261029.md
+  - id: qwen35-livetranslate
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-livetranslate-early-audit.md
+      - docs/reviews/qwen35-livetranslate-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen35-livetranslate-full-review-20261029.md
+      training: docs/reviews/qwen35-livetranslate-full-review-20261029.md
+      evaluation: docs/reviews/qwen35-livetranslate-full-review-20261029.md
+      figures: docs/reviews/qwen35-livetranslate-full-review-20261029.md
+      community: docs/reviews/qwen35-livetranslate-full-review-20261029.md
+  - id: qwen-image21
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image21-final-audit.md
+      - docs/reviews/qwen-image21-ncnn-community-20261028.md
+      - docs/reviews/qwen-image21-full-review-20261029.md
+      - docs/reviews/qwen-image21-prompt-eval-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image21-full-review-20261029.md
+      training: docs/reviews/qwen-image21-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image21-full-review-20261029.md
+      figures: docs/reviews/qwen-image21-full-review-20261029.md
+      community: docs/reviews/qwen-image21-full-review-20261029.md
+  - id: qwen38-livetranslate
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen38-flash-live-final-audit.md
+      - docs/reviews/qwen38-livetranslate-community.md
+      - docs/reviews/qwen38-livetranslate-full-review-20261029.md
+      - docs/reviews/kimi3-live38-figure-visual-check-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen38-livetranslate-full-review-20261029.md
+      training: docs/reviews/qwen38-livetranslate-full-review-20261029.md
+      evaluation: docs/reviews/qwen38-livetranslate-full-review-20261029.md
+      figures: docs/reviews/qwen38-livetranslate-full-review-20261029.md
+      community: docs/reviews/qwen38-livetranslate-full-review-20261029.md
+  - id: qwen38-flash-next
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen38-flash-live-final-audit.md
+      - docs/reviews/qwen38-versions-review-20261028.md
+      - docs/reviews/qwen38-flash-next-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen38-flash-next-full-review-20261029.md
+      training: docs/reviews/qwen38-flash-next-full-review-20261029.md
+      evaluation: docs/reviews/qwen38-flash-next-full-review-20261029.md
+      figures: docs/reviews/qwen38-flash-next-full-review-20261029.md
+      community: docs/reviews/qwen38-flash-next-full-review-20261029.md
+  - id: qwen-omni
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen25-omni-full-review-20261029.md
+      - docs/reviews/qwen-omni-distillation-asr-followup-20261029.md
+      - docs/reviews/qwen-omni-1m-primary-followup-20261029.md
+    notes: 按报告、模型卡、图像显示和社区实读记录审阅；重建后确认替代文字。
+    completedEvidence:
+      structure: docs/reviews/qwen25-omni-full-review-20261029.md
+      training: docs/reviews/qwen25-omni-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-omni-full-review-20261029.md
+      figures: docs/reviews/qwen25-omni-full-review-20261029.md
+      community: docs/reviews/qwen25-omni-full-review-20261029.md
+  - id: qwen-vl
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-vl-version-detail-audit.md
+      - docs/reviews/qwen-vl-two-independent-20261028.md
+      - docs/reviews/qwen-vision-community.md
+      - docs/reviews/qwen25vl-full-review-20261029.md
+      - docs/reviews/qwen-vl-three-versions-crosscheck-20261029.md
+      - docs/reviews/community-four-version-check-20261029.md
+    notes: 代表性结构、训练、评测条件和教学图；社区阅读为历史记录。
+    completedEvidence:
+      structure: docs/reviews/qwen25vl-full-review-20261029.md
+      training: docs/reviews/qwen25vl-full-review-20261029.md
+      evaluation: docs/reviews/qwen25vl-full-review-20261029.md
+      figures: docs/reviews/qwen25vl-full-review-20261029.md
+      community: docs/reviews/qwen25vl-full-review-20261029.md
+  - id: qwen3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-text-audit.md
+      - docs/reviews/qwen-model-card-audit.md
+      - docs/reviews/qwen-community.md
+      - docs/reviews/qwen3-full-review-20261029.md
+      - docs/reviews/moe-model-card-crosscheck-20261029.md
+      - docs/reviews/five-open-models-spotcheck-20261029.md
+      - docs/reviews/qwen-five-modelcard-source-check-20261029.md
+    notes: 各代配置、部分训练与模型卡；社区有历史阅读。
+    completedEvidence:
+      structure: docs/reviews/qwen3-full-review-20261029.md
+      training: docs/reviews/qwen3-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-full-review-20261029.md
+      figures: docs/reviews/qwen3-full-review-20261029.md
+      community: docs/reviews/qwen3-full-review-20261029.md
+  - id: qwen-embedding
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-embedding-reranker-four-review-20261028.md
+      - docs/reviews/qwen3-embedding-full-review-20261029.md
+      - docs/reviews/qwen3-embedding-reranker-metrics-figures-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-embedding-full-review-20261029.md
+      training: docs/reviews/qwen3-embedding-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-embedding-full-review-20261029.md
+      figures: docs/reviews/qwen3-embedding-full-review-20261029.md
+      community: docs/reviews/qwen3-embedding-full-review-20261029.md
+  - id: qwen3-vl-embedding
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-embedding-reranker-four-review-20261028.md
+      - docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+      training: docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+      figures: docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+      community: docs/reviews/qwen3-vl-embedding-full-review-20261029.md
+  - id: qwen3-coder
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-coder-source-review-20261028.md
+      - docs/reviews/qwen-code-community.md
+      - docs/reviews/qwen3-coder-full-review-20261029.md
+      - docs/reviews/qwen-coder-two-context-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-coder-full-review-20261029.md
+      training: docs/reviews/qwen3-coder-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-coder-full-review-20261029.md
+      figures: docs/reviews/qwen3-coder-full-review-20261029.md
+      community: docs/reviews/qwen3-coder-full-review-20261029.md
+  - id: qwen-next
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-last-audit.md
+      - docs/reviews/qwen3-next-full-review-20261029.md
+      - docs/reviews/qwen3-next-yarn-budget-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-next-full-review-20261029.md
+      training: docs/reviews/qwen3-next-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-next-full-review-20261029.md
+      figures: docs/reviews/qwen3-next-full-review-20261029.md
+      community: docs/reviews/qwen3-next-full-review-20261029.md
+  - id: qwen3-omni
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen3-omni-full-review-20261029.md
+      - docs/reviews/qwen-omni-distillation-asr-followup-20261029.md
+    notes: 按技术报告、模型卡、配图渲染及社区实读记录完成全维度审阅；没有模型实跑。
+    completedEvidence:
+      structure: docs/reviews/qwen3-omni-full-review-20261029.md
+      training: docs/reviews/qwen3-omni-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-omni-full-review-20261029.md
+      figures: docs/reviews/qwen3-omni-full-review-20261029.md
+      community: docs/reviews/qwen3-omni-full-review-20261029.md
+  - id: qwen35-omni
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen35-qwen38-omni-followup-20261028.md
+      - docs/reviews/qwen38-versions-review-20261028.md
+      - docs/reviews/qwen35-omni-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen35-omni-full-review-20261029.md
+      training: docs/reviews/qwen35-omni-full-review-20261029.md
+      evaluation: docs/reviews/qwen35-omni-full-review-20261029.md
+      figures: docs/reviews/qwen35-omni-full-review-20261029.md
+      community: docs/reviews/qwen35-omni-full-review-20261029.md
+  - id: qwen38-omni
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen35-qwen38-omni-followup-20261028.md
+      - docs/reviews/qwen38-versions-review-20261028.md
+      - docs/reviews/qwen38-omni-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen38-omni-full-review-20261029.md
+      training: docs/reviews/qwen38-omni-full-review-20261029.md
+      evaluation: docs/reviews/qwen38-omni-full-review-20261029.md
+      figures: docs/reviews/qwen38-omni-full-review-20261029.md
+      community: docs/reviews/qwen38-omni-full-review-20261029.md
+  - id: qwen3-vl
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-vl-version-detail-audit.md
+      - docs/reviews/qwen-vl-two-independent-20261028.md
+      - docs/reviews/qwen-vision-community.md
+      - docs/reviews/qwen3-vl-full-review-20261029.md
+      - docs/reviews/community-four-version-check-20261029.md
+      - docs/reviews/qwen3vl-deepstack-context-check-20261029.md
+    notes: 代表性结构、训练、评测条件和教学图；社区阅读为历史记录。
+    completedEvidence:
+      structure: docs/reviews/qwen3-vl-full-review-20261029.md
+      training: docs/reviews/qwen3-vl-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-vl-full-review-20261029.md
+      figures: docs/reviews/qwen3-vl-full-review-20261029.md
+      community: docs/reviews/qwen3-vl-full-review-20261029.md
+  - id: qwen-guard
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen3guard-reranker-review-20261028.md
+      - docs/reviews/qwen3guard-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3guard-full-review-20261029.md
+      training: docs/reviews/qwen3guard-full-review-20261029.md
+      evaluation: docs/reviews/qwen3guard-full-review-20261029.md
+      figures: docs/reviews/qwen3guard-full-review-20261029.md
+      community: docs/reviews/qwen3guard-full-review-20261029.md
+  - id: qwen-qwq
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwq-two-versions-second-review.md
+      - docs/reviews/qwq-32b-full-review-20261029.md
+      - docs/reviews/qwq32b-official-evaluation-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwq-32b-full-review-20261029.md
+      training: docs/reviews/qwq-32b-full-review-20261029.md
+      evaluation: docs/reviews/qwq-32b-full-review-20261029.md
+      figures: docs/reviews/qwq-32b-full-review-20261029.md
+      community: docs/reviews/qwq-32b-full-review-20261029.md
+  - id: glm5
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-core-audit.md
+      - docs/reviews/glm5-versions-review-20261028.md
+      - docs/reviews/glm45-glm5-architecture-review-20261028.md
+      - docs/reviews/community-coverage.md
+      - docs/reviews/glm5-full-review-20261029.md
+    notes: 正文与配图已审校；社区原文访问受阻，具体范围见专项记录。
+    completedEvidence:
+      structure: docs/reviews/glm5-full-review-20261029.md
+      training: docs/reviews/glm5-full-review-20261029.md
+      evaluation: docs/reviews/glm5-full-review-20261029.md
+      figures: docs/reviews/glm5-full-review-20261029.md
+      community: docs/reviews/glm5-full-review-20261029.md
+  - id: glm52
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm5-versions-review-20261028.md
+      - docs/reviews/glm51-glm52-backbone-followup-20261028.md
+      - docs/reviews/glm-community.md
+      - docs/reviews/glm52-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm52-full-review-20261029.md
+      training: docs/reviews/glm52-full-review-20261029.md
+      evaluation: docs/reviews/glm52-full-review-20261029.md
+      figures: docs/reviews/glm52-full-review-20261029.md
+      community: docs/reviews/glm52-full-review-20261029.md
+  - id: glm53
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-core-audit.md
+      - docs/reviews/glm53-structure-20261028.md
+      - docs/reviews/community-coverage.md
+      - docs/reviews/glm53-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm53-full-review-20261029.md
+      training: docs/reviews/glm53-full-review-20261029.md
+      evaluation: docs/reviews/glm53-full-review-20261029.md
+      figures: docs/reviews/glm53-full-review-20261029.md
+      community: docs/reviews/glm53-full-review-20261029.md
+  - id: glm53-flash
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-version-audit.md
+      - docs/reviews/glm53-structure-20261028.md
+      - docs/reviews/remaining-community-2.md
+      - docs/reviews/glm53-flash-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm53-flash-full-review-20261029.md
+      training: docs/reviews/glm53-flash-full-review-20261029.md
+      evaluation: docs/reviews/glm53-flash-full-review-20261029.md
+      figures: docs/reviews/glm53-flash-full-review-20261029.md
+      community: docs/reviews/glm53-flash-full-review-20261029.md
+  - id: glm-ocr
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-remaining-audit.md
+      - docs/reviews/glm-ocr-glm-image-review-20261028.md
+      - docs/reviews/community-coverage.md
+      - docs/reviews/glm-ocr-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-ocr-full-review-20261029.md
+      training: docs/reviews/glm-ocr-full-review-20261029.md
+      evaluation: docs/reviews/glm-ocr-full-review-20261029.md
+      figures: docs/reviews/glm-ocr-full-review-20261029.md
+      community: docs/reviews/glm-ocr-full-review-20261029.md
+  - id: jev
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/closed-model-audit.md
+      - docs/reviews/jev-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/jev-full-review-20261029.md
+      training: docs/reviews/jev-full-review-20261029.md
+      evaluation: docs/reviews/jev-full-review-20261029.md
+      figures: docs/reviews/jev-full-review-20261029.md
+      community: docs/reviews/jev-full-review-20261029.md
+  - id: kimi25
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-k2-k25-architecture-review-20261028.md
+      - docs/reviews/kimi-k2-versions-review-20261028.md
+      - docs/reviews/kimi-k25-full-review-20261029.md
+      - docs/reviews/kimi-k15-k2-k25-eval-followup-20261029.md
+      - docs/reviews/community-four-version-check-20261029.md
+    notes: 范围及限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k25-full-review-20261029.md
+      training: docs/reviews/kimi-k25-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k25-full-review-20261029.md
+      figures: docs/reviews/kimi-k25-full-review-20261029.md
+      community: docs/reviews/kimi-k25-full-review-20261029.md
+  - id: kimi26
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-k26-k27-backbone-review-20261028.md
+      - docs/reviews/kimi-k26-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k26-full-review-20261029.md
+      training: docs/reviews/kimi-k26-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k26-full-review-20261029.md
+      figures: docs/reviews/kimi-k26-full-review-20261029.md
+      community: docs/reviews/kimi-k26-full-review-20261029.md
+  - id: kimi27
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-k26-k27-backbone-review-20261028.md
+      - docs/reviews/kimi-k27-full-review-20261029.md
+      - docs/reviews/kimi-vision-evidence-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k27-full-review-20261029.md
+      training: docs/reviews/kimi-k27-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k27-full-review-20261029.md
+      figures: docs/reviews/kimi-k27-full-review-20261029.md
+      community: docs/reviews/kimi-k27-full-review-20261029.md
+  - id: kimi-k3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-core-audit.md
+      - docs/reviews/kimi-official-figure-sources.md
+      - docs/reviews/kimi-k3-full-review-20261029.md
+      - docs/reviews/kimi3-live38-figure-visual-check-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/kimi-k3-full-review-20261029.md
+      training: docs/reviews/kimi-k3-full-review-20261029.md
+      evaluation: docs/reviews/kimi-k3-full-review-20261029.md
+      figures: docs/reviews/kimi-k3-full-review-20261029.md
+      community: docs/reviews/kimi-k3-full-review-20261029.md
+  - id: omnijev
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: untriaged
+    evidence:
+      - docs/reviews/closed-model-audit.md
+      - docs/reviews/omnijev-zhihu-direct-search-20261028.md
+      - docs/reviews/omnijev-full-review-20261029.md
+      - docs/reviews/omnijev-community-independent-20261029.md
+      - docs/reviews/omnijev-fastjev-independent-20261029.md
+      - docs/reviews/omnijev-zhihu-identity-recheck-20261029.md
+      - docs/reviews/omnijev-fastjev-comparison-review-20261029.md
+      - docs/reviews/omnijev-community-search-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/omnijev-full-review-20261029.md
+      training: docs/reviews/omnijev-full-review-20261029.md
+      evaluation: docs/reviews/omnijev-full-review-20261029.md
+      figures: docs/reviews/omnijev-full-review-20261029.md
+  - id: qwen3-asr
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen3-asr-full-review-20261029.md
+      - docs/reviews/qwen3-asr-tts-training-packets-followup-20261029.md
+      - docs/reviews/audio-figures-four-crosscheck-20261029.md
+      - docs/reviews/qwen3-asr-streaming-implementation-20261029.md
+    notes: 指定结构、训练、部分评测及官方图标题和范围；当轮未重新阅读全部社区资料。
+    completedEvidence:
+      structure: docs/reviews/qwen3-asr-full-review-20261029.md
+      training: docs/reviews/qwen3-asr-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-asr-full-review-20261029.md
+      figures: docs/reviews/qwen3-asr-full-review-20261029.md
+      community: docs/reviews/qwen3-asr-full-review-20261029.md
+  - id: qwen-coder-next
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-coder-versions-review-20261028.md
+      - docs/reviews/qwen-code-community.md
+      - docs/reviews/qwen3-coder-next-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-coder-next-full-review-20261029.md
+      training: docs/reviews/qwen3-coder-next-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-coder-next-full-review-20261029.md
+      figures: docs/reviews/qwen3-coder-next-full-review-20261029.md
+      community: docs/reviews/qwen3-coder-next-full-review-20261029.md
+  - id: qwen-tts
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-audio-omni-audit.md
+      - docs/reviews/qwen3-tts-full-review-20261029.md
+      - docs/reviews/qwen3-asr-tts-training-packets-followup-20261029.md
+      - docs/reviews/audio-figures-four-crosscheck-20261029.md
+      - docs/reviews/qwen3-tts-tokenizer-training-followup-20261029.md
+    notes: 对照报告、模型卡、代码、两张图和社区实读记录审阅；未运行模型。
+    completedEvidence:
+      structure: docs/reviews/qwen3-tts-full-review-20261029.md
+      training: docs/reviews/qwen3-tts-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-tts-full-review-20261029.md
+      figures: docs/reviews/qwen3-tts-full-review-20261029.md
+      community: docs/reviews/qwen3-tts-full-review-20261029.md
+  - id: qwen35
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-remaining-audit.md
+      - docs/reviews/qwen35-full-review-20261029.md
+    notes: 范围及证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen35-full-review-20261029.md
+      training: docs/reviews/qwen35-full-review-20261029.md
+      evaluation: docs/reviews/qwen35-full-review-20261029.md
+      figures: docs/reviews/qwen35-full-review-20261029.md
+      community: docs/reviews/qwen35-full-review-20261029.md
+  - id: qwen36
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-remaining-audit.md
+      - docs/reviews/qwen36-full-review-20261029.md
+    notes: 代表性结构、训练披露、评测条件及 SVG；3.7 内部结构与配方未公开。
+    completedEvidence:
+      structure: docs/reviews/qwen36-full-review-20261029.md
+      training: docs/reviews/qwen36-full-review-20261029.md
+      evaluation: docs/reviews/qwen36-full-review-20261029.md
+      figures: docs/reviews/qwen36-full-review-20261029.md
+      community: docs/reviews/qwen36-full-review-20261029.md
+  - id: qwen37
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-remaining-audit.md
+      - docs/reviews/qwen37-full-review-20261029.md
+    notes: 代表性结构、训练披露、评测条件及 SVG；3.7 内部结构与配方未公开。
+    completedEvidence:
+      structure: docs/reviews/qwen37-full-review-20261029.md
+      training: docs/reviews/qwen37-full-review-20261029.md
+      evaluation: docs/reviews/qwen37-full-review-20261029.md
+      figures: docs/reviews/qwen37-full-review-20261029.md
+      community: docs/reviews/qwen37-full-review-20261029.md
+  - id: qwen38-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen38-versions-review-20261028.md
+      - docs/reviews/qwen38-full-review-20261029.md
+      - docs/reviews/final-community-a.md
+      - docs/reviews/qwen38-24t-numeric-review-20261029.md
+    notes: 结构、训练披露、评测条件及教学图；区分不同权重和服务榜单。
+    completedEvidence:
+      structure: docs/reviews/qwen38-full-review-20261029.md
+      training: docs/reviews/qwen38-full-review-20261029.md
+      evaluation: docs/reviews/qwen38-full-review-20261029.md
+      figures: docs/reviews/qwen38-full-review-20261029.md
+      community: docs/reviews/qwen38-full-review-20261029.md
+  - id: glm51
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm5-versions-review-20261028.md
+      - docs/reviews/glm51-glm52-backbone-followup-20261028.md
+      - docs/reviews/glm-community.md
+      - docs/reviews/glm51-full-review-20261029.md
+    notes: '[版本复核](glm5-versions-review-20261028.md)与[主干图复核](glm51-glm52-backbone-followup-20261028.md)核对配置、指标及渲染；新增训练配方未公开，[社区资料](glm-community.md)为厂方发布。'
+    completedEvidence:
+      structure: docs/reviews/glm51-full-review-20261029.md
+      training: docs/reviews/glm51-full-review-20261029.md
+      evaluation: docs/reviews/glm51-full-review-20261029.md
+      figures: docs/reviews/glm51-full-review-20261029.md
+      community: docs/reviews/glm51-full-review-20261029.md
+  - id: deepseek-llm
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-remaining-audit.md
+      - docs/reviews/deepseek-llm-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-llm-full-review-20261029.md
+      training: docs/reviews/deepseek-llm-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-llm-full-review-20261029.md
+      figures: docs/reviews/deepseek-llm-full-review-20261029.md
+      community: docs/reviews/deepseek-llm-full-review-20261029.md
+  - id: deepseek-coder
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/deepseek-coder-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-coder-full-review-20261029.md
+      training: docs/reviews/deepseek-coder-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-coder-full-review-20261029.md
+      figures: docs/reviews/deepseek-coder-full-review-20261029.md
+      community: docs/reviews/deepseek-coder-full-review-20261029.md
+  - id: deepseek-math
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/deepseek-math-full-review-20261029.md
+      - docs/reviews/deepseek-math-passk-followup-20261029.md
+      - docs/reviews/deepseek-math-zhihu-candidate-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-math-full-review-20261029.md
+      training: docs/reviews/deepseek-math-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-math-full-review-20261029.md
+      figures: docs/reviews/deepseek-math-full-review-20261029.md
+      community: docs/reviews/deepseek-math-full-review-20261029.md
+  - id: janus-pro
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/deepseek-vision-audit-2026-10-28.md
+      - docs/reviews/janus-pro-full-review-20261029.md
+      - docs/reviews/janus-pro-diagram-flow-followup-20261029.md
+    notes: '[专用模型审校](deepseek-special-audit.md)、[视觉模型复核](deepseek-vision-audit-2026-10-28.md)：结构、训练、部分评测；修正图中文字问题的输入路径；社区参考沿用既有阅读记录。'
+    completedEvidence:
+      structure: docs/reviews/janus-pro-full-review-20261029.md
+      training: docs/reviews/janus-pro-full-review-20261029.md
+      evaluation: docs/reviews/janus-pro-full-review-20261029.md
+      figures: docs/reviews/janus-pro-full-review-20261029.md
+      community: docs/reviews/janus-pro-full-review-20261029.md
+  - id: deepseek-math-v2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/deepseek-math-v2-full-review-20261029.md
+    notes: '[专用模型审校](deepseek-special-audit.md)：结构、训练、部分评测、图标题及节点；社区为既有阅读记录。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-math-v2-full-review-20261029.md
+      training: docs/reviews/deepseek-math-v2-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-math-v2-full-review-20261029.md
+      figures: docs/reviews/deepseek-math-v2-full-review-20261029.md
+      community: docs/reviews/deepseek-math-v2-full-review-20261029.md
+  - id: deepseek-v2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-core-audit.md
+      - docs/reviews/deepseek-v2-v25-followup-20261028.md
+      - docs/reviews/deepseek-v2-full-review-20261029.md
+      - docs/reviews/deepseek-v2-v3-v32-comparison-followup-20261029.md
+      - docs/reviews/deepseek-v32-glm45-training-followup-20261029.md
+      - docs/reviews/deepseek-v2-token-dropping-review-20261029.md
+      - docs/reviews/deepseek-v2-layer-diagram-review-20261029.md
+    notes: 正文与配图已审校；社区原文访问受阻，具体范围见专项记录。
+    completedEvidence:
+      structure: docs/reviews/deepseek-v2-full-review-20261029.md
+      training: docs/reviews/deepseek-v2-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v2-full-review-20261029.md
+      figures: docs/reviews/deepseek-v2-full-review-20261029.md
+      community: docs/reviews/deepseek-v2-full-review-20261029.md
+  - id: deepseek-coder-v2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/community-weak-models-20261028.md
+      - docs/reviews/deepseek-coder-v2-full-review-20261029.md
+    notes: 审校范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-coder-v2-full-review-20261029.md
+      training: docs/reviews/deepseek-coder-v2-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-coder-v2-full-review-20261029.md
+      figures: docs/reviews/deepseek-coder-v2-full-review-20261029.md
+      community: docs/reviews/deepseek-coder-v2-full-review-20261029.md
+  - id: deepseek-vl2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-special-audit.md
+      - docs/reviews/deepseek-vision-audit-2026-10-28.md
+      - docs/reviews/deepseek-vl2-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-vl2-full-review-20261029.md
+      training: docs/reviews/deepseek-vl2-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-vl2-full-review-20261029.md
+      figures: docs/reviews/deepseek-vl2-full-review-20261029.md
+      community: docs/reviews/deepseek-vl2-full-review-20261029.md
+  - id: deepseek-v31
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-core-audit.md
+      - docs/reviews/deepseek-v31-v32-review-20261028.md
+      - docs/reviews/deepseek-v31-full-review-20261029.md
+      - docs/reviews/deepseek-v31-search-protocol-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-v31-full-review-20261029.md
+      training: docs/reviews/deepseek-v31-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v31-full-review-20261029.md
+      figures: docs/reviews/deepseek-v31-full-review-20261029.md
+      community: docs/reviews/deepseek-v31-full-review-20261029.md
+  - id: deepseek-v32
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-core-audit.md
+      - docs/reviews/omnijev-zhihu-direct-search-20261028.md
+      - docs/reviews/deepseek-v32-full-review-20261029.md
+      - docs/reviews/deepseek-v2-v3-v32-comparison-followup-20261029.md
+      - docs/reviews/deepseek-v32-glm45-training-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-v32-full-review-20261029.md
+      training: docs/reviews/deepseek-v32-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v32-full-review-20261029.md
+      figures: docs/reviews/deepseek-v32-full-review-20261029.md
+      community: docs/reviews/deepseek-v32-full-review-20261029.md
+  - id: deepseek-v4-flash
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-remaining-audit.md
+      - docs/reviews/deepseek-v4-flash-full-review-20261029.md
+      - docs/reviews/deepseek-glm-evidence-sample-20261029.md
+    notes: '[初代与 V4 审校](deepseek-remaining-audit.md)：结构、训练、部分评测、图标题与节点文字；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-v4-flash-full-review-20261029.md
+      training: docs/reviews/deepseek-v4-flash-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v4-flash-full-review-20261029.md
+      figures: docs/reviews/deepseek-v4-flash-full-review-20261029.md
+      community: docs/reviews/deepseek-v4-flash-full-review-20261029.md
+  - id: deepseek-v4-pro
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-remaining-audit.md
+      - docs/reviews/deepseek-v4-pro-full-review-20261029.md
+    notes: '[初代与 V4 审校](deepseek-remaining-audit.md)：结构、训练、部分评测、图标题与节点文字；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-v4-pro-full-review-20261029.md
+      training: docs/reviews/deepseek-v4-pro-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v4-pro-full-review-20261029.md
+      figures: docs/reviews/deepseek-v4-pro-full-review-20261029.md
+      community: docs/reviews/deepseek-v4-pro-full-review-20261029.md
+  - id: deepseek-v41-flash
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-remaining-audit.md
+      - docs/reviews/deepseek-v41-flash-full-review-20261029.md
+    notes: '[初代与 V4 审校](deepseek-remaining-audit.md)：结构、训练、部分评测、图标题与节点文字；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/deepseek-v41-flash-full-review-20261029.md
+      training: docs/reviews/deepseek-v41-flash-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v41-flash-full-review-20261029.md
+      figures: docs/reviews/deepseek-v41-flash-full-review-20261029.md
+      community: docs/reviews/deepseek-v41-flash-full-review-20261029.md
+  - id: minimax-m1
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-m1-review-20261028.md
+      - docs/reviews/minimax-m1-full-review-20261029.md
+      - docs/reviews/minimax-m1-m2-training-figure-crosscheck-20261029.md
+      - docs/reviews/five-open-models-spotcheck-20261029.md
+      - docs/reviews/minimax-m1-budget-checkpoint-20261029.md
+      - docs/reviews/minimax-m1-reward-length-bias-20261029.md
+    notes: '[M1 内容核对](minimax-m1-review-20261028.md)：结构、论文计算口径、教学图定位与知乎实读；未运行模型。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m1-full-review-20261029.md
+      training: docs/reviews/minimax-m1-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m1-full-review-20261029.md
+      figures: docs/reviews/minimax-m1-full-review-20261029.md
+      community: docs/reviews/minimax-m1-full-review-20261029.md
+  - id: minimax-m2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-core-audit.md
+      - docs/reviews/minimax-m2-full-review-20261029.md
+      - docs/reviews/minimax-m1-m2-training-figure-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/minimax-m2-full-review-20261029.md
+      training: docs/reviews/minimax-m2-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m2-full-review-20261029.md
+      figures: docs/reviews/minimax-m2-full-review-20261029.md
+      community: docs/reviews/minimax-m2-full-review-20261029.md
+  - id: minimax-m21
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-versions-second-20261028.md
+      - docs/reviews/minimax-m21-full-review-20261029.md
+    notes: '[版本复核](minimax-versions-second-20261028.md)：配置、公开训练信息、部分评测及图示。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m21-full-review-20261029.md
+      training: docs/reviews/minimax-m21-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m21-full-review-20261029.md
+      figures: docs/reviews/minimax-m21-full-review-20261029.md
+      community: docs/reviews/minimax-m21-full-review-20261029.md
+  - id: minimax-m25
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-core-audit.md
+      - docs/reviews/minimax-m25-full-review-20261029.md
+    notes: '[核心模型审校](minimax-core-audit.md)：结构、训练、部分评测、图标题文字和连接；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m25-full-review-20261029.md
+      training: docs/reviews/minimax-m25-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m25-full-review-20261029.md
+      figures: docs/reviews/minimax-m25-full-review-20261029.md
+      community: docs/reviews/minimax-m25-full-review-20261029.md
+  - id: minimax-m27
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-core-audit.md
+      - docs/reviews/minimax-versions-second-20261028.md
+      - docs/reviews/minimax-m27-full-review-20261029.md
+    notes: '[核心模型审校](minimax-core-audit.md)、[版本复核](minimax-versions-second-20261028.md)：结构、公开训练信息、部分评测和图示。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m27-full-review-20261029.md
+      training: docs/reviews/minimax-m27-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m27-full-review-20261029.md
+      figures: docs/reviews/minimax-m27-full-review-20261029.md
+      community: docs/reviews/minimax-m27-full-review-20261029.md
+  - id: minimax-m3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-core-audit.md
+      - docs/reviews/minimax-m3-full-review-20261029.md
+    notes: '[核心模型审校](minimax-core-audit.md)：结构、训练、部分评测、图标题文字和连接；社区沿用历史记录。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m3-full-review-20261029.md
+      training: docs/reviews/minimax-m3-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m3-full-review-20261029.md
+      figures: docs/reviews/minimax-m3-full-review-20261029.md
+      community: docs/reviews/minimax-m3-full-review-20261029.md
+  - id: minimax-m31-flash
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-core-audit.md
+      - docs/reviews/minimax-versions-second-20261028.md
+      - docs/reviews/minimax-m31-flash-full-review-20261029.md
+    notes: '[核心模型审校](minimax-core-audit.md)、[版本复核](minimax-versions-second-20261028.md)：结构、公开训练信息、部分评测和图示。'
+    completedEvidence:
+      structure: docs/reviews/minimax-m31-flash-full-review-20261029.md
+      training: docs/reviews/minimax-m31-flash-full-review-20261029.md
+      evaluation: docs/reviews/minimax-m31-flash-full-review-20261029.md
+      figures: docs/reviews/minimax-m31-flash-full-review-20261029.md
+      community: docs/reviews/minimax-m31-flash-full-review-20261029.md
+  - id: qwen3-reranker
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-embedding-reranker-four-review-20261028.md
+      - docs/reviews/qwen3-reranker-full-review-20261029.md
+      - docs/reviews/qwen3-embedding-reranker-metrics-figures-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-reranker-full-review-20261029.md
+      training: docs/reviews/qwen3-reranker-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-reranker-full-review-20261029.md
+      figures: docs/reviews/qwen3-reranker-full-review-20261029.md
+      community: docs/reviews/qwen3-reranker-full-review-20261029.md
+  - id: qwen3-vl-reranker
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-embedding-reranker-four-review-20261028.md
+      - docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+      training: docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+      figures: docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+      community: docs/reviews/qwen3-vl-reranker-full-review-20261029.md
+  - id: qwen3-forcedaligner
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-asr-aligner-independent-20261028.md
+      - docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+      - docs/reviews/forcedaligner-community-config-check-20261029.md
+      - docs/reviews/qwen-five-modelcard-source-check-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+      training: docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+      figures: docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+      community: docs/reviews/qwen3-forcedaligner-full-review-20261029.md
+  - id: qwen25-1m
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen25-1m-independent.md
+      - docs/reviews/qwen25-1m-community-final.md
+      - docs/reviews/qwen25-1m-full-review-20261029.md
+      - docs/reviews/qwen-prm-1m-evidence-check-20261029.md
+      - docs/reviews/qwen-five-modelcard-source-check-20261029.md
+      - docs/reviews/qwen-omni-1m-primary-followup-20261029.md
+    notes: 已完成对应维度审校，详见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-1m-full-review-20261029.md
+      training: docs/reviews/qwen25-1m-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-1m-full-review-20261029.md
+      figures: docs/reviews/qwen25-1m-full-review-20261029.md
+      community: docs/reviews/qwen25-1m-full-review-20261029.md
+  - id: deepseek-r1-0528
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-v3-r1-independent-20261028.md
+      - docs/reviews/deepseek-versions-figure-eval-20261028.md
+      - docs/reviews/deepseek-r1-0528-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-r1-0528-full-review-20261029.md
+      training: docs/reviews/deepseek-r1-0528-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-r1-0528-full-review-20261029.md
+      figures: docs/reviews/deepseek-r1-0528-full-review-20261029.md
+      community: docs/reviews/deepseek-r1-0528-full-review-20261029.md
+  - id: qwen25-math-prm
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-math-three-review-20261028.md
+      - docs/reviews/qwen25-math-prm-full-review-20261029.md
+      - docs/reviews/qwen-prm-1m-evidence-check-20261029.md
+    notes: 已完成对应维度审校，详见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-math-prm-full-review-20261029.md
+      training: docs/reviews/qwen25-math-prm-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-math-prm-full-review-20261029.md
+      figures: docs/reviews/qwen25-math-prm-full-review-20261029.md
+      community: docs/reviews/qwen25-math-prm-full-review-20261029.md
+  - id: glm-image
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm-ocr-glm-image-review-20261028.md
+      - docs/reviews/new-models-community-logged-in.md
+      - docs/reviews/glm-image-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-image-full-review-20261029.md
+      training: docs/reviews/glm-image-full-review-20261029.md
+      evaluation: docs/reviews/glm-image-full-review-20261029.md
+      figures: docs/reviews/glm-image-full-review-20261029.md
+      community: docs/reviews/glm-image-full-review-20261029.md
+  - id: deepseek-v3-0324
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-v3-0324-audit.md
+      - docs/reviews/deepseek-versions-figure-eval-20261028.md
+      - docs/reviews/deepseek-v3-0324-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-v3-0324-full-review-20261029.md
+      training: docs/reviews/deepseek-v3-0324-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v3-0324-full-review-20261029.md
+      figures: docs/reviews/deepseek-v3-0324-full-review-20261029.md
+      community: docs/reviews/deepseek-v3-0324-full-review-20261029.md
+  - id: qwen25-math-rm
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-math-three-review-20261028.md
+      - docs/reviews/qwen25-math-rm-full-review-20261029.md
+    notes: 范围与证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen25-math-rm-full-review-20261029.md
+      training: docs/reviews/qwen25-math-rm-full-review-20261029.md
+      evaluation: docs/reviews/qwen25-math-rm-full-review-20261029.md
+      figures: docs/reviews/qwen25-math-rm-full-review-20261029.md
+      community: docs/reviews/qwen25-math-rm-full-review-20261029.md
+  - id: qvq-72b-preview
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qvq-independent-audit.md
+      - docs/reviews/qvq-72b-preview-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qvq-72b-preview-full-review-20261029.md
+      training: docs/reviews/qvq-72b-preview-full-review-20261029.md
+      evaluation: docs/reviews/qvq-72b-preview-full-review-20261029.md
+      figures: docs/reviews/qvq-72b-preview-full-review-20261029.md
+      community: docs/reviews/qvq-72b-preview-full-review-20261029.md
+  - id: deepseek-v25
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-v2-v25-followup-20261028.md
+      - docs/reviews/deepseek-new-community-logged-in.md
+      - docs/reviews/deepseek-v25-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/deepseek-v25-full-review-20261029.md
+      training: docs/reviews/deepseek-v25-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-v25-full-review-20261029.md
+      figures: docs/reviews/deepseek-v25-full-review-20261029.md
+      community: docs/reviews/deepseek-v25-full-review-20261029.md
+  - id: glm-tts
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/kimi-glm-audio-review-20261028.md
+      - docs/reviews/glm-tts-community-final.md
+      - docs/reviews/glm-tts-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm-tts-full-review-20261029.md
+      training: docs/reviews/glm-tts-full-review-20261029.md
+      evaluation: docs/reviews/glm-tts-full-review-20261029.md
+      figures: docs/reviews/glm-tts-full-review-20261029.md
+      community: docs/reviews/glm-tts-full-review-20261029.md
+  - id: gpt3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/gpt3-independent.md
+      - docs/reviews/gpt3-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt3-full-review-20261029.md
+      training: docs/reviews/gpt3-full-review-20261029.md
+      evaluation: docs/reviews/gpt3-full-review-20261029.md
+      figures: docs/reviews/gpt3-full-review-20261029.md
+      community: docs/reviews/gpt3-full-review-20261029.md
+  - id: gpt4
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/gpt4-model-audit.md
+      - docs/reviews/gpt4-gpt4o-second-review.md
+      - docs/reviews/gpt4-community-20261028.md
+      - docs/reviews/gpt4-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt4-full-review-20261029.md
+      training: docs/reviews/gpt4-full-review-20261029.md
+      evaluation: docs/reviews/gpt4-full-review-20261029.md
+      figures: docs/reviews/gpt4-full-review-20261029.md
+      community: docs/reviews/gpt4-full-review-20261029.md
+  - id: wan21
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/wan21-wan22-review-20261028.md
+      - docs/reviews/wan21-full-review-20261029.md
+      - docs/reviews/wan-generation-loop-figures-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/wan21-full-review-20261029.md
+      training: docs/reviews/wan21-full-review-20261029.md
+      evaluation: docs/reviews/wan21-full-review-20261029.md
+      figures: docs/reviews/wan21-full-review-20261029.md
+      community: docs/reviews/wan21-full-review-20261029.md
+  - id: gpt1
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/gpt1-independent.md
+      - docs/reviews/gpt1-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt1-full-review-20261029.md
+      training: docs/reviews/gpt1-full-review-20261029.md
+      evaluation: docs/reviews/gpt1-full-review-20261029.md
+      figures: docs/reviews/gpt1-full-review-20261029.md
+      community: docs/reviews/gpt1-full-review-20261029.md
+  - id: sam2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/sam2-independent.md
+      - docs/reviews/sam2-community-success-20261028.md
+      - docs/reviews/sam2-full-review-20261029.md
+      - docs/reviews/vision-audio-numeric-batch10-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/sam2-full-review-20261029.md
+      training: docs/reviews/sam2-full-review-20261029.md
+      evaluation: docs/reviews/sam2-full-review-20261029.md
+      figures: docs/reviews/sam2-full-review-20261029.md
+      community: docs/reviews/sam2-full-review-20261029.md
+  - id: wan22
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/wan21-wan22-review-20261028.md
+      - docs/reviews/wan22-full-review-20261029.md
+      - docs/reviews/wan-generation-loop-figures-20261029.md
+      - docs/reviews/wan22-evaluation-followup-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/wan22-full-review-20261029.md
+      training: docs/reviews/wan22-full-review-20261029.md
+      evaluation: docs/reviews/wan22-full-review-20261029.md
+      figures: docs/reviews/wan22-full-review-20261029.md
+      community: docs/reviews/wan22-full-review-20261029.md
+  - id: qwq-preview
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwq-two-versions-second-review.md
+      - docs/reviews/qwq-preview-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwq-preview-full-review-20261029.md
+      training: docs/reviews/qwq-preview-full-review-20261029.md
+      evaluation: docs/reviews/qwq-preview-full-review-20261029.md
+      figures: docs/reviews/qwq-preview-full-review-20261029.md
+      community: docs/reviews/qwq-preview-full-review-20261029.md
+  - id: gpt5
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/gpt5-independent.md
+      - docs/reviews/gpt5-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/gpt5-full-review-20261029.md
+      training: docs/reviews/gpt5-full-review-20261029.md
+      evaluation: docs/reviews/gpt5-full-review-20261029.md
+      figures: docs/reviews/gpt5-full-review-20261029.md
+      community: docs/reviews/gpt5-full-review-20261029.md
+  - id: qwen-image-2512
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-2512-independent.md
+      - docs/reviews/qwen-image-2512-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-2512-full-review-20261029.md
+      training: docs/reviews/qwen-image-2512-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-2512-full-review-20261029.md
+      figures: docs/reviews/qwen-image-2512-full-review-20261029.md
+      community: docs/reviews/qwen-image-2512-full-review-20261029.md
+  - id: qwen-image-edit-2511
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-edit-2511-independent.md
+      - docs/reviews/qwen-image-edit-bench-review-20261028.md
+      - docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+      training: docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+      figures: docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+      community: docs/reviews/qwen-image-edit-2511-full-review-20261029.md
+  - id: qwen-image-edit-2509
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen-image-edit-2509-independent.md
+      - docs/reviews/qwen-image-edit-bench-review-20261028.md
+      - docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+      training: docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+      evaluation: docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+      figures: docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+      community: docs/reviews/qwen-image-edit-2509-full-review-20261029.md
+  - id: llama1
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama1-independent.md
+      - docs/reviews/llama1-full-review-20261029.md
+      - docs/reviews/llama123-architecture-training-eval-crosscheck-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama1-full-review-20261029.md
+      training: docs/reviews/llama1-full-review-20261029.md
+      evaluation: docs/reviews/llama1-full-review-20261029.md
+      figures: docs/reviews/llama1-full-review-20261029.md
+      community: docs/reviews/llama1-full-review-20261029.md
+  - id: llama2
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama2-independent.md
+      - docs/reviews/llama2-community-20261028.md
+      - docs/reviews/llama2-full-review-20261029.md
+      - docs/reviews/llama123-architecture-training-eval-crosscheck-20261029.md
+    notes: 范围及证据见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama2-full-review-20261029.md
+      training: docs/reviews/llama2-full-review-20261029.md
+      evaluation: docs/reviews/llama2-full-review-20261029.md
+      figures: docs/reviews/llama2-full-review-20261029.md
+      community: docs/reviews/llama2-full-review-20261029.md
+  - id: llama3
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama3-independent.md
+      - docs/reviews/llama3-full-review-20261029.md
+      - docs/reviews/llama123-architecture-training-eval-crosscheck-20261029.md
+    notes: 范围及限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama3-full-review-20261029.md
+      training: docs/reviews/llama3-full-review-20261029.md
+      evaluation: docs/reviews/llama3-full-review-20261029.md
+      figures: docs/reviews/llama3-full-review-20261029.md
+      community: docs/reviews/llama3-full-review-20261029.md
+  - id: llama4
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama4-independent.md
+      - docs/reviews/llama4-community-20261028.md
+      - docs/reviews/llama4-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama4-full-review-20261029.md
+      training: docs/reviews/llama4-full-review-20261029.md
+      evaluation: docs/reviews/llama4-full-review-20261029.md
+      figures: docs/reviews/llama4-full-review-20261029.md
+      community: docs/reviews/llama4-full-review-20261029.md
+  - id: llama32-vision
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama32-vision-independent.md
+      - docs/reviews/llama32-vision-community-20261028.md
+      - docs/reviews/llama32-vision-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama32-vision-full-review-20261029.md
+      training: docs/reviews/llama32-vision-full-review-20261029.md
+      evaluation: docs/reviews/llama32-vision-full-review-20261029.md
+      figures: docs/reviews/llama32-vision-full-review-20261029.md
+      community: docs/reviews/llama32-vision-full-review-20261029.md
+  - id: llama33
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama33-independent.md
+      - docs/reviews/llama31-llama33-architecture-review-20261028.md
+      - docs/reviews/llama33-direct-community-20261028.md
+      - docs/reviews/llama33-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama33-full-review-20261029.md
+      training: docs/reviews/llama33-full-review-20261029.md
+      evaluation: docs/reviews/llama33-full-review-20261029.md
+      figures: docs/reviews/llama33-full-review-20261029.md
+      community: docs/reviews/llama33-full-review-20261029.md
+  - id: instructgpt
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/instructgpt-independent.md
+      - docs/reviews/instructgpt-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/instructgpt-full-review-20261029.md
+      training: docs/reviews/instructgpt-full-review-20261029.md
+      evaluation: docs/reviews/instructgpt-full-review-20261029.md
+      figures: docs/reviews/instructgpt-full-review-20261029.md
+      community: docs/reviews/instructgpt-full-review-20261029.md
+  - id: llama32-text
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/llama32-text-independent.md
+      - docs/reviews/llama32-text-community-20261028.md
+      - docs/reviews/llama32-text-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/llama32-text-full-review-20261029.md
+      training: docs/reviews/llama32-text-full-review-20261029.md
+      evaluation: docs/reviews/llama32-text-full-review-20261029.md
+      figures: docs/reviews/llama32-text-full-review-20261029.md
+      community: docs/reviews/llama32-text-full-review-20261029.md
+  - id: glm130-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm130-glm4-review-20261028.md
+      - docs/reviews/glm130-glm4-zhihu-20261028.md
+      - docs/reviews/glm130-full-review-20261029.md
+    notes: 范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm130-full-review-20261029.md
+      training: docs/reviews/glm130-full-review-20261029.md
+      evaluation: docs/reviews/glm130-full-review-20261029.md
+      figures: docs/reviews/glm130-full-review-20261029.md
+      community: docs/reviews/glm130-full-review-20261029.md
+  - id: glm4-version
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm130-glm4-review-20261028.md
+      - docs/reviews/glm130-glm4-zhihu-20261028.md
+      - docs/reviews/glm4-9b-full-review-20261029.md
+    notes: 审校范围与限制见专项记录；未运行模型或复现评测。
+    completedEvidence:
+      structure: docs/reviews/glm4-9b-full-review-20261029.md
+      training: docs/reviews/glm4-9b-full-review-20261029.md
+      evaluation: docs/reviews/glm4-9b-full-review-20261029.md
+      figures: docs/reviews/glm4-9b-full-review-20261029.md
+      community: docs/reviews/glm4-9b-full-review-20261029.md
+  - id: qwen3-omni-captioner
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/qwen3-omni-captioner-initial-20261029.md
+      - docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+      - docs/reviews/qwen3-omni-captioner-eureka-evaluation-20261029.md
+    notes: 已完成独立复核，范围与来源见专项记录。
+    completedEvidence:
+      figures: docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+      structure: docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+      training: docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+      evaluation: docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+      community: docs/reviews/qwen3-omni-captioner-full-review-20261029.md
+  - id: deepseek-vl-first
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/deepseek-vl-first-new-review-20261029.md
+      - docs/reviews/deepseek-vl-first-full-review-20261029.md
+    notes: 独立复核已完成；范围与来源见专项记录。
+    completedEvidence:
+      figures: docs/reviews/deepseek-vl-first-full-review-20261029.md
+      structure: docs/reviews/deepseek-vl-first-full-review-20261029.md
+      training: docs/reviews/deepseek-vl-first-full-review-20261029.md
+      evaluation: docs/reviews/deepseek-vl-first-full-review-20261029.md
+      community: docs/reviews/deepseek-vl-first-full-review-20261029.md
+  - id: minimax-text-01
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-text01-initial-20261029.md
+      - docs/reviews/minimax-01-independent-full-review-20261029.md
+    notes: 独立复核已完成；范围与来源见专项记录。
+    completedEvidence:
+      structure: docs/reviews/minimax-01-independent-full-review-20261029.md
+      training: docs/reviews/minimax-01-independent-full-review-20261029.md
+      evaluation: docs/reviews/minimax-01-independent-full-review-20261029.md
+      figures: docs/reviews/minimax-01-independent-full-review-20261029.md
+      community: docs/reviews/minimax-01-independent-full-review-20261029.md
+  - id: minimax-vl01
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/minimax-vl01-initial-20261029.md
+      - docs/reviews/minimax-01-independent-full-review-20261029.md
+    notes: 独立复核已完成；范围与来源见专项记录。
+    completedEvidence:
+      structure: docs/reviews/minimax-01-independent-full-review-20261029.md
+      training: docs/reviews/minimax-01-independent-full-review-20261029.md
+      evaluation: docs/reviews/minimax-01-independent-full-review-20261029.md
+      figures: docs/reviews/minimax-01-independent-full-review-20261029.md
+      community: docs/reviews/minimax-01-independent-full-review-20261029.md
+  - id: glm45v
+    review:
+      structure: complete
+      training: complete
+      evaluation: complete
+      figures: complete
+      community: complete
+    evidence:
+      - docs/reviews/glm45v-initial-review-20261029.md
+      - docs/reviews/glm45v-complete-review-20261029.md
+    notes: 独立复核已完成；范围与来源见专项记录。
+    completedEvidence:
+      structure: docs/reviews/glm45v-complete-review-20261029.md
+      training: docs/reviews/glm45v-complete-review-20261029.md
+      evaluation: docs/reviews/glm45v-complete-review-20261029.md
+      figures: docs/reviews/glm45v-complete-review-20261029.md
+      community: docs/reviews/glm45v-complete-review-20261029.md

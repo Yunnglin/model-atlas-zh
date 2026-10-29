@@ -12,6 +12,7 @@ import {
   sourceSchema,
   questionSchema,
   learningPathSchema,
+  timelineModelSchema,
 } from './core/schemas/knowledge';
 
 export const collections = {
@@ -19,6 +20,10 @@ export const collections = {
   docs: defineCollection({
     loader: docsLoader(),
     schema: docsSchema({ extend: z.object({ atlas: nodeMetadataSchema }) }),
+  }),
+  timeline: defineCollection({
+    loader: file('src/content/data/model-timeline.yaml', { parser: parse }),
+    schema: timelineModelSchema,
   }),
   figures: defineCollection({
     loader: file('src/content/data/figures.yaml', { parser: parse }),

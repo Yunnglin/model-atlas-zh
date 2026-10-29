@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">扩散与流匹配：训练目标和生成过程</title>
+  <desc id="desc">扩散示例：训练时对数据加噪，网络预测噪声；推理时从噪声开始按采样器多次去噪。流匹配直线示例：训练时从噪声 x0 和数据 x1 插值得到 xt，目标速度为 x1 减 x0；推理时从噪声出发，使用预测的速度多次更新到数据端。图是简化示意，具体路径、目标和采样器依方法而异。</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#3b7d74"/></marker></defs>
+  <rect width="1000" height="680" rx="18" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#173b3d">
+    <text x="34" y="46" font-size="25" font-weight="700">从噪声生成数据：两种训练目标</text>
+    <text x="34" y="78" font-size="16" fill="#486460">示意：训练时构造问题，推理时从噪声多次更新</text>
+    <rect x="34" y="105" width="932" height="235" rx="14" fill="#fff" stroke="#a8c7c4" stroke-width="2"/>
+    <text x="57" y="143" font-size="20" font-weight="700">扩散去噪：预测噪声的一种常见形式</text>
+    <text x="58" y="185" font-size="17" font-weight="700" fill="#39766c">训练</text>
+    <rect x="148" y="158" width="220" height="53" rx="9" fill="#e8f3ef"/><text x="258" y="191" text-anchor="middle" font-size="16">真实数据 + 随机噪声</text>
+    <rect x="415" y="158" width="222" height="53" rx="9" fill="#e8f3ef"/><text x="526" y="191" text-anchor="middle" font-size="16">随机噪声程度的状态</text>
+    <rect x="684" y="158" width="241" height="53" rx="9" fill="#e9effa"/><text x="804" y="191" text-anchor="middle" font-size="16">网络学习预测加入的噪声</text>
+    <text x="58" y="260" font-size="17" font-weight="700" fill="#39766c">生成</text>
+    <rect x="148" y="233" width="220" height="53" rx="9" fill="#fff4e6"/><text x="258" y="266" text-anchor="middle" font-size="16">从随机噪声开始</text>
+    <rect x="415" y="233" width="222" height="53" rx="9" fill="#fff4e6"/><text x="526" y="266" text-anchor="middle" font-size="16">按采样器多次去噪</text>
+    <rect x="684" y="233" width="241" height="53" rx="9" fill="#fff4e6"/><text x="804" y="266" text-anchor="middle" font-size="16">得到生成的数据表示</text>
+    <text x="58" y="319" font-size="14" fill="#486460">其他扩散模型也可能预测数据或其他量；不是所有模型都预测噪声。</text>
+    <rect x="34" y="365" width="932" height="235" rx="14" fill="#fff" stroke="#a8c7c4" stroke-width="2"/>
+    <text x="57" y="403" font-size="20" font-weight="700">流匹配：一条直线条件路径的例子</text>
+    <text x="58" y="445" font-size="17" font-weight="700" fill="#39766c">训练</text>
+    <rect x="148" y="418" width="220" height="53" rx="9" fill="#e8f3ef"/><text x="258" y="451" text-anchor="middle" font-size="16">噪声 x₀ + 数据 x₁</text>
+    <rect x="415" y="418" width="222" height="53" rx="9" fill="#e8f3ef"/><text x="526" y="451" text-anchor="middle" font-size="16">采样时间 t，插值得 xₜ</text>
+    <rect x="684" y="418" width="241" height="53" rx="9" fill="#e9effa"/><text x="804" y="451" text-anchor="middle" font-size="16">学习速度目标 x₁ − x₀</text>
+    <text x="58" y="520" font-size="17" font-weight="700" fill="#39766c">生成</text>
+    <rect x="148" y="493" width="220" height="53" rx="9" fill="#fff4e6"/><text x="258" y="526" text-anchor="middle" font-size="16">从噪声出发：t = 0</text>
+    <rect x="415" y="493" width="222" height="53" rx="9" fill="#fff4e6"/><text x="526" y="526" text-anchor="middle" font-size="16">用预测速度多次更新</text>
+    <rect x="684" y="493" width="241" height="53" rx="9" fill="#fff4e6"/><text x="804" y="526" text-anchor="middle" font-size="16">到数据端：t = 1</text>
+    <text x="58" y="580" font-size="14" fill="#486460">直线条件路径仅为例子；不同方法可使用其他路径与采样器。</text>
+    <g fill="none" stroke="#3b7d74" stroke-width="2.5" marker-end="url(#a)"><path d="M368 184H408"/><path d="M637 184H677"/><path d="M368 259H408"/><path d="M637 259H677"/><path d="M368 444H408"/><path d="M637 444H677"/><path d="M368 519H408"/><path d="M637 519H677"/></g>
+    <text x="34" y="645" font-size="15" fill="#486460">图为教学简化：不同网络骨干、表示空间和条件可与这两类方法组合。</text>
+  </g>
+</svg>

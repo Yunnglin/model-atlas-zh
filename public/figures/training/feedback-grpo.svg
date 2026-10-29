@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="930" viewBox="0 0 720 930" role="img" aria-labelledby="title desc">
+  <title id="title">奖励来源与 GRPO 更新：两层不同的选择</title>
+  <desc id="desc">旧策略对同一道问题采样一组回答。奖励可以由规则验证器产生，也可以由偏好训练的奖励模型给出，这里是两种示例，不意味着必须同时使用。GRPO 将同组回答的奖励转换为相对优势，再结合当前与旧策略的概率比进行裁剪优化；原始方法还有参考策略的 KL 项。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4a7e79"/></marker>
+  </defs>
+  <rect width="720" height="930" rx="24" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#173b3d" text-anchor="middle">
+    <text x="360" y="52" font-size="26" font-weight="700">一组回答如何变成更新信号？</text>
+    <text x="360" y="86" font-size="18" fill="#496663">示意图：奖励从哪里来，与怎么更新是两回事</text>
+    <rect x="120" y="112" width="480" height="102" rx="14" fill="#fff" stroke="#9ebfba" stroke-width="2"/>
+    <text x="360" y="151" font-size="22" font-weight="700">旧策略：对同一问题采样多个回答</text>
+    <text x="360" y="186" font-size="20">例如 A、B、C、D 四份回答</text>
+    <path d="M360 216V255" stroke="#4a7e79" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="360" y="287" font-size="21" font-weight="700">选择奖励来源（下面是两种示例）</text>
+    <rect x="36" y="312" width="310" height="182" rx="14" fill="#fff" stroke="#9ebfba" stroke-width="2"/>
+    <text x="191" y="349" font-size="21" font-weight="700">可验证奖励</text>
+    <text x="191" y="383" font-size="18">规则或测试检查结果</text>
+    <text x="191" y="418" font-size="20">如 A、B、C、D 的分数</text>
+    <text x="191" y="455" font-size="23" font-weight="700">1、0、1、0</text>
+    <rect x="374" y="312" width="310" height="182" rx="14" fill="#fff" stroke="#9ebfba" stroke-width="2"/>
+    <text x="529" y="349" font-size="21" font-weight="700">偏好模型奖励</text>
+    <text x="529" y="383" font-size="18">用人类偏好训练评分器</text>
+    <text x="529" y="418" font-size="18">评分器给各回答打分</text>
+    <text x="529" y="454" font-size="18">分数并非事实保证</text>
+    <path d="M191 496V527H529V496" fill="none" stroke="#4a7e79" stroke-width="2.5"/>
+    <path d="M360 527V570" fill="none" stroke="#4a7e79" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="90" y="570" width="540" height="114" rx="14" fill="#deefeb" stroke="#76ada5" stroke-width="2"/>
+    <text x="360" y="610" font-size="22" font-weight="700">GRPO：在同组内比较奖励</text>
+    <text x="360" y="646" font-size="19">1、0、1、0 → 相对优势 +、−、+、−</text>
+    <path d="M360 686V734" stroke="#4a7e79" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="90" y="734" width="540" height="128" rx="14" fill="#fff" stroke="#9ebfba" stroke-width="2"/>
+    <text x="360" y="775" font-size="22" font-weight="700">按相对优势优化当前策略</text>
+    <text x="360" y="810" font-size="18">结合新旧概率比、裁剪和参考策略的 KL 项</text>
+    <text x="360" y="842" font-size="18">规则和优化细节应以具体实现为准</text>
+    <text x="360" y="904" font-size="16" fill="#496663">教学示意：原始 GRPO 也可结合其他奖励</text>
+  </g>
+</svg>

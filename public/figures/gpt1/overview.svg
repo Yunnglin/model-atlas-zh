@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">初代 GPT 的预训练与任务微调</title>
+<desc id="desc">无标注文本用于下一 token 预训练，预训练参数作为起点，使用任务标签微调 Transformer 与分类头。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#38796d"/></marker></defs>
+<rect width="1200" height="440" rx="20" fill="#f4f9f7"/>
+<g font-family="sans-serif" fill="#173b38"><text x="35" y="45" font-size="24" font-weight="700">先用文本学续写，再用标签学习具体任务</text>
+<rect x="36" y="85" width="330" height="175" rx="14" fill="#fff" stroke="#a6c9bf"/><text x="58" y="122" font-size="19" font-weight="700">① 自监督预训练</text><text x="58" y="158" font-size="16">书籍前文 → 预测下一个 token</text><text x="58" y="194" font-size="16">真实后文提供学习目标</text><text x="58" y="228" font-size="15">更新 Transformer 参数</text>
+<rect x="425" y="85" width="330" height="175" rx="14" fill="#e7f3ef" stroke="#8bb8aa"/><text x="447" y="122" font-size="19" font-weight="700">② 任务微调</text><text x="447" y="158" font-size="16">句子与标签 → 任务输出层</text><text x="447" y="194" font-size="16">从预训练参数继续学习</text><text x="447" y="228" font-size="15">更新模型与任务头</text>
+<rect x="815" y="85" width="345" height="175" rx="14" fill="#fff" stroke="#a6c9bf"/><text x="837" y="122" font-size="19" font-weight="700">③ 对未见样本评测</text><text x="837" y="158" font-size="16">两句话 → 关系类别</text><text x="837" y="194" font-size="16">统计准确率并检查错例</text><text x="837" y="228" font-size="15">标签和任务规则需要人工定义</text>
+<g fill="none" stroke="#38796d" stroke-width="3" marker-end="url(#arrow)"><path d="M366 173 H414"/><path d="M755 173 H804"/></g>
+<text x="36" y="324" font-size="17">一个预训练起点可用于不同任务；各任务通常分别微调。</text>
+<text x="36" y="370" font-size="14" fill="#58746d">原创教学示意；省略分词、注意力结构及论文中的辅助语言模型目标。</text></g></svg>

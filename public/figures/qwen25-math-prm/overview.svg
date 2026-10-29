@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">数学过程奖励模型：生成、评分与选择</title><desc id="desc">生成器为题目生成多个解答，过程奖励模型逐步评分，按照选择规则选出答案；人工标注的首个错误步骤可以用于独立评测。</desc>
+<rect width="1200" height="420" rx="20" fill="#f5f9f8"/>
+<text x="50" y="55" font-family="sans-serif" font-size="24" fill="#183a40" font-weight="700">数学题如何经过过程奖励模型</text>
+<g font-family="sans-serif" text-anchor="middle"><g fill="#fff" stroke="#b4d2cc" stroke-width="2"><rect x="40" y="105" width="155" height="104" rx="12"/><rect x="255" y="105" width="195" height="104" rx="12"/><rect x="510" y="105" width="195" height="104" rx="12"/><rect x="765" y="105" width="175" height="104" rx="12"/><rect x="1000" y="105" width="155" height="104" rx="12"/></g>
+<g fill="#183a40" font-size="20" font-weight="700"><text x="117" y="145">数学题</text><text x="352" y="145">生成器</text><text x="607" y="145">过程奖励模型</text><text x="852" y="145">选择规则</text><text x="1077" y="145">候选答案</text></g><g fill="#4b676b" font-size="16"><text x="117" y="180">输入题目</text><text x="352" y="180">生成多份解答</text><text x="607" y="180">为每一步打分</text><text x="852" y="180">汇总分数并排序</text><text x="1077" y="180">输出或交由复核</text></g></g>
+<g fill="none" stroke="#468d83" stroke-width="3"><path d="M195 157h50m-8-6 8 6-8 6"/><path d="M450 157h50m-8-6 8 6-8 6"/><path d="M705 157h50m-8-6 8 6-8 6"/><path d="M940 157h50m-8-6 8 6-8 6"/></g>
+<rect x="40" y="255" width="1115" height="100" rx="12" fill="#e4f1ef"/><text x="65" y="294" font-family="sans-serif" font-size="19" font-weight="700" fill="#183a40">独立评测：人工标注首个错误步骤，与模型判断比较</text><text x="65" y="327" font-family="sans-serif" font-size="16" fill="#4b676b">分数是模型输出，不是数学证明；图示为教学概括，不是官方架构图。</text>
+</svg>

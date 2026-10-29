@@ -7,6 +7,17 @@ import { readKnowledgeFixture } from '../fixtures/knowledge';
 
 afterEach(cleanup);
 describe('reusable figure resource contracts', () => {
+  it.each([
+    ['CC BY 4.0', 'https://creativecommons.org/licenses/by/4.0/'],
+    ['MIT', 'https://spdx.org/licenses/MIT.html'],
+    ['Apache-2.0', 'https://www.apache.org/licenses/LICENSE-2.0'],
+  ])('links the stated %s license in the interactive figure attribution', (license, url) => {
+    const figure = structuredClone(readKnowledgeFixture().figures[0]!);
+    if (!figure.asset) throw new Error('fixture needs an asset');
+    figure.asset.license = license;
+    render(createElement(ArchitectureFigure, { figure }));
+    expect(screen.getByRole('link', { name: license }).getAttribute('href')).toBe(url);
+  });
   it('supports an external-only resource without reporting a nonexistent image failure or loading third-party content', () => {
     const figure = structuredClone(readKnowledgeFixture().figures[0]!);
     delete figure.asset;

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 330" role="img" aria-labelledby="title desc">
+<title id="title">MiniMax-M1 混合注意力语言主干</title><desc id="desc">输入文本经分词进入八十层主干，十次重复每七个 Lightning Attention 层加一个 Softmax Attention 层；每层的稀疏专家网络路由选择专家，最后预测下一个文本片段。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#087b7c"/></marker></defs>
+<rect width="1080" height="330" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui, -apple-system, sans-serif" fill="#183b45"><text x="30" y="42" font-size="24" font-weight="700">MiniMax-M1：混合注意力 + 稀疏专家</text><text x="30" y="72" font-size="16" fill="#526b72">语言主干示意：从输入到预测下一个 token</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="115" width="135" height="90" rx="10"/><rect x="215" y="98" width="600" height="125" rx="10"/><rect x="865" y="115" width="175" height="90" rx="10"/></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M170 160 H205"/><path d="M820 160 H855"/></g>
+<g font-size="18"><text x="53" y="149">输入文本</text><text x="53" y="179">与历史</text><text x="239" y="131" font-weight="700">80 层：重复 10 组</text><text x="239" y="165">每组：7 层 Lightning Attention + 1 层 Softmax Attention</text><text x="239" y="195">每层含稀疏专家网络：32 个专家，每个 token 选 2 个</text><text x="883" y="149">预测下一个</text><text x="883" y="179">token</text></g>
+<text x="30" y="273" font-size="15" fill="#526b72">原创教学简图：省略层内归一化、残差等细节；工具需要外部程序执行。</text></g></svg>

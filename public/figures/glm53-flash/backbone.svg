@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="410" viewBox="0 0 1100 410" role="img" aria-labelledby="title desc">
+  <title id="title">GLM-5.3-Flash 多模态语言骨干示意</title>
+  <desc id="desc">图片或视频先经过视觉编码器，与文字表示一起进入四十五层语言骨干。每三层线性注意力后一层稀疏注意力，重复十一组，末尾另有一层线性注意力。前馈部分的前三层为稠密网络，后四十二层为混合专家。最终预测下一个 token。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#527f73"/></marker></defs>
+  <rect width="1100" height="410" rx="18" fill="#f5f9f7"/>
+  <g font-family="system-ui, sans-serif" fill="#193d38">
+    <text x="28" y="38" font-size="22" font-weight="700">GLM-5.3-Flash：视觉输入与 45 层语言骨干</text>
+    <rect x="30" y="76" width="170" height="70" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="48" y="106" font-size="16">图片 / 视频</text><text x="48" y="130" font-size="14">24 层视觉编码器</text>
+    <rect x="30" y="180" width="170" height="62" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="48" y="217" font-size="16">文字 token</text>
+    <rect x="250" y="70" width="625" height="210" rx="12" fill="#e6f3ef" stroke="#77aa99"/>
+    <text x="270" y="102" font-size="18" font-weight="700">语言骨干：45 层</text>
+    <text x="270" y="138" font-size="15">注意力：［线性 → 线性 → 线性 → 稀疏］× 11</text>
+    <text x="270" y="165" font-size="15">　　　　 再接 1 层线性注意力</text>
+    <text x="270" y="203" font-size="15">前馈网络：前 3 层稠密，后 42 层 MoE</text>
+    <text x="270" y="231" font-size="15">MoE：288 个路由专家，每次选 8 个，另有共享专家</text>
+    <rect x="920" y="139" width="145" height="70" rx="10" fill="#fff" stroke="#a8c7c4"/><text x="938" y="169" font-size="16">预测下一 token</text><text x="938" y="192" font-size="14">文字或工具请求</text>
+    <g fill="none" stroke="#527f73" stroke-width="2.5" marker-end="url(#arrow)"><path d="M205 111 H240"/><path d="M205 211 H240"/><path d="M880 174 H910"/></g>
+    <text x="30" y="332" font-size="14" fill="#52706a">注意力类型与前馈网络类型是两个维度；图中省略归一化、连接细节和 MTP。</text>
+    <text x="30" y="360" font-size="14" fill="#52706a">根据官方配置绘制；视觉编码器与语言层分别计数。</text>
+  </g>
+</svg>

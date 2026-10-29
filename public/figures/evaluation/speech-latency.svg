@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 245" role="img" aria-labelledby="title desc">
+<title id="title">语音生成等待与实时率示例</title><desc id="desc">一次生成耗时两秒，第一段在零点八秒可播放，生成音频总长四秒，实时率为二除以四等于零点五。</desc>
+<rect width="930" height="245" rx="18" fill="#f5f9f8"/><g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="42" font-size="23" font-weight="700">语音速度：首段等待和整句完成分别看</text>
+<path d="M85 125 H770" stroke="#9bbfba" stroke-width="4"/><path d="M85 125 H360" stroke="#087b7c" stroke-width="6"/><path d="M360 125 H770" stroke="#67b9ae" stroke-width="6"/>
+<g fill="#087b7c"><circle cx="85" cy="125" r="7"/><circle cx="360" cy="125" r="7"/><circle cx="770" cy="125" r="7"/></g><g font-size="17"><text x="30" y="93">开始请求</text><text x="275" y="93">首段可播放：0.8 秒</text><text x="690" y="93">全部生成：2 秒</text><text x="30" y="190">生成的音频长度：4 秒</text><text x="450" y="190">RTF = 2 ÷ 4 = 0.5</text></g>
+<text x="30" y="226" font-size="15" fill="#526b72">示例以请求到全部生成完成的耗时计算；报告时写明计时范围。</text></g></svg>

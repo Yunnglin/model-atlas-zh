@@ -1,0 +1,2223 @@
+- id: transformer
+  title: Transformer
+  year: 2017
+  article: transformer
+  architecture: encoder-decoder
+  modalities:
+    - text
+  sources:
+    - transformer-paper
+  month: 6
+  dateBasis: paper
+  dateSource: transformer-paper
+  organization: Google
+- id: bert
+  title: BERT
+  year: 2018
+  article: bert
+  architecture: encoder
+  modalities:
+    - text
+  sources:
+    - bert-paper
+  month: 10
+  dateBasis: paper
+  dateSource: bert-paper
+  organization: Google
+- id: gpt
+  title: GPT-2
+  year: 2019
+  article: gpt
+  family: GPT
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - gpt-code
+    - gpt3-paper
+    - gpt4-paper
+    - instruct-paper
+  month: 2
+  dateBasis: release
+  dateSource: date-gpt2
+  organization: OpenAI
+  seriesPrevious: gpt1
+- id: t5
+  title: T5
+  year: 2019
+  article: t5
+  architecture: encoder-decoder
+  modalities:
+    - text
+  sources:
+    - t5-paper
+  month: 10
+  dateBasis: paper
+  dateSource: t5-paper
+  organization: Google
+- id: conformer
+  title: Conformer
+  year: 2020
+  article: conformer
+  architecture: encoder
+  modalities:
+    - audio
+  sources:
+    - conformer-paper
+  month: 5
+  dateBasis: paper
+  dateSource: conformer-paper
+  organization: Google
+- id: vit
+  title: ViT
+  year: 2020
+  article: vit
+  architecture: encoder
+  modalities:
+    - image
+  sources:
+    - vit-paper
+  month: 10
+  dateBasis: paper
+  dateSource: vit-paper
+  organization: Google
+- id: wav2vec2
+  title: wav2vec 2.0
+  year: 2020
+  article: wav2vec2
+  architecture: encoder
+  modalities:
+    - audio
+  sources:
+    - wav2vec-paper
+  month: 6
+  dateBasis: paper
+  dateSource: wav2vec-paper
+  organization: Meta
+- id: clip
+  title: CLIP
+  year: 2021
+  article: clip
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - clip-paper
+  month: 1
+  dateBasis: release
+  dateSource: date-clip-release
+  organization: OpenAI
+- id: glm-original
+  title: GLM
+  year: 2021
+  article: glm-original-model
+  family: GLM
+  architecture: mixed
+  modalities:
+    - text
+  sources: &a1
+    - glm-paper
+    - chatglm-paper
+    - chatglm-code
+    - glm4-card
+  month: 3
+  dateBasis: paper
+  dateSource: glm-paper
+  organization: 智谱 / 清华
+- id: hubert
+  title: HuBERT
+  year: 2021
+  article: hubert
+  architecture: encoder
+  modalities:
+    - audio
+  sources:
+    - hubert-paper
+  month: 6
+  dateBasis: paper
+  dateSource: hubert-paper
+  organization: Meta
+- id: swin
+  title: Swin
+  year: 2021
+  article: swin
+  architecture: encoder
+  modalities:
+    - image
+  sources:
+    - swin-paper
+  month: 3
+  dateBasis: paper
+  dateSource: swin-paper
+  organization: Microsoft
+- id: dit
+  title: DiT
+  year: 2022
+  article: dit
+  architecture: other
+  modalities:
+    - image
+  sources:
+    - dit-paper
+  month: 12
+  dateBasis: paper
+  dateSource: dit-paper
+  organization: Meta
+- id: encodec
+  title: EnCodec
+  year: 2022
+  article: encodec
+  architecture: other
+  modalities:
+    - audio
+  sources:
+    - encodec-paper
+  month: 10
+  dateBasis: paper
+  dateSource: encodec-paper
+  organization: Meta
+- id: stable-diffusion
+  title: Stable Diffusion
+  year: 2022
+  article: stable-diffusion
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - ldm-paper
+    - sd-card
+  organization: Stability AI
+  month: 8
+  dateBasis: release
+  dateSource: date-sd
+- id: whisper
+  title: Whisper
+  year: 2022
+  article: whisper
+  architecture: encoder-decoder
+  modalities:
+    - audio
+    - text
+  sources:
+    - whisper-paper
+    - whisper-code
+  month: 9
+  dateBasis: release
+  dateSource: date-whisper
+  organization: OpenAI
+- id: chatglm-version
+  title: ChatGLM
+  year: 2023
+  month: 3
+  dateBasis: release
+  dateSource: date-zhipu-company
+  article: chatglm
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a1
+  seriesPrevious: glm130-version
+  organization: 智谱 / 清华
+- id: chatglm2-version
+  title: ChatGLM2
+  year: 2023
+  month: 6
+  dateBasis: release
+  dateSource: chatglm-paper
+  article: chatglm2-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - chatglm2-official
+    - chatglm2-config
+    - chatglm-paper
+  seriesPrevious: chatglm-version
+  organization: 智谱 / 清华
+- id: chatglm3-version
+  title: ChatGLM3
+  year: 2023
+  month: 10
+  dateBasis: release
+  dateSource: chatglm-paper
+  article: chatglm3-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - chatglm-code
+    - chatglm3-config
+    - chatglm3-prompt
+    - chatglm-paper
+  seriesPrevious: chatglm2-version
+  organization: 智谱 / 清华
+- id: claude
+  title: Claude
+  year: 2023
+  article: claude
+  architecture: unknown
+  modalities:
+    - text
+  sources:
+    - claude-intro
+    - constitutional-paper
+  organization: Anthropic
+  month: 3
+  dateBasis: release
+  dateSource: date-claude
+- id: llava
+  title: LLaVA
+  year: 2023
+  article: llava
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - llava-paper
+  month: 4
+  dateBasis: paper
+  dateSource: llava-paper
+  organization: LLaVA 团队
+- id: qwen-1
+  title: Qwen
+  year: 2023
+  article: qwen1-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: &a2
+    - qwen1-paper
+    - qwen15-blog
+    - qwen2-paper
+    - qwen25-paper
+  month: 8
+  dateBasis: release
+  dateSource: date-qwen1
+  organization: 阿里巴巴
+- id: qwen-audio
+  title: Qwen-Audio
+  year: 2023
+  article: qwen-audio-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources:
+    - qwen-audio-first-paper
+    - qwen-audio-first-code
+  month: 11
+  dateBasis: release
+  dateSource: qwen-audio-first-code
+  organization: 阿里巴巴
+- id: qwen-vl-first
+  title: Qwen-VL
+  year: 2023
+  article: qwen-vl-first-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: &a4
+    - qwen1-vl-paper
+    - qwen2-vl-paper
+    - qwen3-vl-code
+    - qwen-vl-paper
+  month: 8
+  dateBasis: paper
+  dateSource: qwen1-vl-paper
+  organization: 阿里巴巴
+- id: sam
+  title: SAM
+  year: 2023
+  article: sam
+  family: SAM
+  architecture: mixed
+  modalities:
+    - image
+  sources:
+    - sam-paper
+    - sam-code
+  month: 4
+  dateBasis: paper
+  dateSource: sam-paper
+  organization: Meta
+- id: vall-e
+  title: VALL-E
+  year: 2023
+  article: vall-e
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources:
+    - valle-paper
+    - encodec-paper
+  month: 1
+  dateBasis: paper
+  dateSource: valle-paper
+  organization: Microsoft
+- id: qwen-coder-15
+  title: CodeQwen1.5
+  year: 2024
+  article: codeqwen15-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: &a5
+    - codeqwen15-card
+    - qwen25-coder-paper
+    - qwen-coder-code
+  organization: 阿里巴巴
+  month: 4
+  dateBasis: release
+  dateSource: date-codeqwen
+- id: deepseek-v3
+  title: DeepSeek-V3
+  year: 2024
+  article: deepseek-v3
+  family: DeepSeek
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - v3-paper
+  month: 12
+  dateBasis: release
+  dateSource: deepseek-v3-release
+  seriesPrevious: deepseek-v2
+  organization: DeepSeek
+- id: f5-tts
+  title: F5-TTS
+  year: 2024
+  article: f5-tts
+  architecture: other
+  modalities:
+    - text
+    - audio
+  sources:
+    - f5-paper
+    - f5-code
+    - flow-paper
+  month: 10
+  dateBasis: paper
+  dateSource: f5-paper
+  organization: F5-TTS 团队
+- id: gemini
+  title: Gemini 1.5
+  year: 2024
+  article: gemini
+  architecture: unknown
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - gemini-paper
+  month: 3
+  dateBasis: paper
+  dateSource: gemini-paper
+  organization: Google
+- id: glm-vision
+  title: GLM-V
+  year: 2024
+  month: 6
+  dateBasis: release
+  dateSource: date-zhipu-company
+  article: glm-v-model
+  family: GLM
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: &a7
+    - chatglm-paper
+    - glm-v-code
+    - glm-asr-code
+    - glm-tts-code
+    - glm-ocr-code
+    - glm53-flash-card
+  organization: 智谱 / 清华
+- id: gpt4o
+  title: GPT-4o
+  year: 2024
+  article: gpt4o
+  family: GPT
+  architecture: unknown
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - gpt4o-release
+  month: 5
+  dateBasis: release
+  dateSource: gpt4o-release
+  organization: OpenAI
+- id: llama
+  title: Llama 3.1
+  year: 2024
+  article: llama
+  family: Llama
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - llama-paper
+    - llama-card
+  month: 7
+  dateBasis: paper
+  dateSource: llama-paper
+  organization: Meta
+  seriesPrevious: llama3
+- id: qwen-15
+  title: Qwen1.5
+  year: 2024
+  article: qwen15-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a2
+  seriesPrevious: qwen-1
+  month: 2
+  dateBasis: release
+  dateSource: qwen15-blog
+  organization: 阿里巴巴
+- id: qwen-2
+  title: Qwen2
+  year: 2024
+  article: qwen2-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a2
+  seriesPrevious: qwen-15
+  month: 6
+  dateBasis: release
+  dateSource: date-qwen2
+  organization: 阿里巴巴
+- id: qwen2-audio
+  title: Qwen2-Audio
+  year: 2024
+  article: qwen2-audio-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources:
+    - qwen2-audio-paper
+    - qwen-audio-code
+  seriesPrevious: qwen-audio
+  month: 8
+  dateBasis: release
+  dateSource: date-qwen2-audio
+  organization: 阿里巴巴
+- id: qwen2-vl
+  title: Qwen2-VL
+  year: 2024
+  article: qwen2-vl-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources: *a4
+  seriesPrevious: qwen-vl-first
+  month: 8
+  dateBasis: release
+  dateSource: date-qwen2-vl
+  organization: 阿里巴巴
+- id: qwen-25
+  title: Qwen2.5
+  year: 2024
+  article: qwen25-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a2
+  seriesPrevious: qwen-2
+  month: 9
+  dateBasis: release
+  dateSource: date-qwen25
+  organization: 阿里巴巴
+- id: qwen25-coder
+  title: Qwen2.5-Coder
+  year: 2024
+  article: qwen25-coder-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a5
+  seriesPrevious: qwen-coder-15
+  month: 9
+  dateBasis: release
+  dateSource: date-qwen25
+  organization: 阿里巴巴
+- id: qwen2-math
+  title: Qwen2-Math
+  year: 2024
+  month: 8
+  article: qwen2-math-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - qwen2-math-release
+    - qwen2-math-7b-card
+    - qwen2-math-72b-card
+  dateBasis: release
+  dateSource: qwen2-math-release
+  organization: 阿里巴巴
+- id: qwen-math
+  title: Qwen2.5-Math
+  year: 2024
+  article: qwen25-math-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: &a9
+    - qwen-math-code
+    - qwen-qwq-card
+    - qwen-embed-code
+    - qwen-vl-embed-code
+    - qwen-guard-code
+  seriesPrevious: qwen2-math
+  month: 9
+  dateBasis: release
+  dateSource: date-qwen25
+  organization: 阿里巴巴
+- id: deepseek-r1
+  title: DeepSeek-R1
+  year: 2025
+  article: deepseek-r1
+  family: DeepSeek
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - r1-paper
+    - r1-code
+    - v3-paper
+  month: 1
+  dateBasis: release
+  dateSource: deepseek-r1-release
+  organization: DeepSeek
+- id: glm45
+  title: GLM-4.5
+  year: 2025
+  article: glm45-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: &a6
+    - glm45-code
+    - glm5-code
+    - glm5-paper
+    - glm52-card
+    - glm53-card
+    - glm53-flash-card
+    - mhc-paper
+  seriesPrevious: glm4-version
+  organization: 智谱 / 清华
+  month: 7
+  dateBasis: release
+  dateSource: date-glm45
+- id: glm46
+  title: GLM-4.6
+  year: 2025
+  article: glm46-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a6
+  seriesPrevious: glm45
+  organization: 智谱 / 清华
+  month: 9
+  dateBasis: release
+  dateSource: date-glm46
+- id: glm47
+  title: GLM-4.7
+  year: 2025
+  article: glm47-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a6
+  seriesPrevious: glm46
+  organization: 智谱 / 清华
+  month: 12
+  dateBasis: release
+  dateSource: date-glm47
+- id: glm-audio
+  title: GLM-ASR
+  year: 2025
+  month: 12
+  dateBasis: release
+  dateSource: date-zhipu-research
+  article: glm-asr-model
+  family: GLM
+  architecture: unknown
+  modalities:
+    - text
+    - audio
+  sources: *a7
+  organization: 智谱 / 清华
+- id: kimi15
+  title: Kimi K1.5
+  year: 2025
+  article: kimi
+  family: Kimi
+  architecture: unknown
+  modalities:
+    - text
+    - image
+  sources:
+    - kimi15-paper
+    - kimi-k2-code
+    - kimi-k25-code
+    - kimi-k26-card
+    - kimi-k27-card
+    - kimi-k3-code
+    - kimi-linear-card
+    - kimi-vl-card
+    - kimi-audio-card
+  month: 1
+  dateBasis: paper
+  dateSource: kimi15-paper
+  organization: Moonshot AI
+- id: kimi-k2
+  title: Kimi K2
+  year: 2025
+  article: kimi-k2
+  family: Kimi
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - kimi-k2-code
+    - kimi-thinking-card
+  seriesPrevious: kimi15
+  organization: Moonshot AI
+  month: 7
+  dateBasis: release
+  dateSource: date-kimi-k2-releases
+- id: kimi-k2-thinking
+  title: Kimi K2 Thinking
+  year: 2025
+  article: kimi-k2-thinking
+  family: Kimi
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - kimi-thinking-card
+    - kimi-k2-code
+  seriesPrevious: kimi-k2
+  organization: Moonshot AI
+  month: 11
+  dateBasis: release
+  dateSource: date-kimi-k2-releases
+- id: kimi-linear
+  title: Kimi Linear
+  year: 2025
+  article: kimi-linear-model
+  family: Kimi
+  architecture: decoder
+  modalities:
+    - text
+  sources: &a8
+    - kimi-vl-card
+    - kimi-audio-card
+    - kimi-linear-card
+    - kimi-k25-code
+    - kimi-k26-card
+    - kimi-k27-card
+  organization: Moonshot AI
+  month: 10
+  dateBasis: paper
+  dateSource: date-kimi-linear-paper
+- id: kimi-audio
+  title: Kimi-Audio
+  year: 2025
+  article: kimi-audio-model
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources: *a8
+  organization: Moonshot AI
+  month: 4
+  dateBasis: release
+  dateSource: date-kimi-audio
+- id: kimi-vl
+  title: Kimi-VL
+  year: 2025
+  article: kimi-vl-model
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: *a8
+  organization: Moonshot AI
+  month: 4
+  dateBasis: paper
+  dateSource: date-kimi-vl-paper
+- id: qwen-image
+  title: Qwen-Image
+  year: 2025
+  article: qwen-image
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - qwen-image-code
+    - qwen-image-paper
+  month: 8
+  dateBasis: release
+  dateSource: qwen-image-code
+  organization: 阿里巴巴
+- id: qwen-image-edit
+  title: Qwen-Image-Edit
+  year: 2025
+  month: 8
+  article: qwen-image-edit-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - qwen-image-edit-card
+    - qwen-image-edit-blog
+    - qwen-image-paper
+    - qwen-image-code
+  seriesPrevious: qwen-image
+  dateBasis: release
+  dateSource: qwen-image-code
+  organization: 阿里巴巴
+- id: qwen-image-layered
+  title: Qwen-Image-Layered
+  year: 2025
+  month: 12
+  article: qwen-image-layered-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - qwen-image-layered-paper
+    - qwen-image-layered-card
+    - qwen-image-layered-code
+  seriesPrevious: qwen-image-edit
+  dateBasis: release
+  dateSource: qwen-image-layered-release
+  organization: 阿里巴巴
+- id: qwen-vla
+  title: Qwen-VLA
+  year: 2026
+  month: 5
+  article: qwen-vla-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - qwen-vla-paper
+    - qwen-vla-code
+  dateBasis: release
+  dateSource: qwen-vla-release
+  organization: 阿里巴巴
+- id: qwen3-livetranslate
+  title: Qwen3-LiveTranslate
+  year: 2025
+  month: 9
+  article: qwen3-livetranslate-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+    - video
+  sources:
+    - qwen3-livetranslate-blog
+  dateBasis: release
+  dateSource: qwen3-livetranslate-blog
+  organization: 阿里巴巴
+- id: qwen35-livetranslate
+  title: Qwen3.5-LiveTranslate
+  year: 2026
+  month: 5
+  article: qwen35-livetranslate-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+    - video
+  sources:
+    - qwen35-livetranslate-blog
+  seriesPrevious: qwen3-livetranslate
+  dateBasis: release
+  dateSource: qwen35-livetranslate-blog
+  organization: 阿里巴巴
+- id: qwen-image21
+  title: Qwen-Image-2.1
+  year: 2026
+  month: 9
+  article: qwen-image21-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - qwen-image21-card
+    - qwen-image21-code
+  seriesPrevious: qwen-image-layered
+  dateBasis: release
+  dateSource: qwen-image21-release
+  organization: 阿里巴巴
+- id: qwen38-livetranslate
+  title: Qwen3.8-LiveTranslate
+  year: 2026
+  month: 9
+  article: qwen38-livetranslate-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+    - video
+  sources:
+    - qwen38-livetranslate-blog
+  seriesPrevious: qwen35-livetranslate
+  dateBasis: release
+  dateSource: qwen38-livetranslate-blog
+  organization: 阿里巴巴
+- id: qwen38-flash-next
+  title: Qwen3.8-Flash-Next
+  year: 2026
+  month: 8
+  article: qwen38-flash-next-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources:
+    - qwen38-flash-next-card
+    - qwen38-flash-next-paper
+  seriesPrevious: qwen38-version
+  dateBasis: release
+  dateSource: qwen38-flash-next-code
+  organization: 阿里巴巴
+- id: qwen-omni
+  title: Qwen2.5-Omni
+  year: 2025
+  article: qwen-omni
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - omni-code
+    - qwen25-omni-paper
+  month: 3
+  dateBasis: release
+  dateSource: date-qwen25omni
+  organization: 阿里巴巴
+- id: qwen-vl
+  title: Qwen2.5-VL
+  year: 2025
+  article: qwen-vl
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources:
+    - qwen-vl-paper
+    - qwen-vl-card
+    - qwen25-vl-processing
+  seriesPrevious: qwen2-vl
+  month: 1
+  dateBasis: release
+  dateSource: date-qwen25vl
+  organization: 阿里巴巴
+- id: qwen3
+  title: Qwen3
+  year: 2025
+  article: qwen3
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - qwen3-paper
+    - qwen3-code
+  seriesPrevious: qwen-25
+  month: 4
+  dateBasis: release
+  dateSource: date-qwen3
+  organization: 阿里巴巴
+- id: qwen-embedding
+  title: Qwen3 Embedding
+  year: 2025
+  article: qwen3-embedding-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a9
+  month: 6
+  dateBasis: release
+  dateSource: date-qwen3-embed
+  organization: 阿里巴巴
+- id: qwen3-vl-embedding
+  title: Qwen3-VL-Embedding
+  year: 2026
+  month: 1
+  article: qwen3-vl-embedding-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources:
+    - qwen3-vl-embedding-paper
+    - qwen3-vl-embedding-card
+    - qwen-vl-embed-code
+  seriesPrevious: qwen-embedding
+  dateBasis: paper
+  dateSource: qwen3-vl-embedding-paper
+  organization: 阿里巴巴
+- id: qwen3-coder
+  title: Qwen3-Coder
+  year: 2025
+  article: qwen3-coder-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a5
+  seriesPrevious: qwen25-coder
+  month: 7
+  dateBasis: release
+  dateSource: date-qwen3-coder
+  organization: 阿里巴巴
+- id: qwen-next
+  title: Qwen3-Next
+  year: 2025
+  article: qwen-next
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - qwen-next-card
+    - qwen38-code
+    - gated-deltanet-paper
+  month: 9
+  dateBasis: release
+  dateSource: date-qwen-next
+  organization: 阿里巴巴
+- id: qwen3-omni
+  title: Qwen3-Omni
+  year: 2025
+  article: qwen3-omni
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - qwen3-omni-code
+    - qwen3-omni-paper
+    - gspo-paper
+  seriesPrevious: qwen-omni
+  month: 9
+  dateBasis: release
+  dateSource: qwen3-omni-code
+  organization: 阿里巴巴
+- id: qwen35-omni
+  title: Qwen3.5-Omni
+  year: 2026
+  month: 3
+  article: qwen35-omni-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - qwen35-omni-paper
+  seriesPrevious: qwen3-omni
+  dateBasis: release
+  dateSource: date-qwen35-omni-release
+  organization: 阿里巴巴
+- id: qwen38-omni
+  title: Qwen3.8-Omni-Flash
+  year: 2026
+  month: 9
+  article: qwen38-omni-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - audio
+    - video
+  sources:
+    - qwen38-omni-paper
+  seriesPrevious: qwen35-omni
+  dateBasis: release
+  dateSource: date-qwen38-omni-release
+  organization: 阿里巴巴
+- id: qwen3-vl
+  title: Qwen3-VL
+  year: 2025
+  article: qwen3-vl
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources:
+    - qwen3-vl-code
+  seriesPrevious: qwen-vl
+  month: 9
+  dateBasis: release
+  dateSource: qwen3-vl-code
+  organization: 阿里巴巴
+- id: qwen-guard
+  title: Qwen3Guard
+  year: 2025
+  article: qwen3guard-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: [qwen-guard-code, qwen3guard-paper]
+  month: 9
+  dateBasis: release
+  dateSource: date-qwen3guard
+  organization: 阿里巴巴
+- id: qwen-qwq
+  title: QwQ-32B
+  year: 2025
+  article: qwq-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a9
+  organization: 阿里巴巴
+  month: 3
+  dateBasis: release
+  dateSource: date-qwq
+  seriesPrevious: qwq-preview
+- id: glm5
+  title: GLM-5
+  year: 2026
+  article: glm5-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a6
+  seriesPrevious: glm47
+  month: 2
+  dateBasis: release
+  dateSource: date-glm5
+  organization: 智谱 / 清华
+- id: glm52
+  title: GLM-5.2
+  year: 2026
+  article: glm52-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a6
+  seriesPrevious: glm51
+  organization: 智谱 / 清华
+  month: 6
+  dateBasis: release
+  dateSource: date-glm52
+- id: glm53
+  title: GLM-5.3
+  year: 2026
+  article: glm53-model
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a6
+  seriesPrevious: glm52
+  organization: 智谱 / 清华
+  month: 8
+  dateBasis: release
+  dateSource: date-glm53
+- id: glm53-flash
+  title: GLM-5.3-Flash
+  year: 2026
+  article: glm53-flash-model
+  family: GLM
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: *a6
+  organization: 智谱 / 清华
+  month: 8
+  dateBasis: release
+  dateSource: date-glm53flash
+- id: glm-ocr
+  title: GLM-OCR
+  year: 2026
+  month: 2
+  dateBasis: release
+  dateSource: date-zhipu-research
+  article: glm-ocr-model
+  family: GLM
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: *a7
+  organization: 智谱 / 清华
+- id: jev
+  title: Jev
+  year: 2026
+  month: 9
+  dateBasis: release
+  dateSource: jev-release
+  article: jev
+  architecture: unknown
+  modalities:
+    - text
+  sources:
+    - jev-docs
+    - jev-primer
+    - jev-release
+  organization: TypeSafe
+- id: kimi25
+  title: Kimi K2.5
+  year: 2026
+  article: kimi-k25-model
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources: *a8
+  seriesPrevious: kimi-k2-thinking
+  month: 1
+  dateBasis: release
+  dateSource: date-kimi-k25-k26
+  organization: Moonshot AI
+- id: kimi26
+  title: Kimi K2.6
+  year: 2026
+  article: kimi-k26-model
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: *a8
+  seriesPrevious: kimi25
+  month: 4
+  dateBasis: release
+  dateSource: date-kimi-k25-k26
+  organization: Moonshot AI
+- id: kimi27
+  title: Kimi K2.7 Code
+  year: 2026
+  article: kimi-k27-model
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources: [kimi-k27-card, date-kimi-k27]
+  seriesPrevious: kimi26
+  organization: Moonshot AI
+  month: 6
+  dateBasis: release
+  dateSource: date-kimi-k27
+- id: kimi-k3
+  title: Kimi K3
+  year: 2026
+  article: kimi-k3
+  family: Kimi
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - kimi-k3-code
+    - kimi-linear-card
+    - attnres-paper
+  seriesPrevious: kimi27
+  organization: Moonshot AI
+  month: 7
+  dateBasis: release
+  dateSource: date-kimi3
+- id: omnijev
+  title: OmniJev
+  year: 2026
+  month: 9
+  dateBasis: release
+  dateSource: omnijev-v11-release
+  article: omnijev
+  architecture: mixed
+  modalities:
+    - text
+    - image
+  sources:
+    - omnijev-code
+    - omnijev-v11-release
+  organization: OmniJev 团队
+- id: qwen3-asr
+  title: Qwen3-ASR
+  year: 2026
+  article: qwen-asr
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources:
+    - qwen-audio-code
+    - qwen-asr-code
+    - qwen-asr-paper
+    - gspo-paper
+  seriesPrevious: qwen2-audio
+  month: 1
+  dateBasis: release
+  dateSource: qwen-asr-release
+  organization: 阿里巴巴
+- id: qwen-coder-next
+  title: Qwen3-Coder-Next
+  year: 2026
+  article: qwen3-coder-next-model
+  family: Qwen
+  architecture: decoder
+  modalities:
+    - text
+  sources: *a5
+  seriesPrevious: qwen3-coder
+  month: 2
+  dateBasis: release
+  dateSource: date-qwen-coder-next
+  organization: 阿里巴巴
+- id: qwen-tts
+  title: Qwen3-TTS
+  year: 2026
+  article: qwen-tts
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - audio
+  sources:
+    - qwen-tts-code
+    - qwen-tts-paper
+    - gspo-paper
+  month: 1
+  dateBasis: paper
+  dateSource: qwen-tts-paper
+  organization: 阿里巴巴
+- id: qwen35
+  title: Qwen3.5
+  year: 2026
+  article: qwen35-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources: &a10
+    - qwen35-card
+    - qwen38-code
+    - qwen38-card
+    - qwen38-large-card
+    - qwen37-blog
+  seriesPrevious: qwen3
+  organization: 阿里巴巴
+  month: 2
+  dateBasis: release
+  dateSource: date-qwen35
+- id: qwen36
+  title: Qwen3.6
+  year: 2026
+  article: qwen36-model
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources: [date-qwen36, qwen36-card]
+  seriesPrevious: qwen35
+  organization: 阿里巴巴
+  month: 4
+  dateBasis: release
+  dateSource: date-qwen36
+- id: qwen37
+  title: Qwen3.7
+  year: 2026
+  article: qwen37-model
+  family: Qwen
+  architecture: unknown
+  modalities:
+    - text
+  sources: [qwen37-blog]
+  seriesPrevious: qwen36
+  organization: 阿里巴巴
+  month: 5
+  dateBasis: release
+  dateSource: qwen37-blog
+- id: qwen38-version
+  title: Qwen3.8
+  year: 2026
+  article: qwen38
+  family: Qwen
+  architecture: mixed
+  modalities:
+    - text
+    - image
+    - video
+  sources: [date-qwen38, qwen38-card, qwen38-large-card]
+  seriesPrevious: qwen37
+  month: 8
+  dateBasis: release
+  dateSource: date-qwen38
+  organization: 阿里巴巴
+- id: glm51
+  title: GLM-5.1
+  year: 2026
+  month: 4
+  dateBasis: release
+  dateSource: date-glm51
+  article: glm51-model
+  organization: 智谱 / 清华
+  family: GLM
+  architecture: decoder
+  modalities:
+    - text
+  sources:
+    - date-glm51
+  seriesPrevious: glm5
+- id: deepseek-llm
+  title: DeepSeek LLM
+  year: 2024
+  month: 1
+  dateBasis: paper
+  dateSource: deepseek-llm-paper
+  article: deepseek-llm-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-llm-paper]
+- id: deepseek-coder
+  title: DeepSeek-Coder
+  year: 2024
+  month: 1
+  dateBasis: paper
+  dateSource: deepseek-coder-paper
+  article: deepseek-coder-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-coder-paper]
+- id: deepseek-math
+  title: DeepSeekMath
+  year: 2024
+  month: 2
+  dateBasis: paper
+  dateSource: deepseek-math-paper
+  article: deepseek-math-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-math-paper]
+- id: janus-pro
+  title: Janus-Pro
+  year: 2025
+  month: 1
+  dateBasis: release
+  dateSource: janus-pro-release
+  article: janus-pro-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: mixed
+  modalities: [text, image]
+  sources: [janus-pro-release]
+- id: deepseek-math-v2
+  title: DeepSeekMath-V2
+  year: 2025
+  month: 11
+  dateBasis: paper
+  dateSource: deepseek-math-v2-paper
+  article: deepseek-math-v2-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-math-v2-paper]
+  seriesPrevious: deepseek-math
+- id: deepseek-v2
+  title: DeepSeek-V2
+  year: 2024
+  month: 5
+  dateBasis: release
+  dateSource: deepseek-v2-release
+  article: deepseek-v2-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v2-release]
+  seriesPrevious: deepseek-llm
+- id: deepseek-coder-v2
+  title: DeepSeek-Coder-V2
+  year: 2024
+  month: 6
+  dateBasis: paper
+  dateSource: deepseek-coder-v2-paper
+  article: deepseek-coder-v2-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-coder-v2-paper]
+  seriesPrevious: deepseek-coder
+- id: deepseek-vl2
+  title: DeepSeek-VL2
+  year: 2024
+  month: 12
+  dateBasis: paper
+  dateSource: deepseek-vl2-paper
+  article: deepseek-vl2-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: mixed
+  modalities: [text, image]
+  sources: [deepseek-vl2-paper]
+- id: deepseek-v31
+  title: DeepSeek-V3.1
+  year: 2025
+  month: 8
+  dateBasis: release
+  dateSource: deepseek-v31-release
+  article: deepseek-v31-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v31-release]
+  seriesPrevious: deepseek-v3
+- id: deepseek-v32
+  title: DeepSeek-V3.2
+  year: 2025
+  month: 12
+  dateBasis: release
+  dateSource: deepseek-v32-release
+  article: deepseek-v32-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v32-release, deepseek-v32-paper]
+  seriesPrevious: deepseek-v31
+- id: deepseek-v4-flash
+  title: DeepSeek-V4-Flash
+  year: 2026
+  month: 4
+  dateBasis: release
+  dateSource: deepseek-v4-release
+  article: deepseek-v4-flash-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v4-release, deepseek-v4-flash-card]
+  seriesPrevious: deepseek-v32
+- id: deepseek-v4-pro
+  title: DeepSeek-V4-Pro
+  year: 2026
+  month: 4
+  dateBasis: release
+  dateSource: deepseek-v4-release
+  article: deepseek-v4-pro-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v4-release, deepseek-v4-pro-card]
+  seriesPrevious: deepseek-v32
+- id: deepseek-v41-flash
+  title: DeepSeek-V4.1-Flash
+  year: 2026
+  month: 9
+  dateBasis: release
+  dateSource: deepseek-v41-release
+  article: deepseek-v41-flash-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: encoder-decoder
+  modalities: [text, image]
+  sources: [deepseek-v41-release, deepseek-v41-card]
+  seriesPrevious: deepseek-v4-flash
+- id: minimax-m1
+  title: MiniMax-M1
+  year: 2025
+  month: 6
+  dateBasis: paper
+  dateSource: minimax-m1-paper
+  article: minimax-m1-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: mixed
+  modalities: [text]
+  sources: [minimax-m1-paper, minimax-m1-card]
+- id: minimax-m2
+  title: MiniMax-M2
+  year: 2025
+  month: 10
+  dateBasis: release
+  dateSource: minimax-m2-release
+  article: minimax-m2-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: decoder
+  modalities: [text]
+  sources: [minimax-m2-release]
+  seriesPrevious: minimax-m1
+- id: minimax-m21
+  title: MiniMax-M2.1
+  year: 2025
+  month: 12
+  dateBasis: release
+  dateSource: minimax-m21-release
+  article: minimax-m21-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: decoder
+  modalities: [text]
+  sources: [minimax-m21-release]
+  seriesPrevious: minimax-m2
+- id: minimax-m25
+  title: MiniMax-M2.5
+  year: 2026
+  month: 2
+  dateBasis: release
+  dateSource: minimax-m25-release
+  article: minimax-m25-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: decoder
+  modalities: [text]
+  sources: [minimax-m25-release]
+  seriesPrevious: minimax-m21
+- id: minimax-m27
+  title: MiniMax-M2.7
+  year: 2026
+  month: 3
+  dateBasis: release
+  dateSource: minimax-m27-release
+  article: minimax-m27-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: decoder
+  modalities: [text]
+  sources: [minimax-m27-release, minimax-m27-card]
+  seriesPrevious: minimax-m25
+- id: minimax-m3
+  title: MiniMax-M3
+  year: 2026
+  month: 6
+  dateBasis: release
+  dateSource: minimax-m3-release
+  article: minimax-m3-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: mixed
+  modalities: [text, image, video]
+  sources: [minimax-m3-release]
+  seriesPrevious: minimax-m27
+- id: minimax-m31-flash
+  title: MiniMax-M3.1 Flash
+  year: 2026
+  month: 10
+  dateBasis: release
+  dateSource: minimax-m31-release
+  article: minimax-m31-flash-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: mixed
+  modalities: [text, image]
+  sources: [minimax-m31-release]
+  seriesPrevious: minimax-m3
+
+- id: qwen3-reranker
+  title: Qwen3-Reranker
+  year: 2025
+  month: 6
+  dateBasis: release
+  dateSource: date-qwen3-embed
+  article: qwen3-reranker-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: decoder
+  modalities: [text]
+  sources: [qwen3-embedding-paper, qwen3-reranker-card]
+
+- id: qwen3-vl-reranker
+  title: Qwen3-VL-Reranker
+  year: 2026
+  month: 1
+  dateBasis: paper
+  dateSource: qwen3-vl-embedding-paper
+  article: qwen3-vl-reranker-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image, video]
+  sources: [qwen3-vl-embedding-paper, qwen3-vl-reranker-card]
+
+- id: qwen3-forcedaligner
+  title: Qwen3-ForcedAligner
+  year: 2026
+  month: 1
+  dateBasis: release
+  dateSource: qwen-asr-release
+  article: qwen3-forcedaligner-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, audio]
+  sources: [qwen-asr-paper, qwen3-forcedaligner-card]
+
+- id: qwen25-1m
+  title: Qwen2.5-1M
+  year: 2025
+  month: 1
+  dateBasis: release
+  dateSource: qwen25-1m-release
+  article: qwen25-1m-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: decoder
+  modalities: [text]
+  sources: [qwen25-1m-paper, qwen25-1m-release, qwen25-1m-card]
+  seriesPrevious: qwen-25
+
+- id: deepseek-r1-0528
+  title: DeepSeek-R1-0528
+  year: 2025
+  month: 5
+  dateBasis: release
+  dateSource: deepseek-r1-0528-card
+  article: deepseek-r1-0528-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-r1-0528-card, r1-paper, r1-code]
+  seriesPrevious: deepseek-r1
+
+- id: qwen25-math-prm
+  title: Qwen2.5-Math-PRM
+  year: 2025
+  month: 1
+  dateBasis: release
+  dateSource: qwen25-math-prm-release
+  article: qwen25-math-prm-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: decoder
+  modalities: [text]
+  sources: [qwen25-math-prm-release, qwen25-math-prm-paper, qwen25-math-prm-card]
+  seriesPrevious: qwen-math
+
+- id: glm-image
+  title: GLM-Image
+  year: 2026
+  month: 1
+  dateBasis: release
+  dateSource: glm-image-release
+  article: glm-image-model
+  family: GLM
+  organization: 智谱 / 清华
+  architecture: mixed
+  modalities: [text, image]
+  sources: [glm-image-card, glm-image-code, glm-image-release]
+
+- id: deepseek-v3-0324
+  title: DeepSeek-V3-0324
+  year: 2025
+  month: 3
+  dateBasis: release
+  dateSource: deepseek-v3-0324-card
+  article: deepseek-v3-0324-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v3-0324-card, v3-paper]
+  seriesPrevious: deepseek-v3
+
+- id: qwen25-math-rm
+  title: Qwen2.5-Math-RM-72B
+  year: 2024
+  month: 9
+  dateBasis: release
+  dateSource: qwen25-math-release
+  article: qwen25-math-rm-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: decoder
+  modalities: [text]
+  sources: [qwen25-math-paper, qwen25-math-release, qwen25-math-rm-card]
+  seriesPrevious: qwen-math
+
+- id: qvq-72b-preview
+  title: QVQ-72B-Preview
+  year: 2024
+  month: 12
+  dateBasis: release
+  dateSource: qvq-preview-release
+  article: qvq-72b-preview-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image]
+  sources: [qvq-preview-release, qvq-preview-card, qwen2-vl-paper]
+  seriesPrevious: qwen2-vl
+
+- id: deepseek-v25
+  title: DeepSeek-V2.5
+  year: 2024
+  month: 9
+  dateBasis: release
+  dateSource: deepseek-v25-card
+  article: deepseek-v25-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: decoder
+  modalities: [text]
+  sources: [deepseek-v25-card, deepseek-v2-paper]
+  seriesPrevious: deepseek-v2
+
+- id: glm-tts
+  title: GLM-TTS
+  year: 2025
+  month: 12
+  dateBasis: paper
+  dateSource: glm-tts-paper
+  article: glm-tts-model
+  family: GLM
+  organization: 智谱 / 清华
+  architecture: mixed
+  modalities: [text, audio]
+  sources: [glm-tts-card, glm-tts-paper, glm-tts-code]
+
+- id: gpt3
+  title: GPT-3
+  year: 2020
+  month: 5
+  dateBasis: paper
+  dateSource: gpt3-paper
+  article: gpt3-model
+  family: GPT
+  organization: OpenAI
+  architecture: decoder
+  modalities: [text]
+  sources: [gpt3-paper]
+  seriesPrevious: gpt
+
+- id: gpt4
+  title: GPT-4
+  year: 2023
+  month: 3
+  dateBasis: paper
+  dateSource: gpt4-paper
+  article: gpt4-model
+  family: GPT
+  organization: OpenAI
+  architecture: unknown
+  modalities: [text, image]
+  sources: [gpt4-paper]
+  seriesPrevious: gpt3
+
+- id: wan21
+  title: Wan2.1
+  year: 2025
+  month: 2
+  dateBasis: release
+  dateSource: wan21-release
+  article: wan21-model
+  family: Wan
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image, video]
+  sources: [wan21-paper, wan21-release]
+
+- id: gpt1
+  title: GPT 初代
+  year: 2018
+  month: 6
+  dateBasis: release
+  dateSource: gpt1-release
+  article: gpt1-model
+  family: GPT
+  organization: OpenAI
+  architecture: decoder
+  modalities: [text]
+  sources: [gpt1-paper, gpt1-release]
+
+- id: sam2
+  title: SAM 2
+  year: 2024
+  month: 7
+  dateBasis: release
+  dateSource: sam2-release
+  article: sam2-model
+  family: SAM
+  organization: Meta
+  architecture: mixed
+  modalities: [image, video]
+  sources: [sam2-paper, sam2-release]
+  seriesPrevious: sam
+
+- id: wan22
+  title: Wan2.2
+  year: 2025
+  month: 7
+  dateBasis: release
+  dateSource: wan22-paper
+  article: wan22-model
+  family: Wan
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image, video]
+  sources: [wan22-paper]
+  seriesPrevious: wan21
+
+- id: qwq-preview
+  title: QwQ-32B-Preview
+  year: 2024
+  month: 11
+  dateBasis: release
+  dateSource: qwq-preview-release
+  article: qwq-preview-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: decoder
+  modalities: [text]
+  sources: [qwq-preview-release]
+
+- id: gpt5
+  title: GPT-5
+  year: 2025
+  month: 8
+  dateBasis: release
+  dateSource: gpt5-release
+  article: gpt5-model
+  family: GPT
+  organization: OpenAI
+  architecture: unknown
+  modalities: [text, image]
+  sources: [gpt5-release]
+  seriesPrevious: gpt4o
+
+- id: qwen-image-2512
+  title: Qwen-Image-2512
+  year: 2025
+  month: 12
+  dateBasis: release
+  dateSource: qwen-image-release-history
+  article: qwen-image-2512-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image]
+  sources: [qwen-image-2512-card, qwen-image-release-history]
+  seriesPrevious: qwen-image
+
+- id: qwen-image-edit-2511
+  title: Qwen-Image-Edit-2511
+  year: 2025
+  month: 12
+  dateBasis: release
+  dateSource: qwen-image-release-history
+  article: qwen-image-edit-2511-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image]
+  sources: [qwen-image-edit-2511-card, qwen-image-release-history]
+  seriesPrevious: qwen-image-edit-2509
+
+- id: qwen-image-edit-2509
+  title: Qwen-Image-Edit-2509
+  year: 2025
+  month: 9
+  dateBasis: release
+  dateSource: qwen-image-release-history
+  article: qwen-image-edit-2509-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities: [text, image]
+  sources: [qwen-image-edit-2509-card, qwen-image-release-history]
+  seriesPrevious: qwen-image-edit
+
+- id: llama1
+  title: LLaMA 初代
+  year: 2023
+  month: 2
+  dateBasis: paper
+  dateSource: llama1-paper
+  article: llama1-model
+  family: Llama
+  organization: Meta
+  architecture: decoder
+  modalities: [text]
+  sources: [llama1-paper]
+
+- id: llama2
+  title: Llama 2
+  year: 2023
+  month: 7
+  dateBasis: paper
+  dateSource: llama2-paper
+  article: llama2-model
+  family: Llama
+  organization: Meta
+  architecture: decoder
+  modalities: [text]
+  sources: [llama2-paper]
+  seriesPrevious: llama1
+
+- id: llama3
+  title: Llama 3
+  year: 2024
+  month: 4
+  dateBasis: release
+  dateSource: llama3-release
+  article: llama3-model
+  family: Llama
+  organization: Meta
+  architecture: decoder
+  modalities: [text]
+  sources: [llama3-release]
+  seriesPrevious: llama2
+
+- id: llama4
+  title: Llama 4：Scout 与 Maverick
+  year: 2025
+  month: 4
+  dateBasis: release
+  dateSource: llama4-release
+  article: llama4-model
+  family: Llama
+  organization: Meta
+  architecture: mixed
+  modalities: [text, image]
+  sources: [llama4-release]
+  seriesPrevious: llama33
+
+- id: llama32-vision
+  title: Llama 3.2 Vision
+  year: 2024
+  month: 9
+  dateBasis: release
+  dateSource: llama32-release
+  article: llama32-vision-model
+  family: Llama
+  organization: Meta
+  architecture: mixed
+  modalities: [text, image]
+  sources: [llama32-release]
+  seriesPrevious: llama
+
+- id: llama33
+  title: Llama 3.3 70B Instruct
+  year: 2024
+  month: 12
+  dateBasis: release
+  dateSource: llama33-card
+  article: llama33-model
+  family: Llama
+  organization: Meta
+  architecture: decoder
+  modalities: [text]
+  sources: [llama33-card]
+  seriesPrevious: llama
+
+- id: instructgpt
+  title: InstructGPT
+  year: 2022
+  month: 3
+  dateBasis: paper
+  dateSource: instruct-paper
+  article: instructgpt-model
+  family: GPT
+  organization: OpenAI
+  architecture: decoder
+  modalities: [text]
+  sources: [instruct-paper]
+  seriesPrevious: gpt3
+
+- id: llama32-text
+  title: Llama 3.2：1B 与 3B 文本模型
+  year: 2024
+  month: 9
+  dateBasis: release
+  dateSource: llama32-release
+  article: llama32-text-model
+  family: Llama
+  organization: Meta
+  architecture: decoder
+  modalities: [text]
+  sources: [llama32-release]
+  seriesPrevious: llama
+
+- id: glm130-version
+  title: GLM-130B
+  year: 2022
+  month: 8
+  dateBasis: release
+  dateSource: glm130-blog
+  article: glm130-model
+  family: GLM
+  architecture: mixed
+  modalities: [text]
+  sources: [glm130-blog, glm130-paper, glm130-code]
+  seriesPrevious: glm-original
+  organization: 智谱 / 清华
+- id: glm4-version
+  title: GLM-4-9B
+  year: 2024
+  month: 6
+  dateBasis: release
+  dateSource: chatglm-paper
+  article: glm4-9b-model
+  family: GLM
+  architecture: decoder
+  modalities: [text]
+  sources: [chatglm-paper, glm4-card, glm4-base-card, glm4-config]
+  seriesPrevious: chatglm3-version
+  organization: 智谱 / 清华
+- id: qwen3-omni-captioner
+  title: Qwen3-Omni-Captioner
+  year: 2025
+  month: 9
+  article: qwen3-omni-captioner-model
+  family: Qwen
+  organization: 阿里巴巴
+  architecture: mixed
+  modalities:
+    - audio
+    - text
+  sources:
+    - qwen3-omni-captioner-card
+    - qwen3-omni-paper
+  dateBasis: release
+  dateSource: qwen3-omni-paper
+- id: deepseek-vl-first
+  title: DeepSeek-VL
+  year: 2024
+  month: 3
+  dateBasis: release
+  dateSource: deepseek-vl-first-release
+  article: deepseek-vl-first-model
+  family: DeepSeek
+  organization: DeepSeek
+  architecture: mixed
+  modalities: [text, image]
+  sources: [deepseek-vl-first-paper, deepseek-vl-first-release]
+- id: minimax-text-01
+  title: MiniMax-Text-01
+  year: 2025
+  month: 1
+  dateBasis: paper
+  dateSource: minimax-01-paper
+  article: minimax-text-01-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: mixed
+  modalities: [text]
+  sources: [minimax-01-paper]
+- id: minimax-vl01
+  title: MiniMax-VL-01
+  year: 2025
+  month: 1
+  dateBasis: paper
+  dateSource: minimax-01-paper
+  article: minimax-vl01-model
+  family: MiniMax
+  organization: MiniMax
+  architecture: mixed
+  modalities: [text, image]
+  sources: [minimax-01-paper]
+- id: glm45v
+  title: GLM-4.5V
+  year: 2025
+  month: 8
+  dateBasis: release
+  dateSource: glm-v-code
+  article: glm45v-model
+  family: GLM
+  organization: 智谱 / 清华
+  architecture: mixed
+  modalities: [text, image, video]
+  sources: [glm45v-paper, glm-v-code]

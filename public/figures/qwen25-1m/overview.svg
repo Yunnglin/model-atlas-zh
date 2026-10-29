@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">Qwen2.5-1M 长上下文训练与推理</title><desc id="desc">Qwen2.5 中间检查点经过逐步长上下文训练和指令微调，推理时结合长度外推处理长文档，可选稀疏注意力提高预填充效率。</desc>
+<rect width="1200" height="440" fill="#f6faf9" rx="20"/>
+<text x="50" y="58" fill="#174b4a" font-size="26" font-family="sans-serif" font-weight="bold">先练长材料，再用推理方法处理更长输入</text>
+<g font-family="sans-serif" fill="#173b44" font-size="21">
+<rect x="50" y="105" width="235" height="115" rx="12" fill="#ffffff" stroke="#92c7be" stroke-width="2"/><text x="70" y="145">Qwen2.5</text><text x="70" y="178">预训练中间检查点</text>
+<path d="M285 162h42" stroke="#448f83" stroke-width="3"/><path d="m318 155 10 7-10 7" fill="none" stroke="#448f83" stroke-width="3"/>
+<rect x="330" y="105" width="260" height="115" rx="12" fill="#ffffff" stroke="#92c7be" stroke-width="2"/><text x="350" y="145">逐步训练到 256K</text><text x="350" y="178">长短材料混合后训练</text>
+<path d="M590 162h42" stroke="#448f83" stroke-width="3"/><path d="m623 155 10 7-10 7" fill="none" stroke="#448f83" stroke-width="3"/>
+<rect x="635" y="105" width="235" height="115" rx="12" fill="#ffffff" stroke="#92c7be" stroke-width="2"/><text x="655" y="145">公开的 1M 权重</text><text x="655" y="178">7B / 14B Instruct</text>
+<path d="M870 162h42" stroke="#448f83" stroke-width="3"/><path d="m903 155 10 7-10 7" fill="none" stroke="#448f83" stroke-width="3"/>
+<rect x="915" y="105" width="235" height="115" rx="12" fill="#e7f4f0" stroke="#409b89" stroke-width="2"/><text x="935" y="145">长文推理</text><text x="935" y="178">长度外推至约 1M</text>
+<rect x="50" y="278" width="1100" height="90" rx="12" fill="#ebf2f4"/><text x="75" y="315">推理配置：DCA 调整相对位置　·　稀疏注意力可减少预填充计算</text><text x="75" y="348" font-size="18">图为教学概览；训练、外推与推理加速是不同步骤，准确性和资源需按实际环境验证。</text>
+</g></svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="300" viewBox="0 0 1060 300" role="img" aria-labelledby="title desc">
+  <title id="title">音频描述的路径</title>
+  <desc id="desc">一段音频经过 AuT 音频编码器和 Thinker，再生成细粒度文字描述；图中未包括语音生成模块。</desc>
+  <rect width="1060" height="300" rx="20" fill="#f4f9f8"/>
+  <g fill="#fff" stroke="#9ebfbc" stroke-width="2"><rect x="20" y="80" width="210" height="125" rx="14"/><rect x="280" y="80" width="210" height="125" rx="14"/><rect x="540" y="80" width="210" height="125" rx="14"/><rect x="800" y="80" width="240" height="125" rx="14"/></g>
+  <g fill="none" stroke="#357d80" stroke-width="3"><path d="M230 142H270"/><path d="M490 142H530"/><path d="M750 142H790"/></g><g fill="#357d80"><path d="M270 136L280 142L270 148Z"/><path d="M530 136L540 142L530 148Z"/><path d="M790 136L800 142L790 148Z"/></g>
+  <g font-family="system-ui, sans-serif" text-anchor="middle" fill="#183f42"><text x="125" y="125" font-size="23" font-weight="700">一段声音</text><text x="125" y="164" font-size="17">人声、环境、音乐</text><text x="385" y="125" font-size="23" font-weight="700">AuT 编码器</text><text x="385" y="164" font-size="17">声音变成表示</text><text x="645" y="125" font-size="23" font-weight="700">Thinker</text><text x="645" y="164" font-size="17">理解后生成文字</text><text x="920" y="125" font-size="23" font-weight="700">声音描述</text><text x="920" y="164" font-size="17">声源、事件与变化</text><text x="530" y="260" font-size="16">教学简图：省略内部模块；此版本不输出语音，也不接受文字提示。</text></g>
+</svg>

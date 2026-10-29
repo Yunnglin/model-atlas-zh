@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-labelledby="title desc">
+<title id="title">Qwen3-ForcedAligner 时间槽填空示意</title><desc id="desc">音频通过 AuT 编码，文字加上时间槽后一起输入因果语言模型，由分类层同时预测各时间槽。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#738e96"/></marker></defs>
+<rect width="1200" height="460" rx="20" fill="#f6faf9"/><g font-family="system-ui, sans-serif" fill="#183848">
+<text x="38" y="48" font-size="24" font-weight="700">把声音和已知文字放在一起，为每个时间槽填空</text>
+<rect x="38" y="86" width="240" height="100" rx="12" fill="#e4f4ee" stroke="#8ec9af"/><text x="57" y="119" font-size="20" font-weight="700">录音</text><text x="57" y="151" font-size="17">“早上好” 的声音</text>
+<rect x="38" y="230" width="240" height="125" rx="12" fill="#ebf2fb" stroke="#adc2e3"/><text x="57" y="264" font-size="20" font-weight="700">已知文字 + 时间槽</text><text x="57" y="299" font-size="16">早上 [时间] [时间]</text><text x="57" y="328" font-size="16">好　 [时间] [时间]</text>
+<rect x="342" y="100" width="190" height="74" rx="12" fill="#fff" stroke="#bdd2ce"/><text x="368" y="133" font-size="19" font-weight="700">AuT 编码器</text><text x="368" y="156" font-size="15">声音 → 特征</text>
+<rect x="590" y="148" width="225" height="138" rx="12" fill="#fff" stroke="#bdd2ce"/><text x="618" y="187" font-size="19" font-weight="700">Qwen3 语言模型</text><text x="618" y="218" font-size="16">结合声音与文字</text><text x="618" y="247" font-size="16">因果上下文</text>
+<rect x="876" y="148" width="275" height="138" rx="12" fill="#fff8e9" stroke="#e6c985"/><text x="895" y="184" font-size="19" font-weight="700">时间分类层</text><text x="895" y="218" font-size="16">各槽同时预测时间编号</text><text x="895" y="247" font-size="16">编号 × 80ms → 时间</text>
+<g fill="none" stroke="#738e96" stroke-width="2.4" marker-end="url(#arrow)"><path d="M278 136 H342"/><path d="M532 137 H560 V192 H590"/><path d="M278 293 H560 V241 H590"/><path d="M815 217 H876"/></g>
+<text x="38" y="411" font-size="16" fill="#506973">教学示意：省略分词及层内细节；不是录音识别或对文字纠错。</text>
+</g></svg>

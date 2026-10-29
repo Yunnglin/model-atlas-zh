@@ -14,8 +14,7 @@
   type: official-code
   checked: 2026-10-26
 - id: t5-paper
-  title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text
-    Transformer
+  title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
   url: https://arxiv.org/abs/1910.10683
   type: paper
   checked: 2026-10-26
@@ -29,6 +28,11 @@
   url: https://arxiv.org/abs/2103.00020
   type: paper
   checked: 2026-10-26
+- id: date-clip-release
+  title: CLIP 官方发布介绍（2021 年 1 月 5 日）
+  url: https://openai.com/index/clip/
+  type: official-docs
+  checked: 2026-10-28
 - id: dit-paper
   title: Scalable Diffusion Models with Transformers
   url: https://arxiv.org/abs/2212.09748
@@ -100,16 +104,21 @@
   type: paper
   checked: 2026-10-26
   note: 本库的原始 R1 流程讲解以 2025 年 v1 报告为基准，后续修订与模型更新另行核对。
+- id: deepseek-r1-release
+  title: DeepSeek-R1 官方发布
+  url: https://deepseek.com/news/deepseek-r1/
+  type: official-docs
+  checked: 2026-10-28
 - id: calibration-paper
   title: On Calibration of Modern Neural Networks
   url: https://arxiv.org/abs/1706.04599
   type: paper
   checked: 2026-10-26
 - id: wer-docs
-  title: 'Hugging Face Evaluate: Word Error Rate'
-  url: https://huggingface.co/spaces/evaluate-metric/wer
+  title: JiWER 官方说明
+  url: https://github.com/jitsi/jiwer
   type: official-docs
-  checked: 2026-10-26
+  checked: 2026-10-27
 - id: ml-rules
   title: Rules of Machine Learning
   url: https://developers.google.com/machine-learning/guides/rules-of-ml
@@ -145,6 +154,11 @@
   url: https://arxiv.org/abs/2412.19437v2
   type: paper
   checked: 2026-10-26
+- id: deepseek-v3-release
+  title: DeepSeek-V3 官方发布
+  url: https://deepseek.com/en/news/deepseek-v3/
+  type: official-docs
+  checked: 2026-10-28
 - id: r1-code
   title: DeepSeek-R1 官方说明与蒸馏模型
   url: https://github.com/deepseek-ai/DeepSeek-R1
@@ -170,9 +184,23 @@
   url: https://arxiv.org/abs/2212.08073
   type: paper
   checked: 2026-10-26
+- id: date-kimi-audio
+  title: Kimi-Audio 官方权重与代码发布记录
+  url: https://huggingface.co/moonshotai/Kimi-Audio-7B/blob/880ac960438820cc894415a053965b1fae170674/README.md
+  type: official-docs
+  checked: 2026-10-28
+- id: date-zhipu-company
+  title: 智谱官方发展历程：ChatGLM 与 GLM-4V 发布时间
+  url: https://z.ai/company
+  type: official-docs
+  checked: 2026-10-28
+- id: date-zhipu-research
+  title: 智谱官方研究列表：GLM-ASR-Nano 与 GLM-OCR 发布时间
+  url: https://www.zhipuai.cn/zh/research
+  type: official-docs
+  checked: 2026-10-28
 - id: moe-paper
-  title: 'Outrageously Large Neural Networks: The Sparsely-Gated
-    Mixture-of-Experts Layer'
+  title: 'Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer'
   url: https://arxiv.org/abs/1701.06538
   type: paper
   checked: 2026-10-26
@@ -237,8 +265,7 @@
   type: paper
   checked: 2026-10-26
 - id: hubert-paper
-  title: 'HuBERT: Self-Supervised Speech Representation Learning by Masked
-    Prediction of Hidden Units'
+  title: 'HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units'
   url: https://arxiv.org/abs/2106.07447
   type: paper
   checked: 2026-10-26
@@ -248,8 +275,7 @@
   type: paper
   checked: 2026-10-26
 - id: f5-paper
-  title: 'F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow
-    Matching'
+  title: 'F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching'
   url: https://arxiv.org/abs/2410.06885
   type: paper
   checked: 2026-10-26
@@ -274,8 +300,7 @@
   type: official-docs
   checked: 2026-10-26
 - id: gemini-paper
-  title: 'Gemini 1.5: Unlocking multimodal understanding across millions of tokens
-    of context'
+  title: 'Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context'
   url: https://arxiv.org/abs/2403.05530v5
   type: paper
   checked: 2026-10-26
@@ -285,14 +310,13 @@
   type: paper
   checked: 2026-10-26
 - id: ctc-paper
-  title: 'Connectionist Temporal Classification: Labelling Unsegmented Sequence
-    Data with Recurrent Neural Networks'
+  title: 'Connectionist Temporal Classification: Labelling Unsegmented Sequence Data with Recurrent
+    Neural Networks'
   url: https://www.cs.toronto.edu/~graves/icml_2006.pdf
   type: paper
   checked: 2026-10-26
 - id: fid-paper
-  title: GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash
-    Equilibrium
+  title: GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium
   url: https://arxiv.org/abs/1706.08500
   type: paper
   checked: 2026-10-26
@@ -302,8 +326,7 @@
   type: paper
   checked: 2026-10-26
 - id: mmmu-paper
-  title: 'MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning
-    Benchmark'
+  title: 'MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark'
   url: https://arxiv.org/abs/2311.16502
   type: paper
   checked: 2026-10-26
@@ -372,6 +395,16 @@
   url: https://github.com/QwenLM/Qwen3-VL
   type: official-code
   checked: 2026-10-26
+- id: date-qwen2-vl
+  title: Qwen2-VL 官方发布
+  url: https://qwenlm.github.io/blog/qwen2-vl/
+  type: official-docs
+  checked: 2026-10-28
+- id: date-qwen3guard
+  title: Qwen3Guard 官方发布
+  url: https://qwenlm.github.io/blog/qwen3guard/
+  type: official-docs
+  checked: 2026-10-28
 - id: qwen2-vl-paper
   title: Qwen2-VL Technical Report
   url: https://arxiv.org/abs/2409.12191
@@ -392,6 +425,11 @@
   url: https://github.com/QwenLM/Qwen3-ASR
   type: official-code
   checked: 2026-10-26
+- id: qwen-asr-release
+  title: Qwen3-ASR 官方发布介绍
+  url: https://qwen.ai/blog?id=qwen3asr
+  type: official-docs
+  checked: 2026-10-28
 - id: qwen-asr-paper
   title: Qwen3-ASR Technical Report
   url: https://arxiv.org/abs/2601.21337
@@ -422,6 +460,131 @@
   url: https://arxiv.org/abs/2609.25611
   type: paper
   checked: 2026-10-26
+- id: date-qwen35-omni-release
+  title: 阿里云模型服务发布记录：Qwen3.5-Omni
+  url: https://docs.modelstudio.console.alibabacloud.com/en/model-studio/newly-released-models
+  type: official-docs
+  checked: 2026-10-28
+- id: date-qwen38-omni-release
+  title: Qwen3.8-Omni-Flash 官方发布
+  url: https://qwen.ai/blog?id=qwen3.8-omni-flash
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen38-flash-next-card
+  title: Qwen3.8-Flash-Next 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen38-flash-next-paper
+  title: On the Design of Qwen3.8-Next Architecture
+  url: https://arxiv.org/abs/2608.30320
+  type: paper
+  checked: 2026-10-28
+- id: qwen38-flash-next-code
+  title: Qwen3.8-Flash-Next 官方代码与发布记录
+  url: https://github.com/QwenLM/Qwen3.8-Flash-Next
+  type: official-code
+  checked: 2026-10-28
+- id: qwen-image21-card
+  title: Qwen-Image-2.1 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-2.1
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image21-code
+  title: Qwen-Image-2.1 官方代码
+  url: https://github.com/QwenLM/Qwen-Image-2.1
+  type: official-code
+  checked: 2026-10-28
+- id: qwen-image21-release
+  title: Qwen-Image-2.1 官方发布
+  url: https://qwen.ai/blog?id=qwen-image-2.1
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen38-livetranslate-blog
+  title: Qwen3.8-LiveTranslate 官方发布
+  url: https://qwen.ai/blog?id=qwen3.8-livetranslate
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen2-math-release
+  title: Qwen2-Math 官方发布
+  url: https://qwenlm.github.io/blog/qwen2-math/
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen2-math-7b-card
+  title: Qwen2-Math-7B-Instruct 模型卡
+  url: https://huggingface.co/Qwen/Qwen2-Math-7B-Instruct
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen2-math-72b-card
+  title: Qwen2-Math-72B-Instruct 模型卡
+  url: https://huggingface.co/Qwen/Qwen2-Math-72B-Instruct
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen3-vl-embedding-paper
+  title: Qwen3-VL Embedding and Reranker 技术报告
+  url: https://arxiv.org/abs/2601.04720
+  type: paper
+  checked: 2026-10-28
+- id: qwen3-vl-embedding-card
+  title: Qwen3-VL-Embedding-8B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-VL-Embedding-8B
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-edit-card
+  title: Qwen-Image-Edit 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-Edit
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-edit-blog
+  title: Qwen-Image-Edit 官方介绍
+  url: https://qwenlm.github.io/blog/qwen-image-edit/
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-layered-paper
+  title: 'Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition'
+  url: https://arxiv.org/abs/2512.15603
+  type: paper
+  checked: 2026-10-28
+- id: qwen-image-layered-card
+  title: Qwen-Image-Layered 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-Layered
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-layered-code
+  title: Qwen-Image-Layered 官方代码
+  url: https://github.com/QwenLM/Qwen-Image-Layered
+  type: official-code
+  checked: 2026-10-28
+- id: qwen-image-layered-release
+  title: Qwen-Image 官方版本时间线
+  url: https://qwen.ai/blog?id=qwen-image-2.0
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-vla-paper
+  title: Qwen-VLA 技术报告 v2
+  url: https://arxiv.org/abs/2605.30280v2
+  type: paper
+  checked: 2026-10-28
+- id: qwen-vla-code
+  title: Qwen-VLA 官方仓库
+  url: https://github.com/QwenLM/Qwen-VLA
+  type: official-code
+  checked: 2026-10-28
+- id: qwen-vla-release
+  title: Qwen-VLA 官方发布
+  url: https://qwen.ai/blog?id=qwenvla
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen3-livetranslate-blog
+  title: Qwen3-LiveTranslate 官方发布
+  url: https://qwen.ai/blog?from=res&id=4266edf7f3718f2d3fda098b3f4c48f3573215d0
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen35-livetranslate-blog
+  title: Qwen3.5-LiveTranslate 官方发布
+  url: https://qwen.ai/blog?id=qwen3.5-livetranslate
+  type: official-docs
+  checked: 2026-10-28
 - id: qwen-coder-code
   title: Qwen3-Coder 与 Coder-Next 官方实现
   url: https://github.com/QwenLM/Qwen3-Coder
@@ -637,3 +800,889 @@
   url: https://arxiv.org/abs/2512.24880v2
   type: paper
   checked: 2026-10-27
+- id: date-gpt2
+  title: GPT-2 官方发布
+  url: https://openai.com/index/better-language-models/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-whisper
+  title: Whisper 官方发布
+  url: https://openai.com/index/whisper/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen1
+  title: Qwen 首次模型发布日期
+  url: https://qwenlm.github.io/blog/qwen/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen2
+  title: Qwen2 官方发布
+  url: https://qwenlm.github.io/blog/qwen2/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen25
+  title: Qwen2.5 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen3
+  title: Qwen3 官方发布
+  url: https://qwenlm.github.io/blog/qwen3/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen25vl
+  title: Qwen2.5-VL 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5-vl/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen25omni
+  title: Qwen2.5-Omni 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5-omni/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen3-coder
+  title: Qwen3-Coder 官方发布
+  url: https://qwenlm.github.io/blog/qwen3-coder/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen3-embed
+  title: Qwen3 Embedding 官方发布
+  url: https://qwenlm.github.io/blog/qwen3-embedding/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen-coder-next
+  title: Qwen3-Coder-Next 官方发布
+  url: https://qwen.ai/blog?id=qwen3-coder-next
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen38
+  title: Qwen3.8-Max 官方发布
+  url: https://qwen.ai/blog?id=qwen3.8
+  type: official-docs
+  checked: 2026-10-27
+- id: date-kimi-k25-k26
+  title: Kimi K2.5 与 K2.6 官方发布时间
+  url: https://www.kimi.com/en/help/agent/agent-swarm
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen-next
+  title: Qwen3-Next 官方发布
+  url: https://qwen.ai/blog?id=qwen3-next
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen2-audio
+  title: Qwen2-Audio 官方发布
+  url: https://qwenlm.github.io/blog/qwen2-audio/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen35
+  title: Qwen3.5 官方发布
+  url: https://qwen.ai/blog?id=qwen3.5
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwen36
+  title: Qwen3.6-27B 官方发布
+  url: https://qwen.ai/blog?id=qwen3.6-27b
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm45
+  title: GLM-4.5 官方发布
+  url: https://z.ai/blog/glm-4.5
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm46
+  title: GLM-4.6 官方发布
+  url: https://z.ai/blog/glm-4.6
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm47
+  title: GLM-4.7 官方发布
+  url: https://z.ai/blog/glm-4.7
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm5
+  title: GLM-5 官方发布
+  url: https://z.ai/blog/glm-5
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm51
+  title: GLM-5.1 官方发布
+  url: https://z.ai/blog/glm-5.1
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm52
+  title: GLM-5.2 官方发布
+  url: https://z.ai/blog/glm-5.2
+  type: official-docs
+  checked: 2026-10-27
+- id: date-kimi3
+  title: Kimi K3 发布与开放权重时间
+  url: https://www.kimi.com/en/help/agent/agent-overview
+  type: official-docs
+  checked: 2026-10-27
+- id: date-qwq
+  title: QwQ-32B 官方发布
+  url: https://qwenlm.github.io/blog/qwq-32b/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-kimi-vl-paper
+  title: Kimi-VL 技术报告
+  url: https://arxiv.org/abs/2504.07491
+  type: paper
+  checked: 2026-10-27
+- id: date-kimi-linear-paper
+  title: Kimi Linear 技术报告
+  url: https://arxiv.org/abs/2510.26692
+  type: paper
+  checked: 2026-10-27
+- id: date-kimi-k2-paper
+  title: Kimi K2 技术报告
+  url: https://arxiv.org/abs/2507.20534
+  type: paper
+  checked: 2026-10-27
+- id: date-kimi-k2-releases
+  title: Kimi 官方研究目录：K2 与 K2 Thinking 发布日期
+  url: https://www.kimi.com/en/blog/
+  type: official-docs
+  checked: 2026-10-28
+- id: date-sd
+  title: Stable Diffusion 官方公开
+  url: https://stability.ai/news-updates/stable-diffusion-public-release
+  type: official-docs
+  checked: 2026-10-27
+- id: date-claude
+  title: Claude 官方发布
+  url: https://www.anthropic.com/news/introducing-claude
+  type: official-docs
+  checked: 2026-10-27
+- id: date-codeqwen
+  title: CodeQwen1.5 官方发布
+  url: https://qwenlm.github.io/blog/codeqwen1.5/
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm53
+  title: GLM-5.3 官方发布
+  url: https://z.ai/blog/glm-5.3
+  type: official-docs
+  checked: 2026-10-27
+- id: date-glm53flash
+  title: GLM-5.3-Flash 官方发布
+  url: https://autoclaw.z.ai/blog/model/glm-5.3-flash
+  type: official-docs
+  checked: 2026-10-27
+- id: qwen3-vl-paper
+  title: Qwen3-VL Technical Report（v1）
+  url: https://arxiv.org/abs/2511.21631v1
+  type: paper
+  checked: 2026-10-27
+- id: qwen-audio-first-paper
+  title: Qwen-Audio 论文（v2）
+  url: https://arxiv.org/abs/2311.07919v2
+  type: paper
+  checked: 2026-10-27
+- id: qwen-audio-first-code
+  title: Qwen-Audio 官方实现与模型
+  url: https://github.com/QwenLM/Qwen-Audio
+  type: official-code
+  checked: 2026-10-27
+- id: qwen2-audio-paper
+  title: Qwen2-Audio Technical Report（v1）
+  url: https://arxiv.org/abs/2407.10759v1
+  type: paper
+  checked: 2026-10-27
+- id: qwen-vl-first-code
+  title: Qwen-VL 官方实现
+  url: https://github.com/QwenLM/Qwen-VL
+  type: official-code
+  checked: 2026-10-27
+- id: qwen2-vl-card
+  title: Qwen2-VL-7B-Instruct 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct
+  type: official-docs
+  checked: 2026-10-27
+- id: qwen25-coder-card
+  title: Qwen2.5-Coder-7B-Instruct 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct
+  type: official-docs
+  checked: 2026-10-27
+- id: qwen3-coder-480-card
+  title: Qwen3-Coder-480B-A35B-Instruct 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct
+  type: official-docs
+  checked: 2026-10-27
+- id: qwen-coder-next-paper
+  title: Qwen3-Coder-Next Technical Report（v1）
+  url: https://arxiv.org/abs/2603.00729v1
+  type: paper
+  checked: 2026-10-27
+- id: qwen-coder-next-card
+  title: Qwen3-Coder-Next 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Coder-Next
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v2-release
+  title: DeepSeek-V2 官方发布记录
+  url: https://github.com/deepseek-ai/DeepSeek-V2
+  type: official-code
+  checked: 2026-10-27
+- id: deepseek-v31-release
+  title: DeepSeek-V3.1 官方发布
+  url: https://www.deepseek.com/en/news/deepseek-v3-1/
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v32-paper
+  title: DeepSeek-V3.2 技术报告
+  url: https://arxiv.org/abs/2512.02556
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-v4-release
+  title: DeepSeek-V4 官方预览版发布
+  url: https://www.deepseek.com/news/v4-preview/
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v4-flash-card
+  title: DeepSeek-V4-Flash 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v4-pro-card
+  title: DeepSeek-V4-Pro 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v41-release
+  title: DeepSeek-V4.1-Flash 官方发布
+  url: https://www.deepseek.com/news/deepseek-v4-1-flash/
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-v41-card
+  title: DeepSeek-V4.1-Flash 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m2-release
+  title: MiniMax M2 官方发布
+  url: https://www.minimax.io/news/minimax-m2
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m21-release
+  title: MiniMax M2.1 官方发布
+  url: https://www.minimax.io/blog/minimax-m21
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m25-release
+  title: MiniMax M2.5 官方发布
+  url: https://www.minimax.io/blog/minimax-m25
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m27-card
+  title: MiniMax M2.7 官方模型卡
+  url: https://huggingface.co/MiniMaxAI/MiniMax-M2.7
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m3-release
+  title: MiniMax M3 官方发布
+  url: https://www.minimax.io/blog/minimax-m3
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m31-release
+  title: MiniMax M3.1 Flash 官方发布
+  url: https://www.minimax.io/blog/minimax-m31f
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-llm-paper
+  title: DeepSeek LLM 论文
+  url: https://arxiv.org/abs/2401.02954
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-coder-v2-paper
+  title: DeepSeek-Coder-V2 论文
+  url: https://arxiv.org/abs/2406.11931
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-vl2-paper
+  title: DeepSeek-VL2 论文
+  url: https://arxiv.org/abs/2412.10302
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-v32-release
+  title: DeepSeek-V3.2 官方发布
+  url: https://deepseek.com/en/news/deepseek-v3-2/
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m27-release
+  title: MiniMax M2.7 官方发布
+  url: https://www.minimax.io/news/minimax-m27-en
+  type: official-docs
+  checked: 2026-10-27
+- id: deepseek-coder-paper
+  title: DeepSeek-Coder 论文
+  url: https://arxiv.org/abs/2401.14196
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-math-paper
+  title: DeepSeekMath 论文
+  url: https://arxiv.org/abs/2402.03300
+  type: paper
+  checked: 2026-10-27
+- id: deepseek-math-v2-paper
+  title: DeepSeekMath-V2 论文
+  url: https://arxiv.org/abs/2511.22570
+  type: paper
+  checked: 2026-10-27
+- id: janus-pro-release
+  title: Janus-Pro 官方发布记录
+  url: https://github.com/deepseek-ai/Janus
+  type: official-docs
+  checked: 2026-10-27
+
+- id: deepseek-v2-paper
+  title: DeepSeek-V2 技术报告
+  url: https://arxiv.org/abs/2405.04434
+  type: paper
+  checked: 2026-10-27
+
+- id: deepseek-v4-paper
+  title: DeepSeek-V4 技术报告
+  url: https://arxiv.org/abs/2606.19348
+  type: paper
+  checked: 2026-10-27
+
+- id: deepseek-v31-card
+  title: DeepSeek-V3.1 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+  type: official-docs
+  checked: 2026-10-27
+
+- id: janus-pro-paper
+  title: Janus-Pro 技术报告
+  url: https://arxiv.org/abs/2501.17811
+  type: paper
+  checked: 2026-10-27
+
+- id: qwen25-math-paper
+  title: Qwen2.5-Math 技术报告
+  url: https://arxiv.org/abs/2409.12122
+  type: paper
+  checked: 2026-10-27
+- id: qwen25-math-release
+  title: Qwen2.5-Math 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5-math/
+  type: official-docs
+  checked: 2026-10-27
+- id: kimi-audio-paper
+  title: Kimi-Audio 技术报告
+  url: https://arxiv.org/abs/2504.18425
+  type: paper
+  checked: 2026-10-27
+
+- id: qwen3-embedding-paper
+  title: Qwen3 Embedding 技术报告
+  url: https://arxiv.org/abs/2506.05176
+  type: paper
+  checked: 2026-10-27
+- id: qwen3-embedding-card
+  title: Qwen3-Embedding-8B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Embedding-8B
+  type: official-docs
+  checked: 2026-10-27
+- id: glm45-paper
+  title: GLM-4.5 技术报告
+  url: https://arxiv.org/abs/2508.06471
+  type: paper
+  checked: 2026-10-27
+
+- id: minimax-m2-card
+  title: MiniMax-M2 官方模型卡
+  url: https://huggingface.co/MiniMaxAI/MiniMax-M2
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m2-paper
+  title: MiniMax-M2 系列技术报告
+  url: https://arxiv.org/abs/2605.26494
+  type: paper
+  checked: 2026-10-27
+- id: glm46-card
+  title: GLM-4.6 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-4.6
+  type: official-docs
+  checked: 2026-10-27
+
+- id: glm47-card
+  title: GLM-4.7 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-4.7
+  type: official-docs
+  checked: 2026-10-27
+- id: kimi-k25-paper
+  title: Kimi K2.5 技术报告
+  url: https://arxiv.org/abs/2602.02276
+  type: paper
+  checked: 2026-10-27
+- id: minimax-m21-card
+  title: MiniMax-M2.1 官方模型卡
+  url: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-agent-training
+  title: MiniMax 智能体后训练说明
+  url: https://www.minimax.io/news/post-training-experience-and-insights-for-agent-models
+  type: official-docs
+  checked: 2026-10-27
+
+- id: kimi-k26-blog
+  title: Kimi K2.6 官方博客
+  url: https://www.kimi.ai/blog/kimi-k2-6
+  type: official-docs
+  checked: 2026-10-27
+- id: minimax-m25-card
+  title: MiniMax-M2.5 官方模型卡
+  url: https://huggingface.co/MiniMaxAI/MiniMax-M2.5
+  type: official-docs
+  checked: 2026-10-27
+
+- id: glm51-card
+  title: GLM-5.1 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-5.1
+  type: official-docs
+  checked: 2026-10-27
+- id: ppo-paper
+  title: PPO 原始论文
+  url: https://arxiv.org/abs/1707.06347
+  type: paper
+  checked: 2026-10-27
+- id: gptq-paper
+  title: GPTQ 原始论文
+  url: https://arxiv.org/abs/2210.17323
+  type: paper
+  checked: 2026-10-27
+- id: smoothquant-paper
+  title: SmoothQuant 原始论文
+  url: https://arxiv.org/abs/2211.10438
+  type: paper
+  checked: 2026-10-27
+- id: sequence-kd-paper
+  title: Sequence-Level Knowledge Distillation
+  url: https://arxiv.org/abs/1606.07947
+  type: paper
+  checked: 2026-10-27
+- id: gkd-paper
+  title: On-Policy Distillation of Language Models
+  url: https://arxiv.org/abs/2306.13649
+  type: paper
+  checked: 2026-10-27
+- id: minillm-paper
+  title: MiniLLM
+  url: https://arxiv.org/abs/2306.08543
+  type: paper
+  checked: 2026-10-27
+- id: llm-int8-paper
+  title: LLM.int8() 原始论文
+  url: https://arxiv.org/abs/2208.07339
+  type: paper
+  checked: 2026-10-27
+- id: gguf-spec
+  title: GGUF 格式说明
+  url: https://github.com/ggml-org/ggml/blob/master/docs/gguf.md
+  type: official-code
+  checked: 2026-10-27
+- id: awq-paper
+  title: AWQ 原始论文
+  url: https://arxiv.org/abs/2306.00978
+  type: paper
+  checked: 2026-10-27
+- id: qlora-paper
+  title: QLoRA 原始论文
+  url: https://arxiv.org/abs/2305.14314
+  type: paper
+  checked: 2026-10-27
+
+- id: rloo-paper
+  title: REINFORCE 与 RLOO 在语言模型中的比较
+  url: https://arxiv.org/abs/2402.14740
+  type: paper
+  checked: 2026-10-27
+- id: dapo-paper
+  title: DAPO 原始论文
+  url: https://arxiv.org/abs/2503.14476
+  type: paper
+  checked: 2026-10-27
+
+- id: glm4v-card
+  title: GLM-4V-9B 官方模型卡
+  url: https://huggingface.co/zai-org/glm-4v-9b
+  type: official-docs
+  checked: 2026-10-27
+- id: cogvlm2-paper
+  title: CogVLM2 和 GLM-4V 技术报告
+  url: https://arxiv.org/abs/2408.16500
+  type: paper
+  checked: 2026-10-27
+- id: glm-asr-nano-card
+  title: GLM-ASR-Nano 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-ASR-Nano-2512
+  type: official-docs
+  checked: 2026-10-27
+
+- id: gpt2-paper
+  title: GPT-2 原始论文
+  url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+  type: paper
+  checked: 2026-10-27
+
+- id: qwen36-card
+  title: Qwen3.6-27B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3.6-27B
+  type: official-docs
+  checked: 2026-10-27
+
+- id: date-kimi-k27
+  title: Kimi K2.7 Code 官方发布记录
+  url: https://www.kimi.com/code/docs/en/kimi-code/whats-new.html
+  type: official-docs
+  checked: 2026-10-27
+
+- id: qwen3guard-paper
+  title: Qwen3Guard 技术报告
+  url: https://arxiv.org/abs/2510.14276
+  type: paper
+  checked: 2026-10-27
+
+- id: qwen3-reranker-card
+  title: Qwen3-Reranker-8B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Reranker-8B
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen3-vl-reranker-card
+  title: Qwen3-VL-Reranker-8B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-VL-Reranker-8B
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen3-forcedaligner-card
+  title: Qwen3-ForcedAligner-0.6B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B
+  type: official-docs
+  checked: 2026-10-28
+
+- id: kto-paper
+  title: 'KTO: Model Alignment as Prospect Theoretic Optimization'
+  url: https://arxiv.org/abs/2402.01306
+  type: paper
+  checked: 2026-10-28
+
+- id: qwen25-1m-paper
+  title: Qwen2.5-1M 技术报告
+  url: https://arxiv.org/abs/2501.15383
+  type: paper
+  checked: 2026-10-28
+
+- id: qwen25-1m-release
+  title: Qwen2.5-1M 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5-1m/
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen25-1m-card
+  title: Qwen2.5-7B-Instruct-1M 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M
+  type: official-docs
+  checked: 2026-10-28
+
+- id: deepseek-r1-0528-card
+  title: DeepSeek-R1-0528 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen25-math-prm-release
+  title: Qwen2.5-Math-PRM 官方发布
+  url: https://qwenlm.github.io/blog/qwen2.5-math-prm/
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen25-math-prm-paper
+  title: Qwen2.5-Math-PRM 技术报告
+  url: https://arxiv.org/abs/2501.07301
+  type: paper
+  checked: 2026-10-28
+
+- id: qwen25-math-prm-card
+  title: Qwen2.5-Math-PRM-7B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B
+  type: official-docs
+  checked: 2026-10-28
+
+- id: glm-image-card
+  title: GLM-Image 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-Image
+  type: official-docs
+  checked: 2026-10-28
+
+- id: glm-image-code
+  title: GLM-Image 官方代码
+  url: https://github.com/zai-org/GLM-Image
+  type: official-code
+  checked: 2026-10-28
+
+- id: glm-image-release
+  title: GLM-Image 官方发布
+  url: https://z.ai/blog/glm-image
+  type: official-docs
+  checked: 2026-10-28
+
+- id: deepseek-v3-0324-card
+  title: DeepSeek-V3-0324 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen25-math-rm-card
+  title: Qwen2.5-Math-RM-72B 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen2.5-Math-RM-72B
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qvq-preview-release
+  title: QVQ-72B-Preview 官方发布
+  url: https://qwenlm.github.io/blog/qvq-72b-preview/
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qvq-preview-card
+  title: QVQ-72B-Preview 官方模型卡
+  url: https://huggingface.co/Qwen/QVQ-72B-Preview
+  type: official-docs
+  checked: 2026-10-28
+
+- id: deepseek-v25-card
+  title: DeepSeek-V2.5 官方模型卡
+  url: https://huggingface.co/deepseek-ai/DeepSeek-V2.5
+  type: official-docs
+  checked: 2026-10-28
+
+- id: glm-tts-card
+  title: GLM-TTS 官方模型卡
+  url: https://huggingface.co/zai-org/GLM-TTS
+  type: official-docs
+  checked: 2026-10-28
+
+- id: glm-tts-paper
+  title: GLM-TTS 技术报告
+  url: https://arxiv.org/abs/2512.14291
+  type: paper
+  checked: 2026-10-28
+
+- id: wan21-paper
+  title: 'Wan: Open and Advanced Large-Scale Video Generative Models'
+  url: https://arxiv.org/abs/2503.20314
+  type: paper
+  checked: 2026-10-28
+- id: wan21-release
+  title: Wan2.1 官方代码与权重发布记录
+  url: https://github.com/Wan-Video/Wan2.1
+  type: official-code
+  checked: 2026-10-28
+
+- id: gpt1-paper
+  title: Improving Language Understanding by Generative Pre-Training
+  url: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+  type: paper
+  checked: 2026-10-28
+- id: gpt1-release
+  title: Improving language understanding with unsupervised learning
+  url: https://openai.com/index/language-unsupervised/
+  type: official-docs
+  checked: 2026-10-28
+- id: sam2-paper
+  title: 'SAM 2: Segment Anything in Images and Videos'
+  url: https://arxiv.org/abs/2408.00714
+  type: paper
+  checked: 2026-10-28
+- id: sam2-release
+  title: SAM 2 官方代码与模型发布记录
+  url: https://github.com/facebookresearch/sam2
+  type: official-code
+  checked: 2026-10-28
+- id: wan22-paper
+  title: Wan2.2 官方代码、模型与技术说明
+  url: https://github.com/Wan-Video/Wan2.2
+  type: official-code
+  checked: 2026-10-28
+
+- id: gpt5-release
+  title: Introducing GPT-5
+  url: https://openai.com/index/introducing-gpt-5/
+  type: official-docs
+  checked: 2026-10-28
+- id: qwq-preview-release
+  title: 'QwQ: Reflect Deeply on the Boundaries of the Unknown'
+  url: https://qwenlm.github.io/blog/qwq-32b-preview/
+  type: official-docs
+  checked: 2026-10-28
+
+- id: qwen-image-2512-card
+  title: Qwen-Image-2512 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-2512
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-edit-2511-card
+  title: Qwen-Image-Edit-2511 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-Edit-2511
+  type: official-docs
+  checked: 2026-10-28
+- id: qwen-image-release-history
+  title: Qwen-Image 官方版本发布记录
+  url: https://github.com/QwenLM/Qwen-Image
+  type: official-code
+  checked: 2026-10-28
+
+- id: qwen-image-edit-2509-card
+  title: Qwen-Image-Edit-2509 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen-Image-Edit-2509
+  type: official-docs
+  checked: 2026-10-28
+
+- id: llama1-paper
+  title: 'LLaMA: Open and Efficient Foundation Language Models'
+  url: https://arxiv.org/abs/2302.13971
+  type: paper
+  checked: 2026-10-28
+- id: llama2-paper
+  title: 'Llama 2: Open Foundation and Fine-Tuned Chat Models'
+  url: https://arxiv.org/abs/2307.09288
+  type: paper
+  checked: 2026-10-28
+
+- id: llama3-release
+  title: Introducing Meta Llama 3
+  url: https://ai.meta.com/blog/meta-llama-3/
+  type: official-docs
+  checked: 2026-10-28
+- id: llama4-release
+  title: 'The Llama 4 herd: natively multimodal AI innovation'
+  url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+  type: official-docs
+  checked: 2026-10-28
+
+- id: llama32-release
+  title: 'Llama 3.2: Vision and edge models'
+  url: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/
+  type: official-docs
+  checked: 2026-10-28
+- id: llama33-card
+  title: Llama 3.3 70B Instruct 官方模型卡
+  url: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+  type: official-docs
+  checked: 2026-10-28
+
+- id: jev-release
+  title: Introducing System One Models & Jev
+  url: https://typesafe.ai/blog/introducing-system-one-models-and-jev
+  type: official-docs
+  checked: 2026-10-28
+
+- id: omnijev-v11-release
+  title: OmniJev v1.1 官方发布记录
+  url: https://github.com/tinnel123666888/OmniJev/releases/tag/v1.1
+  type: official-code
+  checked: 2026-10-28
+- id: minimax-m1-paper
+  title: 'MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention'
+  url: https://arxiv.org/abs/2506.13585
+  type: paper
+  checked: 2026-10-28
+
+- id: chatglm2-official
+  title: ChatGLM2-6B 官方仓库与评测
+  url: https://github.com/zai-org/ChatGLM2-6B
+  type: official-code
+  checked: 2026-10-28
+- id: chatglm2-config
+  title: ChatGLM2-6B 官方配置
+  url: https://huggingface.co/zai-org/chatglm2-6b/blob/main/config.json
+  type: official-docs
+  checked: 2026-10-28
+- id: chatglm3-config
+  title: ChatGLM3-6B 官方配置
+  url: https://huggingface.co/zai-org/chatglm3-6b/blob/main/config.json
+  type: official-docs
+  checked: 2026-10-28
+- id: chatglm3-prompt
+  title: ChatGLM3 官方对话与工具格式
+  url: https://github.com/zai-org/ChatGLM3/blob/main/PROMPT_en.md
+  type: official-docs
+  checked: 2026-10-28
+
+- id: glm130-paper
+  title: GLM-130B 技术报告
+  url: https://arxiv.org/abs/2210.02414
+  type: paper
+  checked: 2026-10-28
+- id: glm130-blog
+  title: GLM-130B 项目发布说明
+  url: https://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
+  type: official-docs
+  checked: 2026-10-28
+- id: glm130-code
+  title: GLM-130B 官方代码与权重申请
+  url: https://github.com/zai-org/GLM-130B
+  type: official-code
+  checked: 2026-10-28
+- id: glm4-base-card
+  title: GLM-4-9B 基础模型官方模型卡
+  url: https://huggingface.co/zai-org/glm-4-9b
+  type: official-docs
+  checked: 2026-10-28
+- id: glm4-config
+  title: GLM-4-9B-Chat 官方结构配置
+  url: https://huggingface.co/zai-org/glm-4-9b-chat/blob/main/config.json
+  type: official-docs
+  checked: 2026-10-28
+- id: minimax-m1-card
+  title: MiniMax-M1-80k 官方模型卡
+  url: https://huggingface.co/MiniMaxAI/MiniMax-M1-80k
+  type: official-docs
+  checked: 2026-10-28
+- id: minimax-m1-code
+  title: MiniMax-M1 官方仓库
+  url: https://github.com/MiniMax-AI/MiniMax-M1
+  type: official-code
+  checked: 2026-10-28
+
+- id: simpo-paper
+  title: 'SimPO: Simple Preference Optimization with a Reference-Free Reward'
+  url: https://arxiv.org/abs/2405.14734
+  type: paper
+  checked: 2026-10-28
+
+- id: orpo-paper
+  title: 'ORPO: Monolithic Preference Optimization without Reference Model'
+  url: https://arxiv.org/abs/2403.07691
+  type: paper
+  checked: 2026-10-28
+- id: qwen3-omni-captioner-card
+  title: Qwen3-Omni-Captioner 官方模型卡
+  url: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Captioner
+  type: official-docs
+  checked: 2026-10-29
+- id: deepseek-vl-first-paper
+  title: 'DeepSeek-VL: Towards Real-World Vision-Language Understanding'
+  url: https://arxiv.org/abs/2403.05525v2
+  type: paper
+  checked: 2026-10-29
+- id: deepseek-vl-first-release
+  title: DeepSeek-VL 官方发布与模型仓库
+  url: https://github.com/deepseek-ai/DeepSeek-VL
+  type: official-docs
+  checked: 2026-10-29
+- id: minimax-01-paper
+  title: 'MiniMax-01: Scaling Foundation Models with Lightning Attention'
+  url: https://arxiv.org/abs/2501.08313
+  type: paper
+  checked: 2026-10-29
+- id: glm45v-paper
+  title: 'GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning'
+  url: https://arxiv.org/abs/2507.01006
+  type: paper
+  checked: 2026-10-29

@@ -39,7 +39,7 @@
   basis: teaching
   source: https://arxiv.org/abs/2502.13923v1
   checked: 2026-10-27
-  caption: 本站原创教学简图；以处理后 840×560 图片计算 patch 与合并后的数量，省略逐层注意力、位置编码及视频路径。
+  caption: 原创教学简图；以处理后 840×560 图片计算 patch 与合并后的数量，省略逐层注意力、位置编码及视频路径。
   alt: 发票图片切成 2400 个 patch，经视觉编码和二乘二合并得到 600 个视觉 token，再由语言模型生成含税金额 114.48。
   asset:
     src: /figures/qwen-vl/teaching-flow.svg
@@ -54,7 +54,7 @@
   basis: teaching
   source: https://arxiv.org/abs/2505.09388v1
   checked: 2026-10-27
-  caption: 本站原创教学简图；Dense 与 MoE 是两种型号选择，不是同一个模型同时走两条 FFN 路线。省略残差、归一化细节和层数。
+  caption: 原创教学简图；Dense 与 MoE 是两种型号选择，不是同一个模型同时走两条 FFN 路线。省略残差、归一化细节和层数。
   alt: 文字前缀进入因果 Transformer，经注意力及 Dense 或 MoE 前馈模块，得到下一 token 概率；新 token 追加到前缀继续生成。
   asset:
     src: /figures/qwen3/teaching-flow.svg
@@ -76,7 +76,7 @@
     width: 2205
     height: 806
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Xian Shi 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen-asr-alignment-official
   title: ForcedAligner：给已知文字定位时间
   model: qwen-asr
@@ -91,7 +91,7 @@
     width: 2738
     height: 1874
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Xian Shi 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen-tts-official
   title: Qwen3-TTS：双轨语音生成
   model: qwen-tts
@@ -106,7 +106,7 @@
     width: 4546
     height: 3171
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Hangrui Hu 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen-tts-tokenizers-official
   title: 语音 tokenizer：25Hz 与 12Hz 两条路线
   model: qwen-tts
@@ -121,7 +121,7 @@
     width: 7737
     height: 3899
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Hangrui Hu 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen25-omni-official
   title: Qwen2.5-Omni：Thinker 与 Talker
   model: qwen-omni
@@ -130,13 +130,13 @@
   source: https://arxiv.org/html/2503.20215v1#S2.F2
   checked: 2026-10-27
   caption: 官方 Figure 2，原图未改绘。理解、文字回答、语音码与分块波形重建分工不同，不适用于直接解释 Qwen3-Omni。
-  alt: 图像、声音和文字编码后进入 Thinker；Thinker 输出文字并向 Talker 提供条件，Talker 生成语音码，由分块 DiT 还原波形。
+  alt: 图像、声音和文字编码后进入 Thinker；Thinker 输出文字并向 Talker 提供条件，Talker 生成语音码，再由流式解码器还原波形。
   asset:
     src: /figures/qwen25-omni/architecture.png
     width: 2742
     height: 2499
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Jin Xu 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen3-omni-official
   title: Qwen3-Omni：理解与流式发声
   model: qwen3-omni
@@ -151,7 +151,7 @@
     width: 5408
     height: 5715
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Jin Xu 等；来源技术报告采用 CC BY 4.0，原图未改绘。
 - id: qwen3-omni-aut-official
   title: AuT：音频表示怎样学习
   model: qwen3-omni
@@ -166,4 +166,2360 @@
     width: 4001
     height: 3689
     license: CC BY 4.0
-    attribution: Qwen Team；来源技术报告采用 CC BY 4.0，原图未改绘。
+    attribution: Jin Xu 等；来源技术报告采用 CC BY 4.0，原图未改绘。
+- id: qwen25-model-teaching
+  title: Qwen2.5：从合同文字到下一 token
+  model: qwen25-model
+  version: Qwen2.5 开放文本模型
+  basis: teaching
+  source: https://arxiv.org/abs/2412.15115
+  checked: 2026-10-27
+  caption: 原创教学简图；说明因果注意力与稠密前馈的重复层，省略位置编码、归一化、残差和张量尺寸。
+  alt: 输入文字分词后经过重复的因果注意力和前馈层，输出词表概率，再选择下一个 token。
+  asset:
+    src: /figures/qwen25/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen2-model-teaching
+  title: Qwen2：因果生成与稠密／专家前馈
+  model: qwen2-model
+  version: Qwen2 文本系列，稠密与 MoE 属不同型号
+  basis: teaching
+  source: https://arxiv.org/abs/2407.10671
+  checked: 2026-10-27
+  caption: 原创教学简图；稠密和 MoE 是不同型号的前馈组织，省略位置编码、归一化、残差和具体参数。
+  alt: 输入文字经过分组查询因果注意力和稠密或专家前馈模块，得到下一 token 的概率。
+  asset:
+    src: /figures/qwen2/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen1-model-teaching
+  title: 第一代 Qwen：从输入文字到下一 token
+  model: qwen1-model
+  version: 第一代 Qwen 文本模型
+  basis: teaching
+  source: https://arxiv.org/abs/2309.16609
+  checked: 2026-10-27
+  caption: 原创教学简图；Qwen-7B 配置为 32 层，其他规格需分别查看配置。省略位置编码、归一化与残差。
+  alt: 输入经过重复的因果注意力与前馈层，输出下一 token 的概率；Qwen-7B 使用 32 层。
+  asset:
+    src: /figures/qwen1/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen15-model-teaching
+  title: Qwen1.5：从对话到下一个 token
+  model: qwen15-model
+  version: Qwen1.5 文本模型
+  basis: teaching
+  source: https://qwenlm.github.io/blog/qwen1.5/
+  checked: 2026-10-27
+  caption: 原创教学简图；稠密 32B 与 110B 使用 GQA，具体型号应核对配置；图省略位置编码、归一化与残差。
+  alt: 对话文字经过因果注意力和前馈层，输出下一 token 的概率；稠密 32B 与 110B 使用 GQA。
+  asset:
+    src: /figures/qwen15/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-next-teaching
+  title: Qwen3-Next 80B-A3B：混合层与专家
+  model: qwen-next
+  version: Qwen3-Next-80B-A3B
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct
+  checked: 2026-10-27
+  caption: 原创教学简图；每组 3 个 Gated DeltaNet 层和 1 个 Gated Attention 层，每层含 MoE；省略残差、归一化、张量细节与 MTP。
+  alt: 输入依次经过三层 Gated DeltaNet 和一层 Gated Attention，每层含 MoE；四层一组重复十二组。
+  asset:
+    src: /figures/qwen-next/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen35-model-teaching
+  title: Qwen3.5：视觉语言与混合注意力
+  model: qwen35-model
+  version: Qwen3.5 视觉语言系列；稠密与 MoE 按具体型号区分
+  basis: teaching
+  source: https://qwen.ai/blog?id=qwen3.5
+  checked: 2026-10-27
+  caption: 原创教学简图；省略视觉编码内部结构、位置编码、归一化、残差、MTP 和具体张量尺寸。
+  alt: 图像或视频帧经视觉编码，文字经分词后进入混合注意力语言模型，最终生成文字。
+  asset:
+    src: /figures/qwen35/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-vl-teaching
+  title: Qwen3-VL：视觉特征怎样进入语言模型
+  model: qwen3-vl
+  version: Qwen3-VL 技术报告 v1
+  basis: teaching
+  source: https://arxiv.org/html/2511.21631v1#S2
+  checked: 2026-10-27
+  caption: 原创教学简图，虚线概括多层视觉特征注入语言模型前三层；省略各融合器、残差与张量细节，非官方原图。
+  alt: 图像或视频帧经视觉编码器和融合器进入语言模型；不同深度视觉特征还注入语言模型前三层，文本与时间戳共同作为输入。
+  asset:
+    src: /figures/qwen3-vl/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-audio-first-official
+  title: Qwen-Audio：多任务训练与音频理解
+  model: qwen-audio-model
+  version: Qwen-Audio 论文 v2，Figure 3
+  basis: official
+  source: https://arxiv.org/html/2311.07919v2#S3.F3
+  checked: 2026-10-27
+  caption: 官方 Figure 3 原图。图中冻结语言模型、训练音频编码器属于多任务预训练阶段；Chat 微调阶段的冻结方式不同。
+  alt: 音频编码器将频谱转换为声音表示，结合多任务标签送入 Qwen 语言模型；下方展示任务、语言与时间戳等训练格式。
+  asset:
+    src: /figures/qwen-audio/architecture.png
+    width: 2040
+    height: 1332
+    license: CC BY 4.0
+    attribution: Yunfei Chu 等，Qwen-Audio 论文 Figure 3，CC BY 4.0；原图未修改。
+- id: qwen2-audio-official
+  title: Qwen2-Audio：结构与三阶段训练
+  model: qwen2-audio-model
+  version: Qwen2-Audio 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2407.10759v1#S2.F2
+  checked: 2026-10-27
+  caption: 官方 Figure 2 原图。左侧展示预训练、SFT 与 DPO，不代表推理请求依次运行三个模型。
+  alt: 声音通过音频编码器与文字提示一同输入 Qwen 语言模型，左侧分别展示多任务预训练、SFT 和 DPO。
+  asset:
+    src: /figures/qwen2-audio/architecture.png
+    width: 2017
+    height: 1220
+    license: CC BY 4.0
+    attribution: Yunfei Chu 等，Qwen2-Audio 技术报告 Figure 2，CC BY 4.0；原图未修改。
+- id: qwen-vl-first-teaching
+  title: Qwen-VL：固定长度视觉表示
+  model: qwen-vl-first-model
+  version: Qwen-VL 论文 v3
+  basis: teaching
+  source: https://arxiv.org/html/2308.12966v3#S2
+  checked: 2026-10-27
+  caption: 原创教学简图，省略图像标记、视觉编码与语言模型内部结构，非官方原图。
+  alt: 图片经过视觉编码和交叉注意力适配器形成 256 个视觉表示，与文字问题一起进入 Qwen-7B，生成文字或坐标。
+  asset:
+    src: /figures/qwen-vl-first/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen2-vl-teaching
+  title: Qwen2-VL：动态视觉输入与位置
+  model: qwen2-vl-model
+  version: Qwen2-VL 技术报告 v2
+  basis: teaching
+  source: https://arxiv.org/html/2409.12191v2#S2
+  checked: 2026-10-27
+  caption: 原创教学简图，省略图像标记、视频管块与视觉编码内部结构，非官方原图。
+  alt: 图片或视频帧经过尺寸处理和视觉编码，MLP 合并邻近特征后与文字一起进入使用多模态位置编码的 Qwen2 语言模型。
+  asset:
+    src: /figures/qwen2-vl/overview.svg
+    width: 1060
+    height: 270
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: codeqwen15-teaching
+  title: CodeQwen1.5：代码生成与外部执行
+  model: codeqwen15-model
+  version: CodeQwen1.5-7B
+  basis: teaching
+  source: https://huggingface.co/Qwen/CodeQwen1.5-7B
+  checked: 2026-10-27
+  caption: 原创教学简图，省略注意力层内结构、残差及归一化；外部工具是可选应用组件，非模型组成。
+  alt: 代码或问题分词后进入因果解码器生成代码或文字，外部执行器可运行测试。
+  asset:
+    src: /figures/codeqwen15/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen25-coder-teaching
+  title: Qwen2.5-Coder：中间补全与执行
+  model: qwen25-coder-model
+  version: Qwen2.5-Coder 技术报告 v3
+  basis: teaching
+  source: https://arxiv.org/html/2409.12186v3
+  checked: 2026-10-27
+  caption: 原创教学简图，FIM 为任务输入组织方式；省略层内结构，外部执行器不是模型内部组件。
+  alt: 代码前缀与后缀按中间补全格式输入解码器，模型生成缺失代码，外部执行器可运行测试。
+  asset:
+    src: /figures/qwen25-coder/overview.svg
+    width: 1060
+    height: 250
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-coder-teaching
+  title: Qwen3-Coder：模型与外部工具
+  model: qwen3-coder-model
+  version: Qwen3-Coder-480B-A35B-Instruct
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct
+  checked: 2026-10-27
+  caption: 原创教学简图，展示模型与工具的交互关系；省略网络层内结构，工具不属于模型组件。
+  alt: 需求与代码进入因果语言模型，生成代码或工具请求，外部工具可运行测试并返回结果。
+  asset:
+    src: /figures/qwen3-coder/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-coder-next-teaching
+  title: Qwen3-Coder-Next：混合层与专家
+  model: qwen3-coder-next-model
+  version: Qwen3-Coder-Next 80B-A3B
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3-Coder-Next
+  checked: 2026-10-27
+  caption: 复用 Qwen3-Next 的层布局教学图；两种模型均以三层 Gated DeltaNet 加一层 Gated Attention 组成重复结构。图省略 RoPE、残差、归一化及 MTP；层布局相同不表示配置或权重完全相同。
+  alt: 输入依次经过三层 Gated DeltaNet 和一层 Gated Attention，每层含 MoE；四层一组重复十二组。
+  asset:
+    src: /figures/qwen-next/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v2-teaching
+  title: DeepSeek-V2：MLA 与专家前馈
+  model: deepseek-v2-model
+  version: DeepSeek-V2 236B
+  basis: teaching
+  source: https://arxiv.org/abs/2405.04434
+  checked: 2026-10-27
+  caption: 教学简图，展示 V2 的层级组织，省略残差、归一化与各层内部计算，非官方原图。
+  alt: 文字经过多层 MLA 因果注意力和前馈模块后预测下一个 token；V2 首层为稠密前馈，其余 59 层使用专家前馈。
+  asset:
+    src: /figures/deepseek-v2/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v3-teaching
+  title: DeepSeek-V3：MLA 与专家前馈
+  model: deepseek-v3
+  version: DeepSeek-V3 原始版本
+  basis: teaching
+  source: https://arxiv.org/abs/2412.19437v2
+  checked: 2026-10-27
+  caption: 教学简图，省略前三层稠密前馈、残差、归一化、层内计算与 MTP，非官方原图。
+  alt: 文字经过 MLA 因果注意力和专家前馈，选中部分路由专家后预测下一个 token。
+  asset:
+    src: /figures/deepseek-v3/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v3-0324-structure
+  title: DeepSeek-V3-0324 的 MLA 与专家前馈
+  model: deepseek-v3-0324-model
+  version: DeepSeek-V3-0324
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324
+  checked: 2026-10-28
+  caption: 复用 DeepSeek-V3 教学图，省略前三层稠密前馈、残差、归一化及层内细节。
+  alt: 文字经 MLA 因果注意力和专家前馈，选中路由专家后预测下一个 token。
+  asset:
+    src: /figures/deepseek-v3/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-r1-0528-structure
+  title: DeepSeek-R1-0528 的 MLA 与专家前馈
+  model: deepseek-r1-0528-model
+  version: DeepSeek-R1-0528
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/config.json
+  checked: 2026-10-28
+  caption: 复用 DeepSeek-V3 架构教学图，省略前三层稠密前馈、残差、归一化及层内细节。
+  alt: 文字经 MLA 因果注意力和专家前馈，选中路由专家后预测下一个 token。
+  asset:
+    src: /figures/deepseek-v3/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-r1-training
+  title: DeepSeek-R1 多阶段后训练
+  model: deepseek-r1
+  version: 2025 年初版 DeepSeek-R1
+  basis: teaching
+  source: https://arxiv.org/abs/2501.12948v1
+  checked: 2026-10-27
+  caption: 教学简图展示推理数据生成及从 V3-Base 重新微调的两个阶段；省略 R1-Zero、蒸馏及内部细节。
+  alt: 冷启动和推理强化学习后的检查点生成筛选数据，与通用数据合并；再从 V3-Base 重新微调并进行全场景强化学习得到 R1。
+  asset:
+    src: /figures/deepseek-r1/training.svg
+    width: 1060
+    height: 350
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v32-teaching
+  title: DeepSeek-V3.2：稀疏注意力的粗筛与精算
+  model: deepseek-v32-model
+  version: DeepSeek-V3.2
+  basis: teaching
+  source: https://arxiv.org/abs/2512.02556
+  checked: 2026-10-27
+  caption: 教学简图，省略 MLA 投影、位置编码、残差与专家层，不是官方原图。
+  alt: 轻量索引器对历史位置打分并选出候选，主注意力对候选进行精算。
+  asset:
+    src: /figures/deepseek-v32/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v4-flash-teaching
+  title: DeepSeek-V4-Flash 混合注意力
+  model: deepseek-v4-flash-model
+  version: DeepSeek-V4-Flash 初版
+  basis: teaching
+  source: https://arxiv.org/abs/2606.19348
+  checked: 2026-10-27
+  caption: 教学简图，后续层另有局部窗口；省略重叠压缩、mHC、残差与层内细节，非官方原图。
+  alt: 前两层使用滑动窗口，后续层交替使用 CSA 与 HCA；每层都有专家前馈，模型逐步生成输出。
+  asset:
+    src: /figures/deepseek-v4-flash/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v41-flash-teaching
+  title: DeepSeek-V4.1-Flash 图文输入与因果主干
+  model: deepseek-v41-flash-model
+  version: DeepSeek-V4.1-Flash 初版
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+  checked: 2026-10-27
+  caption: 教学简图，解码器全局缓存来自编码器状态；省略局部窗口、跨层共享、残差和条件记忆，非官方原图。
+  alt: 图像经视觉编码和投影，与文字表示进入因果编码器，再经过解码器生成文字。
+  asset:
+    src: /figures/deepseek-v41-flash/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v4-pro-teaching
+  title: DeepSeek-V4-Pro 混合注意力
+  model: deepseek-v4-pro-model
+  version: DeepSeek-V4-Pro 初版
+  basis: teaching
+  source: https://arxiv.org/abs/2606.19348
+  checked: 2026-10-27
+  caption: 教学简图，前两层使用 HCA，后续层交替使用 CSA 与 HCA；省略重叠压缩、mHC 和层内细节，非官方原图。
+  alt: 输入经过前两层 HCA，后续层交替使用 CSA 与 HCA；各层包含专家前馈，模型逐步输出。
+  asset:
+    src: /figures/deepseek-v4-pro/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-coder-v2-teaching
+  title: DeepSeek-Coder-V2 代码生成与外部验证
+  model: deepseek-coder-v2-model
+  version: DeepSeek-Coder-V2 系列
+  basis: teaching
+  source: https://arxiv.org/abs/2406.11931
+  checked: 2026-10-27
+  caption: 教学简图，省略层次和路由细节；执行与测试是可选的外部流程，非官方原图。
+  alt: 代码和指令经过注意力与专家网络生成代码，外部环境可执行测试。
+  asset:
+    src: /figures/deepseek-coder-v2/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-vl2-teaching
+  title: DeepSeek-VL2 图像理解流程
+  model: deepseek-vl2-model
+  version: DeepSeek-VL2 系列
+  basis: teaching
+  source: https://arxiv.org/abs/2412.10302
+  checked: 2026-10-27
+  caption: 教学简图，省略分块排列、位置分隔符和层内结构；非官方原图。
+  alt: 图片被分块和编码，视觉适配器转换特征，语言模型结合问题生成结果。
+  asset:
+    src: /figures/deepseek-vl2/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-math-teaching
+  title: DeepSeekMath 训练流程
+  model: deepseek-math-model
+  version: DeepSeekMath 7B
+  basis: teaching
+  source: https://arxiv.org/abs/2402.03300
+  checked: 2026-10-27
+  caption: 教学简图，展示主要训练阶段，省略奖励模型训练、采样与约束细节；非官方原图。
+  alt: 代码底座继续学习数学等语料，经过数学指令微调和 GRPO 训练。
+  asset:
+    src: /figures/deepseek-math/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v31-teaching
+  title: DeepSeek-V3.1 思考模式与外部工具
+  model: deepseek-v31-model
+  version: DeepSeek-V3.1 初版
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+  checked: 2026-10-27
+  caption: 教学简图，工具调用为可选流程；省略多轮交互、验证和层内结构，非官方原图。
+  alt: 对话模板选择思考模式，语言模型可请求外部工具并接收结果。
+  asset:
+    src: /figures/deepseek-v31/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-coder-teaching
+  title: DeepSeek-Coder 代码补全流程
+  model: deepseek-coder-model
+  version: DeepSeek-Coder 初代
+  basis: teaching
+  source: https://arxiv.org/abs/2401.14196
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 代码前后文经过语言模型生成补全内容，外部测试验证结果。
+  asset:
+    src: /figures/deepseek-coder/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-math-v2-teaching
+  title: DeepSeekMath-V2 证明与验证
+  model: deepseek-math-v2-model
+  version: DeepSeekMath-V2
+  basis: teaching
+  source: https://arxiv.org/abs/2511.22570
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 数学问题经过证明生成、验证和修订，专家对最终结果评审。
+  asset:
+    src: /figures/deepseek-math-v2/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: janus-pro-teaching
+  title: Janus-Pro 视觉理解与生成
+  model: janus-pro-model
+  version: Janus-Pro
+  basis: teaching
+  source: https://arxiv.org/abs/2501.17811
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 理解和生成使用不同视觉路径，共用自回归语言主干。
+  asset:
+    src: /figures/janus-pro/overview.svg
+    width: 1060
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen25-math-teaching
+  title: Qwen2.5-Math 训练与推理
+  model: qwen25-math-model
+  version: Qwen2.5-Math 训练与推理
+  basis: teaching
+  source: https://github.com/QwenLM/Qwen2.5-Math
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 数学语料训练底座，奖励模型辅助训练；推理时可使用外部工具。
+  asset:
+    src: /figures/qwen25-math/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwq-teaching
+  title: QwQ-32B 推理流程
+  model: qwq-model
+  version: QwQ-32B 推理流程
+  basis: teaching
+  source: https://huggingface.co/Qwen/QwQ-32B
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 从冷启动检查点出发，模型先接受数学和代码奖励，再接受通用奖励训练。
+  asset:
+    src: /figures/qwq/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-audio-teaching
+  title: Kimi-Audio 音频流程
+  model: kimi-audio-model
+  version: Kimi-Audio 音频流程
+  basis: teaching
+  source: https://arxiv.org/abs/2504.18425
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频输入经过编码器和语言模型，分别输出文字与音频。
+  asset:
+    src: /figures/kimi-audio/overview.svg
+    width: 1060
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3-embedding-teaching
+  title: Qwen3 Embedding 召回与重排
+  model: qwen3-embedding-model
+  version: Qwen3 Embedding 召回与重排
+  basis: teaching
+  source: https://arxiv.org/abs/2506.05176
+  checked: 2026-10-27
+  caption: 原创教学简图；文档可预先建索引，原问题与召回候选共同交给重排模型。省略层内细节，非官方原图。
+  alt: 查询与文档分别编码并进行向量召回，原问题和候选共同送入重排模型评分。
+  asset:
+    src: /figures/qwen3-embedding/overview.svg
+    width: 1060
+    height: 290
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm45-architecture
+  title: GLM-4.5 语言模型结构
+  model: glm45-model
+  version: GLM-4.5
+  basis: teaching
+  source: https://arxiv.org/abs/2508.06471
+  checked: 2026-10-28
+  caption: 根据论文结构配置绘制的教学简图，省略残差、归一化和投影细节。
+  alt: 输入 token 依次经过 3 个稠密层和 89 个混合专家层，输出下一个 token；另有多 token 预测层。
+  asset:
+    src: /figures/glm45/architecture.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图。
+
+- id: glm45-teaching
+  title: GLM-4.5 专家模型训练
+  model: glm45-model
+  version: GLM-4.5 专家模型训练
+  basis: teaching
+  source: https://arxiv.org/abs/2508.06471
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 基础模型训练任务专家，合并经验并后训练，形成工具任务模型。
+  asset:
+    src: /figures/glm45/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-vl-teaching
+  title: Kimi-VL 视觉理解
+  model: kimi-vl-model
+  version: Kimi-VL 视觉理解
+  basis: teaching
+  source: https://arxiv.org/abs/2504.07491
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图片经过视觉编码器，结合文本输入语言模型并生成回答。
+  asset:
+    src: /figures/kimi-vl/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-linear-teaching
+  title: Kimi Linear 混合注意力
+  model: kimi-linear-model
+  version: Kimi Linear 混合注意力
+  basis: teaching
+  source: https://arxiv.org/abs/2510.26692
+  checked: 2026-10-27
+  caption: 原创教学简图，省略每层前馈位置；第一层为稠密前馈，非官方原图。
+  alt: 文本输入经过三比一排列的 KDA 与 MLA 层，第一层为稠密前馈，多数层使用专家前馈网络，最后生成输出。
+  asset:
+    src: /figures/kimi-linear/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m2-teaching
+  title: MiniMax-M2 代码智能体
+  model: minimax-m2-model
+  version: MiniMax-M2 代码智能体
+  basis: teaching
+  source: https://arxiv.org/abs/2605.26494
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 用户问题经过模型生成工具请求，执行器运行代码和测试并返回结果。
+  asset:
+    src: /figures/minimax-m2/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm46-teaching
+  title: GLM-4.6 工具交互
+  model: glm46-model
+  version: GLM-4.6 工具交互
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-4.6
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 代码问题经过 GLM-4.6 产生工具请求，外部执行并返回结果。
+  asset:
+    src: /figures/glm46/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-llm-teaching
+  title: DeepSeek LLM 生成流程
+  model: deepseek-llm-model
+  version: DeepSeek LLM 生成流程
+  basis: teaching
+  source: https://arxiv.org/abs/2401.02954
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文本经过分词和稠密解码器，逐个生成 token。
+  asset:
+    src: /figures/deepseek-llm/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm47-teaching
+  title: GLM-4.7 工具交互
+  model: glm47-model
+  version: GLM-4.7 工具交互
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-4.7
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 用户任务进入模型，工具在外部执行并返回结果，模型继续回答。
+  asset:
+    src: /figures/glm47/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k25-teaching
+  title: Kimi K2.5 图文与工具流程
+  model: kimi-k25-model
+  version: Kimi K2.5 图文与工具流程
+  basis: teaching
+  source: https://arxiv.org/abs/2602.02276
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节；官方模型卡将视频对话标为实验功能，核对时仅官方 API 支持。
+  alt: 图像与视频经视觉编码和投影，文字问题另行进入语言模型；外部编排支持工具任务。
+  asset:
+    src: /figures/kimi-k25/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m21-teaching
+  title: MiniMax-M2.1 工具交互
+  model: minimax-m21-model
+  version: MiniMax-M2.1 工具交互
+  basis: teaching
+  source: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型分析代码和需求，外部工具执行并返回结果，模型继续修复。
+  asset:
+    src: /figures/minimax-m21/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: transformer-teaching
+  title: 原始 Transformer 编码器与解码器
+  model: transformer
+  version: 2017 原始架构
+  basis: teaching
+  source: https://arxiv.org/abs/1706.03762
+  checked: 2026-10-27
+  caption: 教学简图，省略层内细节；非官方原图。
+  alt: 源句经编码器，解码器通过交叉注意力读取源句并生成输出。
+  asset:
+    src: /figures/transformer/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm5-teaching
+  title: GLM-5 长上下文工具任务
+  model: glm5-model
+  version: GLM-5 长上下文工具任务
+  basis: teaching
+  source: https://arxiv.org/abs/2602.15763
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 任务进入稀疏注意力与专家语言模型，经外部工具交互后生成回答。
+  asset:
+    src: /figures/glm5/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k26-teaching
+  title: Kimi K2.6 多模态与工具
+  model: kimi-k26-model
+  version: Kimi K2.6 多模态与工具
+  basis: teaching
+  source: https://huggingface.co/moonshotai/Kimi-K2.6
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节；官方模型卡将视频对话标为实验功能，核对时仅官方 API 支持。
+  alt: 图像与文本经过模型产生回答和工具请求，外部系统执行并反馈。
+  asset:
+    src: /figures/kimi-k26/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m25-teaching
+  title: MiniMax-M2.5 智能体流程
+  model: minimax-m25-model
+  version: MiniMax-M2.5 智能体流程
+  basis: teaching
+  source: https://huggingface.co/MiniMaxAI/MiniMax-M2.5
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型接收任务和工具结果，提出请求，由外部环境执行。
+  asset:
+    src: /figures/minimax-m25/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm51-teaching
+  title: GLM-5.1 工具任务
+  model: glm51-model
+  version: GLM-5.1 工具任务
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-5.1
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型接收任务，调用工具并根据工具结果继续解决问题。
+  asset:
+    src: /figures/glm51/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-ocr-teaching
+  title: GLM-OCR 文档理解
+  model: glm-ocr-model
+  version: GLM-OCR 文档理解
+  basis: teaching
+  source: https://github.com/zai-org/GLM-OCR
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图像经过视觉编码与语言解码，生成文字和结构化内容。
+  asset:
+    src: /figures/glm-ocr/overview.svg
+    width: 1080
+    height: 350
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m27-teaching
+  title: MiniMax-M2.7 智能体流程
+  model: minimax-m27-model
+  version: MiniMax-M2.7 智能体流程
+  basis: teaching
+  source: https://huggingface.co/MiniMaxAI/MiniMax-M2.7
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型与外部工具交互，依据反馈继续完成任务。
+  asset:
+    src: /figures/minimax-m27/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm52-teaching
+  title: GLM-5.2 长上下文
+  model: glm52-model
+  version: GLM-5.2 长上下文
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-5.2
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型通过稀疏注意力和专家网络处理长上下文任务。
+  asset:
+    src: /figures/glm52/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m3-teaching
+  title: MiniMax M3 多模态任务
+  model: minimax-m3-model
+  version: MiniMax M3 多模态任务
+  basis: teaching
+  source: https://huggingface.co/MiniMaxAI/MiniMax-M3
+  checked: 2026-10-27
+  caption: 原创教学简图，展示语言模型稀疏层中的注意力与后续专家前馈；前三层为全注意力，图中省略视觉编码和具体层内细节。
+  alt: 多模态输入经过处理，语言模型稀疏层选择上下文并计算注意力，经专家前馈和后续层生成文本或工具请求。
+  asset:
+    src: /figures/minimax-m3/overview.svg
+    width: 1080
+    height: 345
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm53-teaching
+  title: GLM-5.3 长程工具任务
+  model: glm53-model
+  version: GLM-5.3 长程工具任务
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-5.3
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 语言模型与外部工具交互，根据反馈完成复杂任务。
+  asset:
+    src: /figures/glm53/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm53-flash-teaching
+  title: GLM-5.3-Flash 多模态输入
+  model: glm53-flash-model
+  version: GLM-5.3-Flash 多模态输入
+  basis: teaching
+  source: https://huggingface.co/zai-org/GLM-5.3-Flash
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文本和图像经视觉模块和混合注意力语言模型处理。
+  asset:
+    src: /figures/glm53-flash/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: minimax-m31-flash-teaching
+  title: MiniMax M3.1 Flash 长上下文
+  model: minimax-m31-flash-model
+  version: MiniMax M3.1 Flash 长上下文
+  basis: teaching
+  source: https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型接收多模态输入，使用稀疏注意力并通过工具完成任务。
+  asset:
+    src: /figures/minimax-m31-flash/overview.svg
+    width: 1080
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: bert-teaching
+  title: BERT 输入、双向编码与任务头
+  model: bert
+  version: 2018 原始 BERT
+  basis: teaching
+  source: https://arxiv.org/abs/1810.04805
+  checked: 2026-10-27
+  caption: 原创教学简图，省略编码器各层内部细节；非官方原图。
+  alt: 文字经分词和双向编码器变成逐位置表示，再供分类或实体抽取等任务使用。
+  asset:
+    src: /figures/bert/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-original-teaching
+  title: 原始 GLM 填空生成
+  model: glm-original-model
+  version: 原始 GLM 填空生成
+  basis: teaching
+  source: https://arxiv.org/abs/2103.10360
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 模型读取未遮盖文本，并逐步生成被遮盖内容。
+  asset:
+    src: /figures/glm-original/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-v-teaching
+  title: GLM-4V-9B 图文理解
+  model: glm-v-model
+  version: GLM-4V-9B 图文理解
+  basis: teaching
+  source: https://arxiv.org/abs/2408.16500
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图片经视觉编码与文本合并后进入语言模型。
+  asset:
+    src: /figures/glm-v/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-asr-teaching
+  title: GLM-ASR 语音识别
+  model: glm-asr-model
+  version: GLM-ASR 语音识别
+  basis: teaching
+  source: https://github.com/zai-org/GLM-ASR
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频经过声学编码与投影，转写提示以文本输入语言解码器，解码器输出文字。
+  asset:
+    src: /figures/glm-asr/overview.svg
+    width: 1080
+    height: 330
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: t5-teaching
+  title: T5 编码与解码流程
+  model: t5
+  version: 2019 原始 T5
+  basis: teaching
+  source: https://arxiv.org/abs/1910.10683
+  checked: 2026-10-27
+  caption: 原创教学简图，省略逐层细节，非官方原图。
+  alt: 任务和输入经编码器，解码器参考输入并逐步生成文字输出。
+  asset:
+    src: /figures/t5/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: gpt2-teaching
+  title: GPT-2 逐 token 生成
+  model: gpt
+  version: GPT-2 逐 token 生成
+  basis: teaching
+  source: https://github.com/openai/gpt-2
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 输入前缀经过因果解码器，预测下一个 token 并迭代生成。
+  asset:
+    src: /figures/gpt2/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: vit-teaching
+  title: ViT 图块与分类
+  model: vit
+  version: ViT 图块与分类
+  basis: teaching
+  source: https://arxiv.org/abs/2010.11929
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图片分成图块，映射后与分类 token 一起进入编码器；分类 token 的输出交给分类头。
+  asset:
+    src: /figures/vit/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: wav2vec2-teaching
+  title: wav2vec 2.0 自监督预训练
+  model: wav2vec2
+  version: wav2vec 2.0 自监督预训练
+  basis: teaching
+  source: https://arxiv.org/abs/2006.11477
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频特征分别进入掩码上下文网络和量化目标分支，通过对比目标训练。
+  asset:
+    src: /figures/wav2vec2/overview.svg
+    width: 1100
+    height: 380
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: clip-teaching
+  title: CLIP 图文对比学习
+  model: clip
+  version: CLIP 图文对比学习
+  basis: teaching
+  source: https://arxiv.org/abs/2103.00020
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图片与文本分别编码后计算相似度，通过图文配对进行对比学习。
+  asset:
+    src: /figures/clip/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: hubert-teaching
+  title: HuBERT 聚类与遮盖预测
+  model: hubert
+  version: HuBERT 聚类与遮盖预测
+  basis: teaching
+  source: https://arxiv.org/abs/2106.07447
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频产生离线聚类标签，遮盖上下文网络预测标签，再迭代学习表示。
+  asset:
+    src: /figures/hubert/overview.svg
+    width: 1080
+    height: 365
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: swin-teaching
+  title: Swin 窗口移位与分层
+  model: swin
+  version: Swin 窗口移位与分层
+  basis: teaching
+  source: https://arxiv.org/abs/2103.14030
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 图像分块后通过窗口注意力、窗口移位和分层合并得到视觉特征。
+  asset:
+    src: /figures/swin/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: dit-teaching
+  title: DiT 潜空间去噪
+  model: dit
+  version: DiT 潜空间去噪
+  basis: teaching
+  source: https://arxiv.org/abs/2212.09748
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 噪声潜表示经过分块和 Transformer 去噪，再由解码器转换成图像。
+  asset:
+    src: /figures/dit/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: conformer-teaching
+  title: Conformer 音频编码
+  model: conformer
+  version: Conformer 音频编码
+  basis: teaching
+  source: https://arxiv.org/abs/2005.08100
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频特征经过注意力与卷积结合的编码器，送入识别解码器。
+  asset:
+    src: /figures/conformer/overview.svg
+    width: 1060
+    height: 290
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: encodec-teaching
+  title: EnCodec 神经音频编码
+  model: encodec
+  version: EnCodec 神经音频编码
+  basis: teaching
+  source: https://arxiv.org/abs/2210.13438
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音频经编码器和残差向量量化后形成码流，再由解码器重建。
+  asset:
+    src: /figures/encodec/overview.svg
+    width: 1100
+    height: 350
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: stable-diffusion-teaching
+  title: Stable Diffusion 潜空间生成
+  model: stable-diffusion
+  version: Stable Diffusion 潜空间生成
+  basis: teaching
+  source: https://huggingface.co/CompVis/stable-diffusion-v1-4
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文本经过编码器作为条件，潜空间噪声经过逐步去噪和解码得到图像。
+  asset:
+    src: /figures/stable-diffusion/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: llava-teaching
+  title: LLaVA 图文问答
+  model: llava
+  version: 2023 年原始 LLaVA；示意 CLIP ViT-L/14 与 Vicuna 的组合
+  basis: teaching
+  source: https://arxiv.org/abs/2304.08485
+  checked: 2026-10-27
+  caption: 原创教学简图，展示原始论文使用的视觉编码器、线性投影与 Vicuna；省略层内细节，非官方原图。
+  alt: 图像经 CLIP ViT-L/14 视觉编码与线性投影后进入 Vicuna 语言模型，结合文本问题生成回答。
+  asset:
+    src: /figures/llava/overview.svg
+    width: 1060
+    height: 290
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: vall-e-teaching
+  title: VALL-E 声学码生成
+  model: vall-e
+  version: VALL-E 声学码生成
+  basis: teaching
+  source: https://arxiv.org/abs/2301.02111
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 音素与参考音频共同作为自回归及非自回归生成的条件，声学码经音频解码器还原成波形。
+  asset:
+    src: /figures/vall-e/overview.svg
+    width: 1100
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen36-teaching
+  title: Qwen3.6-27B 多模态与工具流程
+  model: qwen36-model
+  version: Qwen3.6-27B
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3.6-27B
+  checked: 2026-10-28
+  caption: 教学简图展示视觉输入、16 组混合注意力与外部工具交互。
+  alt: 图像经视觉编码，文字经文本处理后进入语言骨干；每组三层 Gated DeltaNet 和一层 Gated Attention，工具请求由外部工具执行。
+  asset:
+    src: /figures/qwen36/overview.svg
+    width: 1060
+    height: 450
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: llama31-teaching
+  title: Llama 3.1 生成流程
+  model: llama
+  version: Llama 3.1 生成流程
+  basis: teaching
+  source: https://arxiv.org/abs/2407.21783
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文本经分词与因果语言模型逐步生成输出。
+  asset:
+    src: /figures/llama31/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: chatglm-teaching
+  title: GLM 填空到 ChatGLM 对话
+  model: chatglm
+  version: GLM 填空到 ChatGLM 对话
+  basis: teaching
+  source: https://arxiv.org/abs/2103.10360
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 原始 GLM 的填空训练与 ChatGLM 的对话用途示意。
+  asset:
+    src: /figures/chatglm/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: f5-tts-teaching
+  title: F5-TTS 文本与语音生成
+  model: f5-tts
+  version: F5-TTS 文本与语音生成
+  basis: teaching
+  source: https://arxiv.org/abs/2410.06885
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文本与参考语音提供条件，流匹配模型多步迭代产生声学表示，再经声码器生成波形。
+  asset:
+    src: /figures/f5-tts/overview.svg
+    width: 1100
+    height: 355
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen38-teaching
+  title: Qwen3.8 开放型号的输入与结构
+  model: qwen38
+  version: Qwen3.8-27B 与 2.4T-A95B
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图；分别以两张模型卡为依据。
+  alt: 27B 处理图文视频并使用稠密前馈层，2.4T-A95B 开放权重处理文本并使用专家路由。
+  asset:
+    src: /figures/qwen38/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k27-teaching
+  title: Kimi K2.7 Code 多模态工具任务
+  model: kimi-k27-model
+  version: Kimi K2.7 Code 多模态工具任务
+  basis: teaching
+  source: https://huggingface.co/moonshotai/Kimi-K2.7-Code
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节；官方模型卡将视频对话标为实验功能，核对时仅官方 API 支持。
+  alt: 模型处理图文并向外部工具发送请求，读取工具反馈继续任务。
+  asset:
+    src: /figures/kimi-k27/overview.svg
+    width: 1100
+    height: 350
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen-image-teaching
+  title: Qwen-Image 文生图流程
+  model: qwen-image
+  version: Qwen-Image 文生图流程
+  basis: teaching
+  source: https://arxiv.org/abs/2508.02324
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 文字编码作为条件，流匹配模型迭代处理图像潜变量，再由解码器生成图像。
+  asset:
+    src: /figures/qwen-image/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3guard-teaching
+  title: Qwen3Guard 生成式与流式审核
+  model: qwen3guard-model
+  version: Qwen3Guard
+  basis: teaching
+  source: https://arxiv.org/abs/2510.14276
+  checked: 2026-10-27
+  caption: 原创教学简图，省略缓存及类别头细节，非官方原图。
+  alt: 输入经生成式或流式审核模型获得风险判断，外部应用按策略处理。
+  asset:
+    src: /figures/qwen3guard/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: jev-teaching
+  title: Jev 的外部决策流程
+  model: jev
+  version: Jev 官方公开接口
+  basis: teaching
+  source: https://docs.typesafe.ai/concepts/system-one
+  checked: 2026-10-27
+  caption: 原创教学简图，仅展示公开接口及应用流程，不代表未公开的内部架构。
+  alt: 应用准备状态与问题，Jev 返回判断及概率，由应用规则决定处理或复核。
+  asset:
+    src: /figures/jev/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi15-teaching
+  title: Kimi K1.5 训练与推理
+  model: kimi
+  version: Kimi K1.5 训练与推理
+  basis: teaching
+  source: https://arxiv.org/abs/2501.12599
+  checked: 2026-10-27
+  caption: 原创教学简图，省略内部细节，非官方原图。
+  alt: 模型使用强化学习训练，推理时依据输入生成回答。
+  asset:
+    src: /figures/kimi15/overview.svg
+    width: 1060
+    height: 280
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k2-teaching
+  title: Kimi K2 工具任务
+  model: kimi-k2
+  version: Kimi K2 工具任务
+  basis: teaching
+  source: https://arxiv.org/abs/2507.20534
+  checked: 2026-10-27
+  caption: 原创教学简图，省略内部细节，非官方原图。
+  alt: 语言模型和专家路由生成工具请求，外部工具执行并返回结果。
+  asset:
+    src: /figures/kimi-k2/overview.svg
+    width: 1060
+    height: 290
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k2-thinking-teaching
+  title: Kimi K2 Thinking：推理与工具协作
+  model: kimi-k2-thinking
+  version: 2025 年 Kimi K2 Thinking
+  basis: teaching
+  source: https://huggingface.co/moonshotai/Kimi-K2-Thinking
+  checked: 2026-10-28
+  caption: 原创教学简图，示意推理、外部工具与结果回传，省略层内细节；不是官方结构图。
+  alt: Kimi K2 Thinking 经注意力与专家网络生成推理和工具请求，外部工具执行后将结果返回模型，再生成回答。
+  asset:
+    src: /figures/kimi-k2-thinking/overview.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: kimi-k3-teaching
+  title: Kimi K3 多模态模型
+  model: kimi-k3
+  version: Kimi K3 多模态模型
+  basis: teaching
+  source: https://arxiv.org/abs/2607.24653
+  checked: 2026-10-27
+  caption: 原创教学简图，省略内部细节，非官方原图。
+  alt: 视觉和文本输入经模型处理，结合注意力、跨层聚合及专家网络生成输出。
+  asset:
+    src: /figures/kimi-k3/overview.svg
+    width: 1100
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: omnijev-teaching
+  title: OmniJev 多模态决策流程
+  model: omnijev
+  version: OmniJev v1.1
+  basis: teaching
+  source: https://github.com/tinnel123666888/OmniJev
+  checked: 2026-10-27
+  caption: 原创教学简图，省略层内细节，非官方原图。
+  alt: 截图和文字经过视觉语言底座与决策头得到概率，由外部应用执行和复核。
+  asset:
+    src: /figures/omnijev/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: claude-teaching
+  title: Claude 对话与应用复核
+  model: claude
+  version: Claude 对话与应用复核
+  basis: teaching
+  source: https://www.anthropic.com/news/introducing-claude
+  checked: 2026-10-27
+  caption: 原创教学简图，只展示公开接口与应用流程，不代表未公开的内部结构。
+  alt: 用户输入通过 Claude 服务产生回答，应用根据证据和规则复核。
+  asset:
+    src: /figures/claude/overview.svg
+    width: 1060
+    height: 230
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: gemini15-teaching
+  title: Gemini 1.5 多模态输入
+  model: gemini
+  version: Gemini 1.5 多模态输入
+  basis: teaching
+  source: https://arxiv.org/abs/2403.05530v5
+  checked: 2026-10-27
+  caption: 原创教学简图，只展示公开接口与应用流程，不代表未公开的内部结构。
+  alt: 文本图像音频视频及问题进入模型服务，产生回答供应用核查。
+  asset:
+    src: /figures/gemini15/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: gpt4o-teaching
+  title: GPT-4o 多模态接口
+  model: gpt4o
+  version: GPT-4o 多模态接口
+  basis: teaching
+  source: https://openai.com/index/gpt-4o-system-card/
+  checked: 2026-10-27
+  caption: 原创教学简图，只展示公开接口与应用流程，不代表未公开的内部结构。
+  alt: 模型处理公开描述的多模态输入输出，应用按接口能力使用并核验。
+  asset:
+    src: /figures/gpt4o/overview.svg
+    width: 1100
+    height: 360
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen37-teaching
+  title: Qwen3.7-Max 服务与工具流程
+  model: qwen37-model
+  version: Qwen3.7-Max
+  basis: teaching
+  source: https://help.aliyun.com/en/model-studio/qwen3-7-max
+  checked: 2026-10-27
+  caption: 原创教学简图，仅展示公开接口和应用流程，不代表未公开的内部结构。
+  alt: 用户请求发送到模型服务，工具由外部系统执行并返回结果供模型继续处理。
+  asset:
+    src: /figures/qwen37/overview.svg
+    width: 1060
+    height: 260
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen35-omni-official
+  title: Qwen3.5-Omni 官方结构
+  model: qwen35-omni-model
+  version: Qwen3.5-Omni 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2604.15804v1#S2.F2
+  checked: 2026-10-28
+  caption: 官方原图，展示 Thinker、Talker 和流式语音路径；具体服务的输入输出以接口文档为准。
+  alt: Qwen3.5-Omni 的音视频输入进入 Thinker，Talker 生成语音 token 并由解码器逐步生成声音。
+  asset:
+    src: /figures/qwen35-omni/official-model.jpg
+    width: 3238
+    height: 2403
+    license: CC BY 4.0
+    attribution: Qwen Team，Qwen3.5-Omni Technical Report v1，Figure 2；原图未改绘。
+- id: qwen35-omni-teaching
+  title: Qwen3.5-Omni 理解与发声流程
+  model: qwen35-omni-model
+  version: Qwen3.5-Omni 技术报告 v1
+  basis: teaching
+  source: https://arxiv.org/abs/2604.15804v1
+  checked: 2026-10-28
+  caption: 原创教学简图，省略层内细节；不是官方结构图。
+  alt: 音视频输入经过编码进入 Thinker，Talker 使用 ARIA 对齐文本与语音，再输出声音。
+  asset:
+    src: /figures/qwen35-omni/overview.svg
+    width: 1240
+    height: 490
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen38-omni-encoders-official
+  title: Qwen3.8-Omni 官方音频编码器
+  model: qwen38-omni-model
+  version: Qwen3.8-Omni 技术报告 v1，Figure 2
+  basis: official
+  source: https://arxiv.org/html/2609.25611v1#S2.F2
+  checked: 2026-10-28
+  caption: 官方原图只展示通用音频与空间音频编码路径，不是完整模型结构图。
+  alt: 普通音频进入 AuT 编码器，多通道空间音频进入 Spatial AuT 编码器，两路分别输出音频表示。
+  asset:
+    src: /figures/qwen38-omni/official-encoders.png
+    width: 2040
+    height: 2040
+    license: CC BY 4.0
+    attribution: Qwen Team，Qwen3.8-Omni Technical Report v1，Figure 2；原图未改绘。
+- id: qwen38-omni-teaching
+  title: Qwen3.8-Omni-Flash 多模态理解
+  model: qwen38-omni-model
+  version: Qwen3.8-Omni 技术报告 v1
+  basis: teaching
+  source: https://arxiv.org/abs/2609.25611v1
+  checked: 2026-10-28
+  caption: 原创教学简图；标准 Flash 与 Realtime 的输出和系统配置不同，省略层内细节。
+  alt: 视觉、普通音频和空间音频分别编码后送入 Thinker，模型生成文字和工具请求；语音输出属于 Realtime 路径。
+  asset:
+    src: /figures/qwen38-omni/overview.svg
+    width: 1240
+    height: 530
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen38-omni-realtime-official
+  title: Qwen3.8-Omni Realtime 与 Live Harness
+  model: qwen38-omni-model
+  version: Qwen3.8-Omni 技术报告 v1，Figure 3
+  basis: official
+  source: https://arxiv.org/html/2609.25611v1
+  checked: 2026-10-28
+  caption: 官方原图展示 Realtime 模型与 Qwen-Live-Harness 的系统协作，不等于标准 Flash 的完整模型结构。
+  alt: Realtime 模型与外部工具、上下文及记忆模块共同组织交互和语音输出。
+  asset:
+    src: /figures/qwen38-omni/official-realtime.png
+    width: 2019
+    height: 856
+    license: CC BY 4.0
+    attribution: Qwen Team，Qwen3.8-Omni Technical Report v1，Figure 3；原图未改绘。
+
+- id: qwen38-flash-next-teaching
+  title: Qwen3.8-Flash-Next：混合历史与专家
+  model: qwen38-flash-next-model
+  version: Qwen3.8-Flash-Next，技术报告 v1
+  basis: teaching
+  source: https://arxiv.org/abs/2608.30320v1
+  checked: 2026-10-28
+  caption: 原创教学简图，展示混合注意力、专家与 N-gram 表，省略层内细节；不是官方原图。
+  alt: 文本或图像输入经过混合注意力、稀疏专家与门控残差，结合额外的 N-gram 表生成文字。
+  asset:
+    src: /figures/qwen38-flash-next/overview.svg
+    width: 1200
+    height: 470
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-image21-teaching
+  title: Qwen-Image-2.1 生成与编辑
+  model: qwen-image21-model
+  version: Qwen-Image-2.1
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen-Image-2.1
+  checked: 2026-10-28
+  caption: 原创教学简图，展示条件编码、图像生成与解码；图像权重的非商业研究许可需另行查看。
+  alt: 文本和参考图片经条件编码器处理，DiT 在条件引导下生成潜在表示，再由 VAE 解码为图像。
+  asset:
+    src: /figures/qwen-image21/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen38-livetranslate-teaching
+  title: Qwen3.8-LiveTranslate 同传流程
+  model: qwen38-livetranslate-model
+  version: Qwen3.8-LiveTranslate，2026 年发布服务
+  basis: teaching
+  source: https://qwen.ai/blog?id=qwen3.8-livetranslate
+  checked: 2026-10-28
+  caption: 原创教学简图，解释流式同传与说话人区分；未披露的内部细节不在图中补猜。
+  alt: 音视频输入经流式理解与翻译，输出原文、译文和语音，并区分不同说话人。
+  asset:
+    src: /figures/qwen38-livetranslate/overview.svg
+    width: 1200
+    height: 410
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen2-math-teaching
+  title: Qwen2-Math 训练路线
+  model: qwen2-math-model
+  version: 2024 年初代 Qwen2-Math
+  basis: teaching
+  source: https://qwenlm.github.io/blog/qwen2-math/
+  checked: 2026-10-28
+  caption: 原创教学简图，示意数学继续预训练、SFT 和奖励反馈；具体数据筛选与训练细节以官方介绍为准。
+  alt: 通用 Qwen2 模型经过数学领域继续预训练，再通过示范和奖励信号进行后训练。
+  asset:
+    src: /figures/qwen2-math/training.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-vl-embedding-teaching
+  title: Qwen3-VL 多模态召回与重排
+  model: qwen3-vl-embedding-model
+  version: Qwen3-VL-Embedding 与配套 Reranker，技术报告 v1
+  basis: teaching
+  source: https://arxiv.org/abs/2601.04720v1
+  checked: 2026-10-28
+  caption: 原创教学简图；Embedding 与 Reranker 是不同权重，先召回候选再逐对重排。
+  alt: 文字或多模态输入分别编码为向量以召回候选，配套重排模型再对问题和候选共同评分。
+  asset:
+    src: /figures/qwen3-vl-embedding/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-image-edit-teaching
+  title: Qwen-Image-Edit：原图的两条路径
+  model: qwen-image-edit-model
+  version: 2025 年初代 Qwen-Image-Edit
+  basis: teaching
+  source: https://qwenlm.github.io/blog/qwen-image-edit/
+  checked: 2026-10-28
+  caption: 原创教学简图，示意视觉语义与外观两条条件路径，省略内部层和采样细节。
+  alt: 原图分别经过视觉语言编码器和 VAE 编码器，与编辑指令一起引导图像生成，再解码得到修改后的图片。
+  asset:
+    src: /figures/qwen-image-edit/overview.svg
+    width: 1200
+    height: 480
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen-image-layered-teaching
+  title: Qwen-Image-Layered 图层分解
+  model: qwen-image-layered-model
+  version: 2025 年 Qwen-Image-Layered
+  basis: teaching
+  source: https://arxiv.org/abs/2512.15603
+  checked: 2026-10-28
+  caption: 原创教学简图，示意条件输入和透明图层生成；省略内部层与采样细节。
+  alt: 输入图片经条件编码后进入图层生成模型，输出可以单独编辑的多个 RGBA 图层。
+  asset:
+    src: /figures/qwen-image-layered/overview.svg
+    width: 1200
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen-image-layered-official-architecture
+  title: Qwen-Image-Layered 论文结构与 Layer3D RoPE
+  model: qwen-image-layered-model
+  version: 2025 年 Qwen-Image-Layered 论文图 4
+  basis: official
+  source: https://arxiv.org/html/2512.15603v1
+  checked: 2026-10-28
+  caption: 论文原图，左侧为训练时的模型输入和模块，右侧展示图层与空间位置；推理时图层从噪声生成。
+  alt: 原图左侧展示文本、输入图和带噪目标图层进入 VLD-MMDiT；右侧展示空间位置与不同图层位置的三维坐标。
+  asset:
+    src: /figures/qwen-image-layered/official-figure4.png
+    width: 1987
+    height: 945
+    license: CC BY 4.0
+    attribution: Shengming Yin 等，Qwen-Image-Layered 论文图 4；保留原图，未改绘。
+- id: qwen-vla-teaching
+  title: Qwen-VLA 视觉理解与动作生成
+  model: qwen-vla-model
+  version: Qwen-VLA 技术报告 v2
+  basis: teaching
+  source: https://arxiv.org/abs/2605.30280v2
+  checked: 2026-10-28
+  caption: 原创教学简图，示意视觉语言骨干、动作专家与外部执行；不是官方逐层结构图。
+  alt: 图像与指令进入视觉语言骨干，动作专家生成轨迹，机器人执行后再观察环境。
+  asset:
+    src: /figures/qwen-vla/overview.svg
+    width: 1200
+    height: 480
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen3-livetranslate-teaching
+  title: Qwen3-LiveTranslate 同传流程
+  model: qwen3-livetranslate-model
+  version: 2025 年 Qwen3-LiveTranslate 服务
+  basis: teaching
+  source: https://qwen.ai/blog?from=res&id=4266edf7f3718f2d3fda098b3f4c48f3573215d0
+  checked: 2026-10-28
+  caption: 原创教学简图，示意音视频翻译和语音输出，不补猜未公开的内部结构。
+  alt: 音频和视频输入经过流式理解与翻译，输出译文和语音。
+  asset:
+    src: /figures/qwen3-livetranslate/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: qwen35-livetranslate-teaching
+  title: Qwen3.5-LiveTranslate 可读单元
+  model: qwen35-livetranslate-model
+  version: 2026 年 Qwen3.5-LiveTranslate 服务
+  basis: teaching
+  source: https://qwen.ai/blog?id=qwen3.5-livetranslate
+  checked: 2026-10-28
+  caption: 原创教学简图，示意音视频输入、可读单元和流式翻译输出。
+  alt: 音视频输入经理解与可读单元组织，再输出译文和语音。
+  asset:
+    src: /figures/qwen35-livetranslate/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3-reranker-teaching
+  title: 文本召回与重排
+  model: qwen3-reranker-model
+  version: 技术报告
+  basis: teaching
+  source: https://arxiv.org/abs/2506.05176
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节。
+  alt: 问题与候选文档一起输入重排模型，输出相关性分数。
+  asset:
+    src: /figures/qwen3-reranker/overview.svg
+    width: 1200
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3-vl-reranker-teaching
+  title: 多模态重排流程
+  model: qwen3-vl-reranker-model
+  version: 技术报告
+  basis: teaching
+  source: https://arxiv.org/abs/2601.04720
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节。
+  alt: 查询与图文或视频候选一起输入重排模型，输出相关性分数。
+  asset:
+    src: /figures/qwen3-vl-reranker/overview.svg
+    width: 1200
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3-forcedaligner-teaching
+  title: 文字和声音的时间对齐
+  model: qwen3-forcedaligner-model
+  version: 技术报告
+  basis: teaching
+  source: https://arxiv.org/abs/2601.21337
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节。
+  alt: 已知文字与声音输入强制对齐模型，输出文字的时间位置。
+  asset:
+    src: /figures/qwen3-forcedaligner/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen3-forcedaligner-official
+  title: ForcedAligner 官方结构图
+  model: qwen3-forcedaligner-model
+  version: Qwen3-ForcedAligner 技术报告 v1，Figure 3
+  basis: official
+  source: https://arxiv.org/html/2601.21337v1#S3.F3
+  checked: 2026-10-28
+  caption: 官方 Figure 3，原图未改绘，展示时间槽预测。
+  alt: 音频和已知文字输入模型，时间戳预测层输出对应时间位置。
+  asset:
+    src: /figures/qwen-asr/alignment.png
+    width: 2738
+    height: 1874
+    license: CC BY 4.0
+    attribution: Xian Shi 等；来源技术报告采用 CC BY 4.0，原图未改绘。
+
+- id: qwen25-1m-teaching
+  title: Qwen2.5-1M 长上下文处理
+  model: qwen25-1m-model
+  version: Qwen2.5-1M 技术报告
+  basis: teaching
+  source: https://arxiv.org/abs/2501.15383
+  checked: 2026-10-28
+  caption: 原创教学简图，概括长上下文训练和推理步骤，不是官方结构图。
+  alt: Qwen2.5 中间检查点逐步扩展训练长度并得到 7B 与 14B 指令模型，再结合长度外推和稀疏注意力进行长文本推理。
+  asset:
+    src: /figures/qwen25-1m/overview.svg
+    width: 1200
+    height: 440
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-r1-0528-teaching
+  title: DeepSeek-R1-0528 生成与验证
+  model: deepseek-r1-0528-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节，非官方结构图。
+  alt: 问题经过因果模型生成推理和答案，外部程序验证结果。
+  asset:
+    src: /figures/deepseek-r1-0528/overview.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen25-math-prm-teaching
+  title: 数学过程评分与候选选择
+  model: qwen25-math-prm-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://arxiv.org/abs/2501.07301
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节，非官方结构图。
+  alt: 生成器提出多个解答，过程奖励模型逐步评分，再选择候选答案。
+  asset:
+    src: /figures/qwen25-math-prm/overview.svg
+    width: 1200
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-image-teaching
+  title: GLM-Image 图像生成流程
+  model: glm-image-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://z.ai/blog/glm-image
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部实现细节，非官方结构图。
+  alt: 文本和参考图进入自回归视觉生成器，再由扩散解码器生成图像。
+  asset:
+    src: /figures/glm-image/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v3-0324-teaching
+  title: DeepSeek-V3-0324 请求处理
+  model: deepseek-v3-0324-model
+  version: DeepSeek-V3-0324 模型卡及配置
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324
+  checked: 2026-10-28
+  caption: 原创教学简图，示意注意力和专家的分工，省略逐层细节。
+  alt: 文本经注意力和专家层生成回答或工具请求，外部系统执行请求并返回结果。
+  asset:
+    src: /figures/deepseek-v3-0324/overview.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qwen25-math-rm-teaching
+  title: 数学结果奖励模型的候选评分
+  model: qwen25-math-rm-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://arxiv.org/abs/2409.12122
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部细节，非官方结构图。
+  alt: 题目由生成器产生多份解答，结果奖励模型逐份评分，随后选择和复核。
+  asset:
+    src: /figures/qwen25-math-rm/overview.svg
+    width: 1200
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: qvq-72b-preview-teaching
+  title: QVQ 视觉问答与推理
+  model: qvq-72b-preview-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://qwenlm.github.io/blog/qvq-72b-preview/
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部细节，非官方结构图。
+  alt: 图片和问题经过视觉编码与语言解码，输出推理和答案。
+  asset:
+    src: /figures/qvq-72b-preview/overview.svg
+    width: 1200
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: deepseek-v25-teaching
+  title: DeepSeek-V2.5 从需求到代码
+  model: deepseek-v25-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://huggingface.co/deepseek-ai/DeepSeek-V2.5
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部细节，非官方结构图。
+  alt: 文本进入模型生成回答或工具请求，外部程序执行并返回结果。
+  asset:
+    src: /figures/deepseek-v25/overview.svg
+    width: 1200
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: glm-tts-teaching
+  title: GLM-TTS 从文本到声音
+  model: glm-tts-model
+  version: 官方发布资料
+  basis: teaching
+  source: https://arxiv.org/abs/2512.14291
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部细节，非官方结构图。
+  alt: 文字与参考声音经语音 token 生成、流匹配和声码器产生波形。
+  asset:
+    src: /figures/glm-tts/overview.svg
+    width: 1200
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+
+- id: gpt3-teaching
+  title: GPT-3 通过上下文示例完成新任务
+  model: gpt3-model
+  version: GPT-3 原始论文
+  basis: teaching
+  source: https://arxiv.org/abs/2005.14165
+  checked: 2026-10-28
+  caption: 原创教学示意，展示提示中的少样本示例与续写，不是模型内部结构图。
+  alt: 提示包含任务示例和待回答的问题，GPT-3 根据上下文逐步生成回答。
+  asset:
+    src: /figures/gpt3/overview.svg
+    width: 1200
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: gpt4-teaching
+  title: GPT-4 公开的输入输出能力
+  model: gpt4-model
+  version: GPT-4 原始报告及后续 GPT-4V 发布
+  basis: teaching
+  source: https://arxiv.org/abs/2303.08774
+  checked: 2026-10-28
+  caption: 原创概念图；参数、内部结构及视觉接入方式未公开，不代表实际架构。
+  alt: 文本和图片作为输入，模型生成文本；视觉能力的开放时间需区分。
+  asset:
+    src: /figures/gpt4/overview.svg
+    width: 1000
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创概念图。
+- id: wan21-teaching
+  title: Wan2.1 文生视频的基本流程
+  model: wan21-model
+  version: Wan2.1 文生视频
+  basis: teaching
+  source: https://arxiv.org/abs/2503.20314
+  checked: 2026-10-28
+  caption: 原创教学简图；展示主要数据流，省略具体层与采样细节。
+  alt: 文字编码作为条件，扩散 Transformer 迭代更新视频潜变量，再经视频 VAE 解码。
+  asset:
+    src: /figures/wan21/overview.svg
+    width: 1200
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: gpt1-teaching
+  title: 初代 GPT 的预训练与任务微调
+  model: gpt1-model
+  version: 2018 年原论文
+  basis: teaching
+  source: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+  checked: 2026-10-28
+  caption: 原创教学图，简化预训练和各任务微调过程，不是论文原图。
+  alt: 文本续写预训练形成模型底座，再结合有监督任务数据和输出头分别微调。
+  asset:
+    src: /figures/gpt1/overview.svg
+    width: 1200
+    height: 440
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: sam2-teaching
+  title: SAM 2 的图像提示与视频记忆
+  model: sam2-model
+  version: SAM 2 论文
+  basis: teaching
+  source: https://arxiv.org/abs/2408.00714
+  checked: 2026-10-28
+  caption: 原创教学简图，省略细节；论文结果需区分初版与 SAM 2.1。
+  alt: 当前视频帧的图像特征结合提示和先前记忆产生掩码，并更新记忆。
+  asset:
+    src: /figures/sam2/overview.svg
+    width: 1040
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: wan22-teaching
+  title: Wan2.2 的双专家与独立 TI2V 路线
+  model: wan22-model
+  version: Wan2.2 T2V-A14B 与 TI2V-5B
+  basis: teaching
+  source: https://github.com/Wan-Video/Wan2.2
+  checked: 2026-10-28
+  caption: 原创教学简图，省略具体网络层；TI2V-5B 是独立稠密模型。
+  alt: 高、低噪声专家依次更新潜变量，VAE 解码视频；TI2V-5B 是另一条模型路线。
+  asset:
+    src: /figures/wan22/overview.svg
+    width: 1200
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: qwq-preview-teaching
+  title: QwQ 预览版逐步生成与外部复核
+  model: qwq-preview-model
+  version: QwQ-32B-Preview 2024 年发布版
+  basis: teaching
+  source: https://qwenlm.github.io/blog/qwq-32b-preview/
+  checked: 2026-10-28
+  caption: 原创教学简图；外部复核需要程序或人工实际执行，不是模型内部保证。
+  alt: 问题经分词和语言模型生成推理及答案，然后由外部程序或人工检查。
+  asset:
+    src: /figures/qwq-preview/overview.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: gpt5-teaching
+  title: GPT-5 发布时的 ChatGPT 请求路径
+  model: gpt5-model
+  version: 2025 年 GPT-5 发布时的产品说明
+  basis: teaching
+  source: https://openai.com/index/introducing-gpt-5/
+  checked: 2026-10-28
+  caption: 原创产品流程示意；非模型内部架构，API 模型选择与产品路由需要区分。
+  alt: 用户请求经路由选择快速模型或思考模型，必要时调用工具后给出回答。
+  asset:
+    src: /figures/gpt5/overview.svg
+    width: 1200
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创产品流程图。
+
+- id: qwen-image-2512-teaching
+  title: Qwen-Image-2512 的文字生成图片过程
+  model: qwen-image-2512-model
+  version: Qwen-Image-2512
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen-Image-2512
+  checked: 2026-10-28
+  caption: 原创教学图，依据初代家族公开方法解释主要流程；2512 训练细节未完整公开。
+  alt: 文字条件与噪声经过图像生成模型，解码并检查海报中的文字与细节。
+  asset:
+    src: /figures/qwen-image-2512/overview.svg
+    width: 1200
+    height: 390
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: qwen-image-edit-2511-teaching
+  title: Qwen-Image-Edit-2511 的多图编辑示例
+  model: qwen-image-edit-2511-model
+  version: Qwen-Image-Edit-2511
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen-Image-Edit-2511
+  checked: 2026-10-28
+  caption: 原创教学示例，展示多图、指令及结果核对；不是完整内部结构。
+  alt: 两张人物参考图和文字指令输入编辑模型，再检查生成图中的人物与空间关系。
+  asset:
+    src: /figures/qwen-image-edit-2511/overview.svg
+    width: 1200
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: qwen-image-edit-2509-teaching
+  title: Qwen-Image-Edit-2509 的多图编辑与验收
+  model: qwen-image-edit-2509-model
+  version: Qwen-Image-Edit-2509
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen-Image-Edit-2509
+  checked: 2026-10-28
+  caption: 原创教学示意；展示输入和输出验收，并非完整内部架构。
+  alt: 多张参考图与文字指令送入图像编辑模型，输出结果后再核对人物、文字与布局。
+  asset:
+    src: /figures/qwen-image-edit-2509/overview.svg
+    width: 1000
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: llama1-teaching
+  title: 初代 LLaMA 的自回归生成流程
+  model: llama1-model
+  version: LLaMA 2023 初版
+  basis: teaching
+  source: https://arxiv.org/abs/2302.13971
+  checked: 2026-10-28
+  caption: 原创教学示意，省略残差和部分归一化细节，不是官方逐层图。
+  alt: 已有文本经过分词和解码器逐步预测并生成下一 token。
+  asset:
+    src: /figures/llama1/overview.svg
+    width: 1200
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: llama2-teaching
+  title: Llama 2 从预训练到对话训练
+  model: llama2-model
+  version: Llama 2 原始论文
+  basis: teaching
+  source: https://arxiv.org/abs/2307.09288
+  checked: 2026-10-28
+  caption: 原创教学示意，概括基础模型与对话模型的训练过程，省略部分细节。
+  alt: 文本预训练得到基础模型，经过示范和偏好反馈训练形成对话模型。
+  asset:
+    src: /figures/llama2/overview.svg
+    width: 1080
+    height: 460
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: llama3-teaching
+  title: Llama 3 的分组查询注意力
+  model: llama3-model
+  version: 2024 年 4 月初版 Llama 3
+  basis: teaching
+  source: https://ai.meta.com/blog/meta-llama-3/
+  checked: 2026-10-28
+  caption: 原创教学示意，解释查询头共享键值头；不是官方逐层架构图。
+  alt: 多个查询头分组共享键值头，以减少需要保存的键值表示。
+  asset:
+    src: /figures/llama3/overview.svg
+    width: 1200
+    height: 430
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: llama4-teaching
+  title: Llama 4 的图文输入与专家处理
+  model: llama4-model
+  version: Llama 4 Scout 与 Maverick
+  basis: teaching
+  source: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+  checked: 2026-10-28
+  caption: 原创教学简图，省略内部细节；专家选择与参数规模因型号而异。
+  alt: 图片和文字经过编码进入模型，混合专家处理后生成文本回答。
+  asset:
+    src: /figures/llama4/overview.svg
+    width: 1100
+    height: 420
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: llama32-vision-teaching
+  title: Llama 3.2 Vision 的视觉通路
+  model: llama32-vision-model
+  version: Llama 3.2 11B 与 90B Vision
+  basis: teaching
+  source: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/
+  checked: 2026-10-28
+  caption: 原创教学示意，概括图像编码、跨注意力与文本生成；省略具体层和训练细节。
+  alt: 图片经过视觉编码，语言模型通过交叉注意力利用图像特征并生成文字。
+  asset:
+    src: /figures/llama32-vision/overview.svg
+    width: 1050
+    height: 410
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: llama33-teaching
+  title: Llama 3.3 指令模型的文本生成
+  model: llama33-model
+  version: Llama 3.3 70B Instruct
+  basis: teaching
+  source: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+  checked: 2026-10-28
+  caption: 原创教学简图，概括文本输入、解码与输出；不是官方逐层结构图。
+  alt: 文本经过分词和采用分组查询注意力的语言模型，逐步生成文字或代码。
+  asset:
+    src: /figures/llama33/overview.svg
+    width: 1000
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: instructgpt-teaching
+  title: InstructGPT 的示范、偏好与强化学习
+  model: instructgpt-model
+  version: InstructGPT 2022 年论文
+  basis: teaching
+  source: https://arxiv.org/abs/2203.02155
+  checked: 2026-10-28
+  caption: 原创教学示意，概括监督微调、奖励模型和 PPO；省略部分训练细节。
+  alt: 人类示范用于监督微调，人类偏好训练奖励模型，PPO 使用奖励信号调整策略。
+  asset:
+    src: /figures/instructgpt/overview.svg
+    width: 1050
+    height: 310
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+- id: llama32-text-teaching
+  title: Llama 3.2 轻量文本模型的训练
+  model: llama32-text-model
+  version: Llama 3.2 1B 和 3B 文本模型
+  basis: teaching
+  source: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/
+  checked: 2026-10-28
+  caption: 原创教学示意，概括结构化剪枝与蒸馏；不代表视觉分支的训练。
+  alt: 大模型经过结构化剪枝，再利用教师模型的输出训练较小的文本模型。
+  asset:
+    src: /figures/llama32-text/overview.svg
+    width: 1100
+    height: 400
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意。
+
+- id: chatglm2-backbone
+  title: ChatGLM2 语言模型骨干
+  model: chatglm2-model
+  version: ChatGLM2-6B
+  basis: teaching
+  source: https://huggingface.co/zai-org/chatglm2-6b/blob/main/config.json
+  checked: 2026-10-28
+  caption: 原创教学示意图，展示模型主干；工具流程针对 ChatGLM3。
+  alt: 对话经分词进入 28 层语言模型，32 查询头共享两组键值头并逐步生成文字。
+  asset:
+    src: /figures/chatglm23/backbone.svg
+    width: 1080
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据官方配置绘制。
+- id: chatglm3-backbone
+  title: ChatGLM3 语言模型及工具流程
+  model: chatglm3-model
+  version: ChatGLM3-6B
+  basis: teaching
+  source: https://huggingface.co/zai-org/chatglm3-6b/blob/main/config.json
+  checked: 2026-10-28
+  caption: 原创教学示意图，工具执行由外部应用完成。
+  alt: 对话输入模型后生成文字或工具请求，工具执行结果返回模型继续生成。
+  asset:
+    src: /figures/chatglm23/backbone.svg
+    width: 1080
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据官方配置及格式说明绘制。
+
+- id: glm130-overview
+  title: GLM-130B 的填空与注意力
+  model: glm130-model
+  version: GLM-130B
+  basis: teaching
+  source: https://arxiv.org/abs/2210.02414
+  checked: 2026-10-28
+  caption: 原创教学示意图；上下文互相可见，答案逐 token 生成，省略特殊标记和逐层细节。
+  alt: 原文挖空后输入单一 GLM 主干，上下文双向读取，答案自回归填回。
+  asset:
+    src: /figures/glm130/overview.svg
+    width: 1080
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意图。
+- id: glm4-9b-overview
+  title: GLM-4-9B-Chat 的文本生成与工具调用
+  model: glm4-9b-model
+  version: GLM-4-9B-Chat
+  basis: teaching
+  source: https://huggingface.co/zai-org/glm-4-9b-chat/blob/main/config.json
+  checked: 2026-10-28
+  caption: 原创教学示意图；工具由外部应用执行，图中省略模型逐层结构。
+  alt: 用户和工具返回经模板输入 40 层语言模型，模型生成文字或工具请求，外部应用执行工具并将结果送回。
+  asset:
+    src: /figures/glm4-9b/overview.svg
+    width: 1080
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学示意图。
+- id: minimax-m1-overview
+  title: MiniMax-M1 混合注意力与稀疏专家
+  model: minimax-m1-model
+  version: MiniMax-M1-80k
+  basis: teaching
+  source: https://arxiv.org/abs/2506.13585
+  checked: 2026-10-28
+  caption: 原创教学图，按论文与 80K 配置展示层组和专家路由，省略层内细节。
+  alt: 文本进入八十层主干，每七层 Lightning Attention 接一层 Softmax Attention，每层的专家网络选择部分专家，最后预测下一个 token。
+  asset:
+    src: /figures/minimax-m1/overview.svg
+    width: 1080
+    height: 330
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据 MiniMax-M1 论文和配置绘制。
+- id: qwen3-omni-captioner-teaching
+  title: 从声音到文字描述
+  model: qwen3-omni-captioner-model
+  version: Qwen3-Omni-30B-A3B-Captioner
+  basis: teaching
+  source: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Captioner
+  checked: 2026-10-29
+  caption: 原创教学简图，展示音频编码和 Thinker 文字输出；省略内部模块，非官方原图。
+  alt: 一段音频经 AuT 音频编码器和 Thinker 生成声音描述文字；该版本不包含语音输出路径。
+  asset:
+    src: /figures/qwen3-omni-captioner/overview.svg
+    width: 1060
+    height: 300
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；原创教学简图，非官方结构图。
+- id: deepseek-vl-first-teaching
+  title: DeepSeek-VL-7B 双路视觉编码
+  model: deepseek-vl-first-model
+  version: DeepSeek-VL-7B
+  basis: teaching
+  source: https://arxiv.org/abs/2403.05525v2
+  checked: 2026-10-29
+  caption: 原创教学简图，概括两路视觉特征与文本如何进入语言模型；省略内部细节。
+  alt: 图片分别经 SigLIP 和 SAM 编码，特征对齐拼接后经适配器，与文本输入语言模型；1.3B 版本只使用 SigLIP。
+  asset:
+    src: /figures/deepseek-vl-first/overview.svg
+    width: 1120
+    height: 410
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据 DeepSeek-VL 论文绘制。
+- id: minimax-text-01-teaching
+  title: MiniMax-Text-01 混合注意力与专家网络
+  model: minimax-text-01-model
+  version: MiniMax-Text-01
+  basis: teaching
+  source: https://arxiv.org/abs/2501.08313
+  checked: 2026-10-29
+  caption: 原创教学图，概括混合注意力与专家路由，省略内部细节。
+  alt: 文本经过交替排列的 Lightning Attention 与 Softmax Attention 层和专家网络，逐 token 输出文字。
+  asset:
+    src: /figures/minimax-text-01/overview.svg
+    width: 1120
+    height: 380
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据 MiniMax-01 技术报告绘制。
+- id: minimax-vl01-teaching
+  title: MiniMax-VL-01 图文处理流程
+  model: minimax-vl01-model
+  version: MiniMax-VL-01
+  basis: teaching
+  source: https://arxiv.org/abs/2501.08313
+  checked: 2026-10-29
+  caption: 原创教学图，展示视觉编码与语言模型的连接；省略内部细节。
+  alt: 图像经过视觉编码与投影后，与文本输入 MiniMax 语言骨干，生成文字回答。
+  asset:
+    src: /figures/minimax-vl01/overview.svg
+    width: 1120
+    height: 350
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据 MiniMax-01 技术报告绘制。
+- id: glm45v-teaching
+  title: GLM-4.5V 图文与视频理解流程
+  model: glm45v-model
+  version: GLM-4.5V
+  basis: teaching
+  source: https://arxiv.org/abs/2507.01006
+  checked: 2026-10-29
+  caption: 原创教学图，展示视觉输入和语言骨干的连接；省略内部细节。
+  alt: 图像或视频帧经过视觉编码与适配器，与文本一起送入混合专家语言模型，生成文字或动作描述。
+  asset:
+    src: /figures/glm45v/overview.svg
+    width: 1100
+    height: 340
+    license: CC BY 4.0
+    attribution: model-atlas-zh 贡献者；依据 GLM-V 技术报告绘制。

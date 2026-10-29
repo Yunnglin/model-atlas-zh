@@ -54,7 +54,7 @@ atlas:
 
 ## 场景与范围
 
-识别“打开客厅灯”时漏了最后一个字，先把错例变成可重复检查的问题。此页为教学复现设计，本站没有执行推理、训练或测出改进分数。完整模型原理见 [Whisper](/audio/whisper/)。
+识别“打开客厅灯”时漏了最后一个字，先把错例变成可重复检查的问题。此页为教学复现设计，未执行推理、训练或测出改进分数。完整模型原理见 [Whisper](/audio/whisper/)。
 
 ## 数据
 
@@ -89,7 +89,7 @@ whisper sample.wav --model small --language Chinese --output_format json
 ## 参考资料
 
 - [Whisper 官方代码与命令行入口](https://github.com/openai/whisper)
-- [Hugging Face Evaluate: Word Error Rate](https://huggingface.co/spaces/evaluate-metric/wer)
+- [JiWER 官方说明](https://github.com/jitsi/jiwer)
 - [Rules of Machine Learning](https://developers.google.com/machine-learning/guides/rules-of-ml)
 
-资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

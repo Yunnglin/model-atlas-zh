@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">GSPO：两个 token 的变化怎样形成序列比率</title>
+  <desc id="desc">同一条两 token 回答，在相同上下文下，新策略与旧策略的 token 条件概率比分别是 1.44 和 0.64。完整序列概率比为两者乘积 0.9216；GSPO 取长度 2 的几何平均，得到 0.96。假设区间 0.8 到 1.2，两个单点分别在区间外，而序列比率在区间内；此区间只为教学示例，不是论文统一设置。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#357f77"/></marker>
+  </defs>
+  <rect width="960" height="560" rx="18" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#173b3d">
+    <text x="34" y="46" font-size="25" font-weight="700">同一条回答：逐 token 看，还是整条看？</text>
+    <text x="34" y="78" font-size="16" fill="#486460">教学算例：两个位置分别比较新旧策略的条件概率</text>
+    <g fill="#fff" stroke="#a8c7c4" stroke-width="2">
+      <rect x="34" y="116" width="244" height="130" rx="12"/>
+      <rect x="358" y="116" width="244" height="130" rx="12"/>
+      <rect x="682" y="116" width="244" height="130" rx="12"/>
+    </g>
+    <g text-anchor="middle">
+      <text x="156" y="149" font-size="17" font-weight="700">第 1 个 token 的比率</text>
+      <text x="156" y="194" font-size="30" font-weight="700" fill="#a65043">1.44</text>
+      <text x="156" y="222" font-size="15" fill="#486460">新策略 / 旧策略</text>
+      <text x="480" y="149" font-size="17" font-weight="700">第 2 个 token 的比率</text>
+      <text x="480" y="194" font-size="30" font-weight="700" fill="#a65043">0.64</text>
+      <text x="480" y="222" font-size="15" fill="#486460">条件包括第 1 个 token</text>
+      <text x="804" y="149" font-size="17" font-weight="700">完整序列概率比</text>
+      <text x="804" y="194" font-size="28" font-weight="700">0.9216</text>
+      <text x="804" y="222" font-size="15" fill="#486460">1.44 × 0.64</text>
+    </g>
+    <g fill="none" stroke="#357f77" stroke-width="2.5" marker-end="url(#arrow)"><path d="M278 181H358"/><path d="M602 181H682"/><path d="M804 246V298"/></g>
+    <rect x="466" y="298" width="460" height="100" rx="12" fill="#e2f2ed" stroke="#83b6a8" stroke-width="2"/>
+    <text x="696" y="332" text-anchor="middle" font-size="18" font-weight="700">GSPO 的长度归一化序列比率</text>
+    <text x="696" y="372" text-anchor="middle" font-size="24" font-weight="700">√(1.44 × 0.64) = 0.96</text>
+    <rect x="34" y="298" width="382" height="100" rx="12" fill="#fff" stroke="#a8c7c4" stroke-width="2"/>
+    <text x="53" y="331" font-size="17" font-weight="700">只用于对照：假设区间 [0.8, 1.2]</text>
+    <text x="53" y="361" font-size="15">两个 token 比率在区间外；</text>
+    <text x="53" y="385" font-size="15">0.96 作为序列比率在区间内。</text>
+    <text x="34" y="456" font-size="16" fill="#486460">比例接近 1 不代表每个 token 的变化都小；是否产生裁剪还取决于优势符号。</text>
+    <text x="34" y="488" font-size="16" fill="#486460">[0.8, 1.2] 是示例阈值，不是 GSPO 论文的通用配置。</text>
+    <text x="34" y="520" font-size="16" fill="#486460">0.96 是序列概率比的平方根，并非完整的序列重要性采样权重。</text>
+  </g>
+</svg>

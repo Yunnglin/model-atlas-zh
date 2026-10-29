@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">InstructGPT 典型 RLHF 路线</title>
+  <desc id="desc">人工示范训练 SFT 策略；人类比较 SFT 策略的多个回答，训练奖励模型；策略采样回答后由奖励模型评分，PPO 用评分与参考策略约束更新策略。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#547d7a"/></marker></defs>
+  <rect width="960" height="430" rx="20" fill="#f5f9f8"/>
+  <g font-family="system-ui, -apple-system, sans-serif" fill="#183b45">
+    <text x="32" y="46" font-size="25" font-weight="700">InstructGPT 的典型路线</text>
+    <text x="32" y="75" font-size="15" fill="#526b72">示范教模型回答；偏好教评分器判断；PPO 利用评分更新策略。</text>
+    <g fill="#fff" stroke="#c9ded9">
+      <rect x="32" y="100" width="250" height="72" rx="10"/><rect x="356" y="100" width="250" height="72" rx="10"/><rect x="680" y="100" width="248" height="72" rx="10"/>
+      <rect x="32" y="198" width="250" height="72" rx="10"/><rect x="356" y="198" width="250" height="72" rx="10"/><rect x="680" y="198" width="248" height="72" rx="10"/>
+      <rect x="32" y="296" width="250" height="72" rx="10"/><rect x="356" y="296" width="250" height="72" rx="10"/><rect x="680" y="296" width="248" height="72" rx="10"/>
+    </g>
+    <g fill="none" stroke="#547d7a" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M282 136H346"/><path d="M606 136H670"/>
+      <path d="M282 234H346"/><path d="M606 234H670"/>
+      <path d="M282 332H346"/><path d="M606 332H670"/>
+      <path d="M680 257 L610 300"/>
+    </g>
+    <g font-size="19" font-weight="700"><text x="50" y="132">① 人工示范</text><text x="374" y="132">监督微调（SFT）</text><text x="698" y="132">SFT 策略</text>
+      <text x="50" y="230">② 人工偏好排序</text><text x="374" y="230">训练奖励模型</text><text x="698" y="230">奖励模型评分</text>
+      <text x="50" y="328">③ 策略采样回答</text><text x="374" y="328">PPO 策略优化</text><text x="698" y="328">更新后的策略</text></g>
+    <g font-size="14" fill="#526b72"><text x="50" y="155">问题与示范答案</text><text x="374" y="155">学习按示范作答</text><text x="698" y="155">用于生成候选回答</text>
+      <text x="50" y="253">人比较 SFT 候选</text><text x="374" y="253">学习近似人的选择</text><text x="698" y="253">给采样回答提供奖励</text>
+      <text x="50" y="351">从 SFT 策略开始</text><text x="374" y="351">使用评分及参考策略约束</text><text x="698" y="351">仍需独立评测</text></g>
+    <text x="32" y="405" font-size="15" fill="#526b72">示意图：PPO 是这篇论文的选择，RLHF 的反馈与优化方式可以不同。</text>
+  </g>
+</svg>

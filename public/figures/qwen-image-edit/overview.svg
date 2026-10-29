@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+<title id="title">Qwen-Image-Edit：原图通过两条路径参与编辑</title><desc id="desc">原图进入 Qwen2.5-VL 形成语义条件，也进入 VAE 编码器提供外观条件；图像生成器结合文字、图像条件和噪声，多步更新后由 VAE 解码为编辑结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#52757a"/></marker></defs>
+<rect width="1200" height="480" rx="22" fill="#f7faf9"/>
+<g font-family="sans-serif" fill="#18353a"><text x="38" y="45" font-size="24" font-weight="700">从原图和指令到编辑结果</text><text x="38" y="74" font-size="15" fill="#526c70">两条路径提供不同的参考信息；图中省略部分实现细节</text>
+<rect x="38" y="125" width="175" height="70" rx="12" fill="#e4f3f0" stroke="#8bbab2"/><text x="56" y="154" font-size="17" font-weight="700">文字指令</text><text x="56" y="179" font-size="14">“把拿铁改成燕麦”</text>
+<rect x="38" y="263" width="175" height="70" rx="12" fill="#e4f3f0" stroke="#8bbab2"/><text x="56" y="292" font-size="17" font-weight="700">输入图片</text><text x="56" y="317" font-size="14">带文字的咖啡杯</text>
+<rect x="275" y="125" width="220" height="92" rx="12" fill="#edf1fa" stroke="#9caed0"/><text x="293" y="157" font-size="17" font-weight="700">Qwen2.5-VL</text><text x="293" y="184" font-size="14">理解图像和指令的语义</text>
+<rect x="275" y="275" width="220" height="84" rx="12" fill="#faf3e6" stroke="#d5b88c"/><text x="293" y="307" font-size="17" font-weight="700">VAE 编码器</text><text x="293" y="334" font-size="14">提供原图的压缩视觉信息</text>
+<rect x="575" y="174" width="225" height="115" rx="12" fill="#e8f2f1" stroke="#62a59c"/><text x="593" y="207" font-size="17" font-weight="700">MMDiT 图像生成器</text><text x="593" y="234" font-size="14">结合条件，多次更新潜变量</text><text x="593" y="260" font-size="14">生成模型约 20B 参数</text>
+<rect x="575" y="350" width="225" height="55" rx="12" fill="#f0f3f3" stroke="#bbcaca"/><text x="593" y="384" font-size="16" font-weight="700">随机噪声：生成的起点</text>
+<rect x="858" y="187" width="135" height="88" rx="12" fill="#faf3e6" stroke="#d5b88c"/><text x="876" y="220" font-size="16" font-weight="700">VAE 解码</text><text x="876" y="246" font-size="14">还原图片</text>
+<rect x="1030" y="195" width="132" height="72" rx="12" fill="#e4f3f0" stroke="#8bbab2"/><text x="1048" y="225" font-size="16" font-weight="700">编辑结果</text><text x="1048" y="250" font-size="14">仍需检查细节</text></g>
+<g fill="none" stroke="#52757a" stroke-width="2" marker-end="url(#arrow)"><path d="M213 160 H275"/><path d="M213 287 H245 V195 H275"/><path d="M213 310 H275"/><path d="M495 170 H535 V205 H575"/><path d="M495 317 H535 V265 H575"/><path d="M687 350 V289"/><path d="M800 231 H858"/><path d="M993 231 H1030"/></g><text x="38" y="450" font-family="sans-serif" font-size="13" fill="#637a7d">教学示意：基于官方博客和技术报告绘制；两路并不保证未编辑区域像素完全不变。</text></svg>

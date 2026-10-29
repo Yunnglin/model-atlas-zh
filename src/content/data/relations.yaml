@@ -5,6 +5,21 @@
   explanation: 阅读前置：先理解相关机制；这条线不表示模型继承或相同架构。
   sources:
     - transformer-paper
+- id: kimi-thinking-before-k2
+  from: kimi-k2-thinking
+  to: kimi-k2
+  kind: prerequisite
+  explanation: 先了解 K2 家族的 MLA 和专家结构，再比较 Thinking 的工具推理与后训练；这条线不表示两个检查点相同。
+  sources:
+    - kimi-k2-code
+    - kimi-thinking-card
+- id: kimi-thinking-uses-quantization
+  from: kimi-k2-thinking
+  to: quantization
+  kind: uses
+  explanation: Thinking 的模型卡描述在后训练中对 MoE 权重采用 INT4 量化感知训练；不是整个模型所有权重都使用 INT4。
+  sources:
+    - kimi-thinking-card
 - id: next-token-before-attention
   from: next-token
   to: attention
@@ -1074,3 +1089,273 @@
   sources:
     - qwen-asr-paper
     - qwen3-omni-paper
+- id: qwen2-audio-compared-qwen-audio
+  from: qwen2-audio-model
+  to: qwen-audio-model
+  kind: compared-with
+  explanation: Qwen2-Audio 以自然语言提示替代第一代的分层任务标签，并采用不同的音频编码器初始化。
+  sources:
+    - qwen2-audio-paper
+    - qwen-audio-first-paper
+- id: qwen2-audio-compared-qwen3-asr
+  from: qwen2-audio-model
+  to: qwen-asr
+  kind: compared-with
+  explanation: Qwen2-Audio 面向多种音频理解和语音交互，Qwen3-ASR 重点是语音转写；应分开评估任务与输出。
+  sources:
+    - qwen2-audio-paper
+    - qwen-asr-paper
+- id: qwen2-vl-compared-first
+  from: qwen2-vl-model
+  to: qwen-vl-first-model
+  kind: compared-with
+  explanation: 第一代 Qwen-VL 使用固定长度的视觉适配器输出，Qwen2-VL 使用动态分辨率与多模态位置编码。
+  sources:
+    - qwen1-vl-paper
+    - qwen2-vl-paper
+- id: qwen2-vl-compared-25-vl
+  from: qwen2-vl-model
+  to: qwen-vl
+  kind: compared-with
+  explanation: Qwen2.5-VL 延续视觉语言路线并改进视觉计算与视频时间建模，具体配置按报告区分。
+  sources:
+    - qwen2-vl-paper
+    - qwen-vl-paper
+- id: qwen25-coder-compared-codeqwen15
+  from: qwen25-coder-model
+  to: codeqwen15-model
+  kind: compared-with
+  explanation: 两者是 Qwen 代码分支不同代际；Qwen2.5-Coder 报告进一步介绍文件级、仓库级与 FIM 训练。
+  sources:
+    - codeqwen15-card
+    - qwen25-coder-paper
+- id: qwen25-coder-uses-next-token
+  from: qwen25-coder-model
+  to: next-token
+  kind: uses
+  explanation: Qwen2.5-Coder 在文件级预训练中使用下一 token 预测与中间补全目标。
+  sources:
+    - qwen25-coder-paper
+- id: qwen3-coder-next-extends-next
+  from: qwen3-coder-next-model
+  to: qwen-next
+  kind: extends
+  explanation: Qwen3-Coder-Next 从 Qwen3-Next-80B-A3B-Base 出发，进一步针对代码和工具交互进行训练。
+  sources:
+    - qwen-coder-next-paper
+    - qwen-coder-next-card
+- id: qwen3-coder-compared-coder-next
+  from: qwen3-coder-model
+  to: qwen3-coder-next-model
+  kind: compared-with
+  explanation: 两个检查点使用不同参数规模和模型结构，均针对代码与工具交互训练。
+  sources:
+    - qwen3-coder-480-card
+    - qwen-coder-next-card
+
+- id: grpo-before-ppo
+  from: grpo
+  to: ppo
+  kind: prerequisite
+  explanation: 先理解 PPO 的策略优化与裁剪目标，再比较 GRPO 的组内优势估计。
+  sources:
+    - ppo-paper
+
+- id: quantization-before-lora
+  from: quantization
+  to: lora
+  kind: prerequisite
+  explanation: 先理解 LoRA 的低秩适配，再区分 QLoRA 中量化基座与可训练适配器。
+  sources:
+    - qlora-paper
+
+- id: rloo-before-grpo
+  from: rloo
+  to: grpo
+  kind: compared-with
+  explanation: 留一基线与组内标准化都是同题多答的比较方式，但完整目标不同。
+  sources:
+    - rloo-paper
+    - grpo-paper
+- id: dapo-before-grpo
+  from: dapo
+  to: grpo
+  kind: prerequisite
+  explanation: 先理解组内相对优势，再比较 DAPO 的采样和长度处理。
+  sources:
+    - dapo-paper
+
+- id: qwen3-reranker-embedding
+  from: qwen3-reranker-model
+  to: qwen3-embedding-model
+  kind: compared-with
+  explanation: 向量模型先召回候选，重排模型再逐对评分；两者使用独立权重。
+  sources: [qwen3-embedding-paper]
+
+- id: qwen3-vl-reranker-embedding
+  from: qwen3-vl-reranker-model
+  to: qwen3-vl-embedding-model
+  kind: compared-with
+  explanation: 多模态向量模型负责召回，重排模型逐对复核候选。
+  sources: [qwen3-vl-embedding-paper]
+
+- id: qwen3-aligner-asr
+  from: qwen3-forcedaligner-model
+  to: qwen-asr
+  kind: compared-with
+  explanation: 语音识别生成文字；强制对齐给已知文字定位时间。
+  sources: [qwen-asr-paper]
+
+- id: kto-compared-with-dpo
+  from: kto
+  to: dpo
+  kind: compared-with
+  explanation: KTO 可利用单条正负反馈，经典 DPO 使用同题优劣回答对。
+  sources: [kto-paper, dpo-paper]
+- id: qwen25-1m-compared-with-qwen25
+  from: qwen25-1m-model
+  to: qwen25-model
+  kind: compared-with
+  explanation: 1M 版本在 Qwen2.5 基础上扩展长上下文训练并配合推理方案。
+  sources: [qwen25-1m-paper, qwen25-1m-release]
+
+- id: r1-0528-compared-r1
+  from: deepseek-r1-0528-model
+  to: deepseek-r1
+  kind: compared-with
+  explanation: 0528 是 R1 的独立更新权重；比较时需区分公开训练细节和评测预算。
+  sources: [deepseek-r1-0528-card, r1-paper]
+- id: qwen25-prm-compared-math
+  from: qwen25-math-prm-model
+  to: qwen25-math-model
+  kind: compared-with
+  explanation: Math-Instruct 生成解答，过程奖励模型给步骤评分；两者权重与用途不同。
+  sources: [qwen25-math-prm-release]
+- id: glm-image-compared-glm-v
+  from: glm-image-model
+  to: glm-v-model
+  kind: compared-with
+  explanation: GLM-Image 生成或编辑图片；GLM-V 面向视觉理解，任务与输出不同。
+  sources: [glm-image-release]
+
+- id: deepseek-v3-0324-compared-v3
+  from: deepseek-v3-0324-model
+  to: deepseek-v3
+  kind: compared-with
+  explanation: 0324 是 V3 的更新权重；初代训练报告不能替代更新版的完整配方。
+  sources: [deepseek-v3-0324-card, v3-paper]
+
+- id: qwen-math-rm-compared-prm
+  from: qwen25-math-rm-model
+  to: qwen25-math-prm-model
+  kind: compared-with
+  explanation: 结果奖励模型给完整解答评分，过程奖励模型尝试给每一步反馈。
+  sources: [qwen25-math-rm-card, qwen25-math-prm-release]
+- id: qvq-compared-qwen2-vl
+  from: qvq-72b-preview-model
+  to: qwen2-vl-model
+  kind: compared-with
+  explanation: QVQ 是以 Qwen2-VL 为基础的视觉推理预览权重；具体能力和使用限制按模型卡区分。
+  sources: [qvq-preview-release, qvq-preview-card]
+- id: deepseek-v25-compared-v2
+  from: deepseek-v25-model
+  to: deepseek-v2-model
+  kind: compared-with
+  explanation: V2.5 结合 V2 对话和 Coder-V2 代码能力；更新训练细节未全部披露。
+  sources: [deepseek-v25-card, deepseek-v2-paper]
+- id: glm-tts-compared-qwen-tts
+  from: glm-tts-model
+  to: qwen-tts
+  kind: compared-with
+  explanation: 两者都是语音生成模型，但语音表示、声学生成和评测条件不同。
+  sources: [glm-tts-paper]
+
+- id: chatglm2-before-chatglm
+  from: chatglm2-model
+  to: chatglm
+  kind: prerequisite
+  explanation: 了解初代对话模型后，再比较二代的缓存与上下文改进。
+  sources:
+    - chatglm2-official
+- id: chatglm3-before-chatglm2
+  from: chatglm3-model
+  to: chatglm2-model
+  kind: prerequisite
+  explanation: 了解二代骨干，再看三代的对话格式和工具调用。
+  sources:
+    - chatglm3-prompt
+
+- id: glm130-before-original
+  from: glm130-model
+  to: glm-original-model
+  kind: prerequisite
+  explanation: 先理解 GLM 的自回归填空和混合注意力，再看 GLM-130B 的规模与训练。
+  sources: [glm-paper, glm130-paper]
+- id: glm4-before-chatglm3
+  from: glm4-9b-model
+  to: chatglm3-model
+  kind: prerequisite
+  explanation: 从 ChatGLM3 的文本生成与对话格式出发，比较 GLM-4-9B 的结构和工具使用。
+  sources: [chatglm-paper, glm4-card]
+- id: minimax-m1-uses-cispo
+  from: minimax-m1-model
+  to: cispo
+  kind: uses
+  explanation: MiniMax-M1 技术报告介绍采用 CISPO 进行策略优化。
+  sources:
+    - minimax-m1-paper
+- id: minimax-m1-before-moe
+  from: minimax-m1-model
+  to: moe
+  kind: prerequisite
+  explanation: 先理解专家路由，再阅读 M1 的混合注意力与训练。
+  sources:
+    - minimax-m1-paper
+
+- id: simpo-compared-with-dpo
+  from: simpo
+  to: dpo
+  kind: compared-with
+  explanation: SimPO 比较长度归一化的模型分数，经典 DPO 比较相对参考模型的变化。
+  sources: [simpo-paper, dpo-paper]
+
+- id: orpo-compared-with-dpo
+  from: orpo
+  to: dpo
+  kind: compared-with
+  explanation: ORPO 将优选回答的监督损失与赔率比偏好损失结合，经典 DPO 使用参考模型。
+  sources: [orpo-paper, dpo-paper]
+- id: qwen3-omni-captioner-extends-qwen3-omni
+  from: qwen3-omni-captioner-model
+  to: qwen3-omni
+  kind: extends
+  explanation: Captioner 从 Qwen3-Omni Instruct 微调，用于音频描述；只接收一段音频并输出文字。
+  sources:
+    - qwen3-omni-captioner-card
+    - qwen3-omni-paper
+- id: qwen3-omni-captioner-compared-with-asr
+  from: qwen3-omni-captioner-model
+  to: qwen-asr
+  kind: compared-with
+  explanation: Captioner 描述声音场景，ASR 主要转写说话内容；两者任务和评测重点不同。
+  sources:
+    - qwen3-omni-captioner-card
+    - qwen-asr-paper
+- id: deepseek-vl-first-compared-with-vl2
+  from: deepseek-vl-first-model
+  to: deepseek-vl2-model
+  kind: compared-with
+  explanation: 两代模型分别采用不同的视觉编码与语言骨干，比较结构与训练设计。
+  sources: [deepseek-vl-first-paper, deepseek-vl2-paper]
+- id: minimax-vl01-extends-text01
+  from: minimax-vl01-model
+  to: minimax-text-01-model
+  kind: extends
+  explanation: MiniMax-VL-01 在同系列语言模型基础上加入视觉编码和图文训练。
+  sources: [minimax-01-paper]
+- id: glm45v-compared-with-glm45
+  from: glm45v-model
+  to: glm45-model
+  kind: compared-with
+  explanation: 视觉模型和文本模型任务及参数规模不同，评测应分别核对。
+  sources: [glm45v-paper, glm45-paper]

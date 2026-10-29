@@ -1,0 +1,23 @@
+---
+import DefaultMarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
+import { getCollection } from 'astro:content';
+import { insertArticleFigures } from '../build/insert-article-figures';
+
+// The interactive reader uses the same guide, but renders its figures as React components.
+const modelId = Astro.locals.starlightRoute.entry.data.atlas.id;
+const [guides, figures] = await Promise.all([getCollection('guides'), getCollection('figures')]);
+const guide = guides.find((item) => item.data.model === modelId)?.data;
+const resources = (guide?.figures ?? []).map((item) => ({
+  heading: item.heading,
+  figure: figures.find((figure) => figure.id === item.figure)!.data,
+}));
+const html = insertArticleFigures(
+  await Astro.slots.render('default'),
+  resources,
+  import.meta.env.BASE_URL,
+);
+---
+
+<DefaultMarkdownContent>
+  <Fragment set:html={html} />
+</DefaultMarkdownContent>

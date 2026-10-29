@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">GLM-Image 的两阶段生成流程</title>
+<desc id="desc">文本及可选参考图经过自回归生成器得到视觉 token，扩散解码器结合字形条件生成图片。</desc>
+<rect width="1200" height="460" rx="24" fill="#f6faf9"/>
+<g font-family="system-ui, sans-serif" fill="#203548">
+<text x="48" y="55" font-size="25" font-weight="700">GLM-Image：两部分协作生成图片</text>
+<text x="48" y="86" font-size="16" fill="#567080">示意图：箭头表示主要信息流，并非完整计算图</text>
+<g fill="#fff" stroke="#bdd4d0" stroke-width="2"><rect x="45" y="145" width="215" height="125" rx="14"/><rect x="335" y="145" width="250" height="125" rx="14"/><rect x="660" y="145" width="250" height="125" rx="14"/><rect x="985" y="145" width="170" height="125" rx="14"/><rect x="675" y="325" width="220" height="65" rx="12"/></g>
+<g font-size="19" font-weight="700"><text x="72" y="185">文字提示</text><text x="72" y="221">可选参考图片</text><text x="363" y="185">自回归生成器 · 9B</text><text x="688" y="185">扩散解码器 · 7B</text><text x="1021" y="195">生成图片</text><text x="706" y="366">字形文字条件</text></g>
+<g font-size="15" fill="#59717c"><text x="363" y="220">生成离散视觉 token</text><text x="688" y="220">根据条件生成图像细节</text><text x="1021" y="225">文生图 / 编辑</text></g>
+<g stroke="#398579" stroke-width="3" fill="none"><path d="M260 207 H323"/><path d="M585 207 H648"/><path d="M910 207 H973"/><path d="M785 325 V282"/><path d="M152 270 V300 H640 V255 H650"/></g>
+<g fill="#398579"><path d="M323 207 l-10 -6 v12z"/><path d="M648 207 l-10 -6 v12z"/><path d="M973 207 l-10 -6 v12z"/><path d="M785 282 l-6 10 h12z"/><path d="M650 255 l-10 -6 v12z"/></g>
+<text x="210" y="324" font-size="15" fill="#59717c">编辑参考图还提供视觉条件</text>
+<text x="48" y="432" font-size="15" fill="#59717c">依据官方模型卡绘制；视觉 token 是压缩表示，文字结果仍需核对。</text>
+</g></svg>

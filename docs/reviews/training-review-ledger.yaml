@@ -1,0 +1,267 @@
+version: 1
+dimensions:
+  - principle
+  - practice
+  - figures
+  - community
+entries:
+  - id: cispo
+    title: CISPO · 裁剪采样权重
+    article: src/content/docs/training/cispo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/cispo-full-review-20261029.md
+      practice: docs/reviews/cispo-full-review-20261029.md
+      figures: docs/reviews/cispo-full-review-20261029.md
+      community: docs/reviews/cispo-full-review-20261029.md
+  - id: contrastive-learning
+    title: 对比学习
+    article: src/content/docs/training/contrastive-learning.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/contrastive-learning-full-review-20261029.md
+      practice: docs/reviews/contrastive-learning-full-review-20261029.md
+      figures: docs/reviews/contrastive-learning-full-review-20261029.md
+      community: docs/reviews/contrastive-learning-full-review-20261029.md
+  - id: dapo
+    title: DAPO · 长推理训练的几项改进
+    article: src/content/docs/training/dapo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/dapo-full-review-20261029.md
+      practice: docs/reviews/dapo-full-review-20261029.md
+      figures: docs/reviews/dapo-full-review-20261029.md
+      community: docs/reviews/dapo-full-review-20261029.md
+  - id: data-quality
+    title: 数据质量与切分
+    article: src/content/docs/training/data-quality.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/data-quality-full-review-20261029.md
+      practice: docs/reviews/data-quality-full-review-20261029.md
+      figures: docs/reviews/data-quality-full-review-20261029.md
+      community: docs/reviews/data-quality-full-review-20261029.md
+  - id: diffusion-flow
+    title: 扩散与流匹配
+    article: src/content/docs/training/diffusion-flow.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/diffusion-flow-full-review-20261029.md
+      practice: docs/reviews/diffusion-flow-full-review-20261029.md
+      figures: docs/reviews/diffusion-flow-full-review-20261029.md
+      community: docs/reviews/diffusion-flow-full-review-20261029.md
+  - id: distillation
+    title: 知识蒸馏
+    article: src/content/docs/training/distillation.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/distillation-full-review-20261029.md
+      practice: docs/reviews/distillation-full-review-20261029.md
+      figures: docs/reviews/distillation-full-review-20261029.md
+      community: docs/reviews/distillation-full-review-20261029.md
+  - id: dpo
+    title: DPO
+    article: src/content/docs/training/dpo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/dpo-full-review-20261029.md
+      practice: docs/reviews/dpo-full-review-20261029.md
+      figures: docs/reviews/dpo-full-review-20261029.md
+      community: docs/reviews/dpo-full-review-20261029.md
+  - id: grpo
+    title: GRPO
+    article: src/content/docs/training/grpo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/grpo-full-review-20261029.md
+      practice: docs/reviews/grpo-full-review-20261029.md
+      figures: docs/reviews/grpo-full-review-20261029.md
+      community: docs/reviews/grpo-full-review-20261029.md
+  - id: gspo
+    title: GSPO · 按序列优化
+    article: src/content/docs/training/gspo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/gspo-full-review-20261029.md
+      practice: docs/reviews/gspo-full-review-20261029.md
+      figures: docs/reviews/gspo-full-review-20261029.md
+      community: docs/reviews/gspo-full-review-20261029.md
+  - id: kto
+    title: KTO · 单条反馈也能做偏好优化
+    article: src/content/docs/training/kto.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/kto-full-review-20261029.md
+      practice: docs/reviews/kto-full-review-20261029.md
+      figures: docs/reviews/kto-full-review-20261029.md
+      community: docs/reviews/kto-full-review-20261029.md
+  - id: lora
+    title: LoRA
+    article: src/content/docs/training/lora.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/lora-full-review-20261029.md
+      practice: docs/reviews/lora-full-review-20261029.md
+      figures: docs/reviews/lora-full-review-20261029.md
+      community: docs/reviews/lora-full-review-20261029.md
+  - id: orpo
+    title: ORPO · 示范与偏好一起学习
+    article: src/content/docs/training/orpo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/orpo-full-review-20261029.md
+      practice: docs/reviews/orpo-full-review-20261029.md
+      figures: docs/reviews/orpo-full-review-20261029.md
+      community: docs/reviews/orpo-full-review-20261029.md
+  - id: training-pipeline
+    title: 训练全流程：预训练到后训练
+    article: src/content/docs/training/pipeline.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/training-pipeline-full-review-20261029.md
+      practice: docs/reviews/training-pipeline-full-review-20261029.md
+      figures: docs/reviews/training-pipeline-full-review-20261029.md
+      community: docs/reviews/training-pipeline-full-review-20261029.md
+  - id: ppo
+    title: PPO · 近端策略优化
+    article: src/content/docs/training/ppo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/ppo-full-review-20261029.md
+      practice: docs/reviews/ppo-full-review-20261029.md
+      figures: docs/reviews/ppo-full-review-20261029.md
+      community: docs/reviews/ppo-full-review-20261029.md
+  - id: quantization
+    title: 量化 · 用更少的位数表示模型
+    article: src/content/docs/training/quantization.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/quantization-full-review-20261029.md
+      practice: docs/reviews/quantization-full-review-20261029.md
+      figures: docs/reviews/quantization-full-review-20261029.md
+      community: docs/reviews/quantization-full-review-20261029.md
+  - id: rlhf
+    title: RLHF
+    article: src/content/docs/training/rlhf.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/rlhf-full-review-20261029.md
+      practice: docs/reviews/rlhf-full-review-20261029.md
+      figures: docs/reviews/rlhf-full-review-20261029.md
+      community: docs/reviews/rlhf-full-review-20261029.md
+  - id: rloo
+    title: REINFORCE 与 RLOO
+    article: src/content/docs/training/rloo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/rloo-full-review-20261029.md
+      practice: docs/reviews/rloo-full-review-20261029.md
+      figures: docs/reviews/rloo-full-review-20261029.md
+      community: docs/reviews/rloo-full-review-20261029.md
+  - id: rlvr
+    title: RLVR
+    article: src/content/docs/training/rlvr.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/rlvr-full-review-20261029.md
+      practice: docs/reviews/rlvr-full-review-20261029.md
+      figures: docs/reviews/rlvr-full-review-20261029.md
+      community: docs/reviews/rlvr-full-review-20261029.md
+  - id: sft
+    title: SFT · 示范学习
+    article: src/content/docs/training/sft.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/sft-full-review-20261029.md
+      practice: docs/reviews/sft-full-review-20261029.md
+      figures: docs/reviews/sft-full-review-20261029.md
+      community: docs/reviews/sft-full-review-20261029.md
+  - id: simpo
+    title: SimPO · 不使用参考模型的偏好优化
+    article: src/content/docs/training/simpo.md
+    review:
+      principle: complete
+      practice: complete
+      figures: complete
+      community: complete
+    completedEvidence:
+      principle: docs/reviews/simpo-full-review-20261029.md
+      practice: docs/reviews/simpo-full-review-20261029.md
+      figures: docs/reviews/simpo-full-review-20261029.md
+      community: docs/reviews/simpo-full-review-20261029.md

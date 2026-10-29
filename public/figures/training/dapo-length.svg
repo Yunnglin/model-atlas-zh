@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">DAPO 超长回答：长度奖励与截断掩码</title>
+  <desc id="desc">论文实验期望长度为 16384 token，之后有 4096 token 的软惩罚缓冲区，上限为 20480。完整回答长度为 18432 时处在缓冲区中点，长度奖励为负 0.5。是否因真正截断而屏蔽策略损失是另一个操作，不能仅因到达上限断定截断。</desc>
+  <rect width="960" height="560" rx="18" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#173b3d">
+    <text x="34" y="45" font-size="25" font-weight="700">回答太长：奖励调整与截断处理</text>
+    <text x="34" y="77" font-size="16" fill="#486460">论文实验配置 · 横轴仅展示缓冲区，不从零开始</text>
+    <rect x="34" y="105" width="892" height="252" rx="14" fill="#fff" stroke="#a8c7c4" stroke-width="2"/>
+    <text x="58" y="139" font-size="18" font-weight="700">① 按回答长度调整奖励</text>
+    <text x="58" y="167" font-size="15" fill="#486460">期望长度以内：惩罚 0；进入缓冲区后逐渐降低</text>
+    <rect x="126" y="199" width="708" height="30" rx="15" fill="#e8f1ee"/>
+    <rect x="126" y="199" width="708" height="30" rx="15" fill="#bbd9cf"/>
+    <line x1="126" y1="187" x2="126" y2="240" stroke="#477f73" stroke-width="2"/>
+    <line x1="480" y1="181" x2="480" y2="245" stroke="#9a5b3b" stroke-width="3"/>
+    <line x1="834" y1="187" x2="834" y2="240" stroke="#477f73" stroke-width="2"/>
+    <circle cx="480" cy="214" r="9" fill="#b66a44" stroke="#fff" stroke-width="3"/>
+    <g text-anchor="middle">
+      <text x="126" y="270" font-size="17" font-weight="700">16,384</text>
+      <text x="126" y="294" font-size="14" fill="#486460">缓冲起点</text>
+      <text x="480" y="270" font-size="17" font-weight="700">18,432</text>
+      <text x="480" y="294" font-size="14" fill="#486460">完整回答示例</text>
+      <text x="834" y="270" font-size="17" font-weight="700">20,480</text>
+      <text x="834" y="294" font-size="14" fill="#486460">生成长度上限</text>
+    </g>
+    <text x="480" y="329" text-anchor="middle" font-size="17" font-weight="700">超过 2,048 / 缓冲 4,096 = 长度奖励 −0.5</text>
+    <rect x="34" y="379" width="892" height="122" rx="14" fill="#fff5e8" stroke="#dab986" stroke-width="2"/>
+    <text x="58" y="414" font-size="18" font-weight="700">② 另看是否真正截断，再处理策略损失</text>
+    <text x="58" y="444" font-size="16">论文叠加的截断过滤：被截断样本的策略损失被屏蔽。</text>
+    <text x="58" y="472" font-size="16">到达长度上限不必然等于截断；应核对结束标记与停止原因。</text>
+    <text x="34" y="535" font-size="15" fill="#486460">示意：长度奖励加到正确性奖励上；掩码的具体处理以实现为准。</text>
+  </g>
+</svg>

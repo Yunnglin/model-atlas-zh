@@ -1,5 +1,5 @@
 import type { KnowledgeBase } from '../../core/schemas/knowledge';
-import { isModel } from '../../core/projections/model-map';
+import { isModel } from '../../core/queries/is-model';
 import { visitSelection, type AtlasSelection } from './state';
 
 /** Old tree URLs migrate to a model, without replaying their obsolete expansion state. */

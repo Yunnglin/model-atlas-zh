@@ -14,7 +14,38 @@ export function AtlasSearch({
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
-  const results = useMemo(() => searchNodes(data, query).slice(0, 7), [data, query]);
+  const results = useMemo(() => {
+    const normalized = query.trim().toLocaleLowerCase();
+    if (!normalized) return [];
+    const terms = normalized.split(/\s+/);
+    const versions = data.timeline
+      .filter((item) => {
+        const name = `${item.title} ${item.id}`.toLocaleLowerCase();
+        return terms.every((term) => name.includes(term));
+      })
+      .map((item) => {
+        const article = data.nodes.find((node) => node.id === item.article)!;
+        const name = item.title.toLocaleLowerCase();
+        return {
+          key: `version-${item.id}`,
+          id: item.article,
+          title: item.title,
+          purpose: item.title === article.title ? article.purpose : '查看系列或分支讲解',
+          rank: name === normalized ? 0 : name.startsWith(normalized) ? 1 : 2,
+        };
+      });
+    const titles = new Set(versions.map((item) => item.title.toLocaleLowerCase()));
+    const nodes = searchNodes(data, query)
+      .filter((node) => !titles.has(node.title.toLocaleLowerCase()))
+      .map((node) => ({
+        key: `node-${node.id}`,
+        id: node.id,
+        title: node.title,
+        purpose: node.purpose,
+        rank: node.title.toLocaleLowerCase() === normalized ? 0 : 3,
+      }));
+    return [...versions, ...nodes].sort((a, b) => a.rank - b.rank).slice(0, 7);
+  }, [data, query]);
   const expanded = open && !!query.trim();
   function choose(id: string) {
     onVisit(id);
@@ -36,9 +67,9 @@ export function AtlasSearch({
         aria-controls="knowledge-search-results"
         aria-autocomplete="list"
         aria-activedescendant={
-          expanded && results[active] ? `result-${results[active]!.id}` : undefined
+          expanded && results[active] ? `result-${results[active]!.key}` : undefined
         }
-        placeholder="搜索知识点…"
+        placeholder="搜索模型或知识点…"
         value={query}
         onFocus={() => setOpen(true)}
         onChange={(event) => {
@@ -75,8 +106,8 @@ export function AtlasSearch({
           {results.length ? (
             results.map((node, index) => (
               <div
-                key={node.id}
-                id={`result-${node.id}`}
+                key={node.key}
+                id={`result-${node.key}`}
                 role="option"
                 aria-selected={index === active}
                 onMouseDown={(event) => event.preventDefault()}

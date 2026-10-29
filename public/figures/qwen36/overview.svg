@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="450" viewBox="0 0 1060 450" role="img" aria-labelledby="title desc">
+  <title id="title">Qwen3.6-27B 的输入、语言骨干和工具交互</title>
+  <desc id="desc">截图经视觉编码器，文字经文本处理后共同进入 64 层语言骨干。语言骨干以三层 Gated DeltaNet 和一层 Gated Attention，各层包含前馈网络，作为一组重复 16 次。模型输出文本或工具请求，外部工具执行后把结果送回语言骨干。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#168779"/></marker></defs>
+  <rect width="1060" height="450" rx="18" fill="#f4f8f7"/>
+  <g font-family="system-ui, sans-serif" fill="#17364b">
+    <text x="30" y="39" font-size="21" font-weight="700">Qwen3.6-27B：视觉输入、语言骨干与工具交互</text>
+    <text x="30" y="66" font-size="14" fill="#52716d">教学简图：突出语言骨干的层次；工具由外部系统执行。</text>
+    <g fill="#fff" stroke="#9ecac3" stroke-width="2">
+      <rect x="28" y="101" width="185" height="67" rx="10"/><rect x="28" y="225" width="185" height="67" rx="10"/>
+      <rect x="278" y="90" width="480" height="235" rx="14"/>
+      <rect x="824" y="112" width="205" height="68" rx="10"/><rect x="824" y="252" width="205" height="68" rx="10"/>
+    </g>
+    <g text-anchor="middle"><text x="120" y="127" font-size="16" font-weight="700">截图 / 图像</text><text x="120" y="150" font-size="14">视觉编码器</text>
+      <text x="120" y="251" font-size="16" font-weight="700">问题 / 历史消息</text><text x="120" y="274" font-size="14">文本处理</text>
+      <text x="518" y="119" font-size="18" font-weight="700">语言骨干：64 层，共 16 组</text>
+      <text x="926" y="140" font-size="16" font-weight="700">文本或工具请求</text><text x="926" y="162" font-size="13">模型生成</text>
+      <text x="926" y="280" font-size="16" font-weight="700">外部工具</text><text x="926" y="302" font-size="13">读取、运行并返回结果</text></g>
+    <g fill="#e4f1ef" stroke="#b8d7d1"><rect x="298" y="143" width="205" height="69" rx="9"/><rect x="533" y="143" width="205" height="69" rx="9"/></g>
+    <g text-anchor="middle"><text x="400" y="169" font-size="15" font-weight="700">3 层 Gated DeltaNet</text><text x="400" y="192" font-size="13">每层搭配 FFN</text><text x="635" y="169" font-size="15" font-weight="700">1 层 Gated Attention</text><text x="635" y="192" font-size="13">搭配 FFN</text>
+      <text x="518" y="262" font-size="15">三层 + 一层 = 一组，顺序重复 16 次</text><text x="518" y="287" font-size="13" fill="#52716d">省略层内投影、归一化和视觉预处理细节</text></g>
+    <g fill="none" stroke="#168779" stroke-width="2.5" marker-end="url(#arrow)"><path d="M213 135H248V180H278"/><path d="M213 258H248V220H278"/><path d="M503 178H531"/><path d="M758 146H824"/><path d="M926 180V250"/><path d="M824 286H792V356H518V327" stroke-dasharray="6 4"/></g>
+    <text x="940" y="220" font-size="12" fill="#52716d">需要调用时</text>
+    <text x="663" y="379" font-size="14" text-anchor="middle" fill="#52716d">工具结果作为后续上下文返回</text>
+    <text x="30" y="421" font-size="14" fill="#52716d">依据官方模型卡绘制；视觉编码器内部和具体工具协议未展开。</text>
+  </g>
+</svg>

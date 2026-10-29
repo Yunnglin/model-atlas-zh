@@ -1,6 +1,6 @@
 import { createStore } from 'zustand/vanilla';
 import type { KnowledgeBase } from '../../core/schemas/knowledge';
-import { isModel } from '../../core/projections/model-map';
+import { isModel } from '../../core/queries/is-model';
 
 export interface AtlasSelection {
   model?: string;

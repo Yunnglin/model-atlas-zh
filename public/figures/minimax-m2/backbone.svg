@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 260" role="img" aria-labelledby="title desc">
+<title id="title">MiniMax-M2 系列的语言模型主干</title>
+<desc id="desc">输入文字经 token 嵌入后，穿过 62 层解码器。每层依次包含因果自注意力与稀疏专家前馈网络，最后预测下一个 token。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#407d73"/></marker></defs>
+<rect width="1100" height="260" rx="16" fill="#f3f8f6"/>
+<g font-family="system-ui, sans-serif" fill="#173b39"><text x="30" y="38" font-size="21" font-weight="700">语言模型主干：每个 token 经过 62 层</text>
+<g stroke="#a1c4bb" fill="#fff"><rect x="30" y="85" width="150" height="84" rx="10"/><rect x="235" y="85" width="280" height="84" rx="10"/><rect x="575" y="85" width="270" height="84" rx="10"/><rect x="900" y="85" width="170" height="84" rx="10"/></g>
+<g text-anchor="middle"><text x="105" y="118" font-size="17">输入与嵌入</text><text x="105" y="144" font-size="13">文本 → token</text><text x="375" y="115" font-size="17">因果自注意力</text><text x="375" y="142" font-size="13">48 个查询头 / 8 个键值头</text><text x="710" y="115" font-size="17">稀疏专家前馈网络</text><text x="710" y="142" font-size="13">256 个专家，每 token 选 8 个</text><text x="985" y="118" font-size="17">预测下个 token</text><text x="985" y="144" font-size="13">逐步生成回答</text></g>
+<g fill="none" stroke="#407d73" stroke-width="2" marker-end="url(#a)"><path d="M180 127H225"/><path d="M515 127H565"/><path d="M845 127H890"/></g>
+<text x="30" y="225" font-size="13" fill="#526b65">教学示意：中间两块构成每层的主要计算，省略归一化、残差、路由及 MTP 细节。</text></g></svg>

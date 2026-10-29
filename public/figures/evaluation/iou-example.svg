@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" role="img" aria-labelledby="title desc">
+<title id="title">IoU 交并比示例</title><desc id="desc">两个相同高度的长方形分别表示预测与标注，面积均为 8，重叠为 6，并集为 10，因此 IoU 为 0.6。</desc>
+<rect width="900" height="260" rx="18" fill="#f5f9f8"/><g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="42" font-size="23" font-weight="700">IoU：重叠区域占整个覆盖区域的多少</text>
+<rect x="70" y="95" width="160" height="80" fill="#55a9a2" fill-opacity="0.48" stroke="#087b7c" stroke-width="2"/><rect x="110" y="95" width="160" height="80" fill="#e7a969" fill-opacity="0.48" stroke="#b57535" stroke-width="2"/>
+<g font-size="18"><text x="70" y="204">预测区域 A</text><text x="205" y="204">标注区域 B</text><text x="375" y="109">预测面积 8，标注面积 8</text><text x="375" y="145">重叠面积 6，并集面积 10</text><text x="375" y="181">IoU = 6 ÷ 10 = 0.6</text></g>
+<text x="30" y="238" font-size="15" fill="#526b72">示意中以相同面积单位计数；真实分割通常按像素计算。</text></g></svg>

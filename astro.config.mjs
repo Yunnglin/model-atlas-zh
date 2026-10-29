@@ -21,6 +21,7 @@ export default defineConfig({
       customCss: ['./src/styles/docs.css', 'katex/dist/katex.min.css'],
       components: {
         PageTitle: './src/components/ArticleTitle.astro',
+        MarkdownContent: './src/components/MarkdownContent.astro',
         Search: './src/components/Search.astro',
       },
       sidebar: [

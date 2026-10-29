@@ -11,6 +11,7 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
     paths: new Set<string>(),
     figures: new Set<string>(),
     guides: new Set<string>(),
+    timeline: new Set<string>(),
   };
   for (const key of Object.keys(sets) as (keyof typeof sets)[]) {
     for (const item of data[key]) {
@@ -30,6 +31,47 @@ export function validateKnowledge(input: unknown): KnowledgeBase {
       }
       for (const stage of stages) references(stage.nodes, sets.nodes, `${node.id}/${stage.stage}`);
     } else if (node.caseStages) errors.push(`${node.id}: only cases may define case stages`);
+  }
+  for (const model of data.timeline) {
+    references([model.article], sets.nodes, model.id);
+    references(model.sources, sets.sources, model.id);
+    if (model.dateSource) references([model.dateSource], sets.sources, model.id);
+    if (model.month && (!model.year || !model.dateBasis || !model.dateSource))
+      errors.push(`${model.id}: month requires year, date basis and source`);
+    if (!model.month && (model.dateBasis || model.dateSource))
+      errors.push(`${model.id}: date basis and source require a month`);
+    const article = data.nodes.find((node) => node.id === model.article);
+    if (article && article.kind !== 'model' && article.id !== 'transformer')
+      errors.push(`${model.id}: timeline article must be a model`);
+    if (new Set(model.modalities).size !== model.modalities.length)
+      errors.push(`${model.id}: duplicate modality`);
+    if (model.seriesPrevious) {
+      references([model.seriesPrevious], sets.timeline, model.id);
+      const previous = data.timeline.find((item) => item.id === model.seriesPrevious);
+      if (previous && (!model.family || model.family !== previous.family))
+        errors.push(`${model.id}: previous entry must share its family`);
+      if (previous && (previous.year ?? 9999) > (model.year ?? 9999))
+        errors.push(`${model.id}: previous entry is later than this model`);
+      if (
+        previous?.year === model.year &&
+        previous?.month &&
+        model.month &&
+        previous.month > model.month
+      )
+        errors.push(`${model.id}: previous entry is later than this model`);
+    }
+  }
+  for (const model of data.timeline) {
+    const seen = new Set<string>();
+    let current: typeof model | undefined = model;
+    while (current) {
+      if (seen.has(current.id)) {
+        errors.push(`${model.id}: cycle in series order`);
+        break;
+      }
+      seen.add(current.id);
+      current = data.timeline.find((item) => item.id === current?.seriesPrevious);
+    }
   }
   for (const relation of data.relations) {
     references([relation.from, relation.to], sets.nodes, relation.id);

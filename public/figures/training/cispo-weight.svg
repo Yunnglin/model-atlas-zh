@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+<title id="title">CISPO 裁剪采样权重</title><desc id="desc">旧策略概率 0.1、当前策略概率 0.3，概率比为 3。以 2 为示例上限，裁剪后的权重为 2，还需乘以优势值。</desc>
+<rect width="960" height="240" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui, sans-serif" fill="#183b45"><text x="32" y="44" font-size="24" font-weight="700">CISPO：先限制权重，再用于更新</text>
+<g fill="#fff" stroke="#bad8d0"><rect x="32" y="70" width="250" height="96" rx="10"/><rect x="355" y="70" width="250" height="96" rx="10"/><rect x="678" y="70" width="250" height="96" rx="10"/></g>
+<g font-size="18"><text x="50" y="104">旧概率 0.1</text><text x="50" y="137">新概率 0.3</text><text x="375" y="104">新旧比率</text><text x="375" y="137">0.3 ÷ 0.1 = 3</text><text x="697" y="104">示例上限为 2</text><text x="697" y="137">裁剪权重 = 2</text></g>
+<path d="M296 118h43m-8-7 8 7-8 7M620 118h43m-8-7 8 7-8 7" fill="none" stroke="#547d7a" stroke-width="2"/><text x="32" y="208" font-size="15" fill="#526b72">教学例子：实际更新还受优势值、学习率和其他样本影响。</text></g></svg>

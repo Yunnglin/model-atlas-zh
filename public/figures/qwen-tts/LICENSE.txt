@@ -1,4 +1,4 @@
-Qwen Team — official technical-report figures
+Hangrui Hu et al. — Qwen3-TTS Technical Report figures
 Source: https://arxiv.org/html/2601.15621v1
 The corresponding report declares Creative Commons Attribution 4.0 International (CC BY 4.0).
 License: https://creativecommons.org/licenses/by/4.0/

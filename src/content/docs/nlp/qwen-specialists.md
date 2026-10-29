@@ -6,14 +6,12 @@ atlas:
   year: 2024
   featured: false
   aliases:
-    - Qwen2-Math
     - Qwen2.5-Math
     - QwQ
     - QwQ-32B
     - Qwen3-Embedding
     - Qwen3-Reranker
     - Qwen3Guard
-    - Qwen3-VL-Embedding
   purpose: 分清生成、检索和判别模型
   summary: 将 Math、QwQ、Embedding、Reranker 与 Guard 放回各自任务与训练目标。
   question: 为什么同属 Qwen，却不能都当成聊天模型调用？
@@ -38,14 +36,16 @@ atlas:
 
 ## 结构与数据流
 
-| 分支                         | 做什么                                   | 典型输出与学习重点                   |
-| ---------------------------- | ---------------------------------------- | ------------------------------------ |
-| Qwen2-Math／Qwen2.5-Math     | 数学专用模型，2.5 包括推理与工具辅助路线 | 解题文本；看数学数据、推理与结果验证 |
-| QwQ-32B-Preview → QwQ-32B    | 早于统一 Qwen3 主线的推理探索            | 较长思考；不是所有 Qwen3 的别名      |
-| Qwen3-Embedding              | 将文本变成检索用向量                     | 向量；不是直接给答案                 |
-| Qwen3-Reranker               | 进一步比较问题与候选材料的相关性         | 排序分数；开销与一次向量检索不同     |
-| Qwen3-VL-Embedding／Reranker | 对文字、图片等多模态材料检索与排序       | 多模态表示／相关性判断               |
-| Qwen3Guard Gen／Stream       | 生成式内容判断与流式检测                 | 安全类别等判别信息，按具体型号接口   |
+| 分支                                                                          | 做什么                                   | 典型输出与学习重点                   |
+| ----------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------ |
+| [Qwen2-Math](/nlp/qwen2-math-model/)／[Qwen2.5-Math](/nlp/qwen25-math-model/) | 数学专用模型，2.5 包括推理与工具辅助路线 | 解题文本；看数学数据、推理与结果验证 |
+| [Qwen2.5-Math-RM-72B](/nlp/qwen25-math-rm-model/)                             | 数学结果奖励模型                         | 整体评分；辅助筛选候选解答           |
+| [Qwen2.5-Math-PRM](/nlp/qwen25-math-prm-model/)                               | 检查数学推理步骤                         | 步骤评分；辅助筛选而非生成答案       |
+| QwQ-32B-Preview → QwQ-32B                                                     | 早于统一 Qwen3 主线的推理探索            | 较长思考；不是所有 Qwen3 的别名      |
+| Qwen3-Embedding                                                               | 将文本变成检索用向量                     | 向量；不是直接给答案                 |
+| Qwen3-Reranker                                                                | 进一步比较问题与候选材料的相关性         | 排序分数；开销与一次向量检索不同     |
+| [Qwen3-VL-Embedding／Reranker](/omni/qwen3-vl-embedding-model/)               | 对文字、图片等多模态材料检索与排序       | 多模态表示／相关性判断               |
+| Qwen3Guard Gen／Stream                                                        | 生成式内容判断与流式检测                 | 安全类别等判别信息，按具体型号接口   |
 
 Embedding 先从很多材料里召回，Reranker 再精排小批候选。Guard 检查风险，生成模型组织答案，它们可以在同一系统中合作，但各自需要独立评测。
 
@@ -95,4 +95,4 @@ Math／QwQ 则是生成答案的路线。例如看 3 箱乘 4 瓶：数学示范
 - [Qwen3-VL-Embedding 与 Reranker 官方实现](https://github.com/QwenLM/Qwen3-VL-Embedding)
 - [Qwen3Guard 官方实现](https://github.com/QwenLM/Qwen3Guard)
 
-资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-27。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

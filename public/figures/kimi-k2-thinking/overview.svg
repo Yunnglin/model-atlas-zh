@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Kimi K2 Thinking：模型推理与外部工具循环</title>
+  <desc id="desc">用户任务进入 Kimi K2 Thinking 的 MLA 与混合专家模型。模型可生成工具请求，外部执行器调用工具并返回结果，模型继续处理并给出最终回答。工具和执行权限由外部系统提供。</desc>
+  <rect width="1200" height="390" rx="18" fill="#f4f8f7"/>
+  <text x="36" y="43" font-family="sans-serif" font-size="23" font-weight="700" fill="#173b3d">Kimi K2 Thinking：推理与工具调用如何配合</text>
+  <g font-family="sans-serif" text-anchor="middle" fill="#173b3d">
+    <rect x="32" y="115" width="165" height="74" rx="10" fill="#fff" stroke="#a8c7c4"/>
+    <text x="114" y="146" font-size="17">用户任务</text><text x="114" y="169" font-size="13">问题与已有上下文</text>
+    <rect x="255" y="95" width="285" height="120" rx="12" fill="#dcefeb" stroke="#67a59c"/>
+    <text x="397" y="128" font-size="18" font-weight="700">Kimi K2 Thinking</text>
+    <text x="397" y="154" font-size="14">K2 系列结构：MLA + MoE</text><text x="397" y="180" font-size="14">推理后训练 · 生成工具请求</text>
+    <rect x="820" y="115" width="275" height="74" rx="10" fill="#fff" stroke="#a8c7c4"/>
+    <text x="957" y="146" font-size="17">外部执行器与工具</text><text x="957" y="169" font-size="13">搜索、运行代码，返回结果</text>
+    <rect x="32" y="284" width="165" height="64" rx="10" fill="#fff" stroke="#a8c7c4"/>
+    <text x="114" y="322" font-size="17">最终回答</text>
+    <text x="678" y="136" font-size="13">生成工具请求 →</text>
+    <text x="742" y="250" font-size="13">工具结果回到上下文，继续推理</text>
+    <text x="600" y="365" font-size="13" fill="#4b6666">教学简图：工具与权限由外部系统提供；是否调用及成功取决于具体环境。</text>
+  </g>
+  <g fill="none" stroke="#357f77" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M197 152h50"/><path d="M540 152h272"/>
+    <path d="M957 189v70H465v-36"/><path d="M330 215v101H205"/>
+  </g>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#357f77"/></marker></defs>
+</svg>

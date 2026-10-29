@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" role="img" aria-labelledby="title desc">
+  <title id="title">GLM-4.5V 图像和视频如何进入语言模型</title>
+  <desc id="desc">图片或视频帧先进入视觉编码器，特征经 MLP 适配器后与文字问题一起进入 GLM-4.5-Air 语言解码器；输出是文字或动作描述，外部工具执行动作。</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#588480"/></marker></defs>
+  <rect width="1100" height="340" rx="20" fill="#f4f9f8"/>
+  <g font-family="system-ui, sans-serif" text-anchor="middle" fill="#193e3c">
+    <text x="550" y="40" font-size="24" font-weight="700">GLM-4.5V：把视觉线索交给语言模型</text>
+    <g fill="#fff" stroke="#91b9b4" stroke-width="2">
+      <rect x="28" y="100" width="150" height="85" rx="12"/><rect x="215" y="100" width="175" height="85" rx="12"/>
+      <rect x="430" y="100" width="155" height="85" rx="12"/><rect x="625" y="100" width="215" height="85" rx="12"/>
+      <rect x="880" y="100" width="190" height="85" rx="12"/><rect x="625" y="224" width="215" height="60" rx="12"/>
+    </g>
+    <g font-size="18" font-weight="700"><text x="103" y="135">图片／视频</text><text x="302" y="130">视觉编码器</text><text x="507" y="130">MLP 适配器</text><text x="732" y="130">语言解码器</text><text x="975" y="130">文字／动作描述</text><text x="732" y="260">用户问题</text></g>
+    <g font-size="14"><text x="103" y="159">视频带时间信息</text><text x="302" y="155">AIMv2-Huge 初始化</text><text x="507" y="155">映射视觉特征</text><text x="732" y="155">GLM-4.5-Air 基础 · MoE</text><text x="975" y="155">工具执行在模型外</text></g>
+    <g fill="none" stroke="#588480" stroke-width="2.5" marker-end="url(#a)"><path d="M178 142H215"/><path d="M390 142H430"/><path d="M585 142H625"/><path d="M840 142H880"/><path d="M732 224V185"/></g>
+    <text x="550" y="320" font-size="13">教学示意：省略内部层、预处理与视觉编码细节；依据 GLM-V 官方报告绘制</text>
+  </g>
+</svg>

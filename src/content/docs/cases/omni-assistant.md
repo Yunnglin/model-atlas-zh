@@ -87,4 +87,4 @@ atlas:
 - [Qwen2.5-VL Technical Report](https://arxiv.org/abs/2502.13923v1)
 - [Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context](https://arxiv.org/abs/2403.05530v5)
 
-资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表本站已经运行得到的结果。
+资料核对：2026-10-26。文中的业务情境为教学例子；排错和对照实验是建议方案，不代表已经实际运行并得到结果。

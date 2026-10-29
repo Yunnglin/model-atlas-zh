@@ -32,6 +32,7 @@ export function readKnowledgeFixture(): KnowledgeBase {
     parse(readFileSync(join(root, 'data', `${name}.yaml`), 'utf8'));
   return validateKnowledge({
     version: 3,
+    timeline: load('model-timeline'),
     figures: load('figures'),
     guides: load('model-guides'),
     nodes,

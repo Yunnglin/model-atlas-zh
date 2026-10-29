@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="250" viewBox="0 0 1060 250" role="img" aria-labelledby="title desc">
+<title id="title">Qwen 第一代因果语言模型简化示意</title><desc id="desc">文字输入经过分词和重复的因果解码器层，最后预测下一个 token。Qwen-7B 有 32 层，其他规格以其配置为准。图中省略残差等细节。</desc>
+<rect width="1060" height="250" rx="16" fill="#f5faf8"/>
+<g font-family="sans-serif" text-anchor="middle" fill="#203b35">
+<rect x="25" y="84" width="155" height="70" rx="10" fill="#fff" stroke="#87b6a4"/><text x="102" y="113" font-size="20">输入文字</text><text x="102" y="139" font-size="15">分词 → 向量</text>
+<rect x="235" y="36" width="510" height="168" rx="12" fill="#e6f3ed" stroke="#4d9578" stroke-width="2"/><text x="490" y="67" font-size="19">重复的因果 Transformer 层</text>
+<rect x="260" y="84" width="205" height="76" rx="8" fill="#fff" stroke="#87b6a4"/><text x="362" y="114" font-size="19">因果注意力</text><text x="362" y="140" font-size="14">读取已有上下文</text>
+<rect x="510" y="84" width="205" height="76" rx="8" fill="#fff" stroke="#87b6a4"/><text x="612" y="114" font-size="19">前馈网络</text><text x="612" y="140" font-size="14">逐位置前馈加工</text>
+<rect x="795" y="84" width="238" height="70" rx="10" fill="#fff" stroke="#87b6a4"/><text x="914" y="113" font-size="19">词表概率</text><text x="914" y="139" font-size="14">选出下一个 token，继续生成</text>
+<text x="490" y="190" font-size="13">示意图：省略归一化、残差、位置编码等细节；重复层不代表共享权重</text>
+<text x="530" y="230" font-size="14">Qwen-7B 示例：32 层；其他规格需查看对应配置</text>
+</g><g fill="none" stroke="#468b75" stroke-width="3" marker-end="url(#arrow)"><path d="M180 119H225"/><path d="M465 122H500"/><path d="M745 119H785"/></g><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#468b75"/></marker></defs></svg>

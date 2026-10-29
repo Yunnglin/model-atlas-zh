@@ -1,4 +1,4 @@
-Qwen Team — official technical-report figures
+Jin Xu et al. — Qwen3-Omni Technical Report figures
 Source: https://arxiv.org/html/2509.17765v1
 The corresponding report declares Creative Commons Attribution 4.0 International (CC BY 4.0).
 License: https://creativecommons.org/licenses/by/4.0/

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="280" viewBox="0 0 1060 280" role="img" aria-labelledby="title desc">
+<title id="title">MiniMax-M2.5 与工具的工作流程示意</title><desc id="desc">任务输入模型，模型通过稀疏专家计算后提出工具请求，执行器把结果反馈给模型，经过独立测试输出结果。</desc>
+<rect width="1060" height="280" rx="18" fill="#f4f8f7"/>
+<text x="32" y="42" fill="#173b3d" font-family="sans-serif" font-size="23" font-weight="700">从用户任务到可验证的结果</text>
+<g font-family="sans-serif" text-anchor="middle"><rect x="32" y="93" width="170" height="90" rx="12" fill="#fff" stroke="#a8c7c4"/><text x="117" y="129" font-size="17" fill="#173b3d">用户任务</text><text x="117" y="156" font-size="13" fill="#4b6666">例如增加优惠券</text>
+<rect x="244" y="93" width="190" height="90" rx="12" fill="#dcefeb" stroke="#67a59c"/><text x="339" y="129" font-size="17" fill="#173b3d">M2.5 模型</text><text x="339" y="156" font-size="13" fill="#4b6666">注意力 + 稀疏专家</text>
+<rect x="476" y="93" width="195" height="90" rx="12" fill="#fff" stroke="#a8c7c4"/><text x="573" y="129" font-size="17" fill="#173b3d">外部执行器</text><text x="573" y="156" font-size="13" fill="#4b6666">读文件、运行测试</text>
+<rect x="713" y="93" width="180" height="90" rx="12" fill="#fff" stroke="#a8c7c4"/><text x="803" y="129" font-size="17" fill="#173b3d">独立验证</text><text x="803" y="156" font-size="13" fill="#4b6666">检查功能与回归</text>
+<path d="M202 138h35" stroke="#357f77" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M434 138h35" stroke="#357f77" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M671 138h35" stroke="#357f77" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M573 188v38H339v-36" stroke="#357f77" stroke-width="2" fill="none" marker-end="url(#arrow)"/><text x="457" y="248" fill="#4b6666" font-size="13">工具结果返回，模型再决定下一步</text></g>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#357f77"/></marker></defs></svg>

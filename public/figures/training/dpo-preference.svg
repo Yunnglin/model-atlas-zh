@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+<title id="title">DPO：用一个偏好对比较策略与参考模型</title>
+<desc id="desc">同一道问题的偏好回答 A 和较差回答 B，参考模型的序列概率分别为 0.03 和 0.16，当前策略分别为 0.06 和 0.08。相对参考模型，A 概率比为 2，B 为 0.5。DPO 使用偏好对和参考模型直接训练策略，不要求另训独立奖励模型。数字仅为教学示例。</desc>
+<rect width="1100" height="600" rx="20" fill="#f4f8f7"/><g font-family="system-ui, sans-serif" fill="#173b3d">
+<text x="40" y="50" font-size="25" font-weight="700">DPO：比较偏好，也比较相对于参考模型的变化</text>
+<text x="40" y="87" font-size="18" fill="#526d68">同一道问题：怎样理解过拟合？以下概率仅用于教学</text>
+<rect x="40" y="115" width="495" height="145" rx="14" fill="#fff" stroke="#a1c6ba" stroke-width="2"/><text x="60" y="150" font-size="21" font-weight="700">A · 被选中</text><text x="60" y="188" font-size="18">训练题记得太牢，换新题可能做不好。</text><text x="60" y="224" font-size="16" fill="#4b6c64">标注依据：准确、容易理解</text>
+<rect x="565" y="115" width="495" height="145" rx="14" fill="#fff" stroke="#a1c6ba" stroke-width="2"/><text x="585" y="150" font-size="21" font-weight="700">B · 未被选中</text><text x="585" y="188" font-size="18">训练误差越小，测试一定越好。</text><text x="585" y="224" font-size="16" fill="#4b6c64">示例中含有错误断言</text>
+<text x="40" y="306" font-size="20" font-weight="700">比较整条回答的概率（同一问题、同一上下文）</text>
+<g text-anchor="middle" font-size="18"><text x="220" y="349">参考模型</text><text x="435" y="349">当前策略</text><text x="725" y="349">当前 ÷ 参考</text><text x="945" y="349">相对变化</text>
+<rect x="40" y="370" width="1020" height="53" rx="9" fill="#e1f1ea"/><text x="80" y="403" font-weight="700">A</text><text x="220" y="403">0.03</text><text x="435" y="403">0.06</text><text x="725" y="403">2</text><text x="945" y="403">相对增加</text>
+<rect x="40" y="431" width="1020" height="53" rx="9" fill="#e9eff8"/><text x="80" y="464" font-weight="700">B</text><text x="220" y="464">0.16</text><text x="435" y="464">0.08</text><text x="725" y="464">0.5</text><text x="945" y="464">相对降低</text></g>
+<text x="40" y="527" font-size="18">经典 DPO 直接用偏好对和参考模型训练策略，不要求另训独立奖励模型。</text><text x="40" y="557" font-size="16" fill="#526d68">例中 B 的绝对概率仍高于 A；相对变化与内容真实性是不同问题。</text>
+</g></svg>

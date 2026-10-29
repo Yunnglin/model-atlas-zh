@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+<title id="title">下一 token 预测：训练与生成</title><desc id="desc">训练时已知完整序列，用向右错位的目标同时计算各位置损失；生成时将新片段接回前缀，再预测后一个片段。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="920" height="260" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui,sans-serif" fill="#183b45"><text x="28" y="40" font-size="23" font-weight="700">同一个目标：训练时学习，生成时续写</text>
+<text x="34" y="86" font-size="18" font-weight="700">训练</text><text x="155" y="86" font-size="18">输入：今天 很</text><text x="495" y="86" font-size="18">目标：很 热</text>
+<text x="155" y="117" font-size="15" fill="#526b72">每个位置只能参考已有前缀</text><text x="495" y="117" font-size="15" fill="#526b72">目标向左错位，逐位置计算损失</text>
+<text x="34" y="183" font-size="18" font-weight="700">生成</text><text x="155" y="183" font-size="18">今天 很</text><text x="390" y="183" font-size="18">今天 很 热</text><text x="690" y="183" font-size="18">继续预测</text>
+<g stroke="#087b7c" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M285 177 H365"/><path d="M555 177 H665"/></g>
+<text x="28" y="236" font-size="14" fill="#526b72">示意中的切分仅为教学；实际 token 由所用分词器决定。</text></g></svg>

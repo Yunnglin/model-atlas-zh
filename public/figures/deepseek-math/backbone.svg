@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 235" role="img" aria-labelledby="title desc">
+<title id="title">DeepSeekMath 7B 语言骨干示意</title><desc id="desc">问题和已生成文本经分词及嵌入后经过三十层因果注意力和前馈网络，最后预测下一个 token。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="960" height="235" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="40" font-size="23" font-weight="700">DeepSeekMath 7B：数学能力建立在语言骨干上</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="75" width="180" height="95" rx="10"/><rect x="275" y="75" width="185" height="95" rx="10"/><rect x="525" y="75" width="200" height="95" rx="10"/><rect x="785" y="75" width="145" height="95" rx="10"/></g>
+<g font-size="17"><text x="50" y="109">数学问题</text><text x="50" y="143">和已有前缀</text><text x="295" y="109">分词、词嵌入</text><text x="295" y="143">数字向量</text><text x="545" y="109">30 层解码器</text><text x="545" y="143">因果注意力 + 前馈</text><text x="805" y="109">词表输出</text><text x="805" y="143">预测下一 token</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#a)"><path d="M215 122 H265"/><path d="M465 122 H515"/><path d="M730 122 H775"/></g><text x="30" y="210" font-size="15" fill="#526b72">按官方 7B Base 配置简化；图省略归一化、位置处理和残差。</text></g></svg>

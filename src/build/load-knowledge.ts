@@ -5,15 +5,18 @@ import { validateKnowledge } from '../core/validation/validate-knowledge';
 import type { KnowledgeBase } from '../core/schemas/knowledge';
 
 export async function loadKnowledge(): Promise<KnowledgeBase> {
-  const [docs, sources, relations, questions, paths, figures, guides] = await Promise.all([
-    getCollection('docs'),
-    getCollection('sources'),
-    getCollection('relations'),
-    getCollection('questions'),
-    getCollection('paths'),
-    getCollection('figures'),
-    getCollection('guides'),
-  ]);
+  const [docs, sources, relations, questions, paths, figures, guides, timeline] = await Promise.all(
+    [
+      getCollection('docs'),
+      getCollection('sources'),
+      getCollection('relations'),
+      getCollection('questions'),
+      getCollection('paths'),
+      getCollection('figures'),
+      getCollection('guides'),
+      getCollection('timeline'),
+    ],
+  );
   await Promise.all(
     figures.map(async ({ data: figure }) => {
       if (!figure.asset) return;
@@ -25,6 +28,7 @@ export async function loadKnowledge(): Promise<KnowledgeBase> {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   return validateKnowledge({
     version: 3,
+    timeline: timeline.map((entry) => entry.data),
     figures: figures.map((entry) => ({
       ...entry.data,
       ...(entry.data.asset

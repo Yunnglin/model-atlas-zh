@@ -1,8 +1,29 @@
-# 模型知识地图
+# 模型知识地图：从 Transformer 读懂 AI 模型
 
-从 Transformer 出发，用大白话理解模型结构、数据、训练、评测与应用。
+一个中文 AI 模型学习知识库。沿时间线认识 BERT、GPT、Qwen、DeepSeek、Kimi、GLM 等模型，再走进模型页面，用大白话和例子理解它们的结构、训练、评测与应用。
 
-这是一个可在本地运行的中文开源学习知识库。源码仓库：[Yunnglin/model-atlas-zh](https://github.com/Yunnglin/model-atlas-zh)。当前本地版收录 85 篇知识正文、49 个模型／家族条目、5 类实践案例和 126 条一手资料。首页精选模型与家族，具体版本在连续正文里展开。重点介绍开放权重模型，闭源模型讲解公开机制与适用边界。
+**适合谁：**想系统学习大模型、多模态模型，或准备相关技术面试的读者。项目重点介绍开放权重模型；对于闭源模型，以公开资料为准说明已知能力和边界。
+
+## 先看看长什么样
+
+首页按厂商和时间排列模型，可以筛选或搜索：
+
+![模型知识地图首页，按厂商和月份展示模型时间线](docs/images/model-atlas-home.png)
+
+进入模型页面，可以先看模型卡，再按目录阅读结构、训练、评测和应用：
+
+![Qwen3 页面，展示模型卡和阅读目录](docs/images/qwen3-article.png)
+
+## 能在这里学到什么
+
+- **模型发展脉络**：从 Transformer 出发，按发布时间和厂商浏览模型；用结构、模态和系列筛选，或搜索模型名称与知识点。
+- **模型原理**：走进模型的独立页面，结合架构图、例子和参考资料，学习结构、训练、评测和应用。覆盖 NLP、视觉、语音和多模态。
+- **训练与推理方法**：学习 [SFT](src/content/docs/training/sft.md)、[LoRA](src/content/docs/training/lora.md)、[RLHF](src/content/docs/training/rlhf.md)、[RLVR](src/content/docs/training/rlvr.md)、[PPO](src/content/docs/training/ppo.md)、[GRPO](src/content/docs/training/grpo.md)、[GSPO](src/content/docs/training/gspo.md)、[DAPO](src/content/docs/training/dapo.md)、[DPO](src/content/docs/training/dpo.md)、[知识蒸馏](src/content/docs/training/distillation.md)和[量化](src/content/docs/training/quantization.md)，理解它们分别解决什么问题。
+- **实践案例**：围绕数据、训练、评测、应用与错例分析梳理思路，并提供资料和工具入口。
+
+如果这份地图对你的学习有帮助，欢迎给 [项目点个 Star](https://github.com/Yunnglin/model-atlas-zh)，也欢迎通过 Issue 提出问题或参与改进。
+
+网站目前需要本地运行，在线版尚未启用。下面的步骤可以启动完整知识地图。
 
 ## 本地运行
 
@@ -18,13 +39,13 @@ pnpm dev
 
 ## 可以怎么学
 
-1. 首页先看模型之间的结构关联与对比，点击一个模型开始阅读。
+1. 首页按厂商和年月浏览模型，选中节点查看关系，再进入正文。
 2. 模型页按章节连贯讲解结构、数据与训练、评测和应用；目录可以直接跳到关心的位置。
 3. 遇到不熟悉的概念，点击正文链接临时查阅；可以继续查其他概念，关闭后仍停在模型原位置。
-4. 架构图优先复用官方图，支持放大与缩放，保留来源和许可；第三方交互图提供独立入口。
-5. 返回地图保留当前平移与缩放；搜索用于快速找模型、方法和别名。
+4. 架构图结合官方原图与原创教学图，支持放大与缩放，注明来源；第三方交互图提供独立入口。
+5. 返回地图继续浏览；搜索用于快速找模型、方法和别名。
 
-实线是有依据的结构关联，虚线是比较，不能把它们都看成历史继承。按需展开“连线依据”可查看原始关系解释与资料。Qwen 覆盖一代至 3.8，以及 Audio／ASR、VL、Omni、TTS、Coder、Image、数学与检索等分支；Kimi 与 GLM 各有代际表和重点详解。各分支独立编号，不按主线版本号补造型号。
+厂商列中的竖线表示时间先后，不代表模型继承。选中节点后，可查看已记录的直接关系及其解释和资料；关系连线中的虚线表示比较。Qwen 覆盖一代至 3.8，以及 Audio／ASR、VL、Omni、TTS、Coder、Image、数学与检索等分支；Kimi 与 GLM 各有代际表和重点详解。各分支独立编号，不按主线版本号补造型号。
 
 模型页分别说明已确认的开放权重、只公开报告与闭源服务。未公开的训练数据和结构不作推测。精选范围见 [内容清单](docs/content-scope.md)。
 

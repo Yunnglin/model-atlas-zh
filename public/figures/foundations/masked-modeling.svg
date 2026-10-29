@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 930 250" role="img" aria-labelledby="title desc">
+<title id="title">BERT 掩码预测中的选中位置</title><desc id="desc">选中一百个预测位置的示例中，约八十个替换为掩码，十个替换为随机词，十个保持原词，目标都是预测原始 token。</desc>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="930" height="250" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="42" font-size="22" font-weight="700">BERT：先选预测位置，再决定怎样改输入</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="78" width="185" height="95" rx="10"/><rect x="285" y="72" width="190" height="48" rx="8"/><rect x="285" y="125" width="190" height="48" rx="8"/><rect x="285" y="178" width="190" height="48" rx="8"/><rect x="650" y="94" width="250" height="70" rx="10"/></g>
+<g font-size="17"><text x="50" y="113">假设选中</text><text x="50" y="146">100 个位置</text><text x="305" y="102">约 80：替换成 MASK</text><text x="305" y="155">约 10：替换成随机词</text><text x="305" y="208">约 10：保留原词</text><text x="672" y="125">每种情况都预测</text><text x="672" y="150">该位置的原始 token</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.3" marker-end="url(#a)"><path d="M220 110 L275 96"/><path d="M220 126 H275"/><path d="M220 144 L275 201"/><path d="M480 96 L640 113"/><path d="M480 149 L640 130"/><path d="M480 201 L640 150"/></g>
+</g></svg>

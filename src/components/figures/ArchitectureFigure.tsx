@@ -7,6 +7,7 @@ import {
   PlusIcon,
 } from '@phosphor-icons/react';
 import type { ModelFigure } from '../../core/schemas/knowledge';
+import { figureLicenseUrl } from '../../core/queries/figure-license';
 import styles from './ArchitectureFigure.module.css';
 
 const basisLabels: Record<ModelFigure['basis'], string> = {
@@ -22,6 +23,7 @@ export function ArchitectureFigure({ figure }: { figure: ModelFigure }) {
   const [failed, setFailed] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [embed, setEmbed] = useState(false);
+  const licenseUrl = figure.asset && figureLicenseUrl(figure.asset.license);
   function open() {
     setZoom(1);
     dialog.current?.showModal();
@@ -70,7 +72,14 @@ export function ArchitectureFigure({ figure }: { figure: ModelFigure }) {
           )}
           {figure.asset && (
             <span>
-              {figure.asset.license} · {figure.asset.attribution}
+              {licenseUrl ? (
+                <a href={licenseUrl} target="_blank" rel="noreferrer">
+                  {figure.asset.license}
+                </a>
+              ) : (
+                figure.asset.license
+              )}{' '}
+              · {figure.asset.attribution}
             </span>
           )}
         </div>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+<title id="title">PPO-Clip 正负优势的两个算例</title>
+<desc id="desc">裁剪范围 0.8 到 1.2。正优势加一、比率 1.5 时，原始目标 1.5，裁剪目标 1.2，取最小值得 1.2。负优势减一、比率 0.5 时，原始目标负 0.5，裁剪目标负 0.8，取最小值得负 0.8。裁剪限制优化激励，不是概率比的硬约束。</desc>
+<rect width="1100" height="600" rx="22" fill="#f4f8f7"/>
+<g font-family="system-ui, sans-serif" fill="#173b3d">
+<text x="40" y="54" font-size="26" font-weight="700">PPO-Clip：带上优势的符号，再比较两项</text>
+<text x="40" y="90" font-size="18" fill="#486862">例子统一取 ε = 0.2，裁剪区间是 [0.8, 1.2]；目标取两项中较小者</text>
+<rect x="40" y="122" width="495" height="300" rx="16" fill="#fff" stroke="#a3c6bb" stroke-width="2"/>
+<rect x="565" y="122" width="495" height="300" rx="16" fill="#fff" stroke="#a3c6bb" stroke-width="2"/>
+<text x="68" y="167" font-size="22" font-weight="700">① 正优势：鼓励这个动作</text>
+<text x="68" y="205" font-size="19">优势 A = +1，概率比 r = 1.5</text>
+<text x="68" y="253" font-size="19">未裁剪：1.5 × (+1) = 1.5</text>
+<text x="68" y="291" font-size="19">裁剪后：1.2 × (+1) = 1.2</text>
+<rect x="68" y="318" width="433" height="68" rx="10" fill="#e5f3ed"/><text x="87" y="359" font-size="20" font-weight="700">取较小值：min(1.5, 1.2) = 1.2</text>
+<text x="593" y="167" font-size="22" font-weight="700">② 负优势：抑制这个动作</text>
+<text x="593" y="205" font-size="19">优势 A = −1，概率比 r = 0.5</text>
+<text x="593" y="253" font-size="19">未裁剪：0.5 × (−1) = −0.5</text>
+<text x="593" y="291" font-size="19">裁剪后：0.8 × (−1) = −0.8</text>
+<rect x="593" y="318" width="433" height="68" rx="10" fill="#eaf0f9"/><text x="612" y="359" font-size="20" font-weight="700">取较小值：min(−0.5, −0.8) = −0.8</text>
+<rect x="40" y="458" width="1020" height="98" rx="14" fill="#fff5e5" stroke="#e3c18c"/>
+<text x="64" y="493" font-size="19" font-weight="700">裁剪限制这条样本的优化激励，不是硬约束。</text>
+<text x="64" y="526" font-size="17">其他样本和后续更新仍可能使实际概率比超出区间；也不能保证模型不退化。</text>
+</g></svg>

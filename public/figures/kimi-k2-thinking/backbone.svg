@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 300" role="img" aria-labelledby="title desc">
+<title id="title">Kimi K2 Thinking 语言模型主干示意</title><desc id="desc">文本输入经词嵌入进入 61 层语言模型，层内由 MLA 注意力和前馈模块处理。首层前馈为稠密网络，其余 60 层前馈采用 384 选 8 的路由专家与一个共享专家，最后预测下一个 token。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="1050" height="300" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui, sans-serif" fill="#183b45"><text x="30" y="40" font-size="24" font-weight="700">Kimi K2 Thinking：从输入到下一个 token</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="102" width="150" height="84" rx="10"/><rect x="220" y="75" width="600" height="145" rx="12"/><rect x="850" y="102" width="170" height="84" rx="10"/></g>
+<g fill="#e1f2ed" stroke="#c5ded8"><rect x="240" y="120" width="180" height="70" rx="9"/><rect x="455" y="120" width="340" height="70" rx="9"/></g>
+<g font-size="17"><text x="51" y="134">文本与工具结果</text><text x="51" y="160">词嵌入</text><text x="242" y="103">重复 61 层</text><text x="260" y="149">MLA 注意力</text><text x="260" y="174">64 个查询头</text><text x="475" y="149">前馈网络：首层稠密</text><text x="475" y="174">其余层：384 个专家选 8 + 共享专家</text><text x="868" y="134">词表打分</text><text x="868" y="160">预测下个 token</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M185 145 H210"/><path d="M425 155 H445"/><path d="M825 145 H840"/></g><text x="30" y="265" font-size="15" fill="#526b72">教学示意：省略归一化、残差与投影等细节；工具本身由外部程序执行。</text></g></svg>

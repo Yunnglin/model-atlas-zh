@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" role="img" aria-labelledby="title desc">
+<title id="title">编码器和解码器的信息流</title><desc id="desc">中文输入先进入编码器，已生成的英文前缀进入解码器；解码器通过交叉注意力读取编码结果并预测下一个英文 token。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="960" height="290" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="40" font-size="23" font-weight="700">翻译示例：读中文，逐步写英文</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="82" width="190" height="65" rx="10"/><rect x="290" y="82" width="190" height="65" rx="10"/><rect x="550" y="165" width="190" height="65" rx="10"/><rect x="800" y="165" width="130" height="65" rx="10"/><rect x="290" y="165" width="190" height="65" rx="10"/></g>
+<g font-size="17"><text x="50" y="120">输入：猫坐着</text><text x="310" y="109">编码器</text><text x="310" y="134">整理中文表示</text><text x="310" y="193">英文已有前缀</text><text x="310" y="217">The cat</text><text x="570" y="193">解码器</text><text x="570" y="217">查询中文并续写</text><text x="820" y="202">下一个 token</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M225 115 H280"/><path d="M480 115 H600 V157"/><path d="M485 197 H540"/><path d="M745 197 H790"/></g>
+<text x="30" y="268" font-size="15" fill="#526b72">解码器自注意力看已有前缀；交叉注意力读取编码器输出。</text></g></svg>

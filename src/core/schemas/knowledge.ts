@@ -20,6 +20,23 @@ export const relationKindSchema = z.enum([
 const idSchema = z.string().regex(/^[a-z][a-z0-9-]*$/);
 const nonempty = z.string().trim().min(1);
 
+export const timelineModelSchema = z.object({
+  id: idSchema,
+  title: nonempty,
+  year: z.number().int().min(1900).max(2100).optional(),
+  month: z.number().int().min(1).max(12).optional(),
+  dateBasis: z.enum(['release', 'paper']).optional(),
+  dateSource: idSchema.optional(),
+  article: idSchema,
+  organization: nonempty,
+  family: nonempty.optional(),
+  seriesPrevious: idSchema.optional(),
+  architecture: z.enum(['encoder', 'decoder', 'encoder-decoder', 'mixed', 'other', 'unknown']),
+  modalities: z.array(z.enum(['text', 'image', 'audio', 'video'])),
+  sources: z.array(idSchema).min(1),
+});
+export type TimelineModel = z.infer<typeof timelineModelSchema>;
+
 export const stageNames = ['数据', '训练', '评测', '应用', '错例分析', '数据改进'] as const;
 export const caseStageSchema = z.object({
   stage: z.enum(stageNames),
@@ -125,6 +142,7 @@ export type ModelGuide = z.infer<typeof modelGuideSchema>;
 
 export const knowledgeBaseSchema = z.object({
   version: z.literal(3),
+  timeline: z.array(timelineModelSchema),
   figures: z.array(figureSchema),
   guides: z.array(modelGuideSchema),
   nodes: z.array(knowledgeNodeSchema),

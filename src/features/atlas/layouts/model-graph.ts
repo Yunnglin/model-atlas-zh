@@ -1,135 +1,127 @@
-import { Graph, GraphEvent, type NodeData, type IPointerEvent } from '@antv/g6';
-import type { KnowledgeBase, KnowledgeNode } from '../../../core/schemas/knowledge';
-import { projectModelMap } from '../../../core/projections/model-map';
+import { Graph, type NodeData } from '@antv/g6';
+import type { TimelineModel, Relation } from '../../../core/schemas/knowledge';
+import {
+  timelineLayout,
+  NODE_WIDTH as WIDTH,
+  NODE_HEIGHT as HEIGHT,
+  COLUMN_STEP,
+  ROW_STEP,
+  AXIS_WIDTH,
+  NODE_OFFSET,
+} from './timeline-layout';
 import styles from '../components/MapCanvas.module.css';
 
-const WIDTH = 204,
-  HEIGHT = 84;
-/** G6 owns layout and the camera. Knowledge data has no renderer coordinates or DOM types. */
+type Edge = { id: string; from: string; to: string; relation: Relation };
+
+/** Columns represent organizations; vertical positions are sorted by year and month. */
 export class ModelGraph {
   readonly graph: Graph;
-  private readonly reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   constructor(
     private container: HTMLElement,
-    data: KnowledgeBase,
+    models: TimelineModel[],
+    edges: Edge[],
+    selected?: string,
   ) {
-    const map = projectModelMap(data);
+    const layout = timelineLayout(models);
+    const width = Math.max(container.parentElement?.clientWidth ?? 0, layout.width);
+    const nodes: NodeData[] = [];
+    // G6 anchors edges to its declared HTML node bounds; measure the same card
+    // that is rendered so its bounds match the visible, content-sized label.
+    const widths = new Map(models.map((model) => [model.id, this.measureCard(model, selected)]));
+    for (const period of layout.periods) {
+      for (const [column, organization] of layout.organizations.entries()) {
+        period.items
+          .filter((model) => model.organization === organization)
+          .forEach((model, index) => {
+            const nodeWidth = widths.get(model.id)!;
+            nodes.push({
+              id: model.id,
+              data: { model },
+              style: {
+                x: AXIS_WIDTH + NODE_OFFSET + nodeWidth / 2 + column * COLUMN_STEP,
+                y: period.top + HEIGHT / 2 + index * ROW_STEP,
+                size: [nodeWidth, HEIGHT],
+                dx: -nodeWidth / 2,
+                dy: -HEIGHT / 2,
+              },
+            });
+          });
+      }
+    }
+    container.style.width = `${width}px`;
+    container.style.height = `${layout.height}px`;
     this.graph = new Graph({
       container,
-      width: Math.max(1, container.clientWidth),
-      height: Math.max(1, container.clientHeight),
-      padding: [16, 24, 80, 24],
+      width,
+      height: layout.height,
+      devicePixelRatio: 1,
       animation: false,
-      zoomRange: [0.35, 1.4],
       data: {
-        nodes: map.nodes.map((node) => ({ id: node.id, data: { knowledge: node } })),
-        edges: map.edges.map((edge) => ({
-          id: edge.id,
-          source: edge.from,
-          target: edge.to,
-          data: { label: edge.label },
-          style: { lineDash: edge.comparison ? [5, 5] : undefined },
-        })),
+        nodes,
+        edges: edges
+          .filter((edge) => selected && (edge.from === selected || edge.to === selected))
+          .map((edge) => ({
+            id: edge.id,
+            source: edge.from,
+            target: edge.to,
+            style: { lineDash: edge.relation.kind === 'compared-with' ? [5, 5] : undefined },
+          })),
       },
       node: {
         type: 'html',
         style: {
-          size: [WIDTH, HEIGHT],
-          dx: -WIDTH / 2,
-          dy: -HEIGHT / 2,
-          innerHTML: (node: NodeData) => this.card(node.data!.knowledge as KnowledgeNode),
-          ports: [
-            { key: 'left', placement: 'left' },
-            { key: 'right', placement: 'right' },
-          ],
+          innerHTML: (node: NodeData) => this.card(node.data!.model as TimelineModel, selected),
         },
       },
       edge: {
         type: 'polyline',
         style: {
-          stroke: '#b0c7bf',
-          lineWidth: 1.4,
-          sourcePort: 'right',
-          targetPort: 'left',
-          radius: 10,
+          stroke: '#588a7b',
+          lineWidth: 2,
+          radius: 8,
+          endArrow: false,
+          router: {
+            type: 'shortest-path',
+            enableObstacleAvoidance: true,
+            gridSize: 10,
+            offset: 4,
+            maximumLoops: 10000,
+          },
         },
       },
-      layout: {
-        type: 'antv-dagre',
-        rankdir: 'LR',
-        nodesep: 6,
-        ranksep: 30,
-        nodeSize: [WIDTH, HEIGHT],
-        controlPoints: true,
-      },
-      behaviors: [
-        { type: 'drag-canvas', enable: (event: IPointerEvent) => event.targetType === 'canvas' },
-        { type: 'zoom-canvas', sensitivity: 0.7 },
-      ],
+      behaviors: [],
     });
   }
-  private updateDetail = () => {
-    if (!this.graph.destroyed) this.container.dataset.compact = String(this.graph.getZoom() < 0.7);
-  };
-  private card(node: KnowledgeNode) {
+  private measureCard(model: TimelineModel, selected?: string) {
+    const card = this.card(model, selected);
+    Object.assign(card.style, { position: 'absolute', visibility: 'hidden', left: '0', top: '0' });
+    this.container.append(card);
+    const width = Math.min(WIDTH, Math.ceil(card.getBoundingClientRect().width));
+    card.remove();
+    return width;
+  }
+  private card(model: TimelineModel, selected?: string) {
     const card = document.createElement('div');
-    card.className = `${styles.modelNode} ${node.id === 'transformer' ? styles.rootNode : ''}`;
-    card.dataset.modelId = node.id;
-    const year = document.createElement('span');
-    year.className = styles.nodeHint!;
-    year.textContent = node.year ? String(node.year) : '模型';
+    card.className = `${styles.modelNode} ${model.id === selected ? styles.selected : ''}`;
+    card.dataset.modelId = model.id;
+    card.dataset.family = model.family ?? 'other';
     const name = document.createElement('button');
     name.type = 'button';
     name.className = styles.nodeName!;
-    name.dataset.knowledge = node.id;
-    name.textContent = node.title;
-    name.title = node.purpose;
-    const description = document.createElement('p');
-    description.className = styles.nodeDescription!;
-    description.textContent = node.purpose;
-    card.append(year, name, description);
+    name.dataset.knowledge = model.id;
+    name.textContent = model.title;
+    name.title = model.title;
+    card.append(name);
     return card;
   }
   async render() {
     await this.graph.render();
-    this.graph.on(GraphEvent.AFTER_TRANSFORM, this.updateDetail);
-    await this.frame();
-    this.updateDetail();
     this.container.querySelectorAll('canvas').forEach((canvas) => {
       canvas.setAttribute('aria-hidden', 'true');
       canvas.tabIndex = -1;
     });
   }
-  private async frame() {
-    await this.fit(false);
-    // Keep text readable on a phone; its overview can be panned or explicitly fitted.
-    if (this.container.clientWidth < 760) {
-      await this.graph.zoomTo(0.75, false);
-      await this.graph.fitCenter(false);
-      const root = this.graph.getViewportByCanvas(this.graph.getElementPosition('transformer'));
-      await this.graph.translateBy([24 + (WIDTH * 0.75) / 2 - root[0]!, 0], false);
-    }
-  }
-  async fit(animate = true) {
-    await this.graph.fitView({ when: 'always' }, animate && !this.reduced);
-    if (this.graph.getZoom() > 1) await this.graph.zoomTo(1, false);
-    await this.graph.fitCenter(false);
-  }
-  async resize(width: number, height: number) {
-    if (width <= 0 || height <= 0 || this.graph.destroyed) return;
-    const size = this.graph.getSize();
-    if (size[0] === width && size[1] === height) return;
-    this.graph.resize(width, height);
-    await this.frame();
-  }
-  zoom(factor: number) {
-    return this.graph.zoomTo(
-      Math.min(1.4, Math.max(0.35, this.graph.getZoom() * factor)),
-      !this.reduced,
-    );
-  }
   destroy() {
-    this.graph.off(GraphEvent.AFTER_TRANSFORM, this.updateDetail);
     if (!this.graph.destroyed) this.graph.destroy();
   }
 }

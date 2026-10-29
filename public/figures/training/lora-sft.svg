@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="440" viewBox="0 0 1120 440" role="img" aria-labelledby="title desc">
+  <title id="title">SFT 与 LoRA 怎样配合</title>
+  <desc id="desc">选中层的输入表示同时经过冻结的原权重与可训练的低秩分支，两路结果相加，模型输出与示范答案计算损失；更新只作用于 LoRA 矩阵。示意图只画出选中的一层。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#37766f"/></marker>
+    <marker id="update" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#a05b27"/></marker>
+  </defs>
+  <rect width="1120" height="440" rx="18" fill="#f4f8f7"/>
+  <g font-family="sans-serif" fill="#183b3c">
+    <text x="36" y="40" font-size="23" font-weight="700">SFT 提供示范，LoRA 决定哪些参数更新</text>
+    <text x="36" y="70" font-size="15" fill="#4b6666">只画选中的一层；同一个输入并行经过两条路径</text>
+    <rect x="30" y="167" width="135" height="70" rx="10" fill="#ffffff" stroke="#a8c7c4"/>
+    <text x="97" y="196" font-size="17" text-anchor="middle">层输入 x</text>
+    <text x="97" y="219" font-size="13" text-anchor="middle">上下文计算出的表示</text>
+    <rect x="260" y="100" width="220" height="74" rx="10" fill="#e8f0ee" stroke="#91b3ac"/>
+    <text x="370" y="129" font-size="17" text-anchor="middle">原权重 W₀</text>
+    <text x="370" y="152" font-size="14" text-anchor="middle">冻结，不更新</text>
+    <rect x="260" y="235" width="220" height="74" rx="10" fill="#fff4e8" stroke="#d7af89"/>
+    <text x="370" y="264" font-size="17" text-anchor="middle">LoRA：缩放 × BA</text>
+    <text x="370" y="287" font-size="14" text-anchor="middle">A、B 是可训练矩阵</text>
+    <circle cx="575" cy="202" r="25" fill="#dcefeb" stroke="#67a59c"/>
+    <text x="575" y="210" font-size="25" text-anchor="middle">＋</text>
+    <rect x="650" y="167" width="160" height="70" rx="10" fill="#ffffff" stroke="#a8c7c4"/>
+    <text x="730" y="196" font-size="17" text-anchor="middle">后续模型层</text>
+    <text x="730" y="219" font-size="13" text-anchor="middle">预测下一个 token</text>
+    <rect x="895" y="167" width="180" height="70" rx="10" fill="#ffffff" stroke="#a8c7c4"/>
+    <text x="985" y="196" font-size="17" text-anchor="middle">与示范答案比较</text>
+    <text x="985" y="219" font-size="13" text-anchor="middle">计算 SFT 损失</text>
+    <g fill="none" stroke="#37766f" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M165 202 H205 V137 H252"/>
+      <path d="M205 202 V272 H252"/>
+      <path d="M480 137 H520 V195 H542"/>
+      <path d="M480 272 H520 V209 H542"/>
+      <path d="M600 202 H642"/>
+      <path d="M810 202 H887"/>
+    </g>
+    <path d="M985 237 V363 H370 V319" fill="none" stroke="#a05b27" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#update)"/>
+    <text x="680" y="385" font-size="14" fill="#865125" text-anchor="middle">反向传播后，只更新图中的 A、B</text>
+    <text x="36" y="418" font-size="13" fill="#4b6666">教学示意：SFT 也可全量微调，LoRA 也可用于其他训练目标。</text>
+  </g>
+</svg>

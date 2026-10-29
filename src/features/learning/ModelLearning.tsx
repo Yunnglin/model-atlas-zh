@@ -33,22 +33,24 @@ export function ModelLearning({
             返回模型地图
           </button>
           <strong>{model.title}</strong>
-          <nav>
-            {model.chapters.map((chapter) => (
-              <a
-                key={chapter.id}
-                href={`#${chapter.id}`}
-                onClick={(event) => {
-                  event.preventDefault();
-                  scroll.current
-                    ?.querySelector(`#${CSS.escape(chapter.id)}`)
-                    ?.scrollIntoView({ block: 'start' });
-                }}
-              >
-                {chapter.title}
-              </a>
-            ))}
-          </nav>
+          {html !== undefined && (
+            <nav>
+              {model.chapters.map((chapter) => (
+                <a
+                  key={chapter.id}
+                  href={`#${chapter.id}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    scroll.current
+                      ?.querySelector(`#${CSS.escape(chapter.id)}`)
+                      ?.scrollIntoView({ block: 'start' });
+                  }}
+                >
+                  {chapter.title}
+                </a>
+              ))}
+            </nav>
+          )}
         </aside>
         <article className={styles.content}>
           <header>

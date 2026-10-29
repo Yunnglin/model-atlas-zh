@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="300" viewBox="0 0 1060 300" role="img" aria-labelledby="title desc">
+  <title id="title">GLM-4.5 语言模型结构</title>
+  <desc id="desc">文本转为 token；模型依次经过三层稠密层和八十九层混合专家层，混合专家层包含分组查询注意力、共享专家和每个 token 选八个的路由专家；最后预测下一个 token。多 token 预测层另用于推测解码。</desc>
+  <rect width="1060" height="300" rx="16" fill="#f5faf8"/>
+  <text x="30" y="38" fill="#193d38" font-family="sans-serif" font-size="20" font-weight="bold">GLM-4.5：从输入到下一个 token</text>
+  <g font-family="sans-serif" text-anchor="middle" fill="#203b35">
+    <rect x="25" y="82" width="135" height="85" rx="9" fill="#fff" stroke="#87b6a4"/>
+    <text x="92" y="115" font-size="17">输入文本</text><text x="92" y="142" font-size="14">拆分 token</text>
+    <rect x="199" y="82" width="160" height="85" rx="9" fill="#e7f4ee" stroke="#87b6a4"/>
+    <text x="279" y="115" font-size="17">3 个稠密层</text><text x="279" y="142" font-size="14">注意力 + 前馈</text>
+    <rect x="398" y="66" width="352" height="118" rx="9" fill="#f0edf9" stroke="#ac9ac7"/>
+    <text x="574" y="99" font-size="17">89 个 MoE 层</text><text x="574" y="126" font-size="14">GQA 注意力 → 路由专家 + 共享专家</text><text x="574" y="153" font-size="14">每个 token 选 8 个路由专家</text>
+    <rect x="789" y="82" width="245" height="85" rx="9" fill="#fff5e8" stroke="#c9a679"/>
+    <text x="911" y="115" font-size="17">输出下一个 token</text><text x="911" y="142" font-size="14">可继续生成或发出工具请求</text>
+  </g>
+  <g stroke="#527f73" stroke-width="2.5" fill="none" marker-end="url(#arrow)"><path d="M160 124h30"/><path d="M359 124h30"/><path d="M750 124h30"/></g>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#527f73"/></marker></defs>
+  <text x="530" y="230" text-anchor="middle" fill="#526b62" font-size="15" font-family="sans-serif">另有 1 个 MTP 层辅助推测解码；工具执行由外部系统完成。</text>
+  <text x="530" y="259" text-anchor="middle" fill="#526b62" font-size="14" font-family="sans-serif">教学简图：省略残差连接、归一化和投影细节。</text>
+</svg>

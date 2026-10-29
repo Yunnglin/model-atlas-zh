@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="260" viewBox="0 0 1060 260" role="img" aria-labelledby="title desc">
+<title id="title">Qwen3-Next / Qwen3-Coder-Next 混合层教学图</title><desc id="desc">输入 token 经过一组四层：三个 Gated DeltaNet 层及一个 Gated Attention 层，每层有 MoE 前馈，重复十二组，再输出下一 token。</desc>
+<rect width="1060" height="260" rx="16" fill="#f5faf8"/><g font-family="sans-serif" text-anchor="middle" fill="#203b35">
+<rect x="20" y="100" width="126" height="56" rx="9" fill="#fff" stroke="#87b6a4"/><text x="83" y="134" font-size="18">输入 token</text>
+<rect x="186" y="35" width="650" height="177" rx="12" fill="#e6f3ed" stroke="#4d9578" stroke-width="2"/><text x="511" y="65" font-size="18">一组 4 层，重复 12 组</text>
+<g fill="#fff" stroke="#87b6a4"><rect x="210" y="86" width="128" height="72" rx="8"/><rect x="350" y="86" width="128" height="72" rx="8"/><rect x="490" y="86" width="128" height="72" rx="8"/><rect x="630" y="86" width="176" height="72" rx="8"/></g>
+<g font-size="15"><text x="274" y="111">DeltaNet</text><text x="274" y="137">＋ MoE</text><text x="414" y="111">DeltaNet</text><text x="414" y="137">＋ MoE</text><text x="554" y="111">DeltaNet</text><text x="554" y="137">＋ MoE</text><text x="718" y="111">Gated Attention</text><text x="718" y="137">＋ MoE</text><text x="511" y="191" font-size="13">注意力处理历史；MoE 选择前馈专家。省略归一化、残差和具体张量。</text></g>
+<rect x="883" y="100" width="155" height="56" rx="9" fill="#fff" stroke="#87b6a4"/><text x="960" y="134" font-size="17">下一 token</text></g>
+<g fill="none" stroke="#468b75" stroke-width="3" marker-end="url(#arrow)"><path d="M146 128H175"/><path d="M338 122H348"/><path d="M478 122H488"/><path d="M618 122H628"/><path d="M836 128H872"/></g><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#468b75"/></marker></defs></svg>

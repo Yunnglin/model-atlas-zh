@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<title id="title">GPT-3：提示中的示例与因果生成</title>
+<desc id="desc">任务说明和示例与待答问题构成上下文，进入因果 Transformer，模型逐 token 续写答案。推理时示例不更新模型参数。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2f7770"/></marker></defs>
+<rect width="1200" height="430" rx="20" fill="#f4f9f7"/>
+<g font-family="sans-serif" fill="#173b38">
+<text x="36" y="45" font-size="24" font-weight="700">少样本：把示范放进提示，再让模型续写</text>
+<rect x="36" y="84" width="310" height="220" rx="14" fill="#fff" stroke="#aacbc3"/>
+<text x="56" y="120" font-size="18" font-weight="700">提示与上下文</text>
+<text x="56" y="156" font-size="16">任务：判断物流还是退款</text>
+<text x="56" y="190" font-size="16">例 1：包裹未到 → 物流</text>
+<text x="56" y="223" font-size="16">例 2：申请退钱 → 退款</text>
+<text x="56" y="256" font-size="16">新问题：快递未更新 →</text>
+<rect x="410" y="110" width="300" height="168" rx="14" fill="#e5f2ef" stroke="#82b6aa"/>
+<text x="560" y="151" text-anchor="middle" font-size="19" font-weight="700">GPT-3 因果 Transformer</text>
+<text x="560" y="188" text-anchor="middle" font-size="16">前文 → 注意力与前馈层</text>
+<text x="560" y="224" text-anchor="middle" font-size="16">预测下一个 token 的概率</text>
+<rect x="775" y="136" width="370" height="115" rx="14" fill="#fff" stroke="#aacbc3"/>
+<text x="960" y="174" text-anchor="middle" font-size="18" font-weight="700">续写：例如“物流”</text>
+<text x="960" y="208" text-anchor="middle" font-size="15">逐 token 输出，结果需评测</text>
+<g fill="none" stroke="#2f7770" stroke-width="3" marker-end="url(#arrow)"><path d="M346 195 H399"/><path d="M710 195 H764"/></g>
+<text x="36" y="352" font-size="17">推理时：示例改变上下文，不对模型权重做梯度更新。</text>
+<text x="36" y="391" font-size="14" fill="#55716b">原创教学示意；简化了分词、注意力模式与采样，示例并非实际模型输出。</text>
+</g></svg>

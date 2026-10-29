@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">GPT-5 发布时 ChatGPT 系统的简化流程</title><desc id="desc">请求交给路由器，选择快速或 thinking 模型；模型可以请求工具，由应用或平台执行，结果返回后生成回答。具体内部结构未公开。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#37796f"/></marker></defs><rect width="1200" height="460" rx="20" fill="#f4f9f7"/>
+<g font-family="sans-serif" fill="#173b38"><text x="36" y="43" font-size="23" font-weight="700">2025 年发布时：产品路由、模型和工具各司其职</text>
+<rect x="35" y="165" width="165" height="75" rx="12" fill="#fff" stroke="#a6c9bf"/><text x="117" y="198" text-anchor="middle" font-size="18">用户请求</text><text x="117" y="222" text-anchor="middle" font-size="14">文本 / 图片等</text>
+<rect x="260" y="165" width="180" height="75" rx="12" fill="#e7f3ef" stroke="#8bb8aa"/><text x="350" y="198" text-anchor="middle" font-size="18">实时路由器</text><text x="350" y="222" text-anchor="middle" font-size="14">选择处理路径</text>
+<rect x="515" y="91" width="195" height="75" rx="12" fill="#fff" stroke="#a6c9bf"/><text x="612" y="124" text-anchor="middle" font-size="18">快速模型</text><text x="612" y="148" text-anchor="middle" font-size="14">处理多数请求</text>
+<rect x="515" y="240" width="195" height="75" rx="12" fill="#fff" stroke="#a6c9bf"/><text x="612" y="273" text-anchor="middle" font-size="18">Thinking 模型</text><text x="612" y="297" text-anchor="middle" font-size="14">处理复杂请求</text>
+<rect x="820" y="165" width="165" height="75" rx="12" fill="#fff" stroke="#a6c9bf"/><text x="902" y="198" text-anchor="middle" font-size="18">模型响应</text><text x="902" y="222" text-anchor="middle" font-size="14">回答或工具请求</text>
+<rect x="820" y="295" width="275" height="65" rx="12" fill="#fff4e8" stroke="#d7af89"/><text x="957" y="322" text-anchor="middle" font-size="16">可选：应用或平台执行工具</text><text x="957" y="344" text-anchor="middle" font-size="13">结果返回模型后再回答</text>
+<g fill="none" stroke="#37796f" stroke-width="2.5" marker-end="url(#arrow)"><path d="M200 202 H250"/><path d="M440 190 H475 V128 H505"/><path d="M440 215 H475 V278 H505"/><path d="M710 128 H760 V190 H810"/><path d="M710 278 H760 V215 H810"/></g>
+<g fill="none" stroke="#a05b27" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"><path d="M875 240 V285"/><path d="M1015 295 V220 H995"/></g>
+<text x="36" y="404" font-size="14" fill="#58746d">原创产品流程示意：工具由应用或平台执行；图不表示模型内部结构或所有版本的路由。</text></g></svg>

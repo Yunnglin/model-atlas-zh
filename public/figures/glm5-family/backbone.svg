@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="340" viewBox="0 0 1100 340" role="img" aria-labelledby="title description">
+  <title id="title">GLM-5.1 和 GLM-5.2 的语言主干示意</title>
+  <desc id="description">输入文字经过嵌入进入七十八层解码器，前三层采用稠密前馈，后七十五层采用混合专家前馈；每层先进行稀疏注意力，再经前馈计算，最终预测下一个 token。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#527f73"/></marker></defs>
+  <rect width="1100" height="340" rx="18" fill="#f5f9f7"/>
+  <g font-family="system-ui, sans-serif" fill="#193d38">
+    <text x="28" y="38" font-size="22" font-weight="700">GLM-5.1 / 5.2：同一类解码器主干，逐层处理输入</text>
+    <rect x="30" y="112" width="145" height="78" rx="10" fill="#fff" stroke="#a8c7c4"/>
+    <text x="49" y="143" font-size="16">输入 token</text><text x="49" y="167" font-size="14">词嵌入</text>
+    <rect x="225" y="82" width="330" height="140" rx="12" fill="#e6f3ef" stroke="#77aa99"/>
+    <text x="245" y="111" font-size="17" font-weight="700">前 3 层：稀疏注意力 + 稠密前馈</text>
+    <text x="245" y="143" font-size="14">注意力根据查询筛选历史位置</text><text x="245" y="170" font-size="14">每个 token 使用同一套前馈网络</text>
+    <rect x="610" y="82" width="315" height="140" rx="12" fill="#e6f3ef" stroke="#77aa99"/>
+    <text x="630" y="111" font-size="17" font-weight="700">后 75 层：稀疏注意力 + MoE</text>
+    <text x="630" y="143" font-size="14">256 个路由专家中选择 8 个</text><text x="630" y="170" font-size="14">另有一个共享专家参与计算</text>
+    <rect x="975" y="112" width="95" height="78" rx="10" fill="#fff" stroke="#a8c7c4"/>
+    <text x="990" y="143" font-size="15">预测</text><text x="990" y="166" font-size="14">下一 token</text>
+    <g fill="none" stroke="#527f73" stroke-width="2.5" marker-end="url(#arrow)"><path d="M180 151 H215"/><path d="M560 151 H600"/><path d="M930 151 H965"/></g>
+    <text x="30" y="272" font-size="14" fill="#52706a">示意图省略归一化、残差与 MTP；5.2 另在部分层之间复用索引。</text>
+    <text x="30" y="301" font-size="14" fill="#52706a">依据官方配置；不同版本使用各自的权重。</text>
+  </g>
+</svg>

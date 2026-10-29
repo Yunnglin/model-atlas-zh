@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 235" role="img" aria-labelledby="title desc">
+<title id="title">从文字到模型输入编号</title><desc id="desc">文本经过分词器切分后映射成词表编号，模型根据编号读取向量。例子的切分和编号仅用于教学。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#087b7c"/></marker></defs><rect width="900" height="235" rx="18" fill="#f5f9f8"/>
+<g font-family="system-ui,sans-serif" fill="#183b45"><text x="30" y="40" font-size="23" font-weight="700">文字进入模型的第一步</text>
+<g fill="#fff" stroke="#c5ded8"><rect x="30" y="75" width="180" height="90" rx="10"/><rect x="260" y="75" width="180" height="90" rx="10"/><rect x="490" y="75" width="180" height="90" rx="10"/><rect x="720" y="75" width="150" height="90" rx="10"/></g>
+<g font-size="18"><text x="50" y="108">原始文字</text><text x="50" y="143">abab</text><text x="280" y="108">切分片段</text><text x="280" y="143">ab · ab</text><text x="510" y="108">词表编号</text><text x="510" y="143">42 · 42</text><text x="740" y="108">模型</text><text x="740" y="143">读取向量</text></g>
+<g fill="none" stroke="#087b7c" stroke-width="2.5" marker-end="url(#arrow)"><path d="M215 120 H250"/><path d="M445 120 H480"/><path d="M675 120 H710"/></g><text x="30" y="205" font-size="15" fill="#526b72">示例编号为虚构；真实切分和编号由具体 tokenizer 与词表决定。</text></g></svg>

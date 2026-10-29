@@ -1,0 +1,14 @@
+Original teaching diagrams identified as “teaching” in src/content/data/figures.yaml,
+and the teaching diagrams listed in docs/assets.md, are by model-atlas-zh contributors
+and licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+For attribution, identify “model-atlas-zh contributors”, link the original diagram
+and license, and indicate changes. These are simplified diagrams based on the
+sources cited in the figure registry or asset documentation; they are not reproductions
+of official figures.
+
+This notice does not apply to official third-party figures. Their copyright,
+licenses, attribution, sources and modifications are listed individually in
+src/content/data/figures.yaml and docs/assets.md; local notices may also be
+present next to those files.

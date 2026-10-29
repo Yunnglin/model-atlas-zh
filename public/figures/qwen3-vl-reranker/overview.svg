@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+<title id="title">多模态召回与重排的教学示意</title><desc id="desc">召回模型挑出候选，重排模型将查询和候选一起输入，输出相关性分数后排序。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#60827e"/></marker></defs>
+<rect width="1200" height="400" rx="24" fill="#f2f8f6"/>
+<text x="40" y="47" font-family="sans-serif" font-size="25" font-weight="700" fill="#173c3c">先海选，再细看：多模态重排怎么工作？</text>
+<g font-family="sans-serif" fill="#173c3c" font-size="19">
+<rect x="40" y="92" width="205" height="146" rx="14" fill="#fff" stroke="#b3d1ca"/><text x="58" y="126" font-weight="700">① 查询与资料库</text><text x="58" y="160">问题、图片或视频</text><text x="58" y="194">资料可提前建立索引</text>
+<rect x="300" y="92" width="205" height="146" rx="14" fill="#fff" stroke="#b3d1ca"/><text x="318" y="126" font-weight="700">② 召回候选</text><text x="318" y="160">Embedding 海选</text><text x="318" y="194">例如选出前 100 个</text>
+<rect x="560" y="92" width="245" height="146" rx="14" fill="#d9efea" stroke="#5b9e90"/><text x="578" y="126" font-weight="700">③ 逐对重排</text><text x="578" y="160">指令 + 查询 + 候选</text><text x="578" y="194">Qwen3-VL-Reranker</text>
+<rect x="860" y="92" width="295" height="146" rx="14" fill="#fff" stroke="#b3d1ca"/><text x="878" y="126" font-weight="700">④ 打分并重新排序</text><text x="878" y="160">比较 yes / no 的分数</text><text x="878" y="194">相关候选排在前面</text>
+<path d="M247 165H289 " fill="none" stroke="#60827e" stroke-width="3" marker-end="url(#arrow)"/><path d="M507 165H549 " fill="none" stroke="#60827e" stroke-width="3" marker-end="url(#arrow)"/><path d="M807 165H849" fill="none" stroke="#60827e" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="42" y="295" font-size="18">每个候选都要和查询一起计算；可以批量处理，但不是一次处理整个资料库。</text>
+<text x="42" y="330" font-size="18">图中箭头表示处理流程。重排不能找回海选时漏掉的资料。</text>
+</g></svg>
